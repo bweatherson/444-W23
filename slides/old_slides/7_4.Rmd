@@ -1,0 +1,267 @@
+---
+title: "444 Lecture 7.4 - Beer and Quiche"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## The Beer-Quiche Game
+
+- Sender's car breaks down on the way to work, so he walks into a bar to wait somewhere while the repair truck comes. (I think in the 1985 version he's looking for a phone.)
+- He quickly realises this is a rougher bar than he expected, and the patrons are all staring at him.
+- Sender is smart, and he quickly realises that the patrons are both bullies and cowards. They're bullies, so they are looking for a fight, but cowards, so they won't fight a Tough Guy. And they think it's about 60% likely that he's a Tough Guy.
+- Sender really wants to avoid a fight (whether or not he's a Tough Guy).
+- He knows that if he just tries to leave, they will conclude that he too is a Wimp, so he better order something
+
+## The Beer-Quiche Game
+
+- His choices are beer or quiche.
+- He knows that the patrons believe, correctly, that if he's a Tough Guy, he'd prefer beer, and if he's a Wimp, he'd prefer quiche.
+- And while they can't read his character, they can hear his order.
+- But he would also prefer not to get in a fight either way. Even Tough Guys have better things to do at 8 in the morning.
+- What to do?
+
+---
+
+\begin{center}
+\begin{istgame}[scale=1.3]
+   \xtdistance{20mm}{20mm}
+   \istroot(0)[chance node]{$c$}
+     \istb<grow=left>{0.6}[a]
+     \istb<grow=right>{0.4}[a]
+     \endist
+   \xtdistance{10mm}{20mm}
+   \istroot(1)(0-1)<180>{1}
+     \istb<grow=north>{Beer}[l]
+     \istb<grow=south>{Quiche}[l]
+     \endist
+   \istroot(2)(0-2)<0>{1}
+     \istb<grow=north>{Beer}[r]
+     \istb<grow=south>{Quiche}[r]
+     \endist
+   \istroot'[north](a1)(1-1)
+     \istb{F}[bl]{1,-1}
+     \istb{N}[br]{4,0}
+     \endist
+   \istroot(b1)(1-2)
+     \istb{F}[al]{-1,-1}
+     \istb{N}[ar]{2,0}
+     \endist
+   \istroot(a2)(2-2)
+     \istb{F}[al]{-1,1}
+     \istb{N}[ar]{4,0}
+     \endist
+   \istroot'[north](b2)(2-1)
+     \istb{F}[bl]{-1,1}
+     \istb{N}[br]{2,0}
+     \endist
+   \xtInfoset(a1)(b2){2}
+   \xtInfoset(b1)(a2){2}
+   \end{istgame}
+\end{center}
+
+---
+
+\begin{center}
+\begin{istgame}[scale=0.9]
+   \xtdistance{20mm}{20mm}
+   \istroot(0)[chance node]{$c$}
+     \istb<grow=left>{0.6}[a]
+     \istb<grow=right>{0.4}[a]
+     \endist
+   \xtdistance{10mm}{20mm}
+   \istroot(1)(0-1)<180>{1}
+     \istb<grow=north>{Beer}[l]
+     \istb<grow=south>{Quiche}[l]
+     \endist
+   \istroot(2)(0-2)<0>{1}
+     \istb<grow=north>{Beer}[r]
+     \istb<grow=south>{Quiche}[r]
+     \endist
+   \istroot'[north](a1)(1-1)
+     \istb{F}[bl]{1,-1}
+     \istb{N}[br]{4,0}
+     \endist
+   \istroot(b1)(1-2)
+     \istb{F}[al]{-1,-1}
+     \istb{N}[ar]{2,0}
+     \endist
+   \istroot(a2)(2-2)
+     \istb{F}[al]{-1,1}
+     \istb{N}[ar]{4,0}
+     \endist
+   \istroot'[north](b2)(2-1)
+     \istb{F}[bl]{-1,1}
+     \istb{N}[br]{2,0}
+     \endist
+   \xtInfoset(a1)(b2){2}
+   \xtInfoset(b1)(a2){2}
+   \end{istgame}
+\end{center}
+
+Sender gets
+
+- 3 points for avoiding fight;
+- +1 for liked order, -1 for disliked order.
+
+---
+
+\begin{center}
+\begin{istgame}[scale=0.9]
+   \xtdistance{20mm}{20mm}
+   \istroot(0)[chance node]{$c$}
+     \istb<grow=left>{0.6}[a]
+     \istb<grow=right>{0.4}[a]
+     \endist
+   \xtdistance{10mm}{20mm}
+   \istroot(1)(0-1)<180>{1}
+     \istb<grow=north>{Beer}[l]
+     \istb<grow=south>{Quiche}[l]
+     \endist
+   \istroot(2)(0-2)<0>{1}
+     \istb<grow=north>{Beer}[r]
+     \istb<grow=south>{Quiche}[r]
+     \endist
+   \istroot'[north](a1)(1-1)
+     \istb{F}[bl]{1,-1}
+     \istb{N}[br]{4,0}
+     \endist
+   \istroot(b1)(1-2)
+     \istb{F}[al]{-1,-1}
+     \istb{N}[ar]{2,0}
+     \endist
+   \istroot(a2)(2-2)
+     \istb{F}[al]{-1,1}
+     \istb{N}[ar]{4,0}
+     \endist
+   \istroot'[north](b2)(2-1)
+     \istb{F}[bl]{-1,1}
+     \istb{N}[br]{2,0}
+     \endist
+   \xtInfoset(a1)(b2){2}
+   \xtInfoset(b1)(a2){2}
+   \end{istgame}
+\end{center}
+
+Hearer gets
+
+- 1 point for fighting Wimp;
+- -1 point for fighting Tough Guy
+
+---
+
+\begin{center}
+\begin{istgame}[scale=0.9]
+   \xtdistance{20mm}{20mm}
+   \istroot(0)[chance node]{$c$}
+     \istb<grow=left>{0.6}[a]
+     \istb<grow=right>{0.4}[a]
+     \endist
+   \xtdistance{10mm}{20mm}
+   \istroot(1)(0-1)<180>{1}
+     \istb<grow=north>{Beer}[l]
+     \istb<grow=south>{Quiche}[l]
+     \endist
+   \istroot(2)(0-2)<0>{1}
+     \istb<grow=north>{Beer}[r]
+     \istb<grow=south>{Quiche}[r]
+     \endist
+   \istroot'[north](a1)(1-1)
+     \istb{F}[bl]{1,-1}
+     \istb{N}[br]{4,0}
+     \endist
+   \istroot(b1)(1-2)
+     \istb{F}[al]{-1,-1}
+     \istb{N}[ar]{2,0}
+     \endist
+   \istroot(a2)(2-2)
+     \istb{F}[al]{-1,1}
+     \istb{N}[ar]{4,0}
+     \endist
+   \istroot'[north](b2)(2-1)
+     \istb{F}[bl]{-1,1}
+     \istb{N}[br]{2,0}
+     \endist
+   \xtInfoset(a1)(b2){2}
+   \xtInfoset(b1)(a2){2}
+   \end{istgame}
+\end{center}
+
+Obvious Equilibrium
+
+- Sender orders Beer if either Tough Guy or Wimp.
+- Hearer doesn't fight if Beer, fights if Quiche.
+
+---
+
+\begin{center}
+\begin{istgame}[scale=0.9]
+   \xtdistance{20mm}{20mm}
+   \istroot(0)[chance node]{$c$}
+     \istb<grow=left>{0.6}[a]
+     \istb<grow=right>{0.4}[a]
+     \endist
+   \xtdistance{10mm}{20mm}
+   \istroot(1)(0-1)<180>{1}
+     \istb<grow=north>{Beer}[l]
+     \istb<grow=south>{Quiche}[l]
+     \endist
+   \istroot(2)(0-2)<0>{1}
+     \istb<grow=north>{Beer}[r]
+     \istb<grow=south>{Quiche}[r]
+     \endist
+   \istroot'[north](a1)(1-1)
+     \istb{F}[bl]{1,-1}
+     \istb{N}[br]{4,0}
+     \endist
+   \istroot(b1)(1-2)
+     \istb{F}[al]{-1,-1}
+     \istb{N}[ar]{2,0}
+     \endist
+   \istroot(a2)(2-2)
+     \istb{F}[al]{-1,1}
+     \istb{N}[ar]{4,0}
+     \endist
+   \istroot'[north](b2)(2-1)
+     \istb{F}[bl]{-1,1}
+     \istb{N}[br]{2,0}
+     \endist
+   \xtInfoset(a1)(b2){2}
+   \xtInfoset(b1)(a2){2}
+   \end{istgame}
+\end{center}
+
+Non-Obvious Equilibrium
+
+- Sender orders Quiche if either Tough Guy or Wimp.
+- Hearer doesn't fight if Quiche, fights if Beer.
+
+## Mathematical Puzzle
+
+- What constraints on equilibrium selection can rule out the non-obvious explanation?
+- Really fun puzzle if you like puzzles, but not for us.
+- The initial statement of the puzzle, and an idea for a solution, is in Cho and Kreps, _Signaling Games and Stable Equilibrium_, QJE 1987.
+- If you like puzzles in this area, I highly recommend that paper.
+
+## Our Lessons
+
+- Nature may provide something like a 'character', or what Harsanyi called a 'type', to Sender.
+- You don't have to think of this as some random event that occurs at a particular time, like the whimsical assignment of characters to the pre-infants in _Soul_.
+- All that matters is that there is some feature of Sender that Sender knows and Hearer doesn't.
+- Well, and that Hearer's probability distribution over the possible types of Sender is common knowledge; this game gets nasty if the initial probability for Tough Guy is under 0.5.
+
+## Our Lessons (cont)
+
+- This is also a good example of a non-cooperative, but positive-sum, signaling game.
+- And that's the kind of game that we're going to spend more time looking at in future lectures.

@@ -1,0 +1,78 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{tabulary}
+\usepackage{mdwlist}
+\usepackage{hyperref}
+\usepackage{istgame}
+\usepackage{multicol}
+\usepackage{multirow}
+%\linespread{1.2}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Probability and Expected Value}}
+\end{center}
+
+\section*{Question One}
+
+Imagine that you are an analyst working for a team playing a rugby-like sport. You don't need to know anything about the sport except the following facts.
+
+\begin{enumerate*}
+\item There is enough scoring that early in the game, you're just trying to get points. (It isn't like soccer where it is so low scoring that any points at all, at any time, could easily be decisive.)
+\item In a common set play situation, the person with the ball has three choices: run, pass, kick or punt. (Don't think of this as like American football; punting leaves the ball in play.) Each of these choices will result in the team scoring a certain number of points (0 to 7), and then the other team getting the ball for their own set play. So all you need to worry about when choosing a strategy is getting more points.
+\item Your team is perfectly average at playing offence, and your opponents are perfectly average at playing defence.
+\item We have a long track record on how teams have done, on average, with the various choices from this kind of set play. Here are the results.
+\end{enumerate*}
+
+\begin{center}
+\begin{tabular}{l r | c c c c}
+& & \multicolumn{4}{c}{\textbf{Points Scored}} \\
+& & 7 & 5 & 3 & 0 \\ \hline
+\multirow{4}{*}{\textbf{Play Chosen}} & Run & 146 & 31 & 0 & 193 \\
+& Pass & 297 & 841 & 0 & 962 \\
+& Punt & 23 & 98 & 0 & 67 \\
+& Kick & 0 & 0 & 194 & 32
+\end{tabular}
+\end{center}
+
+In about 300 words or so, write a short answer that covers the following three  questions.
+
+\begin{enumerate*}
+\item What play would you advise your team to run? Why?
+\item Would your advice change if your team had to run this set play ten or more times a game? Why?
+\item Would your advice change if it was near the end of the game, and you were down by 2 points (or by 6 points)? Why?
+\end{enumerate*}
+
+\bigskip
+\noindent Assignment continues on other side.
+
+\newpage
+
+\section*{Questions 2 to 10}
+A startup company has built a machine to detect which large North American country someone is from. It only works, insofar as it works at all, if you tell it truthfully that the person it is analysing is from the US, Canada or Mexico. After listening to the subject's voice, and asking the subject a few questions, it can do reasonably well. In particular, the following things are true of the machine.
+
+\begin{itemize*}
+\item If the subject is from the US, then it is 70\% likely the machine will say they are from the US, 15\% likely the machine will say they are from Canada, and 15\% likely the machine will say they are from Mexico.
+\item If the subject is from Mexico, then it is 80\% likely the machine will say they are from Mexico, 15\% likely the machine will say they are from the US, and 5\% likely the machine will say they are from Canada.
+\item If the subject is from Canada, then it is 90\% likely the machine will say they are from Canada, 9\% likely the machine will say they are from the US, and 1\% likely the machine will say they are from Mexico.
+\end{itemize*}
+Given the pool of people we're drawing from, the prior probability that the subject is from the US is 0.6, that they are from Mexico is 0.35, and that they are from Canada is 0.05.
+
+\begin{enumerate*}
+\setcounter{enumi}{1}
+\item If the machine says the subject is from the US, what is the probability that the subject is from the US?
+\item If the machine says the subject is from the US, what is the probability that the subject is from Mexico?
+\item If the machine says the subject is from the US, what is the probability that the subject is from Canada?
+\item If the machine says the subject is from Mexico, what is the probability that the subject is from the US?
+\item If the machine says the subject is from Mexico, what is the probability that the subject is from Mexico?
+\item If the machine says the subject is from Mexico, what is the probability that the subject is from Canada?
+\item If the machine says the subject is from Canada, what is the probability that the subject is from the US?
+\item If the machine says the subject is from Canada, what is the probability that the subject is from Mexico?
+\item If the machine says the subject is from Canada, what is the probability that the subject is from Canada?
+\end{enumerate*}
+
+\subsection*{Due Friday Feb 2nd, at 5pm}
+
+
+\end{document}

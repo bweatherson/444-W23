@@ -1,0 +1,96 @@
+---
+title: "444 Lecture 5.6 - Best Responses"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Plan
+
+Discuss how to think about best responses work once mixed strategies are on the table.
+
+## Reading
+
+Bonanno, Section 6.4.
+
+## An example
+
+```{r}
+game <- tribble(
+  ~Moves,         ~Left, ~Right,
+  "Up",  "3, 0", "0, 0", 
+  "Middle", "2, 0", "2, 0",
+  "Down",  "0, 0", "3, 0"
+)
+gameformat(game)
+```
+
+-   Up is the best response to Left.
+-   Down is the best response to Right.
+-   Is Middle the best response to anything?
+
+## Best Responses
+
+```{r}
+gameformat(game)
+```
+
+Yes!
+
+-   Middle is the best response to the mixed strategy Left with probability 0.5, Right with probability 0.5.
+-   It gets 2, the other options have an expected return of 1.5.
+
+## Varieties of Mixed Strategies
+
+```{r}
+gameformat(game)
+```
+
+-   Middle is the best thing to do if you know Column is going to flip a coin to decide what to do. \pause
+-   But it's also the best thing to do if you have no idea what Column is going to do, and the best you can do is say it's 50/50 what they are going to do.
+-   So it's actually pretty easy to think of situations where Middle is the smart play.
+
+## Best Response
+
+-   A strategy $S$ is a **best response** just in case...
+-   There is some probability distribution over the other player's strategies and ...
+-   No strategy has a higher expected return than $S$ given that probability distribution. \pause
+-   Note that this allows for ties.
+-   Weakly dominated strategies can even be best responses in this sense. \pause
+-   This definition also covers mixed strategies; they can also be best responses.
+
+## A Surprising Theorem
+
+-   Say a strategy is **undominated** if no other strategy, pure or mixed, strongly dominates it. \pause
+-   And it is a **best response** if it does as well as anything, given at least one probability distribution.\pause
+-   Here's the surprising theorem:
+
+> The strategies that are best responses are just the same strategies as those that are undominated.
+
+## Best Reponses
+
+-   This relates back to something I was saying in the last lecture.
+-   The strategies that are dominated by mixtures didn't seem to make sense - you could just play the mixtures.
+-   But here's another property that they have - they are never best responses.
+-   And if they are not best responses, no one can play them while maximising expected utility.
+-   Whatever probability you give to the other player's play, if you maximise expected utility you will play a best response.
+-   And you should maximise expected utility.
+
+## For Next Time
+
+-   I'll introduce a new solution concept, one that say playing a best response is not just necessary for rationality, it is also sufficient.

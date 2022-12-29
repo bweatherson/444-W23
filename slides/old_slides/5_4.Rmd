@@ -1,0 +1,150 @@
+---
+title: "444 Lecture 5.4 - Finding Mixed Strategy Equilibria"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Plan
+
+Discuss how we can find mixed strategy equilibria.
+
+## Reading
+
+Bonanno, Section 6.3.
+
+## Basic Idea
+
+- In equilibria, the other player is willing to play a mixed strategy.
+- That requires that they be indifferent between other strategies.
+- So we find the equilibria by finding the mixture that makes them indifferent.
+
+## Example
+
+```{r}
+game <- tribble(
+  ~Moves,         ~Left, ~Right,
+  "Up",  "5, 2", "1, 3", 
+  "Down",  "2, 2", "3, 0"
+)
+gameformat(game)
+```
+
+- You can see fairly quicklythat there is no pure strategy equilibria.
+- So the equilibria must be a mixed strategy equilibria.
+
+## Theory
+
+What does it take for Column to play a mixed strategy in equilibria?
+
+- Assume that Left has a higher expected return than Right.
+- The expected return of a mixed strategy is a weighted average of the expected returns of Left and Right.
+- If Left has a higher expected return than Right, that weighted average will be strictly between the expected returns of Left and Right.
+- And that means it can't be an equilibrium, since in equilibrium there is no alternative with a higher expected return. \pause
+- And the same reasoning shows Right can't have a higher expected return than Left.
+
+## Theory
+
+So we are trying to find the mixture such that Column is indifferent between Left and Right.
+
+- The other crucial thing to remember is that probabilities add to 1.
+- So when working out Row's strategy, there is only one variable.
+- Once we set the probability of Row playing Up to $x$, that sets all the probabilities, because the probablity of playing Down is $1-x$.
+
+## A Note
+
+I'm only going to go over cases where the mixed strategy equilibrium involves a mixture of two pure strategies.
+
+- There are cases where the mixed strategy equilibrium involves mixtures of 3 or more pure strategies.
+- Rock, Paper, Scissors is the simplest such example.
+- But in general the math of calculating these is considerably fancier than what we'll be doing, and I'll stick to cases where the mixed strategy equilibrium only involves 2 pure strategies.
+
+## Back to the Example
+
+```{r}
+gameformat(game)
+```
+
+- Assume Row plays Up with probability $x$, and Down with probability $1-x$.
+- Our job is to find an $x$ such that the expected return of Left and Right is the same.
+
+## Left and Right
+
+```{r}
+gameformat(game)
+```
+
+- The expected return of Left is $2x + 2(1-x)$, i.e., $2$.
+- The expected return of Right is $3x + 0(1-x)$, i.e., $3x$.
+
+## Row's Strategy.
+
+```{r}
+gameformat(game)
+```
+
+- So $2 = 3x$, so $x = \nicefrac{2}{3}$.
+- So Row's strategy is to play Up with probability $\nicefrac{2}{3}$, and hence Down with probability $\nicefrac{1}{3}$.
+
+## 
+- The expected return of Right is $3x + 0(1-x)$, i.e., $3x$.
+
+## Onto Column
+
+```{r}
+gameformat(game)
+```
+
+- Assume Column plays Left with probability $x$, and Right with probability $1-x$.
+- Our job is to find an $x$ such that the expected return of Up and Down is the same.
+
+## Left and Right
+
+```{r}
+gameformat(game)
+```
+
+- The expected return of Up is $5x + 1(1-x)$, i.e., $4x + 1$.
+- The expected return of Down is $2x + 3(1-x)$, i.e., $3 - x$.
+
+## Column's Strategy.
+
+\begin{align*}
+4x + 1 &= 3 - x \\
+5x + 1 &= 3 \\
+5x    &= 2 \\
+x    &= \nicefrac{2}{5}
+\end{align*}
+
+So Column's strategy is to play Left with probability $\nicefrac{2}{5}$, and hence Right with probability $\nicefrac{3}{5}$.
+
+## Takeaways
+
+- To find a player's move probabilities in equilibria, look to the other player's payouts.
+- Try to make the other player indifferent between their choices.
+
+## Extra Steps
+
+- I'm not going to go over more complicated examples on the slides, but there is an extra step you can do (and which we can discuss in class if you're interested).
+- Sometimes you can find the mixed strategy equilibria of a game with more than 2 moves by first deleting **strongly** dominated strategies.
+- Bonanno works through an example like this.
+- I'm going to come back to it later, but for now I'll just stick to this example.
+
+## For Next Time
+
+I'm going to start on an idea I want to work through very slowly, and spend a bit of time on - the idea that a mixture of strategies can dominate another strategy.

@@ -1,0 +1,344 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[Scale=MatchLowercase]{SF Pro Text Light}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Assignment Week 8},
+  pdfauthor={Philosophy 444},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1.3in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% https://github.com/rstudio/rmarkdown/issues/337
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+% https://github.com/rstudio/rmarkdown/pull/252
+\usepackage{titling}
+\setlength{\droptitle}{-2em}
+
+\pretitle{\vspace{\droptitle}\centering\huge}
+\posttitle{\par}
+
+\preauthor{\centering\large\emph}
+\postauthor{\par}
+
+\predate{\centering\large\emph}
+\postdate{\par}
+
+\usepackage[normalem]{ulem}
+\usepackage{nicefrac}
+\usepackage{caption}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[normalem]{ulem}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{calc}
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{wrapfig}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Assignment Week 8}
+\author{Philosophy 444}
+\date{Due 25 February, 2022}
+
+\begin{document}
+\maketitle
+
+\hypertarget{iterated-prisoners-dilemma}{%
+\section{Iterated Prisoners' Dilemma}\label{iterated-prisoners-dilemma}}
+
+We are going to run a tournament pitting different strategies against
+each other in Iterated Prisoners' Dilemma. Your task is to write a
+strategy, and write a short document (about 300 words) explaining why
+you picked that strategy. Both of these are due \textbf{Friday, March
+12} at \textbf{5pm}. You can use the Canvas site to collaborate with
+others on ideas, but you must submit your own work. You will be graded
+in part on how well you do in the tournament, and in part on how well
+you defend your strategy choice.
+
+In the tournament, your strategy will be matched up in turn with each of
+the strategies submitted (including your own), plus five pre-defined
+strategies. You play `against' each of these others five times. Each
+play will consist of roughly 200 rounds of Prisoners' Dilemma (PD). Each
+round of PD consists of a game with the following payouts, in points.
+(You are Row, the other player is Column.)
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[h!]
+\begin{centerbox}
+\begin{threeparttable}
+ \label{tab:unnamed-chunk-2}
+\setlength{\tabcolsep}{0pt}
+\begin{tabular}{l l l}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}|}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}r!{\huxvb{0, 0, 0}{0.4}}}{\huxtpad{0pt + 1em}\raggedleft \hspace{2pt} 
+ \hspace{2pt}\huxbpad{6pt}} &
+\multicolumn{1}{c!{\huxvb{0, 0, 0}{0}}}{\huxtpad{0pt + 1em}\centering \hspace{2pt} C \hspace{2pt}\huxbpad{6pt}} &
+\multicolumn{1}{c!{\huxvb{0, 0, 0}{0}}}{\huxtpad{0pt + 1em}\centering \hspace{2pt} D \hspace{2pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}r!{\huxvb{0, 0, 0}{0.4}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{2pt} C \hspace{2pt}\huxbpad{2pt}} &
+\multicolumn{1}{c!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\centering \hspace{2pt} 3, 3 \hspace{2pt}\huxbpad{2pt}} &
+\multicolumn{1}{c!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\centering \hspace{2pt} 0, 5 \hspace{2pt}\huxbpad{2pt}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}|}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}r!{\huxvb{0, 0, 0}{0.4}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{2pt} D \hspace{2pt}\huxbpad{2pt}} &
+\multicolumn{1}{c!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\centering \hspace{2pt} 5, 0 \hspace{2pt}\huxbpad{2pt}} &
+\multicolumn{1}{c!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\centering \hspace{2pt} 1, 1 \hspace{2pt}\huxbpad{2pt}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}|}
+\arrayrulecolor{black}
+\end{tabular}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+o you will play each `opponent' roughly 1000 times. The number of points
+you each get over those 1000 games will be added to your individual
+scores, and then you'll go on to play another player. At the end of the
+tournament, when everyone has played everyone, whoever has accumulated
+the most points wins.
+
+Note that there is a bit of zero-sum-ness to the game at the end. While
+you are playing any individual player, it is not a zero-sum situation;
+there are ways for both of you to improve or detract from your overall
+position. But your ultimate aim is not just to get a lot of points, it
+is to get more points than anyone else in the class.
+
+\newpage
+
+\hypertarget{writing-a-strategy}{%
+\subsection{Writing a Strategy}\label{writing-a-strategy}}
+
+To explain to the computer how you want to play, you need to write a
+short bit of code. The language we'll use for this is fairly basic -
+essentially you will describe a \textbf{Finite State Machine}.
+
+Your machine will at any time be in one of a number of \emph{states}.
+There will be finitely many of these - hence the name. A state has three
+key characteristics.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Whether the machine plays C or D in that state.
+\item
+  What state the machine moves into if the opponent plays C.
+\item
+  What state the machine moves into if the opponent plays D.
+\end{enumerate}
+
+One of these states, state 0, will be the initial state of the machine.
+So here is a very simple machine.
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule
+Number & Play & Move if C & Move if D & Notes \\
+\midrule
+\endhead
+0 & C & 0 & 1 & Cooperate state \\
+1 & D & 0 & 1 & Defect state \\
+\bottomrule
+\end{longtable}
+
+This machine will play C at first, since that's the play in state 0.
+After that, it mimics what the previous player has done. No matter what
+state it is in, it will move into cooperate state if the other player
+cooperates, and move into defect state if the other player defects. This
+strategy is known as \textbf{Tit-for-Tat}, and is one of the two
+pre-defined strategies I mentioned above.
+
+Let's look at a slightly more complicated strategy.
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule
+Number & Play & Move if C & Move if D & Notes \\
+\midrule
+\endhead
+0 & C & 0 & 1 & Cooperate state \\
+1 & C & 0 & 1 & After single defection \\
+2 & D & 0 & 2 & After multiple defections \\
+\bottomrule
+\end{longtable}
+
+This strategy will start cooperating, then will defect any time the
+opponent has defected on the previous two turns. Here's how it does
+that. State 0 is cooperate, so it starts off cooperating. It is the base
+state; think of it as being happy. State 1 is when the opponent has
+defected once. It's what happens when (and only when) the machine is
+happy, then sees its opponent defect. In state 1, the machine still
+cooperates, but it is vigilant. From now on, any more defections will
+send it to state 2, where it defects. But at any stage, a single
+cooperation from the opponent will send it back to happy.
+
+Finally, a strategy that keeps count of things. The idea is to play
+Tit-for-Tat, but with a fuse. Once the opponent defects four times, we
+defect forever. So we need to keep count of defections. We do that by
+having more states. In the notes, I'll list the count of defections.
+
+\newpage
+
+\begin{longtable}[]{@{}lllll@{}}
+\toprule
+Number & Play & Move if C & Move if D & Notes \\
+\midrule
+\endhead
+0 & C & 0 & 1 & Base; count=0 \\
+1 & D & 2 & 3 & Defect; count=1 \\
+2 & C & 2 & 3 & Coop; count=1 \\
+3 & D & 4 & 5 & Defect; count=2 \\
+4 & C & 4 & 5 & Coop; count=2 \\
+5 & D & 6 & 7 & Defect; count=3 \\
+6 & C & 6 & 7 & Coop; count=3 \\
+7 & D & 7 & 7 & Defect; count=4 \\
+\bottomrule
+\end{longtable}
+
+The machine really cares about two things; how many times the opponent
+has defected, and what the opponent did on the previous play. At each
+time (until it loses patience at the end), it responds to cooperating
+with cooperating and staying in place, and it responds to defecting by
+defecting and moving closer to the lose patience state. Once it gets to
+state 7, it stays there; no matter what the opponent does it will still
+defect.
+
+For this assignment, you should submit two things. Your program should
+be a plain text file (saved as .txt on your computer) with the following
+structure.
+
+\begin{itemize}
+\tightlist
+\item
+  The first three lines are your name, your strategy's name, and the
+  number of states in your machine.
+\item
+  Each line after that is a state. It should say what move to make in
+  that state, then a comma, then what state to move to if the opponent
+  cooperates, then another comma, then what state to move to if the
+  opponent defects.
+\end{itemize}
+
+Here, for instance, is how I would submit a file if I was playing
+Tit-for-Tat.
+
+Brian Weatherson\\
+Very Original Strategy\\
+2\\
+C, 0, 1\\
+D, 0, 1
+
+You should also write a note - roughly 300 words long - about what your
+strategy aims to do, and why you chose it. And make sure that your
+program has the right syntax; we can't debug programs. If you want to
+check for sure, install the Oyun software
+\url{https://oyun.charlespence.net} and run the program yourself to see.
+
+We'll compile all the strategies over the weekend, and next week we'll
+discuss how they did. Note that the tournament will include five
+pre-defined strategies:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Tit-for-Tat
+\item
+  Random, who plays randomly.
+\item
+  All C, who always cooperates.
+\item
+  All D, who always defects.
+\item
+  No forgive, who cooperates until you defect, then always defects.
+\end{enumerate}
+
+\end{document}

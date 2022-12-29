@@ -1,0 +1,187 @@
+\documentclass[landscape]{article}
+\usepackage{multicol}
+\usepackage{fullpage}
+\usepackage{istgame}
+\usepackage{multirow}
+\usepackage{hyphenat}
+\usepackage{tabulary}
+
+
+\def\latexmode{article}
+\def\mytitle{Games for Class 07}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Subgames}} \bigskip
+
+{\large Phil 444, January 25, 2018}
+\end{center}
+
+\begin{multicols}{2}
+
+\subsection*{Game 1}
+
+\begin{istgame}
+\xtdistance{15mm}{30mm}
+\istroot(0){Angela}
+  \istb{E}[al]{(2,2)} \istb{P}[ar]
+  \endist
+\istroot(1)(0-2)<above right>{Angela}
+  \istb{C}[al] \istb{D}[ar]
+  \endist
+\xtdistance{10mm}{20mm}
+\istroot(2)(1-1)
+  \istb{C}[al]{(3,3)} \istb{D}[ar]{(0,5)}
+  \endist
+\istroot(3)(1-2)
+  \istb{C}[al]{(5,0)} \istb{D}[ar]{(1,1)}
+  \endist
+\xtInfoset(2)(3){Emmanuel}
+\end{istgame}
+
+\subsection*{Game 2}
+
+\begin{istgame}
+\xtdistance{15mm}{30mm}
+\istroot(0){Angela}
+  \istb{E}[al]{(2,2)} \istb{P}[ar]
+  \endist
+\istroot(1)(0-2)<above right>{Angela}
+  \istb{X}[al] \istb{Y}[ar]
+  \endist
+\xtdistance{10mm}{20mm}
+\istroot(2)(1-1)
+  \istb{X}[al]{(3,3)} \istb{Y}[ar]{(0,0)}
+  \endist
+\istroot(3)(1-2)
+  \istb{X}[al]{(0,0)} \istb{Y}[ar]{(1,1)}
+  \endist
+\xtInfoset(2)(3){Emmanuel}
+\end{istgame}
+
+
+\subsection*{Game 3}
+
+
+\begin{istgame}
+\xtdistance{15mm}{50mm}
+\istroot(0){Angela}
+  \istb{X}[al] \istb{Y}[ar]
+  \endist
+\xtdistance{10mm}{30mm}
+\istroot(1)(0-1)
+  \istb{X}[al] \istb{Y}[ar]
+  \endist
+\istroot(2)(0-2)
+  \istb{X}[al] \istb{Y}[ar]
+  \endist
+\xtInfoset(1)(2){Emmanuel}
+\xtdistance{10mm}{10mm}
+\istroot(3)(1-1){Ang}
+  \istb{E}[al]{(2,2)} \istb{P}[ar]{(3,3)}
+  \endist
+\istroot(4)(1-2){Ang}
+  \istb{E}[al]{(2,2)} \istb{P}[ar]{(0,0)}
+  \endist
+\istroot(5)(2-1){Ang}
+  \istb{E}[al]{(2,2)} \istb{P}[ar]{(0,0)}
+  \endist
+\istroot(6)(2-2){Ang}
+  \istb{E}[al]{(2,2)} \istb{P}[ar]{(1,1)}
+  \endist
+\end{istgame}
+
+\subsection*{Signalling Game}
+\begin{istgame}[scale=1.3]
+\xtdistance{20mm}{20mm}
+\istroot(0)[chance node]{$c$}
+   \istb<grow=left>{p}[a]
+  \istb<grow=right>{1-p}[a]
+  \endist
+\xtdistance{10mm}{20mm}
+\istroot(1)(0-1)<180>{1}
+  \istb<grow=north>{a}[l]
+  \istb<grow=south>{b}[l]
+  \endist
+\istroot(2)(0-2)<0>{1}
+  \istb<grow=north>{a}[r]
+  \istb<grow=south>{b}[r]
+  \endist
+\istroot'[north](a1)(1-1)
+  \istb{L}[bl]{3,1}
+  \istb{R}[br]{-1,0}
+  \endist
+\istroot(b1)(1-2)
+  \istb{L}[al]{4,1}
+  \istb{R}[ar]{0,0}
+  \endist
+\istroot(a2)(2-2)
+  \istb{L}[al]{4,-1}
+  \istb{R}[ar]{0,0}
+  \endist
+\istroot'[north](b2)(2-1)
+  \istb{L}[bl]{-1,-1}
+  \istb{R}[br]{-5,0}
+  \endist
+\xtInfoset(a1)(b2){2}
+\xtInfoset(b1)(a2){2}
+\end{istgame}
+
+\end{multicols}
+
+\newpage
+
+%\begin{multicols}{2}
+\subsection*{Money Burning}
+
+
+\begin{istgame}
+\xtdistance{15mm}{80mm}
+\istroot(0){Angela}
+  \istb{B}[al] \istb{K}[ar]
+  \endist
+\xtdistance{10mm}{50mm}
+\istroot(1)(0-1){Emm}
+  \istb{X}[al] \istb{Y}[ar]
+  \endist
+\istroot(2)(0-2){Emm}
+  \istb{X}[al] \istb{Y}[ar]
+  \endist
+%\xtInfoset(1)(2){Emmanuel}
+\xtdistance{10mm}{20mm}
+\istroot(3)(1-1)
+  \istb{X}[al]{(2,1)} \istb{Y}[ar]{(-2,0)}
+  \endist
+\istroot(4)(1-2)
+  \istb{X}[al]{(-2,0)} \istb{Y}[ar]{(-1,4)}
+  \endist
+\istroot(5)(2-1)
+  \istb{X}[al]{(4,1)} \istb{Y}[ar]{(0,0)}
+  \endist
+\istroot(6)(2-2)
+  \istb{X}[al]{(0,0)} \istb{Y}[ar]{(1,4)}
+  \endist
+\xtInfoset(3)(4){Angela}
+\xtInfoset(5)(6){Angela}
+\end{istgame}
+
+\bigskip
+
+\begin{center}
+\begin{tabular}{l r | c c c c}
+& & \multicolumn{4}{c}{\textbf{Emmanuel}} \\
+& & $XX$ & $XY$ & $YX$ & $YY$ \\ \hline
+\multirow{4}{*}{\textbf{Angela}}
+& $BX$ & 2, 1 & -2, 0 & 2, 1 & -2, 0\\
+& $BY$ & -2, 0 & -1, 4 & -2, 0 & -1, 4 \\
+& $KX$ & 4, 1 & 4, 1 & 0, 0 & 0, 0\\
+& $KY$ & 0, 0 & 0, 0 & 1, 4 & 1, 4
+\end{tabular}
+\end{center}
+
+Note that I'm simplifying here; Angela has 8 strategies, but I'm not distinguishing between strategies that differ only in what she does in moves she has ruled out. This doesn't change anything (I think) in this game.
+%\end{multicols}
+
+
+\end{document}

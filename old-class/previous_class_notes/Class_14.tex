@@ -1,0 +1,409 @@
+\documentclass[11pt,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+    \setmainfont[]{SF Pro Text Light}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Non-Cooperative Signalling},
+            pdfauthor={Philosophy 444},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Non-Cooperative Signalling}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Philosophy 444}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{23 October, 2019}
+
+\usepackage{mathastext}
+\usepackage{nicefrac}
+
+\begin{document}
+\maketitle
+
+\hypertarget{basic-game}{%
+\section{Basic Game}\label{basic-game}}
+
+\begin{itemize}
+\tightlist
+\item
+  Two states of the world - sender knows them, receiver doesn't. Call
+  them `High' and `Low'. (Or H/L.) Assume for now that High is
+  marginally more probable than Low.
+\item
+  Two possible signals/messages that sender can send - call them
+  `Difficult' and `Easy' for reasons that we will get to. (Or D/E).
+\item
+  Two possible actions receiver can take - call them Risky and Safe (Or
+  R/S).
+\end{itemize}
+
+In words, here are the payoffs:
+
+\begin{itemize}
+\tightlist
+\item
+  Sender pays 0 to perform Easy, but a cost \(c > 0\) to perform
+  Difficult. This is subtracted from whatever their ultimate payout is.
+  (We will complicate this clause in a bit.)
+\item
+  Receiver gets a payout of 0 for doing Safe.
+\item
+  If Receiver plays Risky, they get 1 if High, and -1 if Low.
+\item
+  Sender gets 1 (minus whatever cost they incurred at round 1) if Risky,
+  and 0 (minus whatever cost they incurred at round 1) if Low.
+\end{itemize}
+
+In table form, here are the payouts. First, here are the payouts for
+High.
+
+\begin{longtable}[]{@{}rcc@{}}
+\toprule
+& Risky & Safe\tabularnewline
+\midrule
+\endhead
+Difficult & \(1-c, 1\) & \(-c, 0\)\tabularnewline
+Easy & \(1, 1\) & \(0, 0\)\tabularnewline
+\bottomrule
+\end{longtable}
+
+Now, here are the payouts for Low.
+
+\begin{longtable}[]{@{}rcc@{}}
+\toprule
+& Risky & Safe\tabularnewline
+\midrule
+\endhead
+Difficult & \(1-c, -1\) & \(-c, 0\)\tabularnewline
+Easy & \(1, -1\) & \(0, 0\)\tabularnewline
+\bottomrule
+\end{longtable}
+
+Let's try to work through what the equilibria are for different values
+of \(c\).
+
+\begin{itemize}
+\tightlist
+\item
+  First, assume \(c < 1\).
+\item
+  Assume that Receiver will do different things if Difficult or Easy.
+\item
+  Then Sender will do whatever makes Receiver do Risky, whether it is D
+  or E. So no separating equilibrium.
+\item
+  Now assume Receiver will do the same thing if Difficult or Easy.
+\item
+  Then of course Sender will do Easy and get that payout, whatever it
+  is.
+\item
+  Again, no separating equilibrium.
+\end{itemize}
+
+\newpage
+
+What does produce a separating equilibrium is if the cost is different
+in High and Low. Change the `penalty' for playing Difficult so that in
+High, the penalty is \(c_1 < 1\), and in Low, the penalty is
+\(c_2 > 1\). Now we get the following equilibrium.
+
+\begin{itemize}
+\tightlist
+\item
+  Sender does Difficult if High, Easy if Low.
+\item
+  Receiver does Risky if Difficult, Safe if Easy.
+\end{itemize}
+
+(Aside: You also get one other really weird equilibrium where
+
+\begin{itemize}
+\tightlist
+\item
+  Sender always does Easy.
+\item
+  Receiver does Risky if Easy, Safe if Difficult.
+\end{itemize}
+
+This is mathematically interesting - and hence interesting to me -
+because it is not just a Nash equilibrium and subgame perfect, but also
+satisfies all the extra criteria developed in chapters 11 and 12 to rule
+out intuitively absurd equilibria like this one. But it is hard to see
+how it has any real-world relevance - it doesn't look like it could
+naturally evolve, for example - and I'll ignore it from here on.)
+
+So we get a separating equilibrium. And maybe we get a model of some
+fascinating real-world things. In most of these cases, Sender has
+something like a continuum of choices from Easy to Difficult, and
+Receiver has a continuum from Risky to Safe. But it arguably helps to
+look at the binary case first, and maybe we can generalise that to the
+real-world example.
+
+Two caveats before we start the examples.
+
+In practice, biologists seem happy to use this procedure - think about
+the binary model and then generalise to the continuous case - while
+economists prefer to start with the continuous case. My intuitions are
+normally with the economists, but here I'm acting like a biologist.
+
+And these are possible models of what we see. In every case, I'm going
+to eventually raise worries for the model. But I want to have them on
+the table.
+
+\hypertarget{example-one-tail-feathers}{%
+\section{Example One: Tail-Feathers}\label{example-one-tail-feathers}}
+
+Male peacocks have very colorful tails. On the face of it, this doesn't
+look like it serves any purpose in either collecting food or avoiding
+becoming food. (Quite the opposite in fact.) But maybe we should think
+of it as a move in a signalling game.
+
+\begin{itemize}
+\tightlist
+\item
+  Sender is the male, choosing whether to have a normal tail (Easy) or a
+  colourful tail (Difficult). `Choosing' here is misleading - it's less
+  misleading to say their genes choose.
+\item
+  Sender is either Strong (that's High) or Weak (that's Low).
+\item
+  It's resource-intensive to produce (and preserve) a colorful tail, but
+  it's more costly for Weak than for Strong peacocks.
+\item
+  Receiver is a female, choosing a mate. They prefer Strong to Weak -
+  since they want better genes for their children. (Again, it's hard to
+  say this is what the individual female wants - better to say there are
+  evolutionary advantages to acting as if that's what she wants.)
+\item
+  So perhaps an equilibrium is Strong have colorful tails, Weak don't,
+  and females who have a choice prefer males with colorful tails.
+\end{itemize}
+
+\hypertarget{example-two-stotting}{%
+\section{Example Two: Stotting}\label{example-two-stotting}}
+
+Stotting is where a quadruped leaps into the air, with legs relatively
+stiff. Stotting is common among young animals in various species. But
+the really odd thing is that among some gazelles, it only happens when a
+predator is nearby. And why they do this is a bit of a mystery. It
+doesn't seem that efficient as a means of propulsion. And revealing
+one's location this dramatically doesn't seem like a good tactic in
+predator avoidance. But maybe it's a move in a signalling game. In this
+game, the payouts are slightly changed. The gazelle is the sender, and
+the predator is the receiver, and the predator's payoffs are going to be
+different from the standard game.
+
+\begin{itemize}
+\tightlist
+\item
+  High in this case is that the gazelle is strong (High means things are
+  good from the predator's perspective.) Low is that the gazelle is
+  weak.
+\item
+  Stotting is Difficult; Not-stotting is Easy.
+\item
+  Chasing this particular gazelle is Risky; leaving it is Safe.
+\item
+  But here we change the payoffs. Here receiver/predator gets -1 for
+  doing Risky in High, and 1 for doing Risky in Safe. Otherwise the game
+  is the same.
+\end{itemize}
+
+Again, there is a separating equilibria.
+
+\begin{itemize}
+\tightlist
+\item
+  Gazelle stotts if and only if they are strong.
+\item
+  Predator chases if and only if they don't see stotting.
+\end{itemize}
+
+And so there is an advantage to stotting - you don't get chased - even
+though holding fixed the state of the world and the behavior of the
+predator, stotting is a cost with no benefit. It doesn't help you get
+away - it helps the predator not choose to attack.
+
+\hypertarget{example-three-university}{%
+\section{Example Three: University}\label{example-three-university}}
+
+According to recent research from the San Francisco Federal Reserve,
+here are the average hourly wages for Americans by educational level as
+of 2015. (I don't think the numbers have changed much since.) I've also
+added a column for what percentage of the workforce each of these groups
+are. Source:
+\url{https://www.frbsf.org/economic-research/files/wp2016-17.pdf}
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+Education & Wage & Ratio\tabularnewline
+\midrule
+\endhead
+No degree & \$13.56 & 7.7\%\tabularnewline
+High school degree & \$17.98 & 25.6\%\tabularnewline
+Some college & \$21.59 & 27.8\%\tabularnewline
+Undergrad degree & \$30.93 & 24.7\%\tabularnewline
+Graduate degree & \$39.48 & 14.3\%\tabularnewline
+\bottomrule
+\end{longtable}
+
+What could explain the fact that college graduates earn almost 75\% more
+per hour than high school graduates? There are two obvious
+possibilities.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Universities impart lots of valuable skills, and employers are
+  rationally responding to this value we add by paying more for more
+  valuable employees.
+\item
+  It's a selection effect - the people who come to college were more
+  valuable before they came here, and employees are rationally
+  responding to that underlying fact.
+\end{enumerate}
+
+These aren't exclusive, but let's pretend for now we're going to assume
+one of them is decisive, and we're trying to figure out which it is.
+There are two things missing in explanation 2.
+
+First, why do all these smart people choose to go to college? On the one
+hand, it is mostly fun. On the other hand, it's expensive, and there are
+a lot of other fun things you could do with the money. If it's all about
+the climbing walls, you could join the fanciest gym in the country for a
+fraction of the cost. If it's about meeting new people, you could go
+backpacking around Europe. If it's about intellectual stimulation, you
+could take a gap year or four and spend your days reading and listening
+to educational podcasts.
+
+Second, why do employers look for college degrees as the signal of who
+they will pay high wages to? Why don't they simply ask to see your offer
+letters? If it's just a selection effect, then you can see who has been
+selected in as soon as the offer letters go out - and that should be
+enough to make employers happy. But it's not - they want degrees not
+just offer letters. (This seems really obvious, but I think it's kind of
+a striking fact about the modern world, and one that doesn't get enough
+attention in a lot of debates.)
+
+So we need a model that explains why we don't see, for example, valuable
+employees taking their offer letters and backpacking around Europe with
+Kindles and podcasts for their spare time. Spence's signalling model
+provides such an explanation.
+
+\begin{itemize}
+\tightlist
+\item
+  Sender is the college graduate. They are either High - i.e., valuable
+  to employers, or Low - not so valuable.
+\item
+  Receiver is the high wage employer. They can do the Risky thing - hire
+  this person - or the Safe thing - not hire them.
+\item
+  Going to college is Difficult. But - and this is the crucial thing -
+  on this model it is more Difficult for Low than for High. All those
+  calculus classes are really unpleasant. But they are more unpleasant
+  for Low - so much so that \(c_2 > 1\).
+\item
+  So the separating equilibrium is High goes to college and Low hits the
+  beach/workforce. Then high-wage employers hire college graduates only.
+\item
+  And all this happens even though college is a pure cost to everyone
+  who goes there. Employer doesn't get any reward for hiring graduates -
+  they get same reward for hiring High grads as High non-grads. And
+  holding all else fixed, every young person is better off skipping
+  college than going.
+\end{itemize}
+
+Four questions for you to discuss.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What aspects of this model seem to resemble the world you (as in
+  literally you personally) find yourself in?
+\item
+  What aspects of it seem to differ from the world in significant ways?
+\item
+  What empirical data would make you think this model was right in some
+  important way?
+\item
+  What empirical data would make you think this model was wrong in some
+  important way?
+\end{enumerate}
+
+
+\end{document}

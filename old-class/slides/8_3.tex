@@ -1,0 +1,361 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 8.3 - Stag Hunt},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+\usepackage{istgame}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 8.3 - Stag Hunt}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Stag Hunt}
+\protect\hypertarget{stag-hunt}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & gather & hunt\\
+\midrule
+Gather & x, x & y, z\\
+Hunt & z, y & w, w\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+With the following constraints:
+
+\begin{itemize}
+\tightlist
+\item
+  \(x > z\)
+\item
+  \(w > y\)
+\item
+  \(w > x\)
+\item
+  \(x + y > z + w\)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Concrete Example of Stag Hunt}
+\protect\hypertarget{concrete-example-of-stag-hunt}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & gather & hunt\\
+\midrule
+Gather & 2, 2 & 4, 0\\
+Hunt & 0, 4 & 5, 5\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{Differences with Prisoners' Dilemma}
+\protect\hypertarget{differences-with-prisoners-dilemma}{}
+\begin{itemize}
+\tightlist
+\item
+  Again, there is a cooperative move (in this case Hunt), which is
+  socially better than the individualistic move (Gather).
+\item
+  But in this case, cooperation is an equilibrium; it isn't dominated.
+\item
+  The problem is that there are nevertheless reasons to do the
+  individualistic thing.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Regret Based Reasons}
+\protect\hypertarget{regret-based-reasons}{}
+\begin{itemize}
+\tightlist
+\item
+  Whatever you do in Stag Hunt, you're hoping/guessing that the other
+  player does the same thing.
+\item
+  If you guess wrong, you'll regret your choice. \pause
+\item
+  If you Gather when the other player Hunts, you'll get 4 and you could
+  have got 5 - a regret of 1. \pause
+\item
+  If you Hunt when the other player Gathers, you'll get 0 and you could
+  have got 2 - a regret of 2. \pause
+\item
+  Mistakenly Hunting leads to higher regret than mistakenly Gathering.
+\item
+  Minimising regret, which a lot of people think is important in
+  decisions under radical uncertainty, implies Gathering.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Random Choice}
+\protect\hypertarget{random-choice}{}
+\begin{itemize}
+\tightlist
+\item
+  There are two equilibria.
+\item
+  Maybe it's reasonable, as a first pass, to have equal probabilities in
+  each hypothesis about what the other player will pick.
+\item
+  So in this case, you'd be (as a first pass), 50/50 about whether the
+  other person will Gather or Hunt. \pause
+\item
+  But then it maximises expected utility to Gather.
+\item
+  That has expected utility 3, while Hunting has expected utility 2.5.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Evolutionary Explanations}
+\protect\hypertarget{evolutionary-explanations}{}
+\begin{itemize}
+\tightlist
+\item
+  Imagine an Axelrod type evolutionary situation, that starts out with
+  equal numbers of Gatherers and Hunters.
+\item
+  Each person interacts with everyone else in the community, and they
+  add up their score.
+\item
+  Then in the next generation, the number of Gatherers and Hunters is
+  proportionate to the score that Gatherers and Hunters get in this
+  generation. \pause
+\item
+  Well, in fairly short order, you have a population of more or less all
+  Gatherers.
+\item
+  Indeed, that happens unless you start with at least 2/3 Hunters.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Social Challenge}
+\protect\hypertarget{social-challenge}{}
+\begin{itemize}
+\tightlist
+\item
+  How do we get people to be cooperative, i.e., Hunt?
+\item
+  Note that we don't have to imagine changing the payouts, i.e.,
+  punishing, or taking away options.
+\item
+  It suffices to get everyone to (truly) believe that others will Hunt.
+\item
+  This isn't trivial, but it's a very different kind of challenge than
+  in PD.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Modeling Challenge}
+\protect\hypertarget{modeling-challenge}{}
+\begin{itemize}
+\tightlist
+\item
+  Which cases are really Stag Hunt not PD?
+\item
+  I'm going to talk about this a bit more, but it's really worth
+  thinking through real life cases.
+\item
+  Is there a genuine equilibrium where merely by everyone believing that
+  everyone else will Hunt, it becomes in their own interest to Hunt?
+  \pause
+\item
+  Note that it is really great if this is so.
+\item
+  The view from Hobbes on was that getting out of PD required heavy
+  handed intervention.
+\item
+  But getting to the cooperative equilibrium in Stag Hunt might just
+  require nudging.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Mixing the Issues}
+\protect\hypertarget{mixing-the-issues}{}
+\begin{itemize}
+\tightlist
+\item
+  The modeling challenge and the social challenge can run together.
+\item
+  If we want to change behavior, it helps to know what kind of game
+  people are, or take themselves, to be playing.
+\item
+  So the theoretical question of how to conceptualise a practice might
+  be related to the social question of how to repair it.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{For Next Time}
+\protect\hypertarget{for-next-time}{}
+I'll go over a bit what PD and Stag Hunt look like in \(n\) player
+cases.
+\end{frame}
+
+\end{document}

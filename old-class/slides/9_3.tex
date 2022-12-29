@@ -1,0 +1,441 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 9.3 - O'Connor Chapter 4},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+\usepackage{istgame}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Day Plan}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 9.3 - O'Connor Chapter 4}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Day Plan}
+\protect\hypertarget{day-plan}{}
+\tableofcontents
+\end{frame}
+
+\hypertarget{conventionality}{%
+\section{Conventionality}\label{conventionality}}
+
+\begin{frame}{Degrees of Conventionality}
+\protect\hypertarget{degrees-of-conventionality}{}
+This is a really good point - we shouldn't think of social outcomes as
+being either purely conventional, or explained by the superiority of the
+ultimate outcome.
+
+\begin{itemize}
+\tightlist
+\item
+  There are in between cases.
+\item
+  And there are cases that are closer to one end than the other.
+\item
+  We need a scale.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Language}
+\protect\hypertarget{language}{}
+To see this, think about how we ended up with the distribution of
+languages we have today.
+
+\begin{itemize}
+\tightlist
+\item
+  Why are English, Spanish and Mandarin Chinese spoken so widely, and
+  other languages less so?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Non-Conventional Stories}
+\protect\hypertarget{non-conventional-stories}{}
+\begin{itemize}
+\tightlist
+\item
+  Some languages are easier to learn than others.
+\item
+  They don't have large dictionaries (though English does);
+\item
+  They don't make you learn messy things like gender or formality
+  (though Spanish does);
+\item
+  They don't make you produce sounds that are hard to acquire in
+  adulthood (I'm not sure if any of these three do)
+\item
+  These are all reasons why it would be surprising for Welsh or Xhosa to
+  become widespread.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Conventional Stories}
+\protect\hypertarget{conventional-stories}{}
+\begin{itemize}
+\tightlist
+\item
+  But none of these factors explain why English is more widely spoken
+  than, say, Dutch.
+\item
+  The reason for that seems more connected to how New Amsterdam became
+  New York than to anything about language.
+\item
+  It happened that various English-speaking settlements in the Americas
+  thrived, Dutch-speaking ones did not, and here we are.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Measuring Conventionality}
+\protect\hypertarget{measuring-conventionality}{}
+\begin{itemize}
+\tightlist
+\item
+  O'Connor offers a measure of how conventional an outcome is.
+\item
+  I don't love it as a measure; as she notes, it varies depending on how
+  finely we divide up the alternative options.
+\item
+  Better I think to do pairwise comparisons directly.
+\item
+  English is more widely spoken than Welsh for somewhat functional
+  reasons.
+\item
+  English is more widely spoken than Dutch for almost entirely
+  conventional reasons.
+\end{itemize}
+\end{frame}
+
+\hypertarget{pairing}{%
+\section{Pairing}\label{pairing}}
+
+\begin{frame}{Normal Households}
+\protect\hypertarget{normal-households}{}
+Here's a quote from page 101.
+
+\begin{quote}
+Especially in recent Western history, the vast majority of households
+involved one man and one woman.
+\end{quote}
+
+And I don't really know if this is true, especially in the time frame
+needed to make the explanation work.
+\end{frame}
+
+\begin{frame}{Post War America}
+\protect\hypertarget{post-war-america}{}
+In post-war America, you see the following three factors.
+
+\begin{enumerate}
+\tightlist
+\item
+  Few households with multiple adult generations.
+\item
+  High marriage rates and low divorce rates.
+\item
+  Low rates of mid-life death.
+\end{enumerate}
+
+You really need all three to get ``the vast majority of households
+involved one man and one woman'', and I don't really know how many
+times/places have all three.
+\end{frame}
+
+\begin{frame}{Household Structure}
+\protect\hypertarget{household-structure}{}
+So open question.
+
+\begin{itemize}
+\tightlist
+\item
+  In what societies (other than mid-20th-century
+  America/Canada/Australia) was it true that the vast majority of
+  households involved one man and one woman?
+\end{itemize}
+
+My guess is not that many. And since gender divisions are
+\emph{everywhere}, this can't really be the story.
+\end{frame}
+
+\hypertarget{mfeo-games}{%
+\section{MFEO Games}\label{mfeo-games}}
+
+\begin{frame}{How Common are MFEO Games?}
+\protect\hypertarget{how-common-are-mfeo-games}{}
+\begin{itemize}
+\tightlist
+\item
+  We need specialisation to make modern society run.
+\item
+  But question: how many real world situations are there where we need
+  1/2 the (adult) population to do X, and the other half to do Y?
+\item
+  A lot of specialisation tasks are more than we need some single digit
+  percentage of the population to do them.
+\item
+  Why don't we get more types correlating with those needed
+  specialisations.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Households and MFEO}
+\protect\hypertarget{households-and-mfeo}{}
+\begin{itemize}
+\tightlist
+\item
+  This is really a version of the previous question.
+\item
+  If it is really common to have 1M/1F households, then sure there will
+  be lots of MFEO games where it is useful to have 50/50 splits.
+\item
+  But without that, I don't really see them being frequent enough for
+  this analysis.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Child Making}
+\protect\hypertarget{child-making}{}
+Now there's one thing that does require 1M/1F, namely child making.
+
+\begin{itemize}
+\tightlist
+\item
+  If you have a society where the two biological parents of a child have
+  a distinctive role in child rearing, then sure, that will lead to
+  these two player games.
+\item
+  But this leads us back to questions of household composition, and I'm
+  not sure there is a good answer.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Functionality Given Pregnancy}
+\protect\hypertarget{functionality-given-pregnancy}{}
+Can you get more out of thinking about reproduction?
+
+\begin{itemize}
+\tightlist
+\item
+  Some jobs are hard to do while pregnant or nursing.
+\item
+  Now `hard' doesn't mean impossible, but maybe there is a story here.
+\item
+  But do you need 1/2 the population to engage in those jobs?
+\item
+  Some of this might turn on hard questions about the prevalence of big
+  game hunting in human societies.
+\end{itemize}
+\end{frame}
+
+\hypertarget{multiple-games}{%
+\section{Multiple Games}\label{multiple-games}}
+
+\begin{frame}{Hawk-Dove and MFEO}
+\protect\hypertarget{hawk-dove-and-mfeo}{}
+\begin{itemize}
+\tightlist
+\item
+  This I thought was one of the best parts of the chapter.
+\item
+  It seems really crucial to understanding what's going on.
+\item
+  The point of gender roles is not that there is this one thing where
+  men do one thing and women do another.
+\item
+  It's that there is a systematic pattern of differential behavior
+  across a huge range of parts of life.
+\item
+  Thinking about how games interact could be a big part of the story.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{To Be Explained}
+\protect\hypertarget{to-be-explained}{}
+One challenge in this chapter is to go beyond explaining why typing
+occurs to explaining why gender is universal.
+
+\begin{itemize}
+\tightlist
+\item
+  There is an attempt at this by noting the benefits of the equal
+  division.
+\item
+  But this is, I think, an artifact of the game chosen.
+\item
+  It comes back to whether it is useful to have 50\% specialise in some
+  task.
+\item
+  I think it's more likely that thinking about interlocking games is
+  more promising.
+\end{itemize}
+\end{frame}
+
+\end{document}

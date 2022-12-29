@@ -1,0 +1,41 @@
+Question 1
+
+There are two (pure strategy) Nash equilibria of the embedded game: TT and AA. Each of these can be extended to a subgame perfect equilibria of the general game. (In what follows I'll list Coke first, Pepsi second, and use E for enter, and N for not enter.)
+
+The first equilibrium is that Coke plays NT, and Pepsi plays T. Coke gets 0 from playing N, and it would have received -2 from playing E, so that's an equlibrium. And if we get to the embedded game (we won't), we'll end up at the TT equilibrium.
+
+The second equilibrium is that Coke plays EA, and Pepsi plays A. That's an equilibrium of the embedded game, and Coke gets its highest possible payout, and Pepsi gets the highest payout it can get given Coke plays E, so it's clearly an equilibrium.
+
+Question 2
+
+The only subgame perfect equilibria of this game are where Coke plays whatever Pepsi played at the first round. If we assume Coke will do that, then the first round game looks like this.
+
+             Pepsi Tough    Pepsi Accom
+Coke Enter     -2,1             1,2
+Coke Not-E      0,-1            0,-1
+
+And the two Nash equilibria of that game are NT and EA.
+
+So the two subgame perfect equilibria of the overall game are NT, T and EA, A.
+
+Question 3, with 'it = Coke'
+
+Sorry this was a messed up question; I've got to get better with anaphors. Anyway, if 'it' means Coke, the game changes to this.
+
+             Pepsi Tough    Pepsi Accom
+Coke Enter     -2,1             1,2
+Coke Not-E      1,-1            1,-1
+
+That has three subgame perfect equilibria: NT, EA and NA. So the overall game has three subgame perfect equilibria: NT, T; EA, A; NA, A.
+
+Question 3, with 'it = Pepsi'
+
+I think this makes more sense; why would Coke's payout change for Pepsi being Tough in a market it isn't in. Anyway, let's work through it.
+
+Now the first stage game (assuming Coke is rational at round 2) looks like
+
+             Pepsi Tough    Pepsi Accom
+Coke Enter     -2,1             1,2
+Coke Not-E      0,1             0,1
+
+But actually this has the same Nash equilibria as in question 2, so it has the same subgame perfect equilibria.

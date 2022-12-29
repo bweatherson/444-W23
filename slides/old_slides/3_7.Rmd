@@ -1,0 +1,88 @@
+---
+title: "444 Lecture 3.7 - Zero Sum Turn Taking Games"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Plan
+
+To discuss a remarkable result - that every turn taking zero sum game has a **value**.
+
+## Reading
+
+Bonanno, section 3.5
+
+## The Class of Games Under Discussion
+
+- Two-player
+- Turn-taking
+- Finite
+- No hidden facts
+- No randomness
+- Zero-sum
+
+That is a lot of restrictions, but it includes classic games like chess, checkers, go, othello and more.
+
+## Theorem
+
+Every one of these games has a **value**.
+
+- The value of the game is an outcome that each player can guarantee that they get at least that good a result.
+- Since the game is zero-sum, it follows that no player can guarantee that they do better.
+
+## Proof Schema
+
+- We prove this by induction on the nodes.
+- The value of a terminal node is given by the definition.
+- Say a penultimate node (at any stage of the process) is a node such that whatever move is made, the next node has a value.
+- The value of that node is the best value of the subsequent nodes, by the lights of the player who has to play.
+- So if player 1 has to play, and one nodes leads to a draw, and the other to Player 2 winning, the value of that node is draw.
+
+## Proof Schema
+
+- Since the game is finite, a finite number of steps of this process will assign a value to every node in the tree.
+- So eventually the initial node will get a value.
+- And that's the value of the game.
+- And the way we've constructed that value shows that each player always has a path to ensure they never do worse.
+- If it is their move, there will be a move that preserves value.
+- And if it is the other players' move, the value is by definition the most harm they can do with that move.
+
+## Consequences
+
+- Consider any game with just two outcomes, one player wins or the other.
+- Whatever the tree is, we know the table will have one of the following two features.
+
+1. There is a row where every result is that Player 1 wins; or
+2. There is a column where every result is that Player 2 wins.
+
+## Consequences
+
+> - In chess, at least one player has a strategy that guarantees not losing.
+> - For some chess like games this is not a surprise - if player 2 had a winning strategy, player 1 could as it were execute it first. This isn't quite right for chess, but no one really thinks that player 2 has a winning strategy in chess.
+> - Probably the value of chess is a draw, but this isn't known yet.
+
+## Solved Games
+
+![Wikipedia page on solved games](images/solved.png)
+
+## For Next Week
+
+We will start chapter 4, on games involving hidden information.
+
+

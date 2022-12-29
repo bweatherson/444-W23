@@ -1,0 +1,274 @@
+\documentclass[11pt,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+    \setmainfont[]{SF Pro Text Light}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Honest Signalling},
+            pdfauthor={Philosophy 444},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Honest Signalling}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Philosophy 444}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{30 October, 2019}
+
+\usepackage{mathastext}
+\usepackage{nicefrac}
+
+\begin{document}
+\maketitle
+
+\hypertarget{big-themes}{%
+\subsection{Big Themes}\label{big-themes}}
+
+\begin{itemize}
+\tightlist
+\item
+  There are other signalling models than the Spence model. You can think
+  that tail feathers or stotting or college attendance is signalling
+  without thinking this is the right model.
+\item
+  The Spence model says that non-signallers \textbf{can} signal but
+  \textbf{won't}. We should also think about models where non-signallers
+  \textbf{would} signal but \textbf{can't}.
+\end{itemize}
+
+\hypertarget{three-big-questions}{%
+\subsection{Three Big Questions}\label{three-big-questions}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Why does receiver take the signal seriously?
+\item
+  Why does signaller send signal? In particular, why do they send this
+  signal? Why don't signallers collectively organise a cheaper signal?
+\item
+  Why don't non-signallers send signal?
+\end{enumerate}
+
+\hypertarget{four-questions-from-last-time}{%
+\subsection{Four Questions from Last
+Time}\label{four-questions-from-last-time}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What aspects of this model seem to resemble the world you (as in
+  literally you personally) find yourself in?
+\item
+  What aspects of it seem to differ from the world in significant ways?
+\item
+  What empirical data would make you think this model was right in some
+  important way?
+\item
+  What empirical data would make you think this model was wrong in some
+  important way?
+\end{enumerate}
+
+\hypertarget{my-answers}{%
+\subsection{My Answers}\label{my-answers}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The basic structure seems plausible. It isn't obvious how what we do
+  here makes you a more valuable employee. It might make you better
+  citizens, but employers don't care about that. And calculus class
+  really is less pleasant for people who won't be as valuable.
+\item
+  The wage premium is so high that it's hard to believe \(c_2 > 1\). The
+  same is true for the tail feathers and stotting examples. The payouts
+  to Difficult are really really high, and calculus class isn't that
+  differentially unpleasant.
+\item
+  Restricting things to data I know exist - one thing that supports the
+  model is the `sheepskin effect'. If you divide the `some college'
+  group by how much college they got, the skills hypotheis would predict
+  that the more college you did, the higher your wage premium. That
+  might be approximately true. But it would also predict that if you're
+  one course from graduation, you would get 95\% or more of the wage
+  premium. And that's wildly false.
+\item
+  One thing that's trouble for the model is that the wage premium is
+  really high among older workers. To make that work, you need one of a
+  few implausible things. One possibility is that you need employers who
+  are so unobservant that they can't tell the valuable workers from the
+  not valuable workers after years and years of work, so they still have
+  to rely on degrees as a signalling device.
+\end{enumerate}
+
+\newpage
+
+\hypertarget{another-hypothesis}{%
+\subsection{Another Hypothesis}\label{another-hypothesis}}
+
+So far we've assumed everyone can do Difficult or Easy, but it is more
+costly for Low than High. Maybe we should drop that assumption. Here is
+another kind of signalling model that we could consider.
+
+\begin{itemize}
+\tightlist
+\item
+  The basic structure of sender, receiver, signal and receiver actions
+  are the same.
+\item
+  Now the cost of Difficult is the same for High and Low.
+\item
+  But now Sender isn't in full control of their actions.
+\item
+  If they choose Easy, then Easy happens.
+\item
+  But if they choose Difficult, then they have to pay the cost \(c\),
+  but what happens, and what Receiver sees, is Difficult with
+  probability \(p\), and Easy with probability \(1-p\).
+\item
+  And the probability is high for High and low for Low.
+\item
+  Again, we get a separating equilibrium.
+\item
+  Receiver does Risky if they see High, and Safe if they see Low. (Or
+  the other way around in the stotting game.)
+\item
+  And the expected payouts are such that High should take the chance and
+  do Difficult, while Low should not.
+\item
+  At the extreme, the probability of success is 1 for High and 0 for
+  Low, but the model works even with much more balanced probabilities.
+\end{itemize}
+
+This is sometimes called the \textbf{Honest Signalling} model, or the
+\textbf{Indexical Signalling} model, as opposed to the \textbf{Handicap
+Principle} model we started with.
+
+\hypertarget{mixing-the-hypotheses}{%
+\subsection{Mixing the Hypotheses}\label{mixing-the-hypotheses}}
+
+Maybe for some Senders, they have a choice about what costs to incur,
+with the more costs they incur increasing their probability of success.
+
+\begin{itemize}
+\tightlist
+\item
+  This is easier to see in the college case. Imagine a person who has
+  the skills to finish a college degree, but doesn't have the skills to
+  finish while holding down a 40 hour job, and it would be really costly
+  to give up the 40 hour job.
+\item
+  For that person, going to college and keeping the job might not be
+  worth it - it would be like doing the low-probability Difficult
+  signal, which usually just results in paying a cost and getting no
+  return.
+\item
+  But going to college and giving up the job might not be worth it
+  either. If the cost \(c\) isn't just the tuition cost, but the money
+  foresaken from the job, and perhaps the interest on the loans taken
+  out to cover that money, then perhaps the cost is higher than the
+  premium.
+\end{itemize}
+
+In general, we might want to be a little sceptical that there is clean
+line between cases where a player chooses not to send a costly signal,
+and cases where that player doesn't have the ability to (reliably) send
+that signal. Maybe the signal success probability is a function of the
+costs incurred, and there is no level of costs they can justify
+spending.
+
+\hypertarget{for-more-information}{%
+\subsection{For More information}\label{for-more-information}}
+
+For stats on the college wage premium over time, see
+
+\begin{itemize}
+\tightlist
+\item
+  \url{https://fredblog.stlouisfed.org/2018/07/is-college-still-worth-it/}
+\end{itemize}
+
+For information on the college wealth premium, plus stats on the
+demographics of both the wage premium and the wealth premium, see
+
+\begin{itemize}
+\tightlist
+\item
+  \url{https://www.stlouisfed.org/~/media/files/pdfs/hfs/is-college-worth-it/emmons_symposium.pdf?la=en}
+\end{itemize}
+
+
+\end{document}

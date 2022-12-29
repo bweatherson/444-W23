@@ -1,0 +1,122 @@
+---
+title: "444 Lecture 2.7 - Iterated Deletion of Weakly Dominated Strategies"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Plan
+
+To look at two problems that arise when we delete strategies that are merely weakly dominated.
+
+## Reading
+
+Bonanno, section 2.5.2.
+
+## Two Issues
+
+- Order effects.
+- Philosophical motivation.
+
+## Order Effects
+
+- As Bonanno goes over, when deleting weakly dominated strategies, it matters what order you do the deletions in.
+- Whether a strategy weakly dominates another at a point in the process might depend on how you got to that point.
+- And the result is that different ways of applying the process lead to different 'solutions'.
+
+## Way Around This
+
+- Bonanno says (as I think is standard) that you solve this by saying that at each stage, you delete every strategy that you possibly can.
+- There is still an issue I think about why that deletion process is justified as opposed to some other.
+- It does have the nice advantage of actually being a well defined process, so that's nice.
+
+## Philosophical Justification
+
+- The bigger issue is that it is a little hard to say why we should care about the result of this procedure.
+- Saying what's special about the result of this strategy is not completely obvious.
+- Bonanno alludes to this - let's go over it in a bit more detail.
+
+## Iterated Deletion
+
+```{r}
+game <- tribble(
+  ~Moves,    ~Left, ~Center, ~Right,
+  "Up",     "1, 1",  "1, 1", "0, 0",
+  "Middle", "1, 1",  "0, 0", "1, 0",
+  "Down",   "0, 0",  "0, 1", "1, 1"
+)
+gameformat(game)
+```
+
+- Middle weakly dominates Down, and Center weakly dominates Right.
+- So let's delete them.
+
+## Iterated Deletion
+
+```{r}
+game <- tribble(
+  ~Moves,    ~Left, ~Center, 
+  "Up",     "1, 1",  "1, 1", 
+  "Middle", "1, 1",  "0, 0"
+)
+gameformat(game)
+```
+
+- Now Up weakly dominates Middle and Left weakly dominates Center.
+- So the solution is Up/Left, right?
+- Well, not so fast.
+
+## Iterated Deletion
+
+```{r}
+game <- tribble(
+  ~Moves,    ~Left, ~Center, ~Right,
+  "Up",     "1, 1",  "1, 1", "0, 0",
+  "Middle", "1, 1",  "0, 0", "1, 0",
+  "Down",   "0, 0",  "0, 1", "1, 1"
+)
+gameformat(game)
+```
+
+- Think about it from Row's perspective.
+- We have an argument that Column will play Left.
+- If that argument works, Row shouldn't prefer Up - they should be indifferent between Up and Middle.
+- Why does the argument say to play Up then?
+
+## Iterated Deletion
+
+```{r}
+game <- tribble(
+  ~Moves,    ~Left, ~Center, ~Right,
+  "Up",     "1, 1",  "1, 1", "0, 0",
+  "Middle", "1, 1",  "0, 0", "1, 0",
+  "Down",   "0, 0",  "0, 1", "1, 1"
+)
+gameformat(game)
+```
+
+- The answer is that Middle is risky.
+- In the game after deletion, Middle has a risk of getting 0, but Up is sure to get 1.
+
+> - But look at the original game - Up is risky too!
+> - I think this makes it hard to philosophically defend IDWDS
+
+## For Next Time
+
+We will look at a famous example of iterated deletion that's not in the book.
+

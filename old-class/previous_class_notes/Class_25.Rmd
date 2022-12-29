@@ -1,0 +1,60 @@
+---
+title: "Levy and Alfano"
+output:
+  pdf_document:
+    toc: false
+    md_extensions: +startnum
+    df_print: kable
+    keep_tex: yes
+    latex_engine: xelatex
+    extra_dependencies: ["mathastext", "nicefrac"]
+    fig_caption: no
+fontsize: 11pt
+mainfont: SF Pro Text Light
+geometry: margin=1in
+author: Philosophy 444
+date: 2 December, 2019
+---
+
+Virtues and vices
+	Aristotle
+	Character not outcome or even action
+	Doctrine of the mean
+	E.g., courage as mean between cowardice and foolishness
+
+Virtue epistemology
+	Introduced to solve Dharmottara cases
+	But generally more interesting than that
+	Open-mindedness, inquisitiveness, modesty, curiosity, etc
+	Which of these are Aristotelian means?
+
+Private vices as public goods
+	Mandeville (1705/1729) - Saving is a private virtue but public vice (but did he really)
+	Explorers, innovators etc
+	Need a bunch of excessively confident people for things to move forward
+
+Epistemic version
+	Two main cases
+	One they spend most time on is cultural evolution
+	The other, perhaps as important, is argumentation
+
+Defences
+	Obviously two - these aren't public goods, or they aren't private vices
+	Maybe they are not public *epistemic* goods?
+	But I'm more interested in them being private virtues
+	How discriminating does imitation have to be for it to be a virtue
+	Compare the headbutting the light switch example - maybe this is common
+	What do we mean by 'over-imitating'?
+	If it's just not actual utility maximising on this occasion, that's too strong
+
+Evidence of evidence
+	General picture - often we find evidence that someone has evidence that p
+	That's defeasibly good evidence that p
+	Maybe that's what all these folks are doing
+	And maybe that's rational
+
+Vigilence
+	This is a really important notion, and one that's worth spelling out
+	Example of walking through a crowded corridor
+	Maybe that's the right attitude to take towards people telling you stuff
+	And maybe that's enough to make these virtues - copying with vigilance is kinda good?

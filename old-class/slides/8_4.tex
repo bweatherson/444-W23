@@ -1,0 +1,306 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 8.4 - Many Player Stag Hunt},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+\usepackage{istgame}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 8.4 - Many Player Stag Hunt}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Generalising}
+\protect\hypertarget{generalising}{}
+\begin{itemize}
+\tightlist
+\item
+  The world doesn't have many 2 player 2 option games.
+\item
+  If we're thinking of modelling real world situations, either as PD or
+  Stag Hunt, we need something more general.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Generalised Prisoners' Dilemma}
+\protect\hypertarget{generalised-prisoners-dilemma}{}
+\begin{itemize}
+\tightlist
+\item
+  \(n > 2\) players each choose a number \(x\) in \([0, 1]\).
+\item
+  The mean of the choices is \(m\).
+\item
+  Payoff to each player is \(m - \frac{x}{r}\), for \(r\) between \(2\)
+  and \(n\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{General Pattern}
+\protect\hypertarget{general-pattern}{}
+\begin{itemize}
+\tightlist
+\item
+  If everyone picks the same number, better for everyone that that
+  number is higher. \pause
+\item
+  Holding fixed other players moves, it is always better to pick a lower
+  number.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Iteration}
+\protect\hypertarget{iteration}{}
+\begin{itemize}
+\tightlist
+\item
+  It's really hard to do Axelrod-type stuff in these kinds of games.
+\item
+  Just having the chance to interact again is not enough to push people
+  to cooperate.
+\item
+  There isn't enough freedom of movement; do you defect if 1 player out
+  of 100 defects?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Punishment}
+\protect\hypertarget{punishment}{}
+\begin{itemize}
+\tightlist
+\item
+  Changing the payouts is a more effective move.
+\item
+  So what we see in these kinds of situations is what is called
+  `altruistic punishment'.
+\item
+  One person makes themselves temporarily worse off, and the perpetrator
+  much worse off, to send a signal that defection will not be tolerated.
+\item
+  Of course there is a free riding issue with who carries out the
+  punishment, so \ldots{}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Generalised Stag Hunt}
+\protect\hypertarget{generalised-stag-hunt}{}
+\begin{itemize}
+\tightlist
+\item
+  \(n > 2\) players each choose a number \(x\) in \([0, 1]\).
+\item
+  The mean of the choices is \(m\). \pause
+\item
+  If a player chooses \(x \leq m\), their payout is \(x\). \pause
+\item
+  If they choosee \(x > m\), they receive \(m - r(x - m)\), where
+  \(r > 1\) is some measure of how much one is penalised for leaving the
+  equilibrium.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{General Pattern}
+\protect\hypertarget{general-pattern-1}{}
+\begin{itemize}
+\tightlist
+\item
+  For any \(x\), everyone choosing \(x\) is a (strict) equilibrium.
+\item
+  The higher \(x\) is, the better this equilibrium is for everyone.
+\item
+  Choosing 0 minimises regret, and maximises expected return given some
+  natural distributions of probability to the other player's moves.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Real World}
+\protect\hypertarget{real-world}{}
+\begin{itemize}
+\tightlist
+\item
+  For something to be a real world stag hunt, those are the features you
+  (approximately) need.
+\item
+  The best thing to do is to do what everyone else does.
+\item
+  If everyone does the same thing, better that everyone does the more
+  cooperative thing.
+\item
+  Given radical uncertainty about what others will do, best to do the
+  uncooperative thing.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{For Next Time}
+\protect\hypertarget{for-next-time}{}
+\begin{itemize}
+\tightlist
+\item
+  We'll talk through some examples of possible real life Stag Hunts.
+\end{itemize}
+\end{frame}
+
+\end{document}

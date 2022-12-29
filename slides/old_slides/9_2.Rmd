@@ -1,0 +1,110 @@
+---
+title: "444 Lecture 9.2 - O'Connor Chapters 2-3"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+        - toc.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## Day Plan
+
+\tableofcontents
+
+# Types
+
+## Types
+
+- Remember that the key thing abut types is that they are visible.
+- In any interaction, everyone knows who is of which type.
+- And everyone knows everyone knows that.
+- So part of the theory is that a method of typing will have to go along, socially, with visible markers.
+- This is interesting in the context of religious typing - and worth thinking about how religious groups have voluntarily or involuntarily adopted visible markers.
+
+# Resumé Studies
+
+## Resumé Studies
+
+- These are really fascinating, and worth looking up.
+- You can find some of them at this UM site: https://advance.umich.edu/stride-readings/
+- Do be careful about dates.
+- Obviously racism/sexism have not gone away in the last 40 years.
+- But they have changed some, and results from 40 years ago might not replicate now.
+
+# Handfield Model
+
+## Handfield Model
+
+This is the model discussed on page 60 of the book, and we spent a bit of time on it last time.
+
+> - O'Connor thinks it puts too much weight on rational choice. We'll come back to her alternative to rational choice models in a bit.
+> - She also thinks it can't explain the stability of gender roles. I'm not really sure why that is true.
+> - I'm worried that it requires 100% pairing; even with a 90% likelihood of pairing, you'd expect to see non-trivial investment in non-normative skills, as basically insurance. But we often didn't see even that.
+
+# Basins of Attraction
+
+## Basins of Attraction
+
+- These are going to be significant, and I encourage you to ask about them if you're not following.
+- Here's one thing about them that threw me at first.
+- As O'Connor is using them, these are population level models.
+- When there is an equilibrium point that is 70% A/30% not-A (or whatever), that doesn't mean each player adopts the mixed strategy 0.7 A, 0.3 not A.
+- Rather, it means 70% of the population do A, and 30% do not-A.
+- That doesn't amount to much mathematically, but it matters for how we interpret the model.
+
+# Two Types of Game Theory
+
+## Two Types
+
+- (Rational Choice) Game Theory
+- Evolutionary Game Theory
+
+## Sociological Question
+
+A lot of economists believe all of the following things.
+
+1. Game theory is useful in economic modelling.
+2. Economic actors for the most part (more or less) act rationally.
+3. Economic actors that don't act rationally tend to become economically insignificant.
+4. Points 2 and 3 complement each other; failures of rationality will become less significant because they are made by people/firms who will become less significant.
+
+I think that picture (which I'm sympathetic to!) looks much stronger if you don't distinguish (rational choice) game theory from evolutionary game theory.
+
+## The Differences
+
+(Rational choice) game theory
+
+- High rationality assumptions
+- Comparative statics method
+
+Evolutionary game theory
+
+- Low rationality assumptions
+- Dynamic method
+
+## Big Picture Worries
+
+> - The dynamism of evolutionary views is just good. Who cares if a position is stable if it could never be reached?
+> - And not requiring full rationality is good too.
+> - But ... requiring not full rationality is a bit iffy I think.
+
+## Two Approaches O'Connor Takes
+
+> 1. Behavior acquisition is completely arational; it's just copying the successful. That makes more sense evolutionarily than behaviorally. Sure we copy somewhat, but is that all we do?
+> 2. "Bounded rationality" approaches, where people do the best they can assuming that the population structure they've observed in the (immediate) past is the population structure of the present.
+
+## Back to Rationality?
+
+- I'm not sure if there is a fully rational dynamical model we ever get.
+- But we do get models where these arational/irrational dynamics get to an end state that is rationally stable.
+- Is that rationality enough?

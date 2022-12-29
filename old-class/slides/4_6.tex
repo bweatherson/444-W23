@@ -1,0 +1,313 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 4.6 - Utility},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 4.6 - Utility}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Plan}
+\protect\hypertarget{plan}{}
+To introduce the notion of utility.
+\end{frame}
+
+\begin{frame}{Reading}
+\protect\hypertarget{reading}{}
+Bonanno, chapter 5 - though note we aren't following the book precisely
+in this chapter.
+\end{frame}
+
+\begin{frame}{Ranking}
+\protect\hypertarget{ranking}{}
+\begin{itemize}
+\tightlist
+\item
+  So far the theories we've looked just solve games using the
+  \textbf{rankings} of various options.
+\item
+  It doesn't look at how much a player prefers one option over another,
+  just on what is preferred to what.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Ordinal Utility}
+\protect\hypertarget{ordinal-utility}{}
+\begin{itemize}
+\tightlist
+\item
+  To use the technical language, so far our theories have just used
+  \textbf{ordinal utilities}.
+\item
+  The term \textbf{ordinal} here means that we only look at the
+  \textbf{order} of the options.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Cardinal Utility}
+\protect\hypertarget{cardinal-utility}{}
+\begin{itemize}
+\tightlist
+\item
+  The rules that we'll look at from now on use \textbf{cardinal
+  utilities}.
+\item
+  Whenever we're associating outcomes with numbers in a way that the
+  magnitudes of the differences between the numbers matters, we're using
+  cardinal utilities.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Utility}
+\protect\hypertarget{utility}{}
+\begin{itemize}
+\tightlist
+\item
+  Intuitively, think of utilities as measuring how good an outcome is.
+\item
+  The theory we're building towards is thoroughly subjectivist, so think
+  of `how good' as meaning `how good along all and only dimensions the
+  agent making the decision cares about'.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Scale}
+\protect\hypertarget{scale}{}
+\begin{itemize}
+\tightlist
+\item
+  Utilities aren't really measured on any scale.
+\item
+  Indeed, like temperature measures, or year numberings, they don't even
+  have a fixed zero point.
+\item
+  It is usually convenient to associate 0 utility with the status quo,
+  and then have negative numbers for outcomes worse than status quo, and
+  positive numbers for outcomes better than status quo.
+\item
+  But that's just a convention; you can set the 0 wherever you like.
+\item
+  And you can set the utility 1 point at anything better than 0.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Scale (continued)}
+\protect\hypertarget{scale-continued}{}
+\begin{itemize}
+\tightlist
+\item
+  But that's where the convention stops.
+\item
+  Once you fix the 0 and 1 points, nothing else is fixed by pure
+  convention.
+\item
+  Temperatures are like this too.
+\item
+  Though years are not - all the different calendars have years of the
+  same length.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Meaning of the Scale}
+\protect\hypertarget{meaning-of-the-scale}{}
+We will come back to this much more in the future, but here is the key
+equation.
+
+\[
+U(B) = \frac{U(A) + U(C)}{2}
+\]
+
+Means that the agent is indifferent between getting \(B\) for sure, and
+a coin flip that means they get \(A\) if Heads and \(C\) if Tails.
+\end{frame}
+
+\begin{frame}{Meaning of the Scale}
+\protect\hypertarget{meaning-of-the-scale-1}{}
+It's a little unintuitive to think about this (though it helps if you've
+moved between Celsius and Farenheit countries).
+
+\begin{itemize}
+\tightlist
+\item
+  What matters is the ratio of differences.
+\item
+  If \(U(A) - U(B) = U(B) - U(C)\), that's really meaningful, even if
+  none of the individual numbers are meaningful.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{For Next Time}
+\protect\hypertarget{for-next-time}{}
+\begin{itemize}
+\tightlist
+\item
+  We will look at how utility relates to money.
+\end{itemize}
+\end{frame}
+
+\end{document}

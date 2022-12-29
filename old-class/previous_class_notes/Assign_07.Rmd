@@ -1,0 +1,61 @@
+---
+title: "Assigment 7"
+output:
+  pdf_document:
+    toc: false
+    md_extensions: +startnum
+    df_print: kable
+    keep_tex: yes
+    latex_engine: xelatex
+    extra_dependencies: ["gensymb", "nicefrac", "caption", "istgame", "mathastext"]
+    fig_caption: no
+fontsize: 11pt
+mainfont: SF Pro Text Light
+geometry: margin=1in
+author: Philosophy 444
+date: Due November 8, 2019
+---
+
+Answer **one** of the two following questions, in about 400-500 words. You should answer the question at the end, defend your answer, and say a bit about the best argument for the opposing answer, and why you don't think that argument works.
+
+# Question One
+
+Alice, Betty, Carla, Daria and Elise are deciding where to go for brunch. They have two choices, Fred's and George's. They have talked about each of the following propositions, and have settled views about each of them.
+
+1. Which place has tastier food?
+2. Which places serve only free-range eggs?
+3. Should we boycott places that serve eggs that aren't free range?
+4. Where should we go?
+
+They each agree that they want the tastiest food at a place they aren't boycotting, but beyond that they don't agree on much. Here are their answers.
+
+|       |   Q1     |     Q2        | Q3  | Verdict  |    
+| :---: | :------: | :-----------: | :-: | :------: |
+| Alice | Fred's   | Only George's | Yes | George's |
+| Betty | Fred's   | Only George's | No  | Fred's   |
+| Carla | Fred's   | Both          | Yes | Fred's   |
+| Daria | George's | Only George's | Yes | George's |
+| Elise | Fred's   | Both          | No  | Fred's   |
+
+Where should the friends eat?
+
+(Question Two is on the next page)
+
+\newpage
+
+# Question Two 
+
+Alice is offered a choice of two bets that concern a pair of basketball games. Neither of them can lose money, so this is just a gift, but how much they win, and how likely they are to win, varies between the bets. The Ducks are playing in the first game, and the Emus are playing in the second game.
+
+- Option A wins \$100 if the Ducks and Emus both win, and nothing otherwise.
+- Option B wins \$50 if either the Ducks or the Emus lose (i.e., if it is not the case that Option A wins), and nothing otherwise.
+
+Alice must chose one, and just one, of these options.
+
+Alice knows almost nothing about basketball, so she asks her two friends Betty and Carla. They both have lots of knowledge about basketball, and have extremely good track records at forecasting basketball games.
+
+Betty says that the two games are probabilistically independent, and each team (the Ducks and the Emus) has an 80% chance to win their game. So the chance that Option A will win is 64%, and the chance that Option B will win is 36%.
+
+Carla says that the two games are probabilistically independent, and each team (the Ducks and the Emus) has an 30% chance to win their game. So the chance that Option A will win is 9%, and the chance that Option B will win is 91%.
+
+Alice has no other information about the games. Which option should she take?

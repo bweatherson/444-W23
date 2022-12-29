@@ -1,0 +1,420 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 10.2 - O'Connor Chapter 5},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+\usepackage{istgame}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Day Plan}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 10.2 - O'Connor Chapter 5}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Day Plan}
+\protect\hypertarget{day-plan}{}
+\tableofcontents
+\end{frame}
+
+\hypertarget{demand-game}{%
+\section{Demand Game}\label{demand-game}}
+
+\begin{frame}{Demand Game}
+\protect\hypertarget{demand-game-1}{}
+First, a brief note on the structure of the games at the heart of this
+chapter.
+
+\begin{itemize}
+\tightlist
+\item
+  These are simultaneous move games.
+\item
+  They are not like the ultimatum game that you may have heard about.
+\item
+  Nor are they like real world negotiations.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Negotiations}
+\protect\hypertarget{negotiations}{}
+But they are a bit like negotiations.
+
+\begin{itemize}
+\tightlist
+\item
+  They are at least a little bit like strategies for a real world
+  negotiation, espcially if it works by something like English Auction.
+\item
+  The numbers are something like a reserve price.
+\item
+  In principle you could complicate the game a bit more by adding in
+  extra strategies within each round.
+\item
+  But this is probably the best way to think about it.
+\end{itemize}
+\end{frame}
+
+\hypertarget{basins}{%
+\section{Basins}\label{basins}}
+
+\begin{frame}{Basins of Attraction}
+\protect\hypertarget{basins-of-attraction}{}
+I don't have much to say here, but I really wanted to draw attention to
+the very surprising graph on page 114 (figure 5.3).
+
+\begin{itemize}
+\tightlist
+\item
+  I guess up to this point most of the models hadn't been \emph{that}
+  different from what I would have guessed a priori.
+\item
+  But this one really was surprisingly different.
+\item
+  Would be kind of interested in running another version of this with
+  multiple overlapping games.
+\end{itemize}
+\end{frame}
+
+\hypertarget{equity}{%
+\section{Equity}\label{equity}}
+
+\begin{frame}{What is Fair}
+\protect\hypertarget{what-is-fair}{}
+\begin{itemize}
+\tightlist
+\item
+  We've talked about this a bit, but it's really worth thinking about
+  what counts as a `fair' distribution.
+\item
+  This can have effects both for the payoffs (people value fairness) and
+  for dynamics (people move towards fair)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Fairness and Markets}
+\protect\hypertarget{fairness-and-markets}{}
+\begin{itemize}
+\tightlist
+\item
+  This matters a lot in market economies.
+\item
+  Often the fair outcome is the one driven by the market.
+\item
+  And that's true even if different forms of market infrastrcture would
+  have produced different outcomes.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Fairness and Deontology}
+\protect\hypertarget{fairness-and-deontology}{}
+\begin{itemize}
+\tightlist
+\item
+  It also matters in the contexts of norms like ``Don't Steal''.
+\item
+  Sometimes whether an outcome is coded as fair depends on how it
+  relates to an initial condition that we accept as fair.
+\item
+  And that in turn might depend on facts that, if we thought about them
+  directly, we would not think of as morally significant.
+\end{itemize}
+\end{frame}
+
+\hypertarget{disagreement-points}{%
+\section{Disagreement Points}\label{disagreement-points}}
+
+\begin{frame}{Disagreement Points}
+\protect\hypertarget{disagreement-points-1}{}
+The fact that different people are differentially able to walk away from
+a game is really important. But\ldots{}
+
+\begin{itemize}
+\tightlist
+\item
+  I'm kinda suspicious of Figure 5.5 (page 119).
+\item
+  The basins of attraction of the equilibria where the type with more
+  ability to walk away end up with less are surprisingly large.
+\item
+  Is there a real world situation that is like this?
+\item
+  Or is this a case where the model doesn't really reflect reality?
+\end{itemize}
+\end{frame}
+
+\hypertarget{punishment}{%
+\section{Punishment}\label{punishment}}
+
+\begin{frame}{Punishment}
+\protect\hypertarget{punishment-1}{}
+I've been worried a bit over the course of this that we've changed what
+we're talking about when we discuss punishment. In particular, do we
+mean:
+
+\begin{enumerate}
+\tightlist
+\item
+  Changing the payoffs; or
+\item
+  Choosing a strategy that leads to lower payoffs for the `punished'.
+\end{enumerate}
+
+These are both important things, but I'm not sure they are the same
+thing
+\end{frame}
+
+\begin{frame}{Punishment}
+\protect\hypertarget{punishment-2}{}
+And around page 126 we see some movement between these two notions.
+
+\begin{itemize}
+\tightlist
+\item
+  In the game table, punishment for a high bid is depicted as the
+  payoffs being externally lowered.
+\item
+  But then we get discussions of non-equilibrium moves within games.
+\item
+  Maybe these are the same thing?
+\item
+  Feels like we should keep them separate.
+\end{itemize}
+\end{frame}
+
+\hypertarget{varieties-of-disagreement-points}{%
+\section{Varieties of Disagreement
+Points}\label{varieties-of-disagreement-points}}
+
+\begin{frame}{Population Divergence}
+\protect\hypertarget{population-divergence}{}
+I really liked the stuff around page 126 on what happens if there is
+divergence within the population.
+
+\begin{itemize}
+\tightlist
+\item
+  Most of the games so far have essentially presupposed uniform
+  populations, at least within types.
+\item
+  Here we get a nice effect of the existence of a sub-population within
+  one but not the other type.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Credible Signals}
+\protect\hypertarget{credible-signals}{}
+And this I think really does matter to the real world.
+
+\begin{itemize}
+\tightlist
+\item
+  Sometimes what matters in these games is not what your disagreement
+  point is, but what you can credibly signal that it is.
+\item
+  We're getting back here to things that would come up if we modelled
+  each interaction as a negotiation over time.
+\item
+  Anyway, sometimes it is really obvious what your type is, but there is
+  no way to credibly signal willingness to walk away.
+\item
+  And in that case, the other player might (quite rationally!) assume
+  that your disagreement point is something like the average of your
+  type, whatever non-credible signal you send.
+\end{itemize}
+\end{frame}
+
+\hypertarget{building-power}{%
+\section{Building Power}\label{building-power}}
+
+\begin{frame}{Building Power}
+\protect\hypertarget{building-power-1}{}
+I was a bit confused by the game on page 128 and after, where success
+causes one to have a higher disagreement point.
+
+\begin{itemize}
+\tightlist
+\item
+  I don't really see the causal mechanism for this; it seemed much more
+  plausible in the other direction.
+\item
+  Maybe it's that the returns to the game come in resources that can be
+  saved?
+\item
+  Maybe it's that there will be other games to play - where your type by
+  default gets the good side of the equilibrium?
+\item
+  It's a nice game, but I would like to hear more about the real world
+  application.
+\end{itemize}
+\end{frame}
+
+\end{document}

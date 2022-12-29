@@ -1,0 +1,419 @@
+\documentclass[11pt,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+    \setmainfont[]{SF Pro Text Light}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Mixed Strategies},
+            pdfauthor={Philosophy 444},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Mixed Strategies}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Philosophy 444}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{30 September, 2019}
+
+\usepackage{gensymb}
+\usepackage{nicefrac}
+\usepackage{mathastext}
+\usepackage{multicol}
+
+\begin{document}
+\maketitle
+
+\hypertarget{best-responses}{%
+\section{Best Responses}\label{best-responses}}
+
+We have done as much as we can for now by merely thinking about ordinal
+utility. We now need to look at games where cardinal utility matters.
+And we assume at every stage that agents are trying to maximise expected
+utility. But that requires a probability function, and where do the
+probabilities come from. We will start with the notion of a \textbf{best
+response}, which I'll define then illustrate.
+
+\begin{description}
+\tightlist
+\item[Best Response]
+A strategy \(s_i\) is a best response for player \(i\) iff there is some
+probability distribution \(\Pr\) over the possible strategies of other
+players such that playing \(s_i\) maximises \(i\)'s \emph{expected}
+payoff, given \(\Pr\). (Note that we're using `maximise' in such a way
+that it allows that other strategies do just as well; it just rules out
+other strategies doing better.)
+\end{description}
+
+\bigskip
+
+\begin{longtable}[]{@{}lcc@{}}
+\toprule
+& \(l\) & \(r\)\tabularnewline
+\midrule
+\endhead
+\(U\) & \(3,0\) & \(0,0\)\tabularnewline
+\(M\) & \(2,0\) & \(2,0\)\tabularnewline
+\(D\) & \(0,0\) & \(3,0\)\tabularnewline
+\bottomrule
+\end{longtable}
+
+Consider that game from the perspective of \(R\), the player who chooses
+the row. What we want to show is that \emph{all three} of the possible
+moves here are best responses.
+
+It is clear that \(U\) is a best response. Set
+\(\Pr(l) = 1, \Pr(r) = 0\). Then \(E(U) = 3, E(M) = 2, E(D) = 0\). It is
+also clear that \(D\) is a best response. Set
+\(\Pr(l) = 0, \Pr(r) = 1\). Then \(E(U) = 0, E(M) = 2, E(D) = 3\).
+
+The striking thing is that \(M\) can also be a best response. Set
+\(\Pr(l) = \Pr(r) = \nicefrac{1}{2}\). Then
+\(E(U) = E(D) = \nicefrac{3}{2}\). But \(E(M) = 2\), which is greater
+than \(\nicefrac{3}{2}\). So if \(R\) thinks it is equally likely that
+\(C\) will play either \(l\) or \(r\), then \(R\) maximises expected
+utility by playing \(M\). Of course, she doesn't maximise actual
+utility. Maximising actual utility requires making a gamble on which
+choice \(C\) will make. That isn't always wise; it might be best to take
+the safe option.
+
+But note that if we change the game just a little, changing the cardinal
+utilities but not the ordinal utilities, the analysis of the game
+changes.
+
+\begin{longtable}[]{@{}lcc@{}}
+\toprule
+& \(l\) & \(r\)\tabularnewline
+\midrule
+\endhead
+\(U\) & \(3,0\) & \(0,0\)\tabularnewline
+\(M\) & \(1,0\) & \(1,0\)\tabularnewline
+\(D\) & \(0,0\) & \(3,0\)\tabularnewline
+\bottomrule
+\end{longtable}
+
+Now \(M\) cannot be a best response. No matter what \(\Pr(l)\) is, it
+won't maximise expected utility to play \(M\). Indeed, there is a good
+sense in which \(M\) is a dominated option. Even though no option is
+guaranteed to do better than it, you can't come up with a good reason to
+play it. And by reason here, we mean probability distribution over what
+the other person will do. No matter what strategy Column plays,
+\emph{pure or mixed}, it isn't best to play \(M\).
+
+Now I won't say much today about what it \textbf{means} to play a mixed
+strategy. That's for Wednesday. For now, I'll just assume that players
+can, instead of choosing a strategy, choose to assign a probability to
+each possible strategy. And if they do that, strategies for the other
+players have expected returns, rather than guaranteed returns.
+
+\hypertarget{nash-equilibrium}{%
+\section{Nash Equilibrium}\label{nash-equilibrium}}
+
+We previously defined a Nash Equilibrium as a set of moves that no
+player can improve their position on by unilaterally defecting from the
+equilibrium. We can equivalently define it the following way.
+
+\begin{itemize}
+\tightlist
+\item
+  A Nash Equilibrium is a set of strategies such that every move is a
+  best response to the strategies the other players actually play.
+\end{itemize}
+
+And remember that a strategy might now be a probability over options.
+You might think that many games do not have a Nash Equilibrium, but in
+fact all (finite) games do. (I am not going to try proving this; hi
+proving it was what lead to Nash equilibrium being named after Nash.)
+Here is one that you might think does not, a game you may be familiar
+with.
+
+\begin{longtable}[]{@{}lccc@{}}
+\toprule
+& \(r\) & \(p\) & \(s\)\tabularnewline
+\midrule
+\endhead
+\(R\) & \(1,1\) & \(0,2\) & \(2,0\)\tabularnewline
+\(P\) & \(2,0\) & \(1,1\) & \(0,2\)\tabularnewline
+\(S\) & \(0,2\) & \(2,0\) & \(1,1\)\tabularnewline
+\bottomrule
+\end{longtable}
+
+For each player, the equilibrium strategy is to play each option with
+probability \(\frac{1}{3}\). (Exercise: Prove this is an equilibrium.)
+
+\hypertarget{finding-mixed-strategy-equilibria}{%
+\section{Finding Mixed Strategy
+Equilibria}\label{finding-mixed-strategy-equilibria}}
+
+Consider this asymmetric version of Death in Damascus. (I'll go over in
+class why it gets this name.)
+
+\begin{longtable}[]{@{}lcc@{}}
+\toprule
+& Damascus & Aleppo\tabularnewline
+\midrule
+\endhead
+Damascus & \(1, -1\) & \(-1,0.5\)\tabularnewline
+Aleppo & \(-1,1\) & \(1,-1.5\)\tabularnewline
+\bottomrule
+\end{longtable}
+
+I've set up the game with Death is the Row player, and the Man is the
+Column player. Death wants to catch Man, Man wants to avoid Death. But
+we've added a 0.5 penalty for Man choosing Aleppo. It's an unpleasant
+journey from Damascus to Aleppo, particularly if you fear Death is at
+the other end.
+
+There is still no pure strategy equilibrium in this game. Whatever Death
+plays, Man would prefer to play the other. And whatever Man plays, Death
+wants to play it. So there couldn't be a set of pure choices that they
+would both be happy with given that they know the other's play.
+
+But the `choose each option with equal probability' strategy isn't a
+Nash equilibrium either. We'll write \(\langle x, y \rangle\) for the
+mixed strategy of going to Damascus with probability \(x\), and going to
+Aleppo with probability \(y\). Clearly we should have \(x + y = 1\), but
+it will make the representation easier to use two variables here, rather
+than just writing \(\langle x, 1-x \rangle\) for the mixed strategies.
+
+Given that representation, we can ask whether the state where each
+player plays \(\langle \nicefrac{1}{2}, \nicefrac{1}{2} \rangle\) is a
+Nash equilibrium. And, as you might guess, it is not. You might have
+guessed this because the game is not symmetric, so it would be odd if
+the equilibrium solution to the game is symmetric. But let's prove that
+it isn't an equilibrium. Assume that Death plays
+\(\langle \nicefrac{1}{2}, \nicefrac{1}{2} \rangle\). Then Man's
+expected return from staying in Damascus is:
+
+\[
+\nicefrac{1}{2} \times -1 + \nicefrac{1}{2} \times 1 = 0
+\]
+
+while his return from going to Aleppo is
+
+\[
+\nicefrac{1}{2} \times 0.5 + \nicefrac{1}{2} \times -1.5 = -0.5
+\]
+
+So if Death plays \(\langle \nicefrac{1}{2}, \nicefrac{1}{2} \rangle\),
+Man is better off staying in Damascus than going to Aleppo. And if he's
+better off staying in Damascus that going to Aleppo, he's also better
+off staying in Damascus than playing some mixed strategy that gives some
+probability of going to Aleppo. In fact, the strategy
+\(\langle x, y \rangle\) will have expected return \(\nicefrac{-y}{2}\),
+which is clearly worse than 0 when \(y > 0\).
+
+There's a general point here. The expected return of a mixed strategy is
+the weighted average of the returns of the pure strategies that make up
+the mixed strategy. In this example, for instance, if the expected value
+of staying in Damascus is \(d\), and the expected value of going to
+Aleppo is \(a\), the mixed strategy \(\langle x, y \rangle\) will have
+expected value \(xd + ya\). And since \(x + y = 1\), the value of that
+will be strictly between \(a\) and \(d\) if \(a \neq d\). On the other
+hand, if \(a = d\), then \(x + y = 1\) entails that \(xd + ya = a = d\).
+So if \(a = d\), then any mixed strategy will be just as good as any
+other, or indeed as either of the pure strategies. That implies that
+mixed strategies are candidates to be equilibrium~points, since there is
+nothing to be gained by moving away from them.
+
+This leads to an immediate, though somewhat counterintuitive,
+conclusion. Let's say we want to find strategies
+\(\langle x_D, y_D \rangle\) for Death and \(\langle x_M, y_M \rangle\)
+for Man that are in equilibrium. If the strategies are in equilibrium,
+then neither party can gain by moving away from them. And we just showed
+that that means that the expected return of Damascus must equal the
+expected return of Aleppo. So to find \(\langle x_D, y_D \rangle\), we
+need to find values for \(x_D\) and \(y_D\) such that, given Man's
+values, staying in Damascus and leaving for Aleppo are equally valued.
+Note, and this is the slightly counterintuitive part, we don't need to
+look at \textit{Death's} values. All that matters is that Death's
+strategy and Man's values together entail that the two options open to
+Man are equally valuable.
+
+Given that Death is playing \(\langle x_D, y_D \rangle\), we can work
+out the expected utility of Man's options fairly easily. (We'll
+occasionally appeal to the fact that \(x_D + y_D = 1\).)
+
+\begin{align*}
+U(\text{Damascus}) &= x_D \times -1 + y_D \times 1 \\
+&= y_D - x_D \\
+&= 1 - 2x_D \\
+U(\text{Aleppo}) &= x_D \times 0.5 + y_D \times -1.5 \\
+&= 0.5x_D - 1.5(1 - x_D) \\
+&= 2x_D - 1.5 
+\end{align*}
+
+So there is equilibrium when \(1 - 2x_D = 2x_D - 1.5\), i.e., when
+\(x_D = \nicefrac{5}{8}\). So any mixed strategy equilibrium~will have
+to have Death playing
+\(\langle \nicefrac{5}{8}, \nicefrac{3}{8} \rangle\).
+
+Now let's do the same calculation for Man's strategy. Given that Man is
+playing \(\langle x_D, y_D \rangle\), we can work out the expected
+utility of Death's options. (Again, we'll occasionally appeal to the
+fact that \(x_M + y_M = 1\).)
+
+\begin{align*}
+U(\text{Damascus}) &= x_M \times 1 + y_M \times -1 \\
+&= x_M - y_M \\
+&= 2x_M - 1 \\
+U(\text{Aleppo}) &= x_M \times -1 + y_M \times 1 \\
+&= y_M - x_M \\
+&= 1 - 2x_M 
+\end{align*}
+
+So there is equilibrium when \(2x_M - 1 = 1 - 2x_M\), i.e., when
+\(x_M = \nicefrac{1}{2}\). So any mixed strategy equilibrium will have
+to have Man playing
+\(\langle \nicefrac{1}{2}, \nicefrac{1}{2} \rangle\). Indeed, we can
+work out that if Death plays
+\(\langle \nicefrac{5}{8}, \nicefrac{3}{8} \rangle\), and Man plays
+\(\langle \nicefrac{1}{2}, \nicefrac{1}{2} \rangle\), then any strategy
+for Death will have expected return 0, and any strategy for Man will
+have expected return of \(\nicefrac{-1}{4}\). So this pair is an
+equilibrium.
+
+But note something very odd about what we just concluded. When we
+chang-ed the payoffs for the two cities, we made it worse for Man, not
+Death, to go to Aleppo. I would have guessed that should make Man more
+likely to stay in Damascus. But it turns out this isn't right, at least
+if the players play equilibrium strategies. The change to Man's payoffs
+doesn't change Man's strategy at all; he still plays
+\(\langle \nicefrac{1}{2}, \nicefrac{1}{2} \rangle\). What it does is
+change Death's strategy from
+\(\langle \nicefrac{1}{2}, \nicefrac{1}{2} \rangle\) to
+\(\langle \nicefrac{5}{8}, \nicefrac{3}{8} \rangle\).
+
+Let's generalise this to a general recipe for finding equilibrium
+strategies in two player games with conflicting incentives. Assume we
+have the following very abstract form of a game:
+
+\begin{longtable}[]{@{}lcc@{}}
+\toprule
+& \(l\) & \(r\)\tabularnewline
+\midrule
+\endhead
+\(U\) & \(a_1, a_2\) & \(b_1, b_2\)\tabularnewline
+\(D\) & \(c_1, c_2\) & \(d_1, d_2\)\tabularnewline
+\bottomrule
+\end{longtable}
+
+As usual, \(R\)ow chooses between \(U\)p and \(D\)own, while \(C\)olumn
+chooses between \(l\)eft and \(r\)ight. We will assume that \(R\)
+prefers the outcome to be on the north-west-southeast diagonal; that is,
+\(a_1 > c_1\), and \(d_1 > b_1\). And we'll assume that \(C\) prefers
+the other diagonal; that is, \(c_2 > a_2\), and \(b_2 > d_2\). We then
+have to find a pair of mixed strategies \(\langle x_U, x_D \rangle\) and
+\(\langle x_l, x_r \rangle\) that are in equilibrium. (We'll use \(x_A\)
+for the probability of playing \(A\).)
+
+What's crucial is that for each player, the expected value of each
+option is equal given what the other person plays. Let's compute them
+the expected value of playing \(U\) and \(D\), given that \(C\) is
+playing \(\langle x_l, x_r \rangle\).
+
+\begin{align*}
+U(U) &= x_la_1 + x_rb_1 \\
+U(D) &= x_lc_1 + x_rd_1
+\end{align*}
+
+We get equilibrium~when these two values are equal, and
+\(x_l + x_r = 1\). So we can solve for \(x_l\) the following way:
+
+\begin{minipage}[t]{0.5\textwidth}
+\begin{align*}
+&x_la_1 +x_rb_1 = x_lc_1 + x_rd_1 \\
+\Leftrightarrow \hspace{6pt} &x_la_1 -x_lc_1 = x_rd_1 - x_rb_1 \\
+\Leftrightarrow \hspace{6pt} &x_l(a_1 - c_1) = x_r(d_1 - b_1) \\
+\Leftrightarrow \hspace{6pt} &x_l\frac{a_1 - c_1}{d_1 - b_1} = x_r \\
+\Leftrightarrow \hspace{6pt} &x_l\frac{a_1 - c_1}{d_1 - b_1} = 1 - x_l \\
+\Leftrightarrow \hspace{6pt} &x_l\frac{a_1 - c_1}{d_1 - b_1} + x_l= 1 \\
+\Leftrightarrow \hspace{6pt} &x_l(\frac{a_1 - c_1}{d_1 - b_1} + 1)= 1 \\
+\Leftrightarrow \hspace{6pt} &x_l= \frac{1}{\frac{a_1 - c_1}{d_1 - b_1} + 1} \\
+\end{align*}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+\bigskip
+I won't go through all the same steps, but a similar argument shows that
+
+$$
+x_U = \frac{1}{\frac{b_2 - a_2}{c_2 - d_2}+1}
+$$
+
+I'll leave it as an exercise to confirm these answers are correct by working out the expected return of $U, D, l$ and $r$ if these strategies are played.
+\bigskip
+The crucial take-away lesson from this discussion is that to find a mixed strategy equilibrium, we look at the interaction between one player's mixture and the other player's payoffs. The idea is to set the probability for each move in such a way that even if the other player knew this, they wouldn't be able to improve their position, since any move would be just as good for them as any other.
+\end{minipage}
+
+
+\end{document}

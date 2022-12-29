@@ -1,0 +1,361 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 7.2 - Two Puzzles about Bayesian Equilibrium},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+\usepackage{istgame}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 7.2 - Two Puzzles about Bayesian Equilibrium}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{First Puzzle}
+\protect\hypertarget{first-puzzle}{}
+\begin{center}
+\begin{istgame}
+%\setistgrowdirection'{east}
+\xtdistance{15mm}{30mm}
+\istroot(0){Alice}
+  \istb{A}[al]{(2,2)}
+  \istb{B}[r]
+  \istb{C}[ar]
+  \endist
+\xtdistance{10mm}{20mm}
+\istroot(1)(0-2)
+  \istb{l}[al]{(4,4)}
+  \istb{r}[ar]{(1,0)}
+  \endist
+\istroot(2)(0-3)
+  \istb{l}[al]{(3,0)}
+  \istb{r}[ar]{(0,4)}
+  \endist
+\xtInfoset(1)(2){Billie}
+\end{istgame}
+\end{center}
+
+\begin{itemize}
+\tightlist
+\item
+  I don't really know what to do here.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Strategy Table}
+\protect\hypertarget{strategy-table}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & l & r\\
+\midrule
+A & 2, 2 & 2, 2\\
+B & 4, 4 & 1, 0\\
+C & 3, 0 & 0, 4\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Note that \(\langle A, r \rangle\) is a Nash equilibrium, and B
+dominates C.
+\end{frame}
+
+\begin{frame}{Bayesian Equilibrium}
+\protect\hypertarget{bayesian-equilibrium}{}
+The following is even a Bayesian Equilibrium
+
+\begin{itemize}
+\tightlist
+\item
+  Alice plays A.
+\item
+  Billie believes with probability 1 that Alice will play A.
+\item
+  If Billie finds herself at the B/C set, she will believe that Alice
+  played C.
+\item
+  So she will do what's best for her given this belief, i.e., play r.
+\item
+  Alice knows this.
+\end{itemize}
+
+Alice plays A and gets 2, and she believes she would get 1 if she played
+B and 0 if she played C. So she's doing the thing that's best by her
+lights.
+\end{frame}
+
+\begin{frame}{Wait a Minute!}
+\protect\hypertarget{wait-a-minute}{}
+\begin{itemize}
+\tightlist
+\item
+  Billie is disposed to believe that if Alice does something weird (play
+  B or C), she will do something really weird (play a dominated
+  strategy).
+\item
+  Is this an OK thing for Billie to believe?
+\item
+  It seems a bit weird.
+\item
+  Maybe if Alice has not given Billie conclusive evidence that she will
+  do something bizarre - i.e., play a dominated strategy - it's wrong to
+  believe that she's done something bizarre.
+\item
+  So if we get to B/C, Billie should believe we're at B, so should play
+  l, and knowing that, Alice should play B.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Which is right?}
+\protect\hypertarget{which-is-right}{}
+\begin{itemize}
+\tightlist
+\item
+  I don't really know.
+\item
+  Here we're already into contested territory.
+\item
+  Let's take one further step into contested territory.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Second Puzzle}
+\protect\hypertarget{second-puzzle}{}
+\begin{center}
+\begin{istgame}
+%\setistgrowdirection'{east}
+\xtdistance{15mm}{30mm}
+\istroot(0){Alice}
+  \istb{A}[al]{(3,3)}
+  \istb{B}[r]
+  \istb{C}[ar]
+  \endist
+\xtdistance{10mm}{20mm}
+\istroot(1)(0-2)
+  \istb{l}[al]{(4,4)}
+  \istb{r}[ar]{(0,0)}
+  \endist
+\istroot(2)(0-3)
+  \istb{l}[al]{(2,0)}
+  \istb{r}[ar]{(1,4)}
+  \endist
+\xtInfoset(1)(2){Billie}
+\end{istgame}
+\end{center}
+
+\begin{itemize}
+\tightlist
+\item
+  I really don't know what to do here.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Why is it Puzzling}
+\protect\hypertarget{why-is-it-puzzling}{}
+\begin{itemize}
+\tightlist
+\item
+  \(\langle A, r \rangle\) is a Bayesian (and Nash and subgame perfect)
+  equilibrium.
+\item
+  But maybe Alice should choose B. \pause
+\item
+  Note that A dominates C.
+\item
+  So if Billie knows that Alice doesn't choose dominated options, and
+  this survives learning that Alice has chosen B or C, then Billie will
+  know that Alice has chosen B.
+\item
+  And then Billie will choose l, so Alice should choose B.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Two Big Questions}
+\protect\hypertarget{two-big-questions}{}
+\begin{enumerate}
+\tightlist
+\item
+  Are there philosophical grounds to change our theory of equilibrium
+  selection to make Alice choose B in both of these games?
+\item
+  If we want to do that, what's the best mathematical theory that
+  generates the intended result?
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  Both of these are hard questions, but not one's I'm going to address
+  in this course.
+\item
+  We have to stop somewhere, and there are always more questions like
+  this to ask and answer.
+\item
+  Instead I'm going to a special class of games: signaling games.
+\end{itemize}
+\end{frame}
+
+\end{document}

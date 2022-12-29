@@ -1,0 +1,102 @@
+---
+title: "444 Lecture 1.1 - Course Overview"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("gameformat.R")
+```
+
+## Plan
+
+- To introduce the outlines of the course.
+
+## Associated Reading
+
+Read the syllabus!
+
+## Three Parts
+
+1. Game Theory
+2. Origins of Unfairness
+3. Group attitudes
+
+---
+
+![Giacomo Bonanno, Game Theory](images/bonanno_cover.png){height=65% width=65%}
+
+## Aims
+
+- Familiarity with the basic math of game theory.
+- Introduce some famous examples of simple game theoretic models that get used throughout academic work.
+- Look at some attempted explanation of real world phenomena using game theoretic tools, and go over the strengths and weaknesses of these explanations.
+
+---
+
+![Cailin O'Connor, The Origins of Unfairness](images/oconnor_visual.jpg){height=65% width=65%}
+
+## Aims
+
+- Look at game theoretic models of the origin of unequal gender distributions.
+- Ask whether these models are plausible in light of the facts about how this kind of inequality manifests in the real world.
+- And in particular, look at the different kinds of gender inequality in different parts of life (in particular in workforces vs in households) and look at whether the models are as plausible in each case.
+
+---
+
+![PhilPapers](images/phil_papers.png){height=65% width=65%}
+
+## Aims
+
+- Ask whether groups can have attitudes like beliefs, desires, goals, intentions, plans and so on.
+- Along the way, ask what it means to answer this question positively or negatively.
+- And, if we have the time, ask what a positive answer would mean for our theories of knowledge, responsibility, and so on.
+
+## Schedule
+
+- Seven weeks on game theory 
+- Three weeks on unfairness
+- Three weeks on group attitudes
+
+## Schedule Quirk
+
+- I'm away on January 27, and working around this led to some complications with the schedule.
+- You'll see things described as 'units' not weeks for a little bit on the syllabus, because sometimes the material on a Thursday goes best with the following Tuesday.
+- And for a couple of weeks, the assignments are a little 'behind' the lectures.
+- But we catch up around February 15.
+
+## Schedule Luck
+
+- The Spring Break falls precisely at the right time for this course; just as we switch from the more mathematical part to the more discursive part.
+- I'd like to claim this was great course design, but it was actually a bit of luck.
+
+## Assessment
+
+> - Do six small assignments on game theory (the best five will count).
+> - Write an 8-10 page paper (about 2000 words) on a question from the latter two topics
+> - Each of these will be half of the grade.
+
+## Week by Week
+
+> - These lectures are recorded ahead of time.
+> - For the game theory part of the course, they will be the primary part of what we do.
+> - I'll be there for 'lectures', but they will just be q&a, and maybe some worked examples. I'm not planning to go 80 minutes each day, though I'll stay as long as people have questions.
+> - Once we get to Part II, I'll still record lecture videos like this ahead of time, but they won't go into as much detail.
+> - There will be discussion sections each week, and they are really important.
+
+## For Next Time
+
+- We will start on Bonanno, starting with section 2.1.
+- You should also read 2.2 for next Tuesday's class.
+- There is no assignment this week, but there will be assignments most of the following weeks.

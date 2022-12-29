@@ -1,0 +1,221 @@
+\input{../styles/handout-leader}
+\usepackage{bm}
+\usepackage{nicefrac}
+\def\mytitle{Mixed Strategies}
+\def\myauthor{Brian Weatherson}
+\def\mydate{February 6, 2018}
+\input{../styles/handout-begin}
+
+\newcommand{\starttab}{\begin{center}
+\vspace{6pt}
+\begin{tabular}}
+
+\newcommand{\stoptab}{\end{tabular}
+\vspace{6pt}
+\end{center}
+\noindent}
+
+\newcommand{\tol}[1]{$\langle #1 \rangle$}
+
+\section{Sure Thing Principle}
+The principle that you should maximise expected utility is equivalent to the conjunction of a number of other principles. The most controversial of these (though not the only controversial one) is the Sure Thing Principle.
+
+\begin{description}
+\item[Sure Thing Principle] If $AE \succeq BE$ and $A \neg E \succeq B \neg E$, then $A \succeq B$.
+\end{description}
+The terminology there could use some spelling out. By $A \succ B$ I mean that $A$ is preferred to $B$. By $A \succeq B$ I mean that $A$ is regarded as at least as good as $B$. The relation between $\succ$ and $\succeq$ is like the relation between $>$ and $\geq$. In each case the line at the bottom means that we're allowing equality between the values on either side.
+
+The odd thing here is using $AE \succeq BE$ rather than something that's explicitly conditional. Read the terms on each side of the inequality sign as \textit{conjunctions}. It means that $A$ \textit{and} $E$ is regarded as at least as good an outcome as $B$ and $E$. But that sounds like something that's true just in case the agent prefers $A$ to $B$ conditional on $E$ obtaining. So we can use preferences over conjunctions like $AE$ as proxy for conditional preferences.
+
+So we can read the Sure Thing Principle as saying that if $A$ is at least as good as $B$ conditional on $E$, and conditional on $\neg E$, then it really is at least as good as $B$. Again, this looks fairly plausible in the abstract, though we'll soon see some reasons to worry about it.
+
+\section{Allais Paradox}
+The Sure Thing Principle is controversial because there seem to be cases where it gives the wrong answer. The most famous of these is the Allais paradox, first discovered by the French economist (and Nobel Laureate) Maurice Allais. In this paradox, the subject is first offered the following choice between $A$ and $B$. The results of their choice will depend on the drawing of a coloured ball from an urn. The urn contains 10 white balls, 1 yellow ball, and 89 black balls, and assume the balls are all randomly distributed so the probability of drawing each is identical.
+
+\starttab{c c c c}
+ & \textbf{White} & \textbf{Yellow} & \textbf{Black} \\ 
+$\bm{A}$ & \$1,000,000 & \$1,000,000 & \$0 \\
+$\bm{B}$ & \$5,000,000 & \$0 & \$0
+\stoptab That is, they are offered a choice between an 11\% shot at \$1,000,000, and a 10\% shot at \$5,000,000. Second, the subjects are offered the following choice between $C$ and $D$, which are dependent on drawings from a similarly constructed urn.
+\starttab{c c c c}
+ & \textbf{White} & \textbf{Yellow} & \textbf{Black} \\ 
+$\bm{C}$ & \$1,000,000 & \$1,000,000 & \$1,000,000 \\
+$\bm{D}$ & \$5,000,000 & \$0 & \$1,000,000
+\stoptab That is, they are offered a choice between \$1,000,000 for sure, and a complex bet that gives them a 10\% shot at \$5,000,000, an 89\% shot at \$1,000,000, and a 1\% chance of striking out and getting nothing.
+
+Now if we were trying to maximise expected \textit{dollars}, then we'd have to choose both $B$ and $D$. But of course we don't just try to maximise expected dollars, we try to maximise expected utility. And unless we say what the utility of the prizes is, we can's say what choice to make. But we can say that you can't consistently hold the following three views.
+
+\begin{itemize}
+\item $B \succ A$
+\item $C \succ D$
+\item The Sure Thing Principle holds
+\end{itemize}
+This is relevant because a lot of people think $B \succ A$ and $C \succ D$. Let's work through the proof of this to finish with.
+
+Let $E$ be that either a white or yellow ball is drawn. So $\neg E$ is that a black ball is drawn. Now note that $A \neg E$ is identical to $B \neg E$. In either case you get nothing. So $A \neg E \succeq B \neg E$. So if $AE \succeq BE$ then, by Sure Thing, $A \succeq B$. Equivalently, if $B \succ A$, then $BE \succ AE$. Since we've assumed $B \succ A$, then $BE \succ AE$.
+
+Also note that $C \neg E$ is identical to $D \neg E$. In either case you get a million dollars. So $D \neg E \succeq C \neg E$. So if $DE \succeq CE$ then, by Sure Thing, $D \succeq C$. Equivalently, if $C \succ D$, then $CE \succ DE$. Since we've assumed $C \succ D$, then $CE \succ DE$.
+
+But now we have a problem, since $BE = DE$, and $AE = CE$. Given $E$, then choice between $A$ and $B$ just is the choice between $C$ and $D$. So holding simultaneously that $BE \succ AE$ and $CE \succ DE$ is incoherent.
+
+In utility terms, let the utility of getting \$1,000,000 be $x$ and the utility of getting \$5,000,000 be $y$. Then the following lines are all equivalent.
+
+\begin{align*}
+U(B) &> U(A) \\
+0.1y &> 0.11x \\
+0.89x + 0.1y &> 0.89x + 0.11x \\
+0.89x + 0.1y &> x \\
+U(D) &> (C)
+\end{align*}
+So $D$ has a higher utility than $C$ if and only if $B$ has a higher utility than $A$. Allais thought this was wrong, and he thought this showed that it was wrong to understand risk aversion just in terms of declining marginal utility. Risk aversion is why you might prefer $C$ to $D$, but that doesn't affect (so much) the $A, B$ choice.
+
+\section{The Gift Paradox}
+Similarly, utility theory doesn't look like it can explain the following puzzle. A parent has a gift that they can either give to their son or their daughter. The gift for whatever reason can't be divided. They have the following preference ordering.
+
+\begin{itemize}
+\item Flip a coin to decide who to give the gift to.
+\item Give the gift to their daughter.
+\item Give the gift to their son.
+\end{itemize}
+If the utility of giving the gift to their daughter is $d$, and of giving it to their son is $s$, then the utility of flipping a coin to decide who to give it to is $\frac{d + s}{2}$. But if they prefer giving it to their daughter to giving it to their son, then $d > s$. But if $d > s$, then $d > \frac{d + s}{2}$, contradicting the first preference. 
+
+There is a common reply to this on behalf of utility theorists. We aren't dividing the options up finely enough. The lottery is not a choice between giving the gift to daughter or son, it is a lottery between giving the gift to daughter \textit{as the result of a fair lottery} and giving the gift to son \textit{as a result of a fair lottery}. And those might have utilities $d_1$ and $s_1$, which are greater than $d$ and $s$.
+
+\section{Best Responses}
+
+We have done as much as we can for now by merely thinking about ordinal utility. We now need to look at games where cardinal utility matters. And we assume at every stage that agents are trying to maximise expected utility. But that requires a probability function, and where do the probabilities come from. We will start with the notion of a \textbf{best response}, which I'll define then illustrate.
+
+\begin{description}
+\item[Best Response] A strategy $s_i$ is a best response for player $i$ iff there is some probability distribution $\Pr$ over the possible strategies of other players such that playing $s_i$ maximises $i$'s \textit{expected} payoff, given $\Pr$. (Note that we're using `maximise' in such a way that it allows that other strategies do just as well; it just rules out other strategies doing better.)
+\end{description}
+
+\starttab{r c c }
+%This is called DomScope
+%It is an illustration of the scope ambiguity in the definition of domination
+ & $l$ & $r$ \\
+$U$ & 3, 0 & 0, 0 \\
+$M$ & 2, 0 & 2, 0 \\
+$D$ & 0, 0 & 3, 0 \\
+\stoptab We will just look at things from the perspective of $R$, the player who chooses the row. What we want to show is that \textit{all three} of the possible moves here are best responses.
+
+It is clear that $U$ is a best response. Set $\Pr(l) = 1, \Pr(r) = 0$. Then $E(U) = 3, E(M) = 2, E(D) = 0$. It is also clear that $D$ is a best response. Set $\Pr(l) = 0, \Pr(r) = 1$. Then $E(U) = 0, E(M) = 2, E(D) = 3$.
+
+The striking thing is that $M$ can also be a best response. Set $\Pr(l) = \Pr(r) = \nicefrac{1}{2}$. Then $E(U) = E(D) = \nicefrac{3}{2}$. But $E(M) = 2$, which is greater than $\nicefrac{3}{2}$. So if $R$ thinks it is equally likely that $C$ will play either $l$ or $r$, then $R$ maximises expected utility by playing $M$. Of course, she doesn't maximise actual utility. Maximising actual utility requires making a gamble on which choice $C$ will make. That isn't always wise; it might be best to take the safe option.
+
+But note that if we change the game just a little, changing the cardinal utilities but not the ordinal utilities, the analysis of the game changes.
+
+\starttab{r c c }
+%This is called DomScope
+%It is an illustration of the scope ambiguity in the definition of domination
+ & $l$ & $r$ \\
+$U$ & 3, 0 & 0, 0 \\
+$M$ & 1, 0 & 1, 0 \\
+$D$ & 0, 0 & 3, 0 \\
+\stoptab Now $M$ cannot be a best response. No matter what $\Pr(l)$ is, it won't maximise expected utility to play $M$. Indeed, there is a good sense in which $M$ is a dominated option. Even though no option is guaranteed to do better than it, you can't come up with a good reason to play it. And by reason here, we mean probability distribution over what the other person will do. No matter what strategy Column plays, \textit{pure or mixed}, it isn't best to play $M$.
+
+Now I won't say much today about what it \textit{means} to play a mixed strategy. That's for Thursday. For now, I'll just assume that players can, instead of choosing a strategy, choose to assign a probability to each possible strategy. And if they do that, strategies for the other players have expected returns, rather than guaranteed returns.
+
+\section{Nash Equilibrium}
+We previously defined a Nash Equilibrium as a set of moves that no player can improve their position on by unilaterally defecting from the equilibrium. We can equivalently define it the following way.
+
+\begin{itemize}
+\item A Nash Equilibrium is a set of strategies such that every move is a best response \textit{to the strategies the other players actually play}.
+\end{itemize}
+And remember that a strategy might now be a probability over options. You might think that many games do not have a Nash Equilibrium, but in fact all (finite) games do. (You can ask Josh to prove that in class.) Here is one that you might think does not, a game you may be familiar with.
+\starttab{r c c c}
+%This is called RockPaperScissors
+%It is Rock, Paper, Scissors!
+ & Rock & Paper & Scissors \\
+Rock & 0, 0 & -1, 1 & 1, -1 \\
+Paper & 1, -1 & 0, 0 & -1, 1 \\
+Scissors & -1, 1 & 1, -1 & 0, 0 \\
+\stoptab For each player, the equilibrium strategy is to play each option with probability $\frac{1}{3}$. (Exercise: Prove this is an equilibrium.)
+
+\section{Finding Mixed Strategy Equilibria}
+
+Consider this asymmetric version of Death in Damascus.
+
+\starttab{r c c}
+%This is called AsymmetricDeathinDamascus
+%It is Matching Pennies with Asymmetries
+ & Damascus & Aleppo \\
+Damascus & 1, -1 & -1, 0.5 \\
+Aleppo & -1, 1 & 1, -1.5 \\
+\stoptab I've set up the game with Death is the Row player, and the Man is the Column player. Death wants to catch Man, Man wants to avoid Death. But we've added a 0.5 penalty for Man choosing Aleppo. It's an unpleasant journey from Damascus to Aleppo, particularly if you fear Death is at the other end.
+
+There is still no pure strategy equilibrium in this game. Whatever Death plays, Man would prefer to play the other. And whatever Man plays, Death wants to play it. So there couldn't be a set of pure choices that they would both be happy with given that they know the other's play.
+
+But the mixed strategy equilibrium that we looked at for Matching Pennies isn't an equilibrium either. We'll write \tol{x, y} for the mixed strategy of going to Damascus with probability $x$, and going to Aleppo with probability $y$. Clearly we should have $x + y = 1$, but it will make the representation easier to use two variables here, rather than just writing \tol{x, 1-x} for the mixed strategies.
+
+Given that representation, we can ask whether the state where each player plays \tol{\nicefrac{1}{2}, \nicefrac{1}{2}} is a Nash equilibrium. And, as you might guess, it is not. You might have guessed this because the game is not symmetric, so it would be odd if the equilibrium solution to the game is symmetric. But let's prove that it isn't an equilibrium. Assume that Death plays \tol{\nicefrac{1}{2}, \nicefrac{1}{2}}. Then Man's expected return from staying in Damascus is:
+\begin{equation*}
+\nicefrac{1}{2} \times -1 + \nicefrac{1}{2} \times 1 = 0
+\end{equation*}
+\noindent while his return from going to Aleppo is 
+\begin{equation*}
+\nicefrac{1}{2} \times 0.5 + \nicefrac{1}{2} \times -1.5 = -0.5
+\end{equation*}
+\noindent So if Death plays \tol{\nicefrac{1}{2}, \nicefrac{1}{2}}, Man is better off staying in Damascus than going to Aleppo. And if he's better off staying in Damascus that going to Aleppo, he's also better off staying in Damascus than playing some mixed strategy that gives some probability of going to Aleppo. In fact, the strategy \tol{x, y} will have expected return $\nicefrac{-y}{2}$, which is clearly worse than 0 when $y > 0$.
+
+There's a general point here. The expected return of a mixed strategy is the weighted average of the returns of the pure strategies that make up the mixed strategy. In this example, for instance, if the expected value of staying in Damascus is $d$, and the expected value of going to Aleppo is $a$, the mixed strategy \tol{x, y} will have expected value $xd + ya$. And since $x + y = 1$, the value of that will be strictly between $a$ and $d$ if $a \neq d$. On the other hand, if $a = d$, then $x + y = 1$ entails that $xd + ya = a = d$. So if $a = d$, then any mixed strategy will be just as good as any other, or indeed as either of the pure strategies. That implies that mixed strategies are candidates to be equilibrium\ points, since there is nothing to be gained by moving away from them.
+
+This leads to an immediate, though somewhat counterintuitive, conclusion. Let's say we want to find strategies \tol{x_D, y_D} for Death and \tol{x_M, y_M} for Man that are in equilibrium. If the strategies are in equilibrium, then neither party can gain by moving away from them. And we just showed that that means that the expected return of Damascus must equal the expected return of Aleppo. So to find \tol{x_D, y_D}, we need to find values for $x_D$ and $y_D$ such that, given Man's values, staying in Damascus and leaving for Aleppo are equally valued. Note, and this is the slightly counterintuitive part, we don't need to look at \textit{Death's} values. All that matters is that Death's strategy and Man's values together entail that the two options open to Man are equally valuable.
+
+Given that Death is playing \tol{x_D, y_D}, we can work out the expected utility of Man's options fairly easily. (We'll occasionally appeal to the fact that $x_D + y_D = 1$.)
+\begin{align*}
+U(\text{Damascus}) &= x_D \times -1 + y_D \times 1 \\
+&= y_D - x_D \\
+&= 1 - 2x_D \\
+U(\text{Aleppo}) &= x_D \times 0.5 + y_D \times -1.5 \\
+&= 0.5x_D - 1.5(1 - x_D) \\
+&= 2x_D - 1.5 
+\end{align*}
+\noindent So there is equilibrium\ when $1 - 2x_D = 2x_D - 1.5$, i.e., when $x_D = \nicefrac{5}{8}$. So any mixed strategy equilibrium\ will have to have Death playing \tol{\nicefrac{5}{8}, \nicefrac{3}{8}}.
+
+Now let's do the same calculation for Man's strategy. Given that Man is playing \tol{x_D, y_D}, we can work out the expected utility of Death's options. (Again, we'll occasionally appeal to the fact that $x_M + y_M = 1$.)
+\begin{align*}
+U(\text{Damascus}) &= x_M \times 1 + y_M \times -1 \\
+&= x_M - y_M \\
+&= 2x_M - 1 \\
+U(\text{Aleppo}) &= x_M \times -1 + y_M \times 1 \\
+&= y_M - x_M \\
+&= 1 - 2x_M 
+\end{align*}
+\noindent So there is equilibrium when $2x_M - 1 = 1 - 2x_M$, i.e., when $x_M = \nicefrac{1}{2}$. So any mixed strategy equilibrium will have to have Man playing \tol{\nicefrac{1}{2}, \nicefrac{1}{2}}. Indeed, we can work out that if Death plays \tol{\nicefrac{5}{8}, \nicefrac{3}{8}}, and Man plays \tol{\nicefrac{1}{2}, \nicefrac{1}{2}}, then any strategy for Death will have expected return 0, and any strategy for Man will have expected return of $\nicefrac{-1}{4}$. So this pair is an equilibrium.
+
+But note something very odd about what we just concluded. When we chang\-ed the payoffs for the two cities, we made it worse for \textit{Man} to go to Aleppo. I would have guessed that should make Man more likely to stay in Damascus. But it turns out this isn't right, at least if the players play equilibrium strategies. The change to Man's payoffs doesn't change Man's strategy at all; he still plays \tol{\nicefrac{1}{2}, \nicefrac{1}{2}}. What it does is change Death's strategy from \tol{\nicefrac{1}{2}, \nicefrac{1}{2}} to \tol{\nicefrac{5}{8}, \nicefrac{3}{8}}.
+
+Let's generalise this to a general recipe for finding equilibrium strategies in two player games with conflicting incentives. Assume we have the following very abstract form of a game:
+
+\starttab{r c c}
+%This is called General2PP
+%It is illustrating a general pattern of how to discover mixed equilibria
+ & $l$ & $r$ \\
+$U$ & $a_1, a_2$ & $b_1, b_2$ \\
+$D$ & $c_1, c_2$ & $d_1, d_2$ \\
+\stoptab As usual, $R$ow chooses between $U$p and $D$own, while $C$olumn chooses between $l$eft and $r$ight. We will assume that $R$ prefers the outcome to be on the north\-west-southeast diagonal; that is, $a_1 > c_1$, and $d_1 > b_1$. And we'll assume that $C$ prefers the other diagonal; that is, $c_2 > a_2$, and $b_2 > d_2$. We then have to find a pair of mixed strategies \tol{x_U, x_D} and \tol{x_l, x_r} that are in equilibrium. (We'll use $x_A$ for the probability of playing $A$.)
+
+What's crucial is that for each player, the expected value of each option is equal given what the other person plays. Let's compute them the expected value of playing $U$ and $D$, given that $C$ is playing \tol{x_l, x_r}.
+\begin{align*}
+U(U) &= x_la_1 + x_rb_1 \\
+U(D) &= x_lc_1 + x_rd_1
+\end{align*} We get equilibrium\ when these two values are equal, and $x_l + x_r = 1$. So we can solve for $x_l$ the following way:
+\begin{align*}
+&x_la_1 +x_rb_1 = x_lc_1 + x_rd_1 \\
+\Leftrightarrow \hspace{6pt} &x_la_1 -x_lc_1 = x_rd_1 - x_rb_1 \\
+\Leftrightarrow \hspace{6pt} &x_l(a_1 - c_1) = x_r(d_1 - b_1) \\
+\Leftrightarrow \hspace{6pt} &x_l\frac{a_1 - c_1}{d_1 - b_1} = x_r \\
+\Leftrightarrow \hspace{6pt} &x_l\frac{a_1 - c_1}{d_1 - b_1} = 1 - x_l \\
+\Leftrightarrow \hspace{6pt} &x_l\frac{a_1 - c_1}{d_1 - b_1} + x_l= 1 \\
+\Leftrightarrow \hspace{6pt} &x_l(\frac{a_1 - c_1}{d_1 - b_1} + 1)= 1 \\
+\Leftrightarrow \hspace{6pt} &x_l= \frac{1}{\frac{a_1 - c_1}{d_1 - b_1} + 1} \\
+\end{align*}
+I won't go through all the same steps, but a similar argument shows that
+\begin{equation*}
+x_U = \frac{1}{\frac{b_2 - a_2}{c_2 - d_2}+1}
+\end{equation*}
+I'll leave it as an exercise to confirm these answers are correct by working out the expected return of $U, D, l$ and $r$ if these strategies are played.
+
+The crucial take-away lesson from this discussion is that to find a mixed strategy equilibrium, we look at the interaction between one player's mixture and the other player's payoffs. The idea is to set the probability for each move in such a way that even if the other player knew this, they wouldn't be able to improve their position, since any move would be just as good for them as any other.
+
+\end{document}

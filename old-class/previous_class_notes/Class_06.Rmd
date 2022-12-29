@@ -1,0 +1,92 @@
+---
+title: "Probability"
+output:
+  pdf_document:
+    toc: false
+    md_extensions: +startnum
+    df_print: kable
+    keep_tex: yes
+    latex_engine: xelatex
+    extra_dependencies: ["gensymb", "nicefrac", "caption", "istgame", "mathastext"]
+    fig_caption: no
+fontsize: 11pt
+mainfont: SF Pro Text Light
+geometry: margin=0.5in
+author: Philosophy 444
+date: 23 September, 2019
+---
+
+## Basic Facts About Probability
+
+- $0 \leq \Pr(X) \leq 1$
+- If $X$ is a logical truth, then $\Pr(X) = 1$. If $X$ is a logical falsehood, then $\Pr(X) = 0$. If $X$ and $Y$ are logically equivalent, then $\Pr(X) = \Pr(Y)$.
+- If $X$ and $Y$ couldn't both be true then $\Pr(X \vee Y) = \Pr(X) + \Pr(Y)$.
+
+In all these respects, probabilities behave like ratios, or proportions, and the mathematics of them is just like the mathematics of proportions. Several important things follow from these definitions; I'll just list two that we will use a lot.
+
+- $\Pr(\neg X) = 1 - \Pr(X)$.
+- $\Pr(X) + \Pr(Y) = \Pr(X \vee Y) + \Pr(X \wedge Y)$
+
+## Conditional Probability
+
+You should read $\Pr(X | Y)$ as "The probability of $X$ given that $Y$ is true''. In cases where $\Pr(Y) > 0$, the following formula holds.
+
+$$
+\Pr(X | Y) = \frac{\Pr(X \wedge Y)}{\Pr(Y)}
+$$
+
+For this course, and indeed most philosophical applications, we'll assume that probabilistic updating goes by conditionalisation. That means that when you learn $Y$, the new probability of $X$ is the old probability of $X$ given $Y$. In symbols
+
+$$
+\Pr_{new}(X) = \Pr_{old}(X | Y)
+$$
+
+For some purposes, the following formula is helpful, though note that it can be easily misused.
+
+$$
+\Pr_{new}(X) = \frac{\Pr_{old}(Y | X) \times \Pr_{old}(X)}{\Pr_{old}(Y)}
+$$
+
+When $X$ and $Y$ are probabilistically independent, then all of the following facts obtain.
+
+- $\Pr(X \wedge Y) = \Pr(X) \times \Pr(Y)$
+- $\Pr(X | Y) = \Pr(X)$
+- $\Pr(Y | X) = \Pr(Y)$
+
+But note this constraint to independent propositions. Lots of things are not independent.
+
+## Quick Math Question
+
+In a particular town, 70% of the people have football as their favourite sport, 15% have basketball as their favourite sport, 10% have baseball as their favourite sport, and 5% have soccer as their favourite sport. What is the probability that two people from the town, chosen at random, have the same favourite sport?
+
+## A Real World Problem
+
+This is a variant on what really happened, as reported in the book. But it's a useful variant to think about.
+
+> Two of X's children died in succession. Both of them died suddenly at around 6 months, and no cause of death could be established. X is brought up on charges of murder, with the prosecution reasoning as follows. The chances of one child dying of SIDS is 1 in 8500. So the chances of both dying of SIDS are 1 in 8500 squared, or about 1 in 73 million. So the chance X is innocent is about 1 in 73 million. That's beyond reasonable doubt; so X killed the children.
+
+There are (at least) two distinct mistakes in that reasoning. What are they?
+
+## Another Real World Problem
+
+Imagine that 3% of men have disease D. A man you know has no special reason to think he's vulnerable to D, it's not like all his male ancestors had D, but no special reason to think he's immune to it either. There is a test for whether one has disease D or not. Among people who have the disease, 90% test positive. But only 5% of those who do not have the disease test positive. This man just had the test, and it came back positive. What is the probability that he has disease D?
+
+## The Monty Hall Puzzle
+
+Suppose you are a game show contestant. You have a chance to win a large prize. You are asked to select one of three doors to open; the large prize is behind one of the three doors and the other two doors are losers. Once you select a door, the game show host, who knows what is behind each door, does the following. First, whether or not you selected the winning door, he opens one of the other two doors that he knows is a losing door (selecting at random if both are losing doors). Then he asks you whether you would like to switch doors. Which strategy should you use? Should you change doors or keep your original selection, or does it not matter?
+
+## Planes and Bullets
+
+This isn't a probability question, but it's related to the previous one. Back during World War II, the RAF lost a lot of planes to German anti-aircraft fire. So they decided to armor them up. But where to put the armor? The obvious answer was to look at planes that returned from missions, count up all the bullet holes in various places, and then put extra armor in the areas that attracted the most fire. Why is the obvious answer wrong?
+
+## Bonus Philosophy Question
+
+From now on, when some fact isn't known, we'll assume each player has a probability for that fact. It won't necessarily be the same probability for each person, but we'll assume that it exists. While this assumption is standard, some philosophers dispute it. To get a sense about why, discuss these questions.
+
+- What is the probability that there will be a nuclear war (i.e., a war in which nuclear missiles are fired at an enemy) this century?
+- What is the probability that there is intelligent life elsewhere in the universe?
+- What is the probability that I had bacon for breakfast this morning?
+
+## Bonus Math Question
+
+Assume that birthdays are evenly distributed over the population, and probabilistically independent. (Extra bonus question: Why is this assumption false?) What is the smallest number $n$ such that it if there are $n$ people in the room, is more probable than not that at least two of them share a birthday?

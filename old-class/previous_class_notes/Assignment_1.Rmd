@@ -1,0 +1,107 @@
+---
+title: "Assigment 1"
+output:
+  pdf_document:
+    toc: false
+    df_print: kable
+    keep_tex: yes
+    latex_engine: xelatex
+    extra_dependencies: ["gensymb", "nicefrac", "caption"]
+    fig_caption: no
+fontsize: 11pt
+mainfont: SF Pro Text Light
+mainfontoptions: "Scale=MatchLowercase"
+geometry: margin=1in
+author: Philosophy 444
+date: Due 13 September, 2019
+---
+
+\captionsetup[table]{labelformat=empty}
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+require(knitr)
+require(tidyverse)
+```
+
+
+# Games
+
+In each of these games, Row picks a row, and Column picks a column. Row’s payouts are listed first, and Column’s payouts are listed second.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+A <- c("1, -1", "2, -2")
+B <- c("4, -4", "3, -3")
+dataframe <- as.data.frame(rbind(A, B))
+row.names(dataframe) <- c("Up", "Down")
+names(dataframe) <- c("Left", "Right")
+kable(dataframe, row.names=TRUE, caption="Game One", align = "c")
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+A <- c("1, -1", "4, -4")
+B <- c("2, -2", "3, -3")
+dataframe <- as.data.frame(rbind(A, B))
+row.names(dataframe) <- c("Up", "Down")
+names(dataframe) <- c("Left", "Right")
+kable(dataframe, row.names=TRUE, caption="Game Two", align = "c") 
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+A <- c("5, -5", "3, -3", "1, -1")
+B <- c("6, -6", "2, -2", "1, -1")
+C <- c("1, -1", "0, 0", "0, 0")
+dataframe <- as.data.frame(rbind(A, B, C))
+row.names(dataframe) <- c("Up", "Straight", "Down")
+names(dataframe) <- c("Left", "Middle", "Right")
+kable(dataframe, row.names=TRUE, caption="Game Three", align = "c") 
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+A <- c("5, -5", "3, -3", "2, -2")
+B <- c("6, -6", "4, -4", "3, -3")
+C <- c("1, -1", "6, -6", "0, 0")
+dataframe <- as.data.frame(rbind(A, B, C))
+row.names(dataframe) <- c("Up", "Straight", "Down")
+names(dataframe) <- c("Left", "Middle", "Right")
+require(knitr)
+require(tidyverse)
+kable(dataframe, row.names=TRUE, caption="Game Four", align = "c") 
+```
+
+\newpage
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+A <- c("2, 4", "1, 0")
+B <- c("6, 5", "4, 2")
+dataframe <- as.data.frame(rbind(A, B))
+row.names(dataframe) <- c("Up", "Down")
+names(dataframe) <- c("Left", "Right")
+kable(dataframe, row.names=TRUE, caption="Game Five", align = "c") 
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+A <- c("1, 1", "0, 1")
+B <- c("1, 0", "1, 1")
+dataframe <- as.data.frame(rbind(A, B))
+row.names(dataframe) <- c("Up", "Down")
+names(dataframe) <- c("Left", "Right")
+kable(dataframe, row.names=TRUE, caption="Game Six", align = "c") 
+```
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+A <- c("0, 1", "9, 0", "2, 3")
+B <- c("5, 9", "7, 3", "1, 7")
+C <- c("7, 5", "10, 10", "3, 5")
+dataframe <- as.data.frame(rbind(A, B, C))
+row.names(dataframe) <- c("Up", "Straight", "Down")
+names(dataframe) <- c("Left", "Middle", "Right")
+kable(dataframe, row.names=TRUE, caption="Game Seven", align = "c") 
+```
+
+## Questions 1a to 7b
+
+For each of the 7 games listed above, find which strategies remain after iterated deletion of strongly dominated strategies. There are seven games, and two questions for each game (which strategy or strategies remain for Row, and which for Column) making 14 questions. Note that for any one of these 14 questions, there may be one or more than one answer, and you will only get credit for stating all (and only) the correct answers.
+
+## Question 8
+
+Which of the answers to questions 1-14 would change if you were asked to iteratively delete weakly dominated strategies, not strongly dominated strategies?

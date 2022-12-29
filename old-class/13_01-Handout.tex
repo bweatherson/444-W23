@@ -1,0 +1,191 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[Scale=MatchLowercase]{SF Pro Text Light}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Group Knowledge},
+  pdfauthor={Philosophy 444},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{mathastext}
+\usepackage{nicefrac}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Group Knowledge}
+\author{Philosophy 444}
+\date{5 April 2022}
+
+\begin{document}
+\maketitle
+
+In each of the following examples, I want you to think about whether the
+group in question has knowledge. One answer might be, ``It depends on
+details you haven't filled in'', but maybe sometimes the answer is
+clearly yes or no.
+
+\hypertarget{example-one}{%
+\section{Example One}\label{example-one}}
+
+The Ruritanian President is a French spy. The CIA agent tasked with
+understanding Ruritania figured this out, and told her superiors. They
+incorporated this into their plans, but kept the information
+super-secret. So most CIA agents, those who don't have to deal with
+Ruritania, have the orthodox view that the Ruritanian President is in
+fact a German spy.
+
+Does the CIA know that the Ruritanian President is a French spy?
+
+\hypertarget{example-two}{%
+\section{Example Two}\label{example-two}}
+
+Fred and George, the twins, are going on a train trip. Fred has looked
+at a timetable, and through that formed the belief that the next train
+leaves at 12.07. George doesn't know when the trains are, but knows that
+Fred is looking at an old timetable. He also knows that the new
+timetable only changes the times of evening trains - trains during the
+day have not changed.
+
+\begin{itemize}
+\tightlist
+\item
+  Does Fred know when the next train leaves?
+\item
+  Does George know when the next train leaves?
+\item
+  Do the twins know when the next train leaves?
+\end{itemize}
+
+\hypertarget{example-three}{%
+\section{Example Three}\label{example-three}}
+
+Fred and George, the twins, got worried that there is a ghost in their
+house. Their house just has an upstairs and a downstairs, so they
+divided it up and started looking. After a search, Fred knows that there
+is no ghost upstairs. George knows that there is no ghost downstairs.
+They haven't yet had a chance to communicate with each other.
+
+\begin{itemize}
+\tightlist
+\item
+  Does Fred know there is no ghost in the house?
+\item
+  Does George know there is no ghost in the house?
+\item
+  Do the twins know there is no ghost in the house.
+\end{itemize}
+
+\newpage
+
+\hypertarget{example-four}{%
+\section{Example Four}\label{example-four}}
+
+Building a car is hard, and requires a lot of knowledge. The Ford Motor
+Company has people who specialise in each of the steps required, and
+managers who know how to get these specialists to work together. But
+none of the specialists could do the jobs of the others, and none of the
+managers could do any of the specialist jobs. Still, the company manages
+to output a lot of cars.
+
+\begin{itemize}
+\tightlist
+\item
+  Does the Ford Motor Company know how to build cars?
+\item
+  Does any person in the Ford Motor Company know how to build cars?
+\end{itemize}
+
+\hypertarget{example-five}{%
+\section{Example Five}\label{example-five}}
+
+The historical records say that in 1896, the mayor of Ann Arbor was
+Warren E. Walker. He's a largely forgotten figure - he doesn't even have
+a wikipedia page. In the world of the story (not this world!) he's even
+more forgotten than this. There is not a person alive who could tell
+you, without looking it up, who was the mayor of Ann Arbor in 1896. But
+there are many people who could look it up - it's right there on
+Wikipedia for one.
+
+\begin{itemize}
+\tightlist
+\item
+  Which groups, if any, know that in 1896, the mayor of Ann Arbor was
+  Warren E. Walker?
+\end{itemize}
+
+\hypertarget{lackeys-argument}{%
+\section{Lackey's Argument}\label{lackeys-argument}}
+
+I'll talk through this much more in class (perhaps much much more), but
+it's useful to have a very brief sketch of the argument on paper.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  If someone, or some group, knows that \(p\), then that group can
+  rationally take it for granted that \(p\) in choosing an action.
+\item
+  In at least example five, and maybe others, the groups cannot take the
+  allegedly known things for granted in rationally choosing an action.
+\item
+  So in at least example five, and maybe others, the groups do not have
+  knowledge.
+\end{enumerate}
+
+\end{document}

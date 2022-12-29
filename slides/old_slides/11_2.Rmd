@@ -1,0 +1,141 @@
+---
+title: "444 Lecture 11.2 - O'Connor Chapters 7-10"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+        - toc.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## Day Plan
+
+\tableofcontents
+
+# Network Models
+
+## Networks and Ecosystems
+
+- So far we've used models where in each round, everyone interacts with everyone. (Or with a randomly selected portion of everyone; it won't matter for modeling purposes.)
+- In a network model, people have 'neighbors'.
+- In general we do not assume these are spatially arranged.
+- My neighbors might include my literal neighbors, but also my workmates, the other parents at my kid's school, people I interact with socially (including online), and so on.
+
+## Networks
+
+Interactions can have two effects.
+
+1. They determine our payout in a given round.
+2. They determine what we learn from for future rounds.
+
+## Network Models
+
+This is a very promising way, I think, for modeling gender inequality.
+
+- One thing about gender is that although there is a lot of discrimination that persists to this day, it is very unevenly distributed.
+- In some fields, there is _relatively_ little.
+- In other fields, there is a lot.
+- Using network models can give us the chance to model that.
+
+## Network Effects
+
+In some of these models, you get some really strange effects.
+
+- Sometimes there are real benefits to cutting off certain connections.
+- By sticking in a smaller network for longer, sometimes you don't get sucked into the bad practices of the group.
+- Of course, sometimes you build a bubble that is bad in lots of ways.
+- It's hard to know in advance which will swamp.
+
+# Bounded Rationality
+
+## Two Kinds of Models
+
+1. Everyone is perfectly rational, and this is common knowledge.
+2. Everyone has a hard-wired strategy, and they will employ it even when it will obviously get them killed.
+
+## Bounded Rationality
+
+Obviously there are situations where we'd like something in between those two situations.
+
+## Two Forms
+
+> 1. No ability to anticipate; the future will be just like the past.
+> 2. Limited memory.
+
+## A Third Form
+
+You can easily mix these two.
+
+- Maybe some agents will assume the future will look like the very recent past.
+- Maybe some agents will have longer or shorter memories.
+
+## Extending the Model
+
+The point is not that these are correct models of reality. That's not the aim.
+
+- But they are different to both the hyper-rational and the hyper-mechanical models.
+- And they do this without sending the computational complexity to infinity, or leaving too few constraints.
+
+# Changing Values
+
+## Bicchieri
+
+- I wanted to end by noting some relevant work by Penn philosoper(/economist/cognitive scientist) Christina Bicchieri.
+- I had a note to mention how this work relates to Bicchieri's, then I got to chapter 9 and saw that O'Connor already made that connection. So I won't belabor the point.
+
+## Norms are Equilibria
+
+- So here's one way a practice can become stable in a community.
+- It's an equilibrium of a game that they are playing, so no one has an incentive to deviate.
+- A very popular theory, one I think has got to be part of the true story, is that social norms typically arise in this way.
+
+## Norms are Special Equilibria
+
+Bicchieri's point is that norms, as opposed to other conventions for dealing with regularities, do more than steer us to an equilibrium point.
+
+- They change the payoffs.
+
+## Two Kinds of Equilibria
+
+> 1. Everyone does X because it's valuable to do what everyone else does. Opening hours are like this.
+> 2. Everyone does X because it's valuable to do what everyone else does _and you'll get punished for doing otherwise_.
+
+\pause
+
+Arguably gender is like this.
+
+## Policing Gender Norms
+
+- Part of the story about gender is that not only do people signal it fairly clearly (at least most people most of the time).
+- But there are strong social sanctions - sometimes including violence - against people who do not signal in this way.
+- It's very hard to model this using either kinds of games that O'Connor describes.
+
+## General Pattern
+
+Here is a hypothesis about what is going on here.
+
+1. Gender norms developed for the kind of game-theoretic reasons that O'Connor describes.
+2. But over time, people internalised those norms, came to see them as the way things should be done, and developed a disposition to punish non-conformers.
+
+These stories are not incompatible; one is a story about generation, the other about persistence.
+
+## Why Two Stories
+
+- We need to explain relative stability of norms over time.
+- O'Connor complains that rational choice models can't deliver this explanation.
+- But going all the way to mechanical biological models seems like overkill.
+- A model of people internalising the norms, and thereby changing the payout structure, seems more promising.
+
+## Where to Go Next
+
+- And thinking about changing payouts might be a more effective way of moving to new solutions.
+- At least, it's a different way than trying to push people to different equilibria of the same game.

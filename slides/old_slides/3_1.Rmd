@@ -1,0 +1,82 @@
+---
+title: "444 Lecture 3.1 - Trees"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## Plan
+
+To introduce games that take place over time.
+
+## Reading
+
+Bonanno, section 3.1.
+
+## Time
+
+- The tables we discussed last week represent games where each player moves once, and those moves are simultaneous.
+- But few games are like that.
+- We need a way to represent games that take time.
+
+## Trees
+
+- We do that with trees.
+- A tree represents all the ways that a game that takes place over time could go.
+
+## Nodes
+
+> - Trees have nodes.
+> - Some nodes are **terminal nodes**; they represent that the game has ended.
+> - Each terminal node has a payout for each of the players.
+> - At any other node, either a player moves, or Nature 'moves'.
+> - One of the non-terminal nodes is special: it is the node where the game starts.
+
+## Branches
+
+- Each non-terminal node has branches, leading to other nodes.
+- A move at a node is always a choice of branches.
+
+---
+
+![Example from Bonanno](images/3_1a.png){height=60%}
+
+- There are two players, 1 and 2.
+- Each player moves once.
+- First 1 moves, then 2 moves, then the game ends.
+
+---
+
+![Example from Bonanno](images/3_1a.png){height=60%}
+
+- Some books use a special notation for the initial node, such as having an open circle rather than a closed circle.
+- Bonanno doesn't, which is a bit odd.
+- But it's clear in context what the initial node is.
+
+---
+
+![Example from Bonanno](images/3_1a.png){height=50%}
+
+- As he goes on to note, this isn't really a tree yet.
+- It describes the physical outcomes of the game at each terminal node, but not the **payoffs**.
+- There is a natural function from outcomes to payoffs - more money equals more utility - but it is not a compulsory interpretation.
+
+## Future Additions
+
+> - Moves by Nature
+> - Moves under uncertainty
+
+## For Next Time
+
+We will think about how players should play these games.

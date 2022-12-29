@@ -1,0 +1,373 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 7.1 - Bayesian Equilibrium},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+\usepackage{istgame}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 7.1 - Bayesian Equilibrium}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{What is Rational Here?}
+\protect\hypertarget{what-is-rational-here}{}
+\begin{center}
+\begin{istgame}
+%\setistgrowdirection'{east}
+\xtdistance{15mm}{30mm}
+\istroot(0){Alice}
+  \istb{A}[al]{(1,1)}
+  \istb{B}[r]
+  \istb{C}[ar]
+  \endist
+\xtdistance{10mm}{20mm}
+\istroot(1)(0-2)
+  \istb{l}[al]{(2,2)}
+  \istb{r}[ar]{(0,0)}
+  \endist
+\istroot(2)(0-3)
+  \istb{l}[al]{(2,2)}
+  \istb{r}[ar]{(0,0)}
+  \endist
+\xtInfoset(1)(2){Billie}
+\end{istgame}
+\end{center}
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Intuitively we should end up with one of the 2,2 outcomes.
+\item
+  But how theoretically can we get that?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Strategy Table}
+\protect\hypertarget{strategy-table}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & l & r\\
+\midrule
+A & 1, 1 & 1, 1\\
+B & 2, 2 & 0, 0\\
+C & 2, 2 & 0, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Note that \(\langle A, r \rangle\) is a Nash equilibrium.
+\end{frame}
+
+\begin{frame}{Subgame Perfection}
+\protect\hypertarget{subgame-perfection}{}
+\begin{center}
+\begin{istgame}
+%\setistgrowdirection'{east}
+\xtdistance{15mm}{30mm}
+\istroot(0){Alice}
+  \istb{A}[al]{(1,1)}
+  \istb{B}[r]
+  \istb{C}[ar]
+  \endist
+\xtdistance{10mm}{20mm}
+\istroot(1)(0-2)
+  \istb{l}[al]{(2,2)}
+  \istb{r}[ar]{(0,0)}
+  \endist
+\istroot(2)(0-3)
+  \istb{l}[al]{(2,2)}
+  \istb{r}[ar]{(0,0)}
+  \endist
+\xtInfoset(1)(2){Billie}
+\end{istgame}
+\end{center}
+
+\begin{itemize}
+\tightlist
+\item
+  There are no subgames (think about why) - so \(\langle A, r \rangle\)
+  is also subgame perfect.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Intuition}
+\protect\hypertarget{intuition}{}
+\begin{itemize}
+\tightlist
+\item
+  It is absurd for Billie to play r if it gets that far.
+\item
+  We need a theory that says this is absurd.
+\item
+  This is just the kind of thing subgame perfect equilibrium was
+  introduced for, but it isn't working for technical reasons about the
+  definition of subgames.
+\item
+  I'm not sure if there is a completely standard solution here, but I
+  wanted to set out an approach that's consistent with current
+  philosophy.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Bayesian Equilibrium}
+\protect\hypertarget{bayesian-equilibrium}{}
+\begin{itemize}
+\tightlist
+\item
+  An equilibrium is a pair of behavioral dispositions.
+\item
+  Each behavioral disposition gives a probability of each choice at each
+  node the player may have to choose at.
+\item
+  In equilibrium, each player has their own disposition from the pair,
+  and believes (with certainty) that the other player has the other
+  disposition from the pair.
+\item
+  If there is a move made by Nature, each player has the correct
+  probability for each of Nature's possible moves.
+\item
+  At every stage, each Player maximises expected utility given their
+  beliefs about the other.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Re-formulation}
+\protect\hypertarget{re-formulation}{}
+This is more or less equivalent.
+
+\begin{itemize}
+\tightlist
+\item
+  Each player starts with a probability distribution over outcomes of
+  the game.
+\item
+  In equilibrium, these are the same, and the players have correct
+  probabilities about the moves nature will make.
+\item
+  When something happens (a move is revealed), the players update by
+  conditionalisation if the event has positive probability.
+\item
+  When something unexpected (probability zero) happens, the players just
+  pick a new probability.
+\item
+  In equilibrium, both players know how both players are disposed to
+  react in each of these cases.
+\item
+  Everyone is always maximising expected utility.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Back to the Game}
+\protect\hypertarget{back-to-the-game}{}
+\begin{center}
+\begin{istgame}
+%\setistgrowdirection'{east}
+\xtdistance{15mm}{30mm}
+\istroot(0){Alice}
+  \istb{A}[al]{(1,1)}
+  \istb{B}[r]
+  \istb{C}[ar]
+  \endist
+\xtdistance{10mm}{20mm}
+\istroot(1)(0-2)
+  \istb{l}[al]{(2,2)}
+  \istb{r}[ar]{(0,0)}
+  \endist
+\istroot(2)(0-3)
+  \istb{l}[al]{(2,2)}
+  \istb{r}[ar]{(0,0)}
+  \endist
+\xtInfoset(1)(2){Billie}
+\end{istgame}
+\end{center}
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  At the B/C information set, Billie must have some probability between
+  B and C.
+\item
+  Whatever it is, l has higher expected utility that r.
+\item
+  Alice knows this, so will choose B or C rather than A.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{For Next Time}
+\protect\hypertarget{for-next-time}{}
+\begin{itemize}
+\tightlist
+\item
+  I'll look at two puzzle cases.
+\item
+  If you're pressed for time, skip ahead to the following lecture.
+\end{itemize}
+\end{frame}
+
+\end{document}

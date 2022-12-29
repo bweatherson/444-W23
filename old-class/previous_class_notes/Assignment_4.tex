@@ -1,0 +1,206 @@
+\documentclass[11pt,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+    \setmainfont[]{SF Pro Text Light}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Assigment 4},
+            pdfauthor={Philosophy 444},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Assigment 4}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Philosophy 444}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{Due 4 October, 2019}
+
+\usepackage{gensymb}
+\usepackage{nicefrac}
+\usepackage{caption}
+\usepackage{istgame}
+\usepackage{mathastext}
+
+\begin{document}
+\maketitle
+
+\hypertarget{questions-one-six}{%
+\section{Questions One-Six}\label{questions-one-six}}
+
+A thief wants to steal a particular diamond owned by the city council.
+The security firm guarding the diamond knows that the thief might strike
+tonight. They have to decide whether to put in Basic security (B) or
+Enhanced security (E). The thief has to decide whether to Steal (S) or
+Not steal (N) the diamond. The thief can evade basic security, but will
+be caught by enhanced security. Here is the payoff table for the two
+parties (with thief payouts first, since she's row).
+
+\begin{longtable}[]{@{}rcc@{}}
+\toprule
+& B & E\tabularnewline
+\midrule
+\endhead
+S & 1, 0 & -5, 2\tabularnewline
+N & 0, 1 & 0, 0\tabularnewline
+\bottomrule
+\end{longtable}
+
+Intuitive, the thief wants the diamond, doesn't want to get caught, and
+cares way more about getting caught that the diamond. The security firm
+doesn't want the bad reputation of the diamond been stolen on their
+watch, or the cost of running Enhanced security, but they would like the
+reward for catching the thief.
+
+The following questions are all about the mixed strategy Nash
+equilibrium of this game. (Answers should be decimal, not fractions, and
+accurate to two decimal places.)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What is the probability of B?
+\item
+  What is the probability of E?
+\item
+  What is the probability of S?
+\item
+  What is the probability of N?
+\item
+  What is firm's expected return?
+\item
+  What is thief's expected return?
+\end{enumerate}
+
+\hypertarget{questions-seven-nine}{%
+\section{Questions Seven-Nine}\label{questions-seven-nine}}
+
+A tough-on-crime faction on the city council wants to prevent theft by
+increasing the punishment for being caught stealing. If they had their
+way, the payout in the upper-right cell (i.e., SE), would be -10, 2. If
+this change was made, how would the new equilibrium compare to the old
+equilibrium?
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Would firm's expected payout go up, go down, or be unchanged?
+\item
+  Would thief's expected payout go up, go down, or be unchanged?
+\item
+  Would the probability that the diamond gets stolen go up, go down, or
+  be unchanged?
+\end{enumerate}
+
+\hypertarget{questions-ten---eleven}{%
+\section{Questions Ten - Eleven}\label{questions-ten---eleven}}
+
+The tough-on-crime faction is defeated, but there is a new dispute over
+exactly what we should do to the payout in the top right cell. There are
+three options
+
+\begin{itemize}
+\tightlist
+\item
+  Option one: leave it unchanged.
+\item
+  Option two: change it to -10, 2, as the tough-on-crime faction wanted.
+\item
+  Option three: change it to -5, 3, i.e., increase the reward for
+  catching the thief.
+\end{itemize}
+
+Happily for the security firm, a nice bit of regulatory capture means
+that they control the deciding vote. So this is now a dynamic game. Firm
+will choose option one, two or three, and then choose Basic or Enhanced.
+Thief will find out whether one, two or three was chosen, then choose
+Steal or Not.
+
+The following questions concern the subgame perfect equilibrium of this
+game.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  What is firm's expected payout?
+\item
+  What is the probability that the diamond gets stolen?
+\end{enumerate}
+
+
+\end{document}

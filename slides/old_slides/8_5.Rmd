@@ -1,0 +1,119 @@
+---
+title: "444 Lecture 8.5 - Real Life Stag Hunts"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## PD or Stag Hunt
+
+So here's a depressingly common kind of situation.
+
+- There is a social interaction where we'd all be better off if we all cooperated.
+- But for whatever reason, cooperation hasn't arisen. \pause
+- One question to ask, assuming people are rational, well-informed, etc, is whether this is more like PD or Stag Hunt.
+- In particular, if people did cooperate in this kind of situation, would cooperation be naturally sustainable, or would it require constant effort to sustain the cooperative equilibrium?
+
+## Vague Question
+
+- There are, as always, borderline cases.
+- As Skyrms points out, there is a natural sense in which Iterated PD is, in the sense we're interested in, a Stag Hunt not a PD.
+- That's because mutual cooperation is, at least in the iterated game, an equilibrium.
+- But when there isn't a lot of iteration, and in particular when there isn't iteration between the same people over and over again, we're back in PD.
+
+## Why This Matters
+
+1. We're theorists here and we like getting this kind of thing right!
+2. The social reforms needed to develop, and sustain, a cooperative equilibrium in the two cases might be very different.
+
+## How Do We Tell
+
+- If we were in the cooperative state, would everyone have an incentive to stay in it, or would they still have a (small) incentive to defect.
+- In PD, everyone wants to defect even in the happy world where everyone else cooperates.
+- In Stag Hunt, once there is cooperation, cooperation is actually beneficial to the participants.
+
+## Example One - Walking
+
+- So think about what it's like to walk through a crowded shared space: the corridors of a university, the common spaces of a shopping mall, a crowded sidewalk in a busy city.
+- There are more or less cooperative ways to walk. Roughly speaking, the straighter the line you walk in, and the closer your speed is to the median speed, the more cooperative you are. \pause
+- Some places are pretty cooperative. UM hallways are surprisingly so on the whole, and any major business city I've been in has been pretty cooperative during the morning and evening commute. \pause
+- But a lot of places are not - everyone is going in all directions, and it's a constant struggle to not get collided into many times. The touristy parts of big cities are like this all the time.
+
+## PD or Stag Hunt
+
+So question - if you're in one of the situations where things are going well, is there an incentive to defect and try to cut through the crowds even more quickly?
+
+## My (very anecdotal) View
+
+- This kind of feels like a Stag Hunt to me.
+- If you're somewhere where the pedestrian traffic is moving smoothly and quickly enough, there isn't much to gain by darting between people looking for a small edge. You just go with the traffic.
+- But if everyone is going at all angles and all speeds, then trying to be as cooperative as possible, sticking to a steady speed and a straight line, will be a disaster.
+- The best way to get where you're going (in a reasonable time with minimal risk) is to do what everyone else does.
+
+## Example Two - Climate Change
+
+- Let's focus on climate change as an issue that affects the relationship between countries. (How individuals relate to each other vis a vis climate change is a trickier question.)
+- At this level it is often thought to be a PD (or what's sometimes called a free rider problem).
+- Everyone would prefer that everyone had lower emissions.
+- But everyone would prefer to not lower their own emissions.
+
+## Is This Right?
+
+Three reasons for scepticism.
+
+1. Synergies
+2. Health
+3. Altruistic Sentiment
+
+## Synergy
+
+- There is an incredible amount of learning by doing in clean energy.
+- As more people install it, the prices just keep falling. 
+- So possibly if everyone cuts emissions, it is in everyone's interests to be part of the cheap energy revolution that is unleashed.
+
+## Health
+
+Carbon based forms of energy have two downsides.
+
+1. They affect the climate, with negative consequences for the planet.
+2. They are polluting, with negative health consequences for the people living near where the energy is generated.
+
+The second puts some independent pressure on countries to get cleaner. You saw this in the US in the late 20th century (especially in Los Angeles), and in big cities in China and India now.
+
+## Altruism
+
+![A recent paper arguing against the PD model](PD_article.png){height=70%}
+
+## Altruism
+
+- The voting public, at least in rich industrial countries, does not favor unilateral defection from climate agreements.
+- This could be because of the first two factors I mentioned.
+- But I suspect a non-trivial factor is that people are altruistic - they care about others.
+- That is, at least given the subjectivist approach to utility we're using, enough to make the game not a PD.
+
+## The Big Distinction
+
+Is the situation you're looking at one where rational agents:
+
+1. Will not cooperate without some added incentive, or
+2. Will not be the first to cooperate without some added incentive?
+
+- If it's the first, you're in a PD; if it's the second, you may be in a Stag Hunt. 
+- And then you might be better off doing some 'one-time' interventions to get people to a new sustainable equilibrium.
+
+## For Next Time
+
+We'll move onto O'Connor's book on the origins of inequality
+
+

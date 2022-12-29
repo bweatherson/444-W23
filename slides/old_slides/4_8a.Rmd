@@ -1,0 +1,55 @@
+---
+title: "444 Lecture 4.8 - Probability"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+## Plan
+
+- In this lecture we'll do a very quick introduction to probability.
+
+## Associated Reading
+
+Still chapter 5, though we're really not going page by page through this chapter.
+
+## Probability
+
+I'm going to do a bit more on this in the half week that's coming up, but here's the nickel version. A probability function $\Pr(\cdot)$ is a function from sets to reals in $[0, 1]$ satisfying:
+
+1. $0 \leq \Pr(X) \leq 1$
+2. If $X \cap Y$ is empty, then $\Pr(X) + \Pr(Y) = \Pr(X \cup Y)$
+
+## Probability and Action
+
+We get from this bit of math to something useful for decisions by making the following extra assumptions.
+
+- The elements of the sets are possible outcomes.
+- Propositions are identified first with properties of outcomes, and in turn with sets of outcomes that have that property.
+- Then the probability of a set of outcomes can be equated with the probability of the truth of that proposition.
+
+## Probability in Practice
+
+For any way of carving up the possibilities into disjoint sets (formally speaking a partition), the probabilities of each of the members of the partition must sum to 1.
+
+- So if there is a soccer game, and we know the result is that Michigan is going to win, lose or draw (and not two of those things), then it has to be that.
+- Probability Win plus Probability Lose plus Probability Draw equals 1.
+
+## More About Probability Later
+
+- We will say much more about probability later, but I think that's sort of enough for now.
+- Next time we will go on to talk about how probability is used in a theory of decision under uncertainty.

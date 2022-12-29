@@ -1,0 +1,200 @@
+---
+title: "444 Lecture 3.5 - Incredible Threats"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Plan
+
+- To explain why some Nash equilibria do not seem like sensible plays.
+
+## Reading
+
+- Bonanno, section 3.4.
+
+## Threat Game {.fragile}
+
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+
+\begin{picture}(350, 110)
+\linethickness{1pt}
+\pictext{175}{0}{I}
+\put(175, 12){\circle*{4}}
+%\thicklines
+\put(175, 12){\line(-2, 1){70}}
+%\thinlines
+\put(175, 12){\line(2, 1){70}}
+\pictext{135}{20}{$A$}
+\pictext{215}{20}{$B$}
+
+\pictext{105}{35}{II}
+\put(105, 47){\circle*{4}}
+%\thicklines
+\put(105, 47){\line(-1, 1){35}}
+\pictext{70}{85}{(4, 1)}
+%\thinlines
+\put(105, 47){\line(1, 1){35}}
+\pictext{140}{85}{(1, 0)}
+\pictext{80}{55}{$a$}
+\pictext{130}{55}{$b$}
+
+\pictext{245}{35}{II}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+\pictext{210}{85}{(1, 1)}
+%\thicklines
+\put(245, 47){\line(1, 1){35}}
+%\thinlines
+\pictext{280}{85}{(2, 2)}
+\pictext{220}{55}{$a$}
+\pictext{270}{55}{$b$}
+
+%\multiput(105,47)(5, 0){28}{\line(1, 0){3}}
+
+\end{picture}
+
+## Strategies
+
+- A \textbf{strategy} for a game is a set of instructions for what to do at each node of a game.
+- Even very small game trees there are a lot of possible strategies.
+- If there are $k$ possible nodes a player could have a choice at, and $m$ possible moves at each of these nodes, then there are $m^k$ possible strategies.
+- Note that a strategy has to say what to do at nodes that are ruled out by your own prior moves.
+
+## Threat Game Strategies
+
+- Let's work through an example of that.
+- For player I, there are just two strategies: $A$ and $B$.
+- For player II, there are two nodes, and two possible choices at each node. So there are $2^2 = 4$ possible strategies.
+- We'll write $xy$ for the strategy of doing $x$ in response to $A$, and $y$ in response to $B$.
+- And note I'm capitalising player I's moves, and using lower case for player II's moves, to make things clearer.
+
+## Threat Game Strategies
+
+Here are the four strategies for player II:
+
+1. $aa$ - Do $a$ no matter what.
+2. $ab$ - Do whatever player I does.
+3. $ba$ - Do the opposite of what player I does.
+4. $bb$ - Do $b$ no matter what.
+
+## Threat Game Strategy Tables
+
+The strategies for the players determine the outcome. Here is the table for the game, given the strategies.
+
+```{r}
+game <- tribble(
+  ~Moves,         ~aa, ~ab, ~ba, ~bb,
+  "A",  "4, 1", "4, 1", "1, 0", "1, 0",
+  "B",  "1, 1", "2, 2", "1, 1", "2, 2" 
+)
+gameformat(game)
+```
+
+
+## Threat Game Strategy Tables
+
+I've put boxes around the best responses.
+
+```{r}
+game <- tribble(
+  ~Moves,         ~aa, ~ab, ~ba, ~bb,
+  "A",  "\\fbox{4}, \\fbox{1}", "\\fbox{4}, \\fbox{1}", "\\fbox{1}, 0", "1, 0",
+  "B",  "1, 1", "\\fbox{2}, \\fbox{2}", "\\fbox{1}, 1", "\\fbox{2}, \\fbox{2}" 
+)
+gameformat(game)
+```
+
+There are three Nash equilibria.
+
+1. $A, aa$ - with result 4, 1
+2. $A, ab$ - with result 4, 1
+3. $B, bb$ - with result 2, 2
+
+## Threat Game with Backward Induction {.fragile}
+
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+
+\begin{picture}(350, 110)
+\linethickness{1pt}
+\pictext{175}{0}{I}
+\put(175, 12){\circle*{4}}
+\thicklines
+\put(175, 12){\line(-2, 1){70}}
+\thinlines
+\put(175, 12){\line(2, 1){70}}
+\pictext{135}{20}{$A$}
+\pictext{215}{20}{$B$}
+
+\pictext{105}{35}{II}
+\put(105, 47){\circle*{4}}
+\thicklines
+\put(105, 47){\line(-1, 1){35}}
+\pictext{70}{85}{(4, 1)}
+\thinlines
+\put(105, 47){\line(1, 1){35}}
+\pictext{140}{85}{(1, 0)}
+\pictext{80}{55}{$a$}
+\pictext{130}{55}{$b$}
+
+\pictext{245}{35}{II}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+\pictext{210}{85}{(1, 1)}
+\thicklines
+\put(245, 47){\line(1, 1){35}}
+\thinlines
+\pictext{280}{85}{(2, 2)}
+\pictext{220}{55}{$a$}
+\pictext{270}{55}{$b$}
+
+%\multiput(105,47)(5, 0){28}{\line(1, 0){3}}
+
+\end{picture}
+
+- I've bolded the best moves at each node, assuming backward induction.
+- The path of best moves is the (in this case unique) backward induction solution.
+
+## Threat Game
+
+- There are three Nash equilibria of the game: strategy pairs that no one can improve on by unilaterally changing strategy.
+- There is just one backward induction solution of the game: a strategy pair where everyone does the best they can \textbf{at every node} assuming others play rationally at every node.
+
+## Incredible Threats
+
+What makes $\langle B, bb \rangle$ a Nash equilibrium is that Player II can make the following speech.
+
+> "I'm going to play b whatever you do. I want that 2 payout, and I'm going to get it. And since I'm going to play b whatever you do, you're better off playing B. That way you'll get 2, when you'd only get 1 if you played A. And you can tell I'm not bluffing because this strategy makes sense for me. Since you'll play B, since I'm committed to always playing b, it's in my best interests to stick to this strategy."
+
+## Incredible Threats
+
+What makes $\langle B, bb \rangle$ not subgame perfect, what makes it an incredible threat, is that A can make the following reply.
+
+---
+
+> "That's an interesting plan. And if it was just a strategic game, I might even believe it. But the problem for you is that you have to stick to that bluff once you know that it's been called. To commit to always playing b means playing b even when you know I've played A. And I don't reckon you'll do it - it's worse for me (which doesn't matter), and it's worse for you (which does). If we were just choosing strategies, I might just about believe that you would adopt a disposition that's bad in some circumstances in the hope that by adopting it, you'll guarantee that those circumstances don't arise. But when you have to play in real time, I don't think you can do it."
+
+## Incredible Threats
+
+So I plays A, and they end up at the 4,1 outcome.
+
+## For Next Time
+
+- We will look, very briefly, at a notable philosophical objection to backwards induction reasoning.

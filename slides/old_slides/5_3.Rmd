@@ -1,0 +1,185 @@
+---
+title: "444 Lecture 5.3 - Mixed Strategies in Equilibria"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Plan
+
+Discuss the existence of mixed strategy equilibria.
+
+## Reading
+
+Bonanno, section 6.2
+
+## Key Theorem
+
+In any finite game in which all mixtures of strategies are available, there is at least one Nash equilibria.
+
+## Example
+
+```{r}
+game <- tribble(
+  ~Moves,         ~Left, ~Right,
+  "Up",  "2, 0", "0, 3", 
+  "Down",  "0, 1", "1, 0"
+)
+gameformat(game)
+```
+
+Let's discuss this game for a bit. Does it have an equilibrium?
+
+## Example
+
+```{r}
+gamebox <- tribble(
+  ~Moves,         ~Left, ~Right,
+  "Up",  "\\fbox{2}, 0", "0, \\fbox{3}", 
+  "Down",  "0, \\fbox{1}", "\\fbox{1}, 0"
+)
+gameformat(gamebox)
+```
+
+No Nash equilibrium in pure strategies.
+
+## A Strategy for Row
+
+```{r}
+gameformat(game)
+```
+
+Consider what happens if Row plays
+
+- Up with probability $\nicefrac{1}{4}$;
+- Down with probability $\nicefrac{3}{4}$.
+
+## Column's Expected Return
+
+```{r}
+gameformat(game)
+```
+
+Column's expected return from playing Left is 
+
+- 0 with probability $\nicefrac{1}{4}$ plus
+- 1 with probability $\nicefrac{3}{4}$, i.e.,
+- $\nicefrac{3}{4}$.
+
+## Column's Expected Return
+
+```{r}
+gameformat(game)
+```
+
+Column's expected return from playing Right is 
+
+- 3 with probability $\nicefrac{1}{4}$ plus
+- 0 with probability $\nicefrac{3}{4}$, i.e.,
+- $\nicefrac{3}{4}$.
+
+## Column's Expected Return
+
+```{r}
+gameformat(game)
+```
+
+- So either way, Column's expected return from playing a pure strategy is $\nicefrac{3}{4}$.
+- And hence Column's expected return from playing any mixture of the two pure strategies is $\nicefrac{3}{4}$.
+
+## A Strategy for Column
+
+```{r}
+gameformat(game)
+```
+
+Consider what happens if Column plays
+
+- Left with probability $\nicefrac{1}{3}$;
+- Right with probability $\nicefrac{2}{3}$.
+
+## Row's Expected Return
+
+```{r}
+gameformat(game)
+```
+
+Row's expected return from playing Up is 
+
+- 2 with probability $\nicefrac{1}{3}$ plus
+- 0 with probability $\nicefrac{2}{3}$, i.e.,
+- $\nicefrac{2}{3}$.
+
+## Column's Expected Return
+
+```{r}
+gameformat(game)
+```
+
+Row's expected return from playing Down is 
+
+- 0 with probability $\nicefrac{1}{3}$ plus
+- 1 with probability $\nicefrac{2}{3}$, i.e.,
+- $\nicefrac{2}{3}$.
+
+## Column's Expected Return
+
+```{r}
+gameformat(game)
+```
+
+- So either way, Row's expected return from playing a pure strategy is $\nicefrac{2}{3}$.
+- And hence Row's expected return from playing any mixture of the two pure strategies is $\nicefrac{2}{3}$.
+
+## An Equilibria
+
+```{r}
+gameformat(game)
+```
+
+- What happens if they both play the mixed strategies we've been discussing? \pause
+- It's an equilibria.
+
+## An Equilibria
+
+```{r}
+gameformat(game)
+```
+
+- Whatever Column does, their expected return is $\nicefrac{3}{4}$.
+- So they can't do better than play this mixed strategy.
+- They can't do worse either, but the definition of equilibrium just requires that they can't do better.
+
+## An Equilibria
+
+```{r}
+gameformat(game)
+```
+
+- Whatever Row does, their expected return is $\nicefrac{2}{3}$.
+- So they can't do better than play this mixed strategy.
+- They can't do worse either, but the definition of equilibrium just requires that they can't do better.
+
+## Two General Points
+
+> 1. There is always some equilibria like this (at least in finite games), even if it doesn't look like it at first.
+> 2. Typically, the way we find equilibria is making the other player indifferent between a bunch of options.
+
+## For Next Time
+
+We will use that last point to work out how to compute the Nash equilibria for simple games.

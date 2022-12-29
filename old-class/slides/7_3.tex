@@ -1,0 +1,392 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 7.3 - Signaling Game},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+\usepackage{istgame}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 7.3 - Signaling Game}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}
+\begin{center}
+\begin{istgame}[scale=0.9]
+   \xtdistance{20mm}{20mm}
+   \istroot(0)[chance node]{$c$}
+     \istb<grow=left>{0.6}[a]
+     \istb<grow=right>{0.4}[a]
+     \endist
+   \xtdistance{10mm}{20mm}
+   \istroot(1)(0-1)<180>{1}
+     \istb<grow=north>{a}[l]
+     \istb<grow=south>{b}[l]
+     \endist
+   \istroot(2)(0-2)<0>{1}
+     \istb<grow=north>{a}[r]
+     \istb<grow=south>{b}[r]
+     \endist
+   \istroot'[north](a1)(1-1)
+     \istb{L}[bl]{1,1}
+     \istb{R}[br]{0,0}
+     \endist
+   \istroot(b1)(1-2)
+     \istb{L}[al]{1,1}
+     \istb{R}[ar]{0,0}
+     \endist
+   \istroot(a2)(2-2)
+     \istb{L}[al]{0,0}
+     \istb{R}[ar]{1,1}
+     \endist
+   \istroot'[north](b2)(2-1)
+     \istb{L}[bl]{0,0}
+     \istb{R}[br]{1,1}
+     \endist
+   \xtInfoset(a1)(b2){2}
+   \xtInfoset(b1)(a2){2}
+   \end{istgame}
+\end{center}
+
+This is a basic signaling game.
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\begin{istgame}[scale=0.9]
+   \xtdistance{20mm}{20mm}
+   \istroot(0)[chance node]{$c$}
+     \istb<grow=left>{0.6}[a]
+     \istb<grow=right>{0.4}[a]
+     \endist
+   \xtdistance{10mm}{20mm}
+   \istroot(1)(0-1)<180>{1}
+     \istb<grow=north>{a}[l]
+     \istb<grow=south>{b}[l]
+     \endist
+   \istroot(2)(0-2)<0>{1}
+     \istb<grow=north>{a}[r]
+     \istb<grow=south>{b}[r]
+     \endist
+   \istroot'[north](a1)(1-1)
+     \istb{L}[bl]{1,1}
+     \istb{R}[br]{0,0}
+     \endist
+   \istroot(b1)(1-2)
+     \istb{L}[al]{1,1}
+     \istb{R}[ar]{0,0}
+     \endist
+   \istroot(a2)(2-2)
+     \istb{L}[al]{0,0}
+     \istb{R}[ar]{1,1}
+     \endist
+   \istroot'[north](b2)(2-1)
+     \istb{L}[bl]{0,0}
+     \istb{R}[br]{1,1}
+     \endist
+   \xtInfoset(a1)(b2){2}
+   \xtInfoset(b1)(a2){2}
+   \end{istgame}
+\end{center}
+
+\begin{enumerate}
+\tightlist
+\item
+  Nature moves left or right, and reveals this to Sender (1).
+\item
+  Sender moves up or down, and reveals this to Hearer (2).
+\item
+  Hearer moves left or right.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\begin{istgame}[scale=0.9]
+   \xtdistance{20mm}{20mm}
+   \istroot(0)[chance node]{$c$}
+     \istb<grow=left>{0.6}[a]
+     \istb<grow=right>{0.4}[a]
+     \endist
+   \xtdistance{10mm}{20mm}
+   \istroot(1)(0-1)<180>{1}
+     \istb<grow=north>{a}[l]
+     \istb<grow=south>{b}[l]
+     \endist
+   \istroot(2)(0-2)<0>{1}
+     \istb<grow=north>{a}[r]
+     \istb<grow=south>{b}[r]
+     \endist
+   \istroot'[north](a1)(1-1)
+     \istb{L}[bl]{1,1}
+     \istb{R}[br]{0,0}
+     \endist
+   \istroot(b1)(1-2)
+     \istb{L}[al]{1,1}
+     \istb{R}[ar]{0,0}
+     \endist
+   \istroot(a2)(2-2)
+     \istb{L}[al]{0,0}
+     \istb{R}[ar]{1,1}
+     \endist
+   \istroot'[north](b2)(2-1)
+     \istb{L}[bl]{0,0}
+     \istb{R}[br]{1,1}
+     \endist
+   \xtInfoset(a1)(b2){2}
+   \xtInfoset(b1)(a2){2}
+   \end{istgame}
+\end{center}
+
+\begin{itemize}
+\tightlist
+\item
+  This is a purely cooperative version.
+\item
+  Each player gets 1 if Hearer makes same move as Nature, and 0
+  otherwise.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Four Equilibria}
+\protect\hypertarget{four-equilibria}{}
+\begin{enumerate}[<+->]
+\tightlist
+\item
+  Sender does Up if Left, Down if Right. Hearer does what Nature does.
+\item
+  Sender does Up if Right, Down if Left. Hearer does what Nature does.
+\item
+  Sender does the same thing no matter what. Hearer does Left no matter
+  what.
+\item
+  Sender speaks randomly. Hearer does Left no matter what.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Equilibria Types}
+\protect\hypertarget{equilibria-types}{}
+\begin{itemize}
+\tightlist
+\item
+  The first two are \textbf{separating} equilibria. This is what we hope
+  happens!
+\item
+  The third is a \textbf{pooling} equilibria. This is not great.
+\item
+  The fourth is a \textbf{babbling} equilibria. This might be worse.
+\end{itemize}
+
+When nature has only two possible states, there isn't much conceptual
+difference between pooling and babbling. But in the more general case,
+we want to distinguish between partially pooling equilibria and
+partially babbling equilibria.
+\end{frame}
+
+\begin{frame}{Conceptual Load}
+\protect\hypertarget{conceptual-load}{}
+\begin{itemize}
+\tightlist
+\item
+  We're normally interested in games where each player is perfectly
+  rational, and is basically a genius game player.
+\item
+  But it's important for the purposes that signaling games are put that
+  you can sustain a separating equilibrium when the players are really
+  not very sophisticated.
+\item
+  Sender needs to be able to detect what Nature is doing, and
+  differentially respond.
+\item
+  Hearer needs to differentially respond to Sender's response - so they
+  also need to be able to detect what Sender is doing, and use that
+  detection to guide action.
+\item
+  That's not nothing - two rocks couldn't do it - but it's not a lot.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Tiny Players}
+\protect\hypertarget{tiny-players}{}
+\begin{itemize}
+\tightlist
+\item
+  Cells, for example, can detect some things and differentially respond.
+\item
+  Certainly animals can do this.
+\item
+  And probably a lot of plants can as well, at least for some possible
+  signals.
+\item
+  So you can use signaling games to explain all sorts of biological
+  interactions, both between organisms and within them.
+\item
+  But this isn't a (philosophy of) biology class, so I'll leave that to
+  another day.
+\end{itemize}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,32 @@
+---
+title: "444 Lecture 4.9 - Expected Value"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+---
+
+```{r}
+game <- tribble(
+  ~moves, ~`Predict G`, ~`Predict H`,
+  "Choose G", 15, 40,
+  "Choose H", 0, 50
+)
+gameformat(game)
+```

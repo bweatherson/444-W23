@@ -1,0 +1,619 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 12.1 - Gilbert on Group Action},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+\usepackage{istgame}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Day Plan}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 12.1 - Gilbert on Group Action}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Very Big Picture}
+\protect\hypertarget{very-big-picture}{}
+We talk all the time about groups as if they are agents.
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  They have doxastic states: beliefs, suspicions, knowledge.
+\item
+  They have desire-like states: hopes, plans, intentions.
+\item
+  They do things.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Three Big Questions}
+\protect\hypertarget{three-big-questions}{}
+\begin{enumerate}
+\tightlist
+\item
+  Are these claims literally true, or are they just figures of speech?
+\item
+  If they are true, when are they true? If they are not, when are they
+  appropriate?
+\item
+  What turns on the answers to 1 and 2?
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Gilbert on Group Action}
+\protect\hypertarget{gilbert-on-group-action}{}
+\begin{itemize}
+\tightlist
+\item
+  Start with a picture of a very simple group - two people walking
+  together.
+\item
+  Leverage that into a picture of what it is for groups to act.
+\item
+  The picture will eventually include groups having other states - the
+  group will be an agent.
+\item
+  But that's not quite how Gilbert builds things up.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Two Big Questions about Gilbert}
+\protect\hypertarget{two-big-questions-about-gilbert}{}
+\begin{enumerate}
+\tightlist
+\item
+  Does Gilbert have the right analysis of ``walking together'', or other
+  small group activities?
+\item
+  Is it the right model for larger group activities?
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{A Traditional Way of Thinking About Problem}
+\protect\hypertarget{a-traditional-way-of-thinking-about-problem}{}
+\begin{enumerate}
+\tightlist
+\item
+  What makes some people a \emph{group}, as opposed to merely some
+  people?
+\item
+  What makes it the case that that group is engaged in a group action,
+  shares a group intention, and so on?
+\end{enumerate}
+
+Gilbert's view is that this is the wrong way to look at things. Rather,
+these two questions should be answered simultaneously.
+\end{frame}
+
+\begin{frame}{Two Theories of Group Action}
+\protect\hypertarget{two-theories-of-group-action}{}
+\begin{description}
+\tightlist
+\item[Weak Shared Plan]
+All the people in the group have the same plan.
+\item[Strong Shared Plan]
+All the people in the group have the same plan, and this is common
+knowledge.
+\end{description}
+\end{frame}
+
+\begin{frame}{Argument Against Weak Shared Plan}
+\protect\hypertarget{argument-against-weak-shared-plan}{}
+\begin{enumerate}
+\tightlist
+\item
+  If each person is trying to do X, and thinks they are the only one
+  trying to do X, then there is no group action of trying to do X.
+\item
+  If \textbf{Weak Shared Plan} is true, then in such a situation there
+  is a group action of trying to do X.
+\item
+  So \textbf{Weak Shared Plan} is false.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Argument Against Strong Shared Plan}
+\protect\hypertarget{argument-against-strong-shared-plan}{}
+\begin{enumerate}
+\tightlist
+\item
+  If \textbf{Strong Shared Plan} is true, then the members of the group
+  have no obligation to the others to continue with the plan if they
+  lose interest in it.
+\item
+  In cases of group action, members of the group do have an obligation
+  to the others to continue with the plan even if they lose interest in
+  it.
+\item
+  So \textbf{Strong Shared Plan} is false.
+\end{enumerate}
+
+Both parts of this are controversial. Gilbert spends time on each, first
+defending 1, then clarifying 2.
+\end{frame}
+
+\begin{frame}{Trust and Reliance}
+\protect\hypertarget{trust-and-reliance}{}
+\begin{itemize}
+\tightlist
+\item
+  Gilbert's objection is that \textbf{Strong Shared Plan} gives you
+  mutual reliance, but it doesn't give you trust.
+\item
+  The distinction between reliance and trust is hard to state precisely,
+  but there are very intuitive examples of reliance without trust.
+\item
+  Note in particular that how you can criticise someone who betrays your
+  trust is very different to how you can criticise someone who you
+  mistakenly relied on.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Gilbert on Obligation}
+\protect\hypertarget{gilbert-on-obligation}{}
+\begin{enumerate}
+\tightlist
+\item
+  If \textbf{Strong Shared Plan} was true, then members of a group could
+  properly rely on each other to continue the group's operation, but
+  they couldn't properly trust each other to continue the group's
+  operation.
+\item
+  When someone abandons a group project, the criticisms we can make of
+  them are more like the criticisms of people who betray a trust than
+  people who let us down even though we relied on them.
+\item
+  So, \textbf{Strong Shared Plan} is false.
+\end{enumerate}
+
+I'm personally somewhat sceptical of 2, at least as a universal claim
+about group projects.
+\end{frame}
+
+\begin{frame}{What is the Obligation to Continue}
+\protect\hypertarget{what-is-the-obligation-to-continue}{}
+It's not a moral obligation. Here is Gilbert's argument.
+
+\begin{enumerate}
+\tightlist
+\item
+  You can have shared plan between people with no concept of moral
+  obligation.
+\item
+  If the obligation is moral obligation, that's impossible.
+\item
+  So the obligation is not moral obligation. \pause
+\end{enumerate}
+
+This is, I think, a bad argument. 1 is only true for psychopaths, and
+not clear they can engage in group action.
+\end{frame}
+
+\begin{frame}{What is the Obligation to Continue}
+\protect\hypertarget{what-is-the-obligation-to-continue-1}{}
+Here is a better argument for the same conclusion.
+
+\begin{enumerate}
+\tightlist
+\item
+  You can have a shared plan to do an immoral thing.
+\item
+  You don't have moral obligations to do immoral things.
+\item
+  So the obligation is not a moral obligation.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{What is the Obligation to Continue}
+\protect\hypertarget{what-is-the-obligation-to-continue-2}{}
+\begin{itemize}
+\tightlist
+\item
+  It's also not a prudential obligation.
+\item
+  This should be clear, but Gilbert spends a bit of time on it. \pause
+\end{itemize}
+
+So what kind of weird sui generis obligation is it? This is a big
+question for Gilbert to answer.
+\end{frame}
+
+\begin{frame}{Gilbert's Positive View}
+\protect\hypertarget{gilberts-positive-view}{}
+\begin{itemize}
+\tightlist
+\item
+  That there is a group action when (and only when) the people form a
+  plural subject.
+\item
+  So, what is a plural subject.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{First Person Plural}
+\protect\hypertarget{first-person-plural}{}
+One account is that we have a plural subject when the plurality can
+literally be the subject of a sentence.
+
+\begin{itemize}
+\tightlist
+\item
+  This can't be right.
+\item
+  ``We are about to start killing each other for food'' is a well-formed
+  English sentence, but the `we' there does not pick out a Gilbert-style
+  group.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Distributive/Collective}
+\protect\hypertarget{distributivecollective}{}
+There is an important distinction between distributive and collective
+readings of plural sentences. The distinction turns on whether this
+inference is valid.
+
+\begin{enumerate}
+\tightlist
+\item
+  Group G is F.
+\item
+  a is in group G.
+\item
+  Therefore, a is F.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Distributive Reading}
+\protect\hypertarget{distributive-reading}{}
+\begin{enumerate}
+\tightlist
+\item
+  Our class has an exam tomorrow.
+\item
+  I am in the class.
+\item
+  Therefore, I have an exam tomorrow.
+\end{enumerate}
+
+This is the distributive reading; the group has the property because
+everyone has the property.
+\end{frame}
+
+\begin{frame}{Collective Reading}
+\protect\hypertarget{collective-reading}{}
+\begin{enumerate}
+\tightlist
+\item
+  Our class is surrounding the building.
+\item
+  I am in the class.
+\item
+  Therefore, I am surrounding the building.
+\end{enumerate}
+
+This is the collective reading; the group does not surround the building
+in virtue of each individual surrounding the building.
+\end{frame}
+
+\begin{frame}{Plural Subjects}
+\protect\hypertarget{plural-subjects}{}
+A better version of Gilbert's view on pronouns is that a group is a
+plural subject when they can be referred to by a first person plural
+pronoun understood collectively, not distributively.
+
+\begin{itemize}
+\tightlist
+\item
+  This rules out really bad cases - that we have an exam tomorrow
+  doesn't make us a group.
+\item
+  But it doesn't do enough - the example I gave earlier is collective
+  not distributive.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Authority and Doing}
+\protect\hypertarget{authority-and-doing}{}
+\begin{itemize}
+\tightlist
+\item
+  I think at the heart of Gilbert's view is a really fascinating
+  phenomena about the emergence of authority.
+\item
+  In some cases, the fact that a person is giving instructions and other
+  people are following them gives that person a kind of authority.
+\item
+  By that I don't just mean the descriptive claim that their
+  instructions will be followed.
+\item
+  I mean that some others should (in some sense) follow these
+  instructions; they are doing the wrong thing if they don't.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Authority and Gilbert Groups}
+\protect\hypertarget{authority-and-gilbert-groups}{}
+\begin{itemize}
+\tightlist
+\item
+  If a person has this kind of authority, then some others should
+  follow.
+\item
+  And that sort of sufficies for the people involved to form a group in
+  Gilbert's sense.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Duos and Gilbert Groups}
+\protect\hypertarget{duos-and-gilbert-groups}{}
+But there is something very special about the two person groups Gilbert
+considers.
+
+\begin{itemize}
+\tightlist
+\item
+  No one can leave without the group dissolving.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Many Person Groups}
+\protect\hypertarget{many-person-groups}{}
+Imagine that you're in a group, and that you have (somehow) the
+followiing obligations.
+
+\begin{enumerate}
+\tightlist
+\item
+  To not do something that would constitute the dissolution of the
+  group.
+\item
+  To follow the rules of the group conditional on being in the group.
+\end{enumerate}
+
+In a two person group, these will entail an obligation to continue
+following the group rules. But not in larger groups.
+\end{frame}
+
+\begin{frame}{Puzzle Cases}
+\protect\hypertarget{puzzle-cases}{}
+\begin{enumerate}
+\tightlist
+\item
+  Large groups
+\item
+  Immoral group activities
+\item
+  Explicit disavowal of long term commitment
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Large Groups}
+\protect\hypertarget{large-groups}{}
+\begin{itemize}
+\tightlist
+\item
+  If I'm in a large group (e.g., a protest rally), how much obligation
+  do I have to continue from the fact that I've joined?
+\item
+  Intuitively, not much.
+\item
+  And maybe the fact that I wouldn't dissolve the group by leaving
+  matters here.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Immoral Groups}
+\protect\hypertarget{immoral-groups}{}
+\begin{itemize}
+\tightlist
+\item
+  Gilbert knows this, but it's a challenge for her to say what the
+  obligation is in cases where the group is, say, robbing a bank.
+\item
+  To be fair, this is kind of a problem for everyone.
+\item
+  If I join a bank robbing group, and promise to do my part in a plan,
+  then just bail when the plan is in operation, there is a sense in
+  which I've done something wrong.
+\item
+  This sense can persist even if it would be all things considered worse
+  to continue in the group.
+\item
+  Perhaps Gilbert can offer resources to explain what's going on here.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Explicit Disavowal}
+\protect\hypertarget{explicit-disavowal}{}
+Sometimes a person can join a group and explicitly say they have no long
+term commitment to it.
+
+\begin{itemize}
+\tightlist
+\item
+  We're watching football in a common area, and someone we know comes
+  by.
+\item
+  We invite them to join us, and they say ``Sure, but I might have to go
+  if I get a call.''
+\item
+  They are in the group, even though they do nothing at all wrong if the
+  call comes and they leave.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{For Next Time}
+\protect\hypertarget{for-next-time}{}
+Bratman's very different picture of group action.
+\end{frame}
+
+\end{document}

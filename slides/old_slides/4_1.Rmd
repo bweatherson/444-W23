@@ -1,0 +1,83 @@
+---
+title: "444 Lecture 4.1 - Information Sets"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Plan
+
+To discuss how we introduce uncertainty into the theory of games.
+
+## Reading
+
+Bonanno, section 4.1; the slide numbers and the section numbers have joined for now.
+
+## Basic Idea
+
+- Sometimes when a player has to make a choice, they know they are at one of a set of nodes in the tree, but they don't know which one.
+- We will illustrate this by drawing a circle around the nodes.
+- The circle means that the player making a choice knows that they are in that circle somewhere, but the rules of the game don't guarantee that they know which point they are in.
+
+## Cheating Game
+
+- Professor decides to either give every student the same exam, or give different exams to different students.
+- Student doesn't know what professor did, and has to decide whether to copy off (known to be good at the course) neighbour.
+
+---
+
+![Payoff tree for cheating game](images/04_01.png)
+
+## How To Read Tree
+
+- Professor makes a choice.
+- Then student makes a choice.
+- When student chooses, there is a fact about where in the tree we are.
+- But student isn't told that fact - they are just told that we are at one of the nodes in the circled set.
+
+## Circles Everywhere
+
+- We don't normally draw them, but you should imagine these circles everywhere on the tree.
+- If a node doesn't have a circle around it, that means that its circle just contains itself.
+
+## Information Set
+
+- We will call the circle associate with each point its **information set**.
+- Each node is in precisely one information set.
+- That set may be a singleton; it might just be that node.
+- But that's not the general case.
+
+## Constraints on Information Sets - Outputs
+
+Every node in an information set must have the same outputs.
+
+- You can't have an information set where the Player has three options from one node, but only two from another.
+- The player knows how many options they have.
+- So if the options were different, they could figure out which node they were at.
+
+## Constraints on Information Sets - Inputs
+
+Every node in an information set has the same history of moves by the player whose turn it is.
+
+- We assume everyone knows what moves they have made.
+- It is an interesting fact that some real life board games rely on the falsity of this assumption.
+- But as on previous slide, if the nodes have a different history for this player, that means the player knows which node they are at.
+
+## For Next Time
+
+- We will look at some assumptions about information sets that game theorists usually take for granted, but which seem philosophically problematic.

@@ -1,0 +1,100 @@
+---
+title: "444 Lecture 2.1 - What are Games"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("gameformat.R")
+```
+
+## Plan
+
+- To introduce games!
+
+## Associated Reading
+
+Bonanno, section 2.1.
+
+## Games
+
+> - A **game** is any situation where the the outcome is determined by the actions of the players, plus perhaps some impact from the outside world.
+> - If this seems really general, it is!
+
+## Formal games
+
+In a formal representation of a game we specify:
+
+> - How many players there are.
+> - How many moves they each have.
+> - What order those moves get made in.
+> - How many options they have at each move.
+> - What the payoff is for each player for each possible combination of moves by the players and 'moves' by nature.
+
+## Two Main Types
+
+> - Each player makes 1 move, and these are made simultaneously.
+> - Players take turns making moves, and every move is revealed to all players when they are made.
+
+---
+
+![An example of a turn taking game](images/chess_board.jpg){height=65% width=65%}
+
+---
+
+![An example of a one move game](images/chess_computer.jpg){height=65% width=65%}
+
+---
+
+![A more familiar one move game](images/rps.png){height=65% width=65%}
+
+## Other Types
+
+> - Nature gets involved.
+> - Nature gets involved and their move is only revealed to one of the players.
+> - A move made by a player is not revealed to the other player(s) straight away.
+> - Multiple sequential moves.
+
+---
+
+![How nature can get involved in a public way.](images/dice.jpg){height=65% width=65%}
+
+---
+
+![How nature can get involved in a private way.](images/cards.jpg){height=65% width=65%}
+
+---
+
+![Moves that are not revealed](images/sealed_envelope.jpg){height=65% width=65%}
+
+---
+
+![Multiple simultaneous moves](images/diplomacy.pdf){height=65% width=65%}
+
+## Positive Sum Game
+
+- These instances are a bit non-representative in one crucial respect.
+- They are all **zero-sum**.
+- That is, someone doing well means someone else must be doing worse.
+- This is not the general case.
+
+## Positive Sum Game
+
+Most of the games we're going to look at have the following characteristic.
+
+- There is a pair of possible outcomes such that every player is better off in the first outcome than the second.
+
+## For Next Time
+
+We're going to get a bit clearer on what this last claim means, and how it affects how we write up games.

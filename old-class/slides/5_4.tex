@@ -1,0 +1,463 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 5.4 - Finding Mixed Strategy Equilibria},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 5.4 - Finding Mixed Strategy Equilibria}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Plan}
+\protect\hypertarget{plan}{}
+Discuss how we can find mixed strategy equilibria.
+\end{frame}
+
+\begin{frame}{Reading}
+\protect\hypertarget{reading}{}
+Bonanno, Section 6.3.
+\end{frame}
+
+\begin{frame}{Basic Idea}
+\protect\hypertarget{basic-idea}{}
+\begin{itemize}
+\tightlist
+\item
+  In equilibria, the other player is willing to play a mixed strategy.
+\item
+  That requires that they be indifferent between other strategies.
+\item
+  So we find the equilibria by finding the mixture that makes them
+  indifferent.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example}
+\protect\hypertarget{example}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 5, 2 & 1, 3\\
+Down & 2, 2 & 3, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  You can see fairly quicklythat there is no pure strategy equilibria.
+\item
+  So the equilibria must be a mixed strategy equilibria.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Theory}
+\protect\hypertarget{theory}{}
+What does it take for Column to play a mixed strategy in equilibria?
+
+\begin{itemize}
+\tightlist
+\item
+  Assume that Left has a higher expected return than Right.
+\item
+  The expected return of a mixed strategy is a weighted average of the
+  expected returns of Left and Right.
+\item
+  If Left has a higher expected return than Right, that weighted average
+  will be strictly between the expected returns of Left and Right.
+\item
+  And that means it can't be an equilibrium, since in equilibrium there
+  is no alternative with a higher expected return. \pause
+\item
+  And the same reasoning shows Right can't have a higher expected return
+  than Left.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Theory}
+\protect\hypertarget{theory-1}{}
+So we are trying to find the mixture such that Column is indifferent
+between Left and Right.
+
+\begin{itemize}
+\tightlist
+\item
+  The other crucial thing to remember is that probabilities add to 1.
+\item
+  So when working out Row's strategy, there is only one variable.
+\item
+  Once we set the probability of Row playing Up to \(x\), that sets all
+  the probabilities, because the probablity of playing Down is \(1-x\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{A Note}
+\protect\hypertarget{a-note}{}
+I'm only going to go over cases where the mixed strategy equilibrium
+involves a mixture of two pure strategies.
+
+\begin{itemize}
+\tightlist
+\item
+  There are cases where the mixed strategy equilibrium involves mixtures
+  of 3 or more pure strategies.
+\item
+  Rock, Paper, Scissors is the simplest such example.
+\item
+  But in general the math of calculating these is considerably fancier
+  than what we'll be doing, and I'll stick to cases where the mixed
+  strategy equilibrium only involves 2 pure strategies.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Back to the Example}
+\protect\hypertarget{back-to-the-example}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 5, 2 & 1, 3\\
+Down & 2, 2 & 3, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  Assume Row plays Up with probability \(x\), and Down with probability
+  \(1-x\).
+\item
+  Our job is to find an \(x\) such that the expected return of Left and
+  Right is the same.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Left and Right}
+\protect\hypertarget{left-and-right}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 5, 2 & 1, 3\\
+Down & 2, 2 & 3, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  The expected return of Left is \(2x + 2(1-x)\), i.e., \(2\).
+\item
+  The expected return of Right is \(3x + 0(1-x)\), i.e., \(3x\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Row's Strategy.}
+\protect\hypertarget{rows-strategy.}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 5, 2 & 1, 3\\
+Down & 2, 2 & 3, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  So \(2 = 3x\), so \(x = \nicefrac{2}{3}\).
+\item
+  So Row's strategy is to play Up with probability \(\nicefrac{2}{3}\),
+  and hence Down with probability \(\nicefrac{1}{3}\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{}
+\protect\hypertarget{section}{}
+\begin{itemize}
+\tightlist
+\item
+  The expected return of Right is \(3x + 0(1-x)\), i.e., \(3x\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Onto Column}
+\protect\hypertarget{onto-column}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 5, 2 & 1, 3\\
+Down & 2, 2 & 3, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  Assume Column plays Left with probability \(x\), and Right with
+  probability \(1-x\).
+\item
+  Our job is to find an \(x\) such that the expected return of Up and
+  Down is the same.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Left and Right}
+\protect\hypertarget{left-and-right-1}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 5, 2 & 1, 3\\
+Down & 2, 2 & 3, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  The expected return of Up is \(5x + 1(1-x)\), i.e., \(4x + 1\).
+\item
+  The expected return of Down is \(2x + 3(1-x)\), i.e., \(3 - x\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Column's Strategy.}
+\protect\hypertarget{columns-strategy.}{}
+\begin{align*}
+4x + 1 &= 3 - x \\
+5x + 1 &= 3 \\
+5x    &= 2 \\
+x    &= \nicefrac{2}{5}
+\end{align*}
+
+So Column's strategy is to play Left with probability
+\(\nicefrac{2}{5}\), and hence Right with probability
+\(\nicefrac{3}{5}\).
+\end{frame}
+
+\begin{frame}{Takeaways}
+\protect\hypertarget{takeaways}{}
+\begin{itemize}
+\tightlist
+\item
+  To find a player's move probabilities in equilibria, look to the other
+  player's payouts.
+\item
+  Try to make the other player indifferent between their choices.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Extra Steps}
+\protect\hypertarget{extra-steps}{}
+\begin{itemize}
+\tightlist
+\item
+  I'm not going to go over more complicated examples on the slides, but
+  there is an extra step you can do (and which we can discuss in class
+  if you're interested).
+\item
+  Sometimes you can find the mixed strategy equilibria of a game with
+  more than 2 moves by first deleting \textbf{strongly} dominated
+  strategies.
+\item
+  Bonanno works through an example like this.
+\item
+  I'm going to come back to it later, but for now I'll just stick to
+  this example.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{For Next Time}
+\protect\hypertarget{for-next-time}{}
+I'm going to start on an idea I want to work through very slowly, and
+spend a bit of time on - the idea that a mixture of strategies can
+dominate another strategy.
+\end{frame}
+
+\end{document}

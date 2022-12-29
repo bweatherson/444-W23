@@ -1,0 +1,89 @@
+---
+title: "Assignment 3"
+fontsize: 11pt
+output:
+  pdf_document:
+    toc: false
+    md_extensions: +startnum
+    df_print: kable
+    keep_tex: yes
+    latex_engine: xelatex
+    extra_dependencies: ["gensymb", "nicefrac", "caption", "istgame", "mathastext"]
+    fig_caption: no
+    includes:
+      in_header: 
+        - ../../compact-title.tex
+header-includes:
+  - \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=MatchLowercase}
+  - \setmainfont[]{SF Pro Text Light}
+geometry: margin=1in
+author: Philosophy 444
+date: Due 27 September, 2019
+---
+
+## Questions 1 to 3
+
+Farad wants to go to law school so he’s going to university to study philosophy. He is deciding between Wisconsin and Minnesota.
+
+Suppose 2/10 of Wisconsin philosophy students who apply to law school get in, the rest go to teacher’s college or medical school. For Farad, going to law school has utility 250, and going to teacher’s college or medical school has utility 50.
+
+1. What is the expected utility of going to Wisconsin for Farad?
+
+Suppose Minnesota students have better odds of getting into law school: 3/10. And 6/10 go to work for the government, which Farad would prefer to being unemployed. On the other hand, 1/10  of them don’t get a job at all, which has utility −50 for Farad.
+
+Farad can’t decide: Wisconsin and Minnesota seem equally good choices to him.
+
+2. How much utility does working for the government have for Farad?
+
+Farad ends up going to Wisconsin and now he’s about to graduate. Unfortunately, his grades aren’t as good as he'd hoped, so he would have to do a special summer program to improve his odds of getting into law school. Alternatively he can apply to medical school or teacher’s college, where he would definitely get in.
+
+Farad has to choose between (i) taking the summer program, and (ii) going to medical school or teacher’s college. He won’t have time to do both. So if the summer program doesn’t get him into law school, he’ll end up unemployed.
+
+3. How high would his chances of getting into law school have to be for him to risk taking the summer program?
+
+## Question 4
+
+Five percent of tablets made by the company Ixian have factory defects. Ten percent of the tablets made by their competitor company Guild do. A computer store buys 40%  of its tablets from Ixian, and 60% from Guild.
+
+Find $\Pr(I | D)$, the probability a tablet from this store is made by Ixian, given that it has a factory defect?
+
+## Question 5
+
+In the city of Elizabeth, the neighbourhood of Southside has lots of chemical plants. 2% of Elizabeth’s children live in Southside, and 14% of those children have been exposed to toxic levels of lead. Elsewhere in the city, only 1% of the children have toxic levels of exposure.
+
+Find $\Pr(S | L)$, the probability that a randomly chosen child from Elizabeth who has toxic levels of lead exposure lives in Southside?
+
+## Question 6
+
+The probability that Nasim will study for her test is 4/10. The probability that she will pass, given that she studies, is 9/10. The probability that she passes, given that she does not study, is 3/10. What is the probability that she has studied, given that she passes?
+
+## Question 7
+
+At the height of flu season, roughly 1 in every 100 people have the flu. But some people don’t show symptoms even when they have it: only half the people who have the virus show symptoms.
+
+Flu symptoms can also be caused by other things, like colds and allergies. So about 1 in every 20 people who don’t have the flu still have flu-like symptoms.
+
+If someone has flu-like symptoms at the height of flu season, what is the probability that they actually have the flu?
+
+## Question 8
+
+A magic shop sells two kinds of trick coins. The first kind are biased towards heads: they come up heads 9 times out of 10 (the tosses are independent). The second kind are biased towards tails: they comes up tails 8 times out of 10 (tosses still independent). Half the coins are the first kind, half are the second kind. But they don’t label the coins, so you have to experiment to find out which are which.
+
+You pick a coin at random and flip it once. Given that it comes up heads, what is the probability it’s the first kind of coin?
+
+
+## Question 9
+
+A company makes websites, always powered by one of three server platforms: Bulldozer, Kumquat, or Penguin. Bulldozer crashes 1 out of every 10 visits, Kumquat crashes 1 in 50 visits, and Penguin only crashes 1 out of every 200 visits.
+
+Half of the websites are run on Bulldozer, 30% are run on Kumquat, and 20% are run on Penguin.
+
+You visit one of their sites for the first time and it crashes. What is the probability it was run on Penguin?
+
+## Question 10
+
+The Emperor Hotel has two kinds of suites: singles have one bed, royal suites have three beds. There are 80 singles and 20 royals.
+
+In a single, the probability of bed bugs is 1/100. But every additional bed put in a suite doubles the chance of bed bugs.
+
+If a suite is inspected at random and bed bugs are found, what is the probability it’s a royal?

@@ -1,0 +1,800 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold,Scale =
+MatchLowercase]{SF Pro Rounded}
+  \setmathfont[]{Fira Math}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1.5in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\linespread{1.05}
+\usepackage{multicol}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={PHIL 444: Groups and Choices},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{PHIL 444: Groups and Choices}
+\author{Brian Weatherson}
+\date{Winter 2023}
+
+\begin{document}
+\maketitle
+
+\hypertarget{course-description}{%
+\section{Course Description}\label{course-description}}
+
+This course has three parts.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Game Theory} - We will review the basics of game theory, with
+  a special focus on the philosophical assumptions that game theorists
+  make, and the ways in which game theory can model the development of
+  cooperative activity. This will be the longest unit, taking up the
+  first half of the course.
+\item
+  \textbf{The Origins of Inequality} - We will look at recent work using
+  game theoretic techniques to model how inequality, and in particular
+  gender inequality, could have arisen out of an equal society. This
+  will take up the third quarter of the course.
+\item
+  \textbf{Group Attitudes} - We will look at what it could mean for
+  groups to have beliefs, desires, plans, intentions and knowledge. This
+  will take up the last quarter of the course.
+\end{enumerate}
+
+\hypertarget{canvas}{%
+\section{Canvas}\label{canvas}}
+
+There is a Canvas site for this course, which can be accessed from
+\url{https://canvas.umich.edu}. Course documents (syllabus, lecture
+notes, assignments) will be available from this site. Please make sure
+that you can access this site. Consult the site regularly for
+announcements, including changes to the course schedule. And there are
+many tools on the site to communicate with each other, and with me.
+
+\hypertarget{required-materials}{%
+\section{Required Materials}\label{required-materials}}
+
+There are two textbooks for the course. The first is open access, but
+the second has to be purchased.
+
+\begin{itemize}
+\tightlist
+\item
+  \emph{Game Theory} by Giacomo Bonanno, available at
+  \url{http://faculty.econ.ucdavis.edu/faculty/bonanno/GT_Book.html}.
+\item
+  \emph{The Origins of Unfairness} by Cailin O'Connor. (Oxford
+  University Press, 2019)
+\end{itemize}
+
+For the O'Connor book, you can either get an electronic or a paper
+version of the book, it shouldn't matter which. (I'll be teaching off of
+the Kindle version, but I will refer to page numbers not Kindle
+locations.)
+
+The other readings will all be available through the university library,
+and will be linked on Canvas.
+
+\newpage
+
+\hypertarget{course-requirements}{%
+\section{Course Requirements}\label{course-requirements}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Do the readings! Nothing I say in class will be more important than
+  the reading.
+\item
+  Come to lectures, and ask questions. For the past few years this class
+  has been run largely remotely, with me recording lectures and people
+  watching in their own time. That's not a terrible model, but it really
+  missed the interactiveness of classes. I will \textbf{not} have 80
+  minutes of material to deliver in front of a screen each class; the
+  aim is to talk about this stuff, and you're not interrupting to ask
+  questions.
+\item
+  Participate in the discussion sections. It is really important that
+  you interact with the discussion section leader, especially in the
+  early part of the course. Some of this material is hard, and you can
+  only grasp it by talking it through in small groups.
+\item
+  Complete 5 of the 6 weekly assignments from part 1 of the course. (You
+  should complete all six, but only the best five will count for credit
+  - this is to allow you to drop one if there is some emergency one
+  week. If the future resembles the recent past.)
+\item
+  Write short papers (5-6 pages, or about 1500 words) for both the
+  second and third parts of the course. The topics for these will be
+  distributed in advance. The first is due on \textbf{March 31} and the
+  second is due on \textbf{April 26}.
+\end{enumerate}
+
+Both of the papers may be co-written with one other student in the
+class. But you may not co-author both papers with the same other
+student.
+
+\hypertarget{summary-of-grading-system}{%
+\section{Summary of Grading System}\label{summary-of-grading-system}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Weekly assignments - 10\% each, 5 assignments, 50\% total.
+\item
+  Two papers - 25\% each, 2 papers, 50\% total.
+\end{enumerate}
+
+\newpage
+
+\hypertarget{plagiarism}{%
+\section{Plagiarism}\label{plagiarism}}
+
+Although team-work, and even co-authorship, is encouraged, plagiarism is
+strictly prohibited. You are responsible for making sure that none of
+your work is plagiarized. Be sure to cite work that you use, both direct
+quotations and paraphrased ideas. Any citation method that is tolerably
+clear is permitted, but if you'd like a good description of a citation
+scheme that works well in philosophy, look at
+\url{http://bit.ly/VDhRJ4}.
+
+You are encouraged to discuss the course material, including
+assignments, with your classmates, but all written work that you hand in
+under your own name must be your own. If work is handed is as the work
+of two people, you are affirming that each person did a fair share of
+the work. (Note that when you're submitting work on Canvas, you have to
+each submit the paper, even if it is co-authored. That way Canvas knows
+that everyone has turned in work.)
+
+You should also be familiar with the academic integrity policies of the
+College of Literature, Science \& the Arts at the University of
+Michigan, which are available here:
+\url{http://www.lsa.umich.edu/academicintegrity/}. Violations of these
+policies will be reported to the Office of the Assistant Dean for
+Student Academic Affairs, and sanctioned with a course grade of F.
+
+\hypertarget{disability}{%
+\section{Disability}\label{disability}}
+
+The University of Michigan abides by the Americans with Disabilities Act
+of 1990, Section 504 of the Rehabilitation Act of 1973, and other
+applicable federal and state laws that prohibit discrimination on the
+basis of disability, which mandate that reasonable accommodations be
+provided for qualified students with disabilities.
+
+If you have a disability, and may require some type of instructional
+and/or examination accommodation, please contact me early in the
+semester. If you have not already done so, you will also need to
+register with the Office of Services for Students with Disabilities. The
+office is located at G664 Haven Hall.
+
+For more information on disability services at the University of
+Michigan, go to \url{http://ssd.umich.edu}.
+
+\newpage
+
+\hypertarget{class-schedule}{%
+\section{Class Schedule}\label{class-schedule}}
+
+Most of the readings are from the two textbooks. The other readings are
+all in the UM library or online. You might have to be logged in to UM to
+get them though. The names of the papers are links to a source where you
+can get a copy of the paper.
+
+The video lectures will have a number of the form \(x.y\), where \(x\)
+is the week they are for, and the \(y\) is their order in the week. You
+should watch these \textbf{before} class, and we can discuss the
+material in class.
+
+I'm away January 27 which complicates the schedule for a while,
+especially since the classes are meant to go in pairs. For a couple of
+weeks the units will start on Thursday and end on the following Tuesday,
+until we'll have a short unit on Probability to catch back up.
+
+\hypertarget{week-1-introduction}{%
+\subsection{Week 1: Introduction}\label{week-1-introduction}}
+
+\begin{multicols}{2}
+
+\hypertarget{tuesday-january-03}{%
+\subsubsection{Tuesday, January 03}\label{tuesday-january-03}}
+
+No class, classes start on Wednesday
+
+\columnbreak
+
+\hypertarget{thursday-january-05}{%
+\subsubsection{Thursday, January 05}\label{thursday-january-05}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Introduction
+\item[Reading]
+Bonanno, Chapter 1
+\end{description}
+
+\end{multicols}
+
+\hypertarget{week-2-what-are-games}{%
+\subsection{Week 2: What are Games}\label{week-2-what-are-games}}
+
+\begin{multicols}{2}
+
+\hypertarget{tuesday-january-10}{%
+\subsubsection{Tuesday, January 10}\label{tuesday-january-10}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Games, Payouts and Utilities
+\item[Reading]
+Bonanno, Sections 2.1 and 2.2.
+\end{description}
+
+\hypertarget{thursday-january-12}{%
+\subsubsection{Thursday, January 12}\label{thursday-january-12}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Dominant Strategies and Equilibria
+\item[Reading]
+Bonanno, Sections 2.5 and 2.6.
+\end{description}
+
+\end{multicols}
+
+\begin{itemize}
+\tightlist
+\item
+  Weekly assignment 1 due on Friday, January 13 at 5pm.
+\end{itemize}
+
+\hypertarget{week-3-games-and-time}{%
+\subsection{Week 3: Games and Time}\label{week-3-games-and-time}}
+
+\begin{multicols}{2}
+
+\hypertarget{tuesday-january-17}{%
+\subsubsection{Tuesday, January 17}\label{tuesday-january-17}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Dynamic Games
+\item[Reading]
+Bonanno, Sections 3.1-3.3.
+\end{description}
+
+\hypertarget{thursday-january-19}{%
+\subsubsection{Thursday, January 19}\label{thursday-january-19}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Backward Induction
+\item[Reading]
+Bonanno, Sections 3.4 and 3.5.
+\end{description}
+
+\end{multicols}
+
+\begin{itemize}
+\tightlist
+\item
+  Weekly assignment 2 due on Friday, January 20 at 5pm.
+\end{itemize}
+
+\newpage
+
+\hypertarget{unit-4-information-and-utility}{%
+\subsection{Unit 4: Information and
+Utility}\label{unit-4-information-and-utility}}
+
+\begin{multicols}{2}
+
+\hypertarget{tuesday-january-24}{%
+\subsubsection{Tuesday, January 24}\label{tuesday-january-24}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Games with Imperfect Information
+\item[Reading]
+Bonanno, Sections 4.1-4.4.
+\end{description}
+
+\hypertarget{thursday-january-26}{%
+\subsubsection{Thursday, January 26}\label{thursday-january-26}}
+
+No class - Professor away at conference
+
+\end{multicols}
+
+\hypertarget{tuesday-january-31}{%
+\subsubsection{Tuesday, January 31}\label{tuesday-january-31}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Utility
+\item[Reading]
+Bonanno, Sections 5.1-5.3.
+\end{description}
+
+\begin{itemize}
+\tightlist
+\item
+  Weekly assignment 3 due on Friday, February 03 at 5pm.
+\end{itemize}
+
+\hypertarget{unit-5-games-with-cardinal-payoffs}{%
+\subsection{Unit 5: Games with Cardinal
+Payoffs}\label{unit-5-games-with-cardinal-payoffs}}
+
+\begin{multicols}{2}
+
+\hypertarget{thursday-february-02}{%
+\subsubsection{Thursday, February 02}\label{thursday-february-02}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Nash Equilibria
+\item[Reading]
+Bonanno, Sections 6.1-6.3
+\end{description}
+
+\hypertarget{tuesday-february-07}{%
+\subsubsection{Tuesday, February 07}\label{tuesday-february-07}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Rationalizable Strategies
+\item[Reading]
+Bonanno, Section 6.4.
+\end{description}
+
+\end{multicols}
+
+\hypertarget{unit-6-probability}{%
+\subsection{Unit 6: Probability}\label{unit-6-probability}}
+
+\hypertarget{thursday-february-09}{%
+\subsubsection{Thursday, February 09}\label{thursday-february-09}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Probability
+\item[Reading]
+No new reading
+\end{description}
+
+\begin{itemize}
+\tightlist
+\item
+  Weekly assignment 4 due on Friday, February 10 at 5pm.
+\end{itemize}
+
+\hypertarget{week-7-games-with-time-and-uncertainty}{%
+\subsection{Week 7: Games with Time and
+Uncertainty}\label{week-7-games-with-time-and-uncertainty}}
+
+\begin{multicols}{2}
+
+\hypertarget{tuesday-february-14}{%
+\subsubsection{Tuesday, February 14}\label{tuesday-february-14}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Extensive Form Games
+\item[Reading]
+Bonanno, Chapter 7
+\end{description}
+
+\hypertarget{thursday-february-16}{%
+\subsubsection{Thursday, February 16}\label{thursday-february-16}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Signaling Games
+\item[Reading]
+Bonanno and Spence papers below.
+\end{description}
+
+\end{multicols}
+
+\begin{itemize}
+\tightlist
+\item
+  Weekly assignment 5 due on Friday, February 17 at 5pm.
+\item
+  Giacomo Bonanno, Spence's model of Signaling in the job market
+  (available on Canvas)
+\item
+  Michael Spence, \href{https://www.jstor.org/stable/1882010?seq=1}{Job
+  Market Signaling}
+\end{itemize}
+
+\newpage
+
+\hypertarget{week-8-famous-cooperation-games}{%
+\subsection{Week 8: Famous Cooperation
+Games}\label{week-8-famous-cooperation-games}}
+
+\begin{multicols}{2}
+
+\hypertarget{tuesday-february-21}{%
+\subsubsection{Tuesday, February 21}\label{tuesday-february-21}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Prisoners Dilemma
+\item[Reading]
+Axelrod and Hamilton paper below
+\end{description}
+
+\hypertarget{thursday-february-23}{%
+\subsubsection{Thursday, February 23}\label{thursday-february-23}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Stag Hunt
+\item[Reading]
+Skyrms paper below
+\end{description}
+
+\end{multicols}
+
+\begin{itemize}
+\tightlist
+\item
+  Weekly assignment 6 due on Friday, February 24 at 5pm.
+\item
+  Robert Axelrod and William Hamilton,
+  \href{http://www-personal.umich.edu/~axe/research/Axelrod\%20and\%20Hamilton\%20EC\%201981.pdf}{The
+  Evolution of Cooperation}
+\item
+  Brian Skyrms, \href{https://www.jstor.org/stable/3218711}{The Stag
+  Hunt}
+\end{itemize}
+
+\hypertarget{week-9-games-with-types}{%
+\subsection{Week 9: Games with Types}\label{week-9-games-with-types}}
+
+\begin{multicols}{2}
+
+\hypertarget{tuesday-march-07}{%
+\subsubsection{Tuesday, March 07}\label{tuesday-march-07}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Gender and Coordination
+\item[Reading]
+O'Connor, Intro and Chapter 1
+\end{description}
+
+\hypertarget{thursday-march-09}{%
+\subsubsection{Thursday, March 09}\label{thursday-march-09}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Equilibria Involving Types
+\item[Reading]
+O'Connor, Chapters 2 and 3
+\end{description}
+
+\end{multicols}
+
+\hypertarget{week-10-the-evolution-of-gender}{%
+\subsection{Week 10: The Evolution of
+Gender}\label{week-10-the-evolution-of-gender}}
+
+\begin{multicols}{2}
+
+\hypertarget{tuesday-march-14}{%
+\subsubsection{Tuesday, March 14}\label{tuesday-march-14}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Gender and Convention
+\item[Reading]
+O'Connor, Chapter 4
+\end{description}
+
+\hypertarget{thursday-march-16}{%
+\subsubsection{Thursday, March 16}\label{thursday-march-16}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Convention and Power
+\item[Reading]
+O'Connor, Chapter 5
+\end{description}
+
+\end{multicols}
+
+\hypertarget{week-11-the-evolution-of-gender}{%
+\subsection{Week 11: The Evolution of
+Gender}\label{week-11-the-evolution-of-gender}}
+
+\begin{multicols}{2}
+
+\hypertarget{tuesday-march-21}{%
+\subsubsection{Tuesday, March 21}\label{tuesday-march-21}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+First Mover Advantage and Disadvantage
+\item[Reading]
+O'Connor, Chapter 6
+\end{description}
+
+\hypertarget{thursday-march-23}{%
+\subsubsection{Thursday, March 23}\label{thursday-march-23}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Discrimination
+\item[Reading]
+O'Connor, Chapters 7-10
+\end{description}
+
+\end{multicols}
+
+\newpage
+
+\hypertarget{week-12-group-intention}{%
+\subsection{Week 12: Group Intention}\label{week-12-group-intention}}
+
+\begin{multicols}{2}
+
+\hypertarget{tuesday-march-28}{%
+\subsubsection{Tuesday, March 28}\label{tuesday-march-28}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Gilbert's Theory
+\item[Reading]
+Gilbert Paper and First Bratman paper
+\end{description}
+
+\hypertarget{thursday-march-30}{%
+\subsubsection{Thursday, March 30}\label{thursday-march-30}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Bratman's Theory
+\item[Reading]
+Second Bratman paper
+\end{description}
+
+\end{multicols}
+
+\begin{itemize}
+\tightlist
+\item
+  Margaret Gilbert, \href{https://philpapers.org/rec/GILWTA}{Walking
+  Together: A Paradigmatic Social Phenomenon}
+\item
+  Michael Bratman, \href{https://philpapers.org/rec/BRASI}{Shared
+  Intention}
+\item
+  Michael Bratman, \href{https://philpapers.org/rec/BRASCA}{Shared
+  Cooperative Activity}
+\end{itemize}
+
+\hypertarget{week-13-group-knowledge}{%
+\subsection{Week 13: Group Knowledge}\label{week-13-group-knowledge}}
+
+\begin{multicols}{2}
+
+\hypertarget{tuesday-april-04}{%
+\subsubsection{Tuesday, April 04}\label{tuesday-april-04}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Group Knowledge and Individual Knowledge
+\item[Reading]
+Lackey paper and Bird paper
+\end{description}
+
+\hypertarget{thursday-april-06}{%
+\subsubsection{Thursday, April 06}\label{thursday-april-06}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Public Virtue and Private Vice
+\item[Reading]
+Levy and Alfano paper
+\end{description}
+
+\end{multicols}
+
+\begin{itemize}
+\tightlist
+\item
+  Jennifer Lackey, \href{https://philpapers.org/rec/LACSEK}{Socially
+  Extended Knowledge}
+\item
+  Alexander Bird, \href{https://philpapers.org/rec/BIRSKT}{Social
+  knowing: The social sense of `scientific knowledge'}
+\item
+  Neil Levy and Mark Alfano,
+  \href{https://philpapers.org/rec/LEVKFV}{Knowledge From Vice: Deeply
+  Social Epistemology}
+\end{itemize}
+
+\hypertarget{week-14-group-belief}{%
+\subsection{Week 14: Group Belief}\label{week-14-group-belief}}
+
+\begin{multicols}{2}
+
+\hypertarget{tuesday-april-11}{%
+\subsubsection{Tuesday, April 11}\label{tuesday-april-11}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Group probability aggregation
+\item[Reading]
+Russell et al paper
+\end{description}
+
+\hypertarget{thursday-april-13}{%
+\subsubsection{Thursday, April 13}\label{thursday-april-13}}
+
+\begin{description}
+\tightlist
+\item[Topic]
+Social Wisdom
+\item[Reading]
+Sullivan et al paper
+\end{description}
+
+\end{multicols}
+
+\begin{itemize}
+\tightlist
+\item
+  Jeffrey Sanford Russell, John Hawthorne and Lara Buchak,
+  \href{https://philpapers.org/rec/RUSG}{Groupthink}
+\item
+  Emily Sullivan et al,
+  \href{https://philarchive.org/archive/SULCRS}{Can Real Social
+  Epistemic Networks Deliver the Wisdom of Crowds?}
+\end{itemize}
+
+\hypertarget{week-15-revision}{%
+\subsection{Week 15: Revision}\label{week-15-revision}}
+
+No new material - we'll just discuss anything that people felt went by
+too quickly, or that they would like to revise for essays.
+
+\newpage
+
+\hypertarget{full-list-of-papers}{%
+\subsection{Full List of Papers}\label{full-list-of-papers}}
+
+\begin{itemize}
+\tightlist
+\item
+  Robert Axelrod and William Hamilton,
+  \href{http://www-personal.umich.edu/~axe/research/Axelrod\%20and\%20Hamilton\%20EC\%201981.pdf}{The
+  Evolution of Cooperation}
+\item
+  Alexander Bird, \href{https://philpapers.org/rec/BIRSKT}{Social
+  knowing: The social sense of `scientific knowledge'}
+\item
+  Michael Bratman, \href{https://philpapers.org/rec/BRASI}{Shared
+  Intention}
+\item
+  Michael Bratman, \href{https://philpapers.org/rec/BRASCA}{Shared
+  Cooperative Activity}
+\item
+  Giacomo Bonanno, \href{http://canvas.umich.edu/}{Spence's model of
+  Signaling in the job market}
+\item
+  Margaret Gilbert, \href{https://philpapers.org/rec/GILWTA}{Walking
+  Together: A Paradigmatic Social Phenomenon}
+\item
+  Jennifer Lackey, \href{https://philpapers.org/rec/LACSEK}{Socially
+  Extended Knowledge}
+\item
+  Neil Levy and Mark Alfano,
+  \href{https://philpapers.org/rec/LEVKFV}{Knowledge From Vice: Deeply
+  Social Epistemology}
+\item
+  Jeffrey Sanford Russell, John Hawthorne and Lara Buchak,
+  \href{https://philpapers.org/rec/RUSG}{Groupthink}
+\item
+  Brian Skyrms, \href{https://www.jstor.org/stable/3218711}{The Stag
+  Hunt}
+\item
+  Michael Spence, \href{https://www.jstor.org/stable/1882010?seq=1}{Job
+  Market Signaling}
+\item
+  Emily Sullivan et al,
+  \href{https://philarchive.org/archive/SULCRS}{Can Real Social
+  Epistemic Networks Deliver the Wisdom of Crowds?}
+\end{itemize}
+
+\end{document}

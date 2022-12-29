@@ -1,0 +1,98 @@
+---
+title: "444 Lecture 2.3 - Ordinal and Cardinal Utility"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("gameformat.R")
+```
+
+## Plan
+
+- Explain the difference between ordinal and cardinal utility.
+
+## Associated Reading
+
+Bonanno, section 2.1.
+
+## Utility
+
+A utility function (for a particular agent) is a mapping $U$ from situations to numbers satsifying this constraint.
+
+- $U(S_1) > U(S_2)$ iff the agent is better off in $S_1$ than in $S_2$.
+
+## Welfare
+
+This isn't part of the formal theory, but we usually implicitly assume (at least in our narratives), the following principle.
+
+> The agent is better off in $S_1$ than in $S_2$ iff, given a choice and assuming they are fully informed, they prefer being in $S_1$ to $S_2$.
+
+That is, we'll usually speak as if a radically subjectivist view of welfare is correct. I've been doing this already, and I'm going to keep doing it.
+
+## Ordinal Utility
+
+- When we say that we're working with **ordinal** utility functions, really the only principle that applies is the one from two slides back.
+- Higher utilities are better, i.e., are preferred.
+- The term **ordinal** should make you think of 'orders'; all an ordinal utility function does is provide a rank **ordering** of the outcomes.
+
+## Two Functions
+
+So if we're working in ordinal utility, these two functions describe the same underlying reality.
+
+         $U_1$   $U_2$
+------- ------- -------
+ $O_1$     1       1
+ $O_2$     2       10
+ $O_3$     3      500
+ $O_4$     4      7329
+ 
+## Cardinal Utility
+
+- In cardinal utility theory, the differences between the numbers matter.
+- The numbers now express quantities, and the two functions from the previous slide do not represent the same underlying reality.
+
+## Cardinal Utility (Detail)
+
+- There is a fussy point here that's worth going over.
+- Even cardinal utility functions don't come with a scale.
+- So two functions with different numbers in them can still express the same underlying reality.
+
+## Cardinal Utility (Detail)
+
+The standard way to put this is that (cardinal) utility is defined only up to a **positive, affine transformation**. That means that if $U_1$ and $U_2$ are related by the following formula, then they represent the same state of affairs.
+
+$$
+U_2(o) = aU_1(o) + b \text{ where } a > 0
+$$
+
+## Celsius and Farenheit
+
+- The main real world cases of scales that are related in this way are temperature scales.
+- To convert between Celsius and Farenheit you use the formula $F = 1.8C + 32$.
+- But the scales are just two ways of representing the same physical reality.
+
+## Cardinal Utility (Detail)
+
+- So there is no such thing as one outcome being *twice as good* as another.
+- But we can say a lot of things about differences.
+
+## Cardinal Utility (Detail)
+
+> - If the difference between $O_1$ and $O_2$ is the same as the difference between $O_2$ and $O_3$, that will stay the same under any positive affine transformation.
+> - Indeed, for any $k$, if the difference between $O_1$ and $O_2$ is $k$ times the difference between $O_2$ and $O_3$, that will stay the same under any positive affine transformation.
+
+## For Next Time
+
+- We will start on section 2.2.

@@ -1,0 +1,50 @@
+title:              Mixed Strategies
+author:             Assignment 5
+date:               Due February 9, 5pm
+base header level:	3
+LaTeX Mode:          Article
+latex leader:         ../styles/handout-leader
+latex begin:         ../styles/handout-begin
+
+# Questions One-Six
+
+A thief wants to steal a particular diamond owned by the city council. The security firm guarding the diamond knows that the thief might strike tonight. They have to decide whether to put in Basic security (B) or Enhanced security (E). The thief has to decide whether to Steal (S) or Not steal (N) the diamond. The thief can evade basic security, but will be caught by enhanced security. Here is the payoff table for the two parties (with thief payouts first, since she's row).
+
+| | B | E |
+| --: | :--: | :--: |
+| S | 1, 0 | -5, 2| 
+| N | 0, 1 | 0, 0 |
+
+Intuitive, the thief wants the diamond, doesn't want to get caught, and cares way more about getting caught that the diamond. The security firm doesn't want the bad reputation of the diamond been stolen on their watch, or the cost of running Enhanced security, but they would like the reward for catching the thief. 
+
+The following questions are all about the mixed strategy Nash equilibrium of this game. (Answers should be decimal, not fractions, and accurate to two decimal places.)
+
+1. What is the probability of B?
+2. What is the probability of E?
+3. What is the probability of S?
+4. What is the probability of N?
+5. What is firm's expected return?
+6. What is thief's expected return?
+
+# Questions Seven-Nine
+
+A tough-on-crime faction on the city council wants to prevent theft by increasing the punishment for being caught stealing. If they had their way, the payout in the upper-right cell (i.e., SE), would be -10, 2. If this change was made, how would the new equilibrium compare to the old equilibrium?
+
+7. Would firm's expected payout go up, go down, or be unchanged?
+8. Would thief's expected payout go up, go down, or be unchanged?
+9. Would the probability that the diamond gets stolen go up, go down, or be unchanged?
+
+# Questions Ten - ???
+
+The tough-on-crime faction is defeated, but there is a new dispute over exactly what we should do to the payout in the top right cell. There are three options
+
+* Option one: leave it unchanged.
+* Option two: change it to -10, 2, as the tough-on-crime faction wanted.
+* Option three: change it to -5, 3, i.e., increase the reward for catching the thief.
+
+Happily for the security firm, a nice bit of regulatory capture means that they control the deciding vote. So this is now a dynamic game. Firm will choose option one, two or three, and then choose Basic or Enhanced. Thief will find out whether one, two or three was chosen, then choose Steal or Not.
+
+The following questions concern the subgame perfect equilibrium of this game.
+
+10. What is firm's expected payout?
+11. What is the probability that the diamond gets stolen?

@@ -1,0 +1,49 @@
+# Week Seven Plan
+
+Loosely based on chapter 7
+
+
+## Lecture Numbers
+
+7.1 Conditionalisation
+- Definition
+- Distinguish static and dynamic
+- Two special cases
+- Division by 0: go to anything
+- What is evidence
+
+7.2 Monty Hall
+
+7.3 Perfect Bayesian Equilibrium (check this is name Bonanno uses)
+- A PBE is a strategy pair with several features
+- Everyone updates by conditionalisation where possible (and is coherent where not)
+- At every information set, everyone maximises expected utility given plan and correct belief about other
+- Why this is stronger than Nash
+- Why this is stronger than SPE
+
+7.4 Signalling Games
+- From handout for last time
+- Basic idea
+- Information == type
+- Pooling, Babbling etc equilibria
+- Perfectly cooperative games
+- Somewhat competitive games
+
+7.5 Costly Signals
+- Real world examples
+- A case where they may be worth paying
+
+7.6 Spence Education Model
+- Go over the data about education
+- Set up the model
+- Explanatory benefits
+- Downsides
+
+7.7 Beer/Quiche Game
+- Basics of game
+- The obvious equilibrium
+- The non-obvious equilibrium
+- Is there a way out? Yes, we're not going to look into it
+- Two theoretical options
+- Option 1: Find a more complicated definition of equilibrium
+- Option 2: Find equilibrium selection strategies

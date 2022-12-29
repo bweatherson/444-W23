@@ -1,0 +1,1395 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[ignorenonframetext,]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph:
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+\centering
+\begin{beamercolorbox}[sep=16pt,center]{part title}
+  \usebeamerfont{part title}\insertpart\par
+\end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+\centering
+\begin{beamercolorbox}[sep=12pt,center]{part title}
+  \usebeamerfont{section title}\insertsection\par
+\end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+\centering
+\begin{beamercolorbox}[sep=8pt,center]{part title}
+  \usebeamerfont{subsection title}\insertsubsection\par
+\end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdftitle={444 Class Four},
+            pdfauthor={Brian Weatherson},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+
+% \usepackage{	-qtree}
+% \usepackage{markdown}
+% \usepackage{prooftrees}
+% \forestset{not line numbering, close with = x}
+% Allow for easy commas inside trees
+\renewcommand{\,}{\text{, }}
+
+
+\usepackage{tabulary}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\newcommand{\starttab}{\begin{center}
+\vspace{6pt}
+\begin{tabular}}
+
+\newcommand{\stoptab}{\end{tabular}
+\vspace{6pt}
+\end{center}
+\noindent}
+
+
+\newcommand{\sif}{\rightarrow}
+\newcommand{\siff}{\leftrightarrow}
+\newcommand{\EF}{\end{frame}}
+
+
+\newcommand{\TreeStart}[1]{
+%\end{frame}
+\begin{frame}
+\begin{center}
+\begin{tikzpicture}[scale=#1]
+\tikzset{every tree node/.style={align=center,anchor=north}}
+%\Tree
+}
+
+\newcommand{\TreeEnd}{
+\end{tikzpicture}
+%\end{center}
+}
+
+\newcommand{\DisplayArg}[2]{
+\begin{enumerate}
+{#1}
+\end{enumerate}
+\vspace{-6pt}
+\hrulefill
+
+%\hspace{14pt} #2
+%{\addtolength{\leftskip}{14pt} #2}
+\begin{quote}
+{\normalfont #2}
+\end{quote}
+}
+
+\newenvironment{ProofTree}[1][1]{
+\begin{center}
+\begin{tikzpicture}[scale=#1]
+\tikzset{every tree node/.style={align=center,anchor=south}}
+}
+{
+\end{tikzpicture}
+\end{center}
+}
+
+\newcommand{\TreeFrame}[2]{
+\begin{columns}[c]
+\column{0.5\textwidth}
+\begin{center}
+\begin{prooftree}{}
+#1
+\end{prooftree}
+\end{center}
+\column{0.45\textwidth}
+%\begin{markdown}
+#2
+%\end{markdown}
+\end{columns}
+}
+
+\newcommand{\ScaledTreeFrame}[3]{
+\begin{columns}[c]
+\column{0.5\textwidth}
+\begin{center}
+\scalebox{#1}{
+\begin{prooftree}{}
+#2
+\end{prooftree}
+}
+\end{center}
+\column{0.45\textwidth}
+%\begin{markdown}
+#3
+%\end{markdown}
+\end{columns}
+}
+
+\usepackage[bb=boondox]{mathalfa}
+\DeclareMathAlphabet{\mathbx}{U}{BOONDOX-ds}{m}{n}
+\SetMathAlphabet{\mathbx}{bold}{U}{BOONDOX-ds}{b}{n}
+\DeclareMathAlphabet{\mathbbx} {U}{BOONDOX-ds}{b}{n}
+
+\RequirePackage{bussproofs}
+\RequirePackage[tableaux]{prooftrees}
+
+\newenvironment{oltableau}{\center\tableau{}} %wff format={anchor = base west}}}
+       {\endtableau\endcenter}
+       
+\newcommand{\formula}[1]{$#1$}
+
+\usepackage{tabulary}
+\usepackage{booktabs}
+\usepackage{multirow}
+
+\def\begincols{\begin{columns}}
+\def\begincol{\begin{column}}
+\def\endcol{\end{column}}
+\def\endcols{\end{columns}}
+
+\usepackage[italic]{mathastext}
+
+\title{444 Class Four}
+\author{Brian Weatherson}
+\date{September 16, 2019}
+
+\begin{document}
+\frame{\titlepage}
+
+\hypertarget{dynamic-games}{%
+\section{Dynamic Games}\label{dynamic-games}}
+
+\begin{frame}{Slides!}
+\protect\hypertarget{slides}{}
+
+\begin{itemize}
+\tightlist
+\item
+  There won't normally be slides - but today is more lecture-y than
+  normal.
+\item
+  These are on Canvas; don't copy anything down.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Class of Games We're Discussing}
+\protect\hypertarget{class-of-games-were-discussing}{}
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Two-player
+\item
+  Turn-taking
+\item
+  Finite
+\item
+  No hidden facts
+\item
+  No randomness
+\item
+  We'll start with zero-sum games, though drop this later.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Five}
+\protect\hypertarget{five}{}
+
+\begin{itemize}
+\tightlist
+\item
+  There are two players, who we'll call \(A\) and \(B\).
+\item
+  First \(A\) moves, then \(B\), then finally \(A\) moves again.
+\item
+  Each move involves announcing a number, 1 or 2.
+\item
+  \(A\) wins if after the three moves, the numbers announced sum to 5.
+\item
+  \(B\) wins otherwise.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Five}
+\protect\hypertarget{five-1}{}
+
+Question: How should you play this game?
+
+\end{frame}
+
+\begin{frame}[fragile,fragile]{Game Tree for Five}
+\protect\hypertarget{game-tree-for-five}{}
+
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+\begin{picture}(350, 150)
+
+\put(175, 0){\makebox(0, 0)[b]{$A$}}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\put(177, 13){\line(2, 1){69}}
+
+\put(135, 20){\makebox(0, 0)[b]{1}}
+
+\put(215, 20){\makebox(0, 0)[b]{2}}
+
+\put(105, 35){\makebox(0, 0)[b]{$B$}}
+\put(105, 47){\circle*{4}}
+\put(105, 47){\line(-1, 1){35}}
+\put(105, 47){\line(1, 1){35}}
+
+\put(80, 55){\makebox(0, 0)[b]{1}}
+
+\put(130, 55){\makebox(0, 0)[b]{2}}
+
+\put(245, 35){\makebox(0, 0)[b]{$B$}}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+
+\put(220, 55){\makebox(0, 0)[b]{1}}
+
+\put(270, 55){\makebox(0, 0)[b]{2}}
+
+\put(70, 70){\makebox(0, 0)[b]{$A$}}
+\put(70, 82){\circle*{4}}
+\put(70, 82){\line(-1, 2){20}}
+
+\put(50, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\put(70, 82){\line(1, 2){20}}
+
+\put(90, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+
+\put(55, 95){\makebox(0, 0)[b]{1}}
+
+\put(85, 95){\makebox(0, 0)[b]{2}}
+
+\put(140, 70){\makebox(0, 0)[b]{$A$}}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+
+\put(120, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\put(140, 82){\line(1, 2){20}}
+
+\put(160, 125){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+
+\put(115, 95){\makebox(0, 0)[b]{1}}
+
+\put(155, 95){\makebox(0, 0)[b]{2}}
+
+\put(210, 70){\makebox(0, 0)[b]{$A$}}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+
+\put(190, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\put(210, 82){\line(1, 2){20}}
+
+\put(230, 125){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+
+\put(195, 95){\makebox(0, 0)[b]{1}}
+
+\put(225, 95){\makebox(0, 0)[b]{2}}
+
+\put(280, 70){\makebox(0, 0)[b]{$A$}}
+\put(280, 82){\circle*{4}}
+\put(280, 82){\line(-1, 2){20}}
+
+\put(260, 125){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(280, 82){\line(1, 2){20}}
+
+\put(300, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+
+\put(265, 95){\makebox(0, 0)[b]{1}}
+
+\put(295, 95){\makebox(0, 0)[b]{2}}
+\end{picture}
+
+\(\mathpzc{W}\) means that \(A\) wins, and \(\mathpzc{L}\) means that
+\(B\) wins.
+
+\end{frame}
+
+\begin{frame}{How to Solve These Games}
+\protect\hypertarget{how-to-solve-these-games}{}
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Work backwards.
+\item
+  First, find points where a player has a choice between two terminal
+  nodes.
+\item
+  Assume that they will make the choice that has higher value for
+  them.\(\pause\)
+\item
+  Mark that choice, e.g., by doubling the line (as the textbook does) or
+  bolding the line (as I'll do).
+\item
+  If there are ties, mark both of the lines. (This gets more complicated
+  once we leave zero-sum games.)
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{How to Solve These Games}
+\protect\hypertarget{how-to-solve-these-games-1}{}
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Assign the value they choose to the choice node.
+\item
+  So just the game assigns values to terminal nodes, we'll now assign
+  value to choice nodes.
+\item
+  In \textbf{Five}, we'll assign the value \(\mathpzc{W}\) to the top
+  right node.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile,fragile]{Five (after one step)}
+\protect\hypertarget{five-after-one-step}{}
+
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+\begin{picture}(350, 150)
+
+\put(175, 0){\makebox(0, 0)[b]{$A$}}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\put(177, 13){\line(2, 1){69}}
+
+\put(135, 20){\makebox(0, 0)[b]{1}}
+
+\put(215, 20){\makebox(0, 0)[b]{2}}
+
+\put(105, 35){\makebox(0, 0)[b]{$B$}}
+\put(105, 47){\circle*{4}}
+\put(105, 47){\line(-1, 1){35}}
+\put(105, 47){\line(1, 1){35}}
+
+\put(80, 55){\makebox(0, 0)[b]{1}}
+
+\put(130, 55){\makebox(0, 0)[b]{2}}
+
+\put(245, 35){\makebox(0, 0)[b]{$B$}}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+
+\put(220, 55){\makebox(0, 0)[b]{1}}
+
+\put(270, 55){\makebox(0, 0)[b]{2}}
+
+\put(70, 70){\makebox(0, 0)[b]{$A$}}
+\put(70, 82){\circle*{4}}
+\put(70, 82){\line(-1, 2){20}}
+
+\put(50, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\put(70, 82){\line(1, 2){20}}
+
+\put(90, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+
+\put(55, 95){\makebox(0, 0)[b]{1}}
+
+\put(85, 95){\makebox(0, 0)[b]{2}}
+
+\put(140, 70){\makebox(0, 0)[b]{$A$}}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+
+\put(120, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\put(140, 82){\line(1, 2){20}}
+
+\put(160, 125){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+
+\put(115, 95){\makebox(0, 0)[b]{1}}
+
+\put(155, 95){\makebox(0, 0)[b]{2}}
+
+\put(210, 70){\makebox(0, 0)[b]{$A$}}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+
+\put(190, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\put(210, 82){\line(1, 2){20}}
+
+\put(230, 125){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+
+\put(195, 95){\makebox(0, 0)[b]{1}}
+
+\put(225, 95){\makebox(0, 0)[b]{2}}
+
+\put(280, 70){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(280, 82){\circle*{4}}
+\thicklines
+\put(280, 82){\line(-1, 2){20}}
+\thinlines
+
+\put(260, 125){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(280, 82){\line(1, 2){20}}
+
+\put(300, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+
+\put(265, 95){\makebox(0, 0)[b]{1}}
+
+\put(295, 95){\makebox(0, 0)[b]{2}}
+\end{picture}
+
+\end{frame}
+
+\begin{frame}[fragile,fragile]{Five (after first level)}
+\protect\hypertarget{five-after-first-level}{}
+
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+\begin{picture}(350, 150)
+
+\put(175, 0){\makebox(0, 0)[b]{$A$}}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\put(177, 13){\line(2, 1){69}}
+
+\put(135, 20){\makebox(0, 0)[b]{1}}
+
+\put(215, 20){\makebox(0, 0)[b]{2}}
+
+\put(105, 35){\makebox(0, 0)[b]{$B$}}
+\put(105, 47){\circle*{4}}
+\put(105, 47){\line(-1, 1){35}}
+\put(105, 47){\line(1, 1){35}}
+
+\put(80, 55){\makebox(0, 0)[b]{1}}
+
+\put(130, 55){\makebox(0, 0)[b]{2}}
+
+\put(245, 35){\makebox(0, 0)[b]{$B$}}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+
+\put(220, 55){\makebox(0, 0)[b]{1}}
+
+\put(270, 55){\makebox(0, 0)[b]{2}}
+
+\put(70, 70){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\put(70, 82){\circle*{4}}
+\thicklines
+\put(70, 82){\line(-1, 2){20}}
+
+\put(50, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\put(70, 82){\line(1, 2){20}}
+\thinlines
+
+\put(90, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+
+\put(55, 95){\makebox(0, 0)[b]{1}}
+
+\put(85, 95){\makebox(0, 0)[b]{2}}
+
+\put(140, 70){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+
+\put(120, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\thicklines
+\put(140, 82){\line(1, 2){20}}
+\thinlines
+
+\put(160, 125){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+
+\put(115, 95){\makebox(0, 0)[b]{1}}
+
+\put(155, 95){\makebox(0, 0)[b]{2}}
+
+\put(210, 70){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+
+\put(190, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\thicklines
+\put(210, 82){\line(1, 2){20}}
+\thinlines
+
+\put(230, 125){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+
+\put(195, 95){\makebox(0, 0)[b]{1}}
+
+\put(225, 95){\makebox(0, 0)[b]{2}}
+
+\put(280, 70){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(280, 82){\circle*{4}}
+\thicklines
+\put(280, 82){\line(-1, 2){20}}
+\thinlines
+
+\put(260, 125){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(280, 82){\line(1, 2){20}}
+
+\put(300, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+
+\put(265, 95){\makebox(0, 0)[b]{1}}
+
+\put(295, 95){\makebox(0, 0)[b]{2}}
+\end{picture}
+
+\end{frame}
+
+\begin{frame}{Next Steps Back}
+\protect\hypertarget{next-steps-back}{}
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Now we do the same thing for \(B\).
+\item
+  We act as if \(B\) is choosing between terminal nodes.
+\item
+  It is as if \(A\) doesn't have a choice - they will just make the
+  choice that is best for them (i.e., worst for \(B\)).
+\item
+  So \(B\) knows what the outcome of each choice will be.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile,fragile]{Five (After Two Rounds)}
+\protect\hypertarget{five-after-two-rounds}{}
+
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+\begin{picture}(350, 150)
+
+\put(175, 0){\makebox(0, 0)[b]{$A$}}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\put(177, 13){\line(2, 1){69}}
+
+\put(135, 20){\makebox(0, 0)[b]{1}}
+
+\put(215, 20){\makebox(0, 0)[b]{2}}
+
+\put(105, 35){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\put(105, 47){\circle*{4}}
+\thicklines
+\put(105, 47){\line(-1, 1){35}}
+\thinlines
+\put(105, 47){\line(1, 1){35}}
+
+\put(80, 55){\makebox(0, 0)[b]{1}}
+
+\put(130, 55){\makebox(0, 0)[b]{2}}
+
+\put(245, 35){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(245, 47){\circle*{4}}
+\thicklines
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+\thinlines
+
+\put(220, 55){\makebox(0, 0)[b]{1}}
+
+\put(270, 55){\makebox(0, 0)[b]{2}}
+
+\put(70, 70){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\put(70, 82){\circle*{4}}
+\thicklines
+\put(70, 82){\line(-1, 2){20}}
+
+\put(50, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\put(70, 82){\line(1, 2){20}}
+\thinlines
+
+\put(90, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+
+\put(55, 95){\makebox(0, 0)[b]{1}}
+
+\put(85, 95){\makebox(0, 0)[b]{2}}
+
+\put(140, 70){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+
+\put(120, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\thicklines
+\put(140, 82){\line(1, 2){20}}
+\thinlines
+
+\put(160, 125){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+
+\put(115, 95){\makebox(0, 0)[b]{1}}
+
+\put(155, 95){\makebox(0, 0)[b]{2}}
+
+\put(210, 70){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+
+\put(190, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\thicklines
+\put(210, 82){\line(1, 2){20}}
+\thinlines
+
+\put(230, 125){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+
+\put(195, 95){\makebox(0, 0)[b]{1}}
+
+\put(225, 95){\makebox(0, 0)[b]{2}}
+
+\put(280, 70){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(280, 82){\circle*{4}}
+\thicklines
+\put(280, 82){\line(-1, 2){20}}
+\thinlines
+
+\put(260, 125){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(280, 82){\line(1, 2){20}}
+
+\put(300, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+
+\put(265, 95){\makebox(0, 0)[b]{1}}
+
+\put(295, 95){\makebox(0, 0)[b]{2}}
+\end{picture}
+
+\end{frame}
+
+\begin{frame}{Five (After Two Rounds)}
+\protect\hypertarget{five-after-two-rounds-1}{}
+
+\begin{itemize}
+\tightlist
+\item
+  So we act as if getting to the left hand node means \(B\) wins, and
+  getting to the right hand node means \(A\) wins.
+\item
+  And now we just have to make the choice for the initial node, using
+  this fact.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile,fragile]{Five (Full Graph)}
+\protect\hypertarget{five-full-graph}{}
+
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+\begin{picture}(350, 150)
+
+\put(175, 0){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\thicklines
+\put(177, 13){\line(2, 1){69}}
+\thinlines
+
+\put(135, 20){\makebox(0, 0)[b]{1}}
+
+\put(215, 20){\makebox(0, 0)[b]{2}}
+
+\put(105, 35){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\put(105, 47){\circle*{4}}
+\thicklines
+\put(105, 47){\line(-1, 1){35}}
+\thinlines
+\put(105, 47){\line(1, 1){35}}
+
+\put(80, 55){\makebox(0, 0)[b]{1}}
+
+\put(130, 55){\makebox(0, 0)[b]{2}}
+
+\put(245, 35){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(245, 47){\circle*{4}}
+\thicklines
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+\thinlines
+
+\put(220, 55){\makebox(0, 0)[b]{1}}
+
+\put(270, 55){\makebox(0, 0)[b]{2}}
+
+\put(70, 70){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\put(70, 82){\circle*{4}}
+\thicklines
+\put(70, 82){\line(-1, 2){20}}
+
+\put(50, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\put(70, 82){\line(1, 2){20}}
+\thinlines
+
+\put(90, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+
+\put(55, 95){\makebox(0, 0)[b]{1}}
+
+\put(85, 95){\makebox(0, 0)[b]{2}}
+
+\put(140, 70){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+
+\put(120, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\thicklines
+\put(140, 82){\line(1, 2){20}}
+\thinlines
+
+\put(160, 125){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+
+\put(115, 95){\makebox(0, 0)[b]{1}}
+
+\put(155, 95){\makebox(0, 0)[b]{2}}
+
+\put(210, 70){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+
+\put(190, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\thicklines
+\put(210, 82){\line(1, 2){20}}
+\thinlines
+
+\put(230, 125){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+
+\put(195, 95){\makebox(0, 0)[b]{1}}
+
+\put(225, 95){\makebox(0, 0)[b]{2}}
+
+\put(280, 70){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(280, 82){\circle*{4}}
+\thicklines
+\put(280, 82){\line(-1, 2){20}}
+\thinlines
+
+\put(260, 125){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(280, 82){\line(1, 2){20}}
+
+\put(300, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+
+\put(265, 95){\makebox(0, 0)[b]{1}}
+
+\put(295, 95){\makebox(0, 0)[b]{2}}
+\end{picture}
+
+\end{frame}
+
+\begin{frame}{Five - Full Analysis}
+\protect\hypertarget{five---full-analysis}{}
+
+\begin{itemize}
+\tightlist
+\item
+  The equilibrium state of the game is that \(A\) wins.
+\item
+  \(A\) plays 2 first.
+\item
+  Then \(B\) can play anything they line.
+\item
+  But whatever they do, \(A\) will win, by playing the opposite number.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Backwards Induction}
+\protect\hypertarget{backwards-induction}{}
+
+\begin{itemize}
+\tightlist
+\item
+  This process is called backwards induction.
+\item
+  We start at the possible ends of the game.
+\item
+  At each step, we assume that each player makes the best decision they
+  can, on the assumption that later players will do the same thing.
+\item
+  And eventually we can solve the game.
+\end{itemize}
+
+\end{frame}
+
+\hypertarget{value-of-games}{%
+\section{Value of Games}\label{value-of-games}}
+
+\begin{frame}{The Value of a Game}
+\protect\hypertarget{the-value-of-a-game}{}
+
+The value of a game is the outcome of the game if everyone does the
+backwards induction recommended move at every possible point.
+
+\end{frame}
+
+\begin{frame}{The Value of a Game}
+\protect\hypertarget{the-value-of-a-game-1}{}
+
+Every zero-sum game (that satisfies the earlier constraints) has a
+value.
+
+\pause \bigskip
+
+The value is the value of one of the terminal nodes.
+
+\pause \bigskip
+
+The proof is a fairly straightforward proof by induction, but I won't go
+through it here.
+
+\end{frame}
+
+\begin{frame}{The Value of a Game}
+\protect\hypertarget{the-value-of-a-game-2}{}
+
+So for any such game that ends with either win to one player or a draw,
+either
+
+\begin{enumerate}
+\tightlist
+\item
+  The first player can guarantee a win; or
+\item
+  The second player can guarantee a win; or
+\item
+  Both players can guarantee at least a draw.
+\end{enumerate}
+
+\end{frame}
+
+\hypertarget{generalising}{%
+\section{Generalising}\label{generalising}}
+
+\begin{frame}{A Complication}
+\protect\hypertarget{a-complication}{}
+
+In a non-zero-sum game, a player might have a choice between two nodes
+that are alike for them, but are different for the other player.
+
+\end{frame}
+
+\begin{frame}{Indifferent Choices}
+\protect\hypertarget{indifferent-choices}{}
+
+\begin{picture}(350, 110)
+\linethickness{1pt}
+
+\put(175, 0){\makebox(0, 0)[b]{I}}
+\put(175, 12){\circle*{4}}
+\put(175, 12){\line(-2, 1){70}}
+\put(175, 12){\line(2, 1){70}}
+
+\put(135, 20){\makebox(0, 0)[b]{$A$}}
+
+\put(215, 20){\makebox(0, 0)[b]{$B$}}
+
+
+\put(105, 35){\makebox(0, 0)[b]{II}}
+\put(105, 47){\circle*{4}}
+\put(105, 47){\line(-1, 1){35}}
+
+\put(70, 85){\makebox(0, 0)[b]{(2, 2)}}
+\put(105, 47){\line(1, 1){35}}
+
+\put(140, 85){\makebox(0, 0)[b]{(0, 2)}}
+
+\put(80, 55){\makebox(0, 0)[b]{$a$}}
+
+\put(130, 55){\makebox(0, 0)[b]{$b$}}
+
+
+\put(245, 35){\makebox(0, 0)[b]{II}}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+
+\put(210, 85){\makebox(0, 0)[b]{(1, 2)}}
+\put(245, 47){\line(1, 1){35}}
+
+\put(280, 85){\makebox(0, 0)[b]{(3, 0)}}
+
+\put(220, 55){\makebox(0, 0)[b]{$a$}}
+
+\put(270, 55){\makebox(0, 0)[b]{$b$}}
+
+\end{picture}
+
+\end{frame}
+
+\begin{frame}{Indifferent Choices}
+\protect\hypertarget{indifferent-choices-1}{}
+
+\begin{itemize}
+\tightlist
+\item
+  If player I chooses \(B\), player II will choose \(a\), ending the
+  game at \((1,2)\).
+\item
+  But what happens if player I chooses \(A\)?
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Duplicating the graph}
+\protect\hypertarget{duplicating-the-graph}{}
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  You can't just draw two lines, because we need a value of the
+  middle-left node for player I, and we don't know what that is.
+\item
+  The solution is to duplicate the graph.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{One Backwards Induction Solution}
+\protect\hypertarget{one-backwards-induction-solution}{}
+
+\begin{picture}(350, 110)
+\linethickness{1pt}
+
+\put(175, 0){\makebox(0, 0)[b]{I}}
+\put(175, 12){\circle*{4}}
+\thicklines
+\put(175, 12){\line(-2, 1){70}}
+\thinlines
+\put(175, 12){\line(2, 1){70}}
+
+\put(135, 20){\makebox(0, 0)[b]{$A$}}
+
+\put(215, 20){\makebox(0, 0)[b]{$B$}}
+
+
+\put(105, 35){\makebox(0, 0)[b]{II}}
+\put(105, 47){\circle*{4}}
+\thicklines
+\put(105, 47){\line(-1, 1){35}}
+\thinlines
+
+\put(70, 85){\makebox(0, 0)[b]{(2, 2)}}
+\put(105, 47){\line(1, 1){35}}
+
+\put(140, 85){\makebox(0, 0)[b]{(0, 2)}}
+
+\put(80, 55){\makebox(0, 0)[b]{$a$}}
+
+\put(130, 55){\makebox(0, 0)[b]{$b$}}
+
+
+\put(245, 35){\makebox(0, 0)[b]{II}}
+\put(245, 47){\circle*{4}}
+\thicklines
+\put(245, 47){\line(-1, 1){35}}
+\thinlines
+
+\put(210, 85){\makebox(0, 0)[b]{(1, 2)}}
+\put(245, 47){\line(1, 1){35}}
+
+\put(280, 85){\makebox(0, 0)[b]{(3, 0)}}
+
+\put(220, 55){\makebox(0, 0)[b]{$a$}}
+
+\put(270, 55){\makebox(0, 0)[b]{$b$}}
+
+\end{picture}
+
+\end{frame}
+
+\begin{frame}{Another Backwards Induction Solution}
+\protect\hypertarget{another-backwards-induction-solution}{}
+
+\begin{picture}(350, 110)
+\linethickness{1pt}
+
+\put(175, 0){\makebox(0, 0)[b]{I}}
+\put(175, 12){\circle*{4}}
+\put(175, 12){\line(-2, 1){70}}
+\thicklines
+\put(175, 12){\line(2, 1){70}}
+\thinlines
+
+\put(135, 20){\makebox(0, 0)[b]{$A$}}
+
+\put(215, 20){\makebox(0, 0)[b]{$B$}}
+
+
+\put(105, 35){\makebox(0, 0)[b]{II}}
+\put(105, 47){\circle*{4}}
+\put(105, 47){\line(-1, 1){35}}
+
+\put(70, 85){\makebox(0, 0)[b]{(2, 2)}}
+\thicklines
+\put(105, 47){\line(1, 1){35}}
+\thinlines
+
+\put(140, 85){\makebox(0, 0)[b]{(0, 2)}}
+
+\put(80, 55){\makebox(0, 0)[b]{$a$}}
+
+\put(130, 55){\makebox(0, 0)[b]{$b$}}
+
+
+\put(245, 35){\makebox(0, 0)[b]{II}}
+\put(245, 47){\circle*{4}}
+\thicklines
+\put(245, 47){\line(-1, 1){35}}
+\thinlines
+
+\put(210, 85){\makebox(0, 0)[b]{(1, 2)}}
+\put(245, 47){\line(1, 1){35}}
+
+\put(280, 85){\makebox(0, 0)[b]{(3, 0)}}
+
+\put(220, 55){\makebox(0, 0)[b]{$a$}}
+
+\put(270, 55){\makebox(0, 0)[b]{$b$}}
+
+\end{picture}
+
+\end{frame}
+
+\begin{frame}{What Should Player I Do?}
+\protect\hypertarget{what-should-player-i-do}{}
+
+Good question!
+
+\end{frame}
+
+\hypertarget{strategies-and-threats}{%
+\section{Strategies and Threats}\label{strategies-and-threats}}
+
+\begin{frame}{Threat Game}
+\protect\hypertarget{threat-game}{}
+
+\begin{picture}(350, 110)
+\linethickness{1pt}
+
+\put(175, 0){\makebox(0, 0)[b]{I}}
+\put(175, 12){\circle*{4}}
+\put(175, 12){\line(-2, 1){70}}
+\put(175, 12){\line(2, 1){70}}
+
+\put(135, 20){\makebox(0, 0)[b]{$A$}}
+
+\put(215, 20){\makebox(0, 0)[b]{$B$}}
+
+
+\put(105, 35){\makebox(0, 0)[b]{II}}
+\put(105, 47){\circle*{4}}
+\put(105, 47){\line(-1, 1){35}}
+
+\put(70, 85){\makebox(0, 0)[b]{(4, 1)}}
+\put(105, 47){\line(1, 1){35}}
+
+\put(140, 85){\makebox(0, 0)[b]{(1, 0)}}
+
+\put(80, 55){\makebox(0, 0)[b]{$a$}}
+
+\put(130, 55){\makebox(0, 0)[b]{$b$}}
+
+
+\put(245, 35){\makebox(0, 0)[b]{II}}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+
+\put(210, 85){\makebox(0, 0)[b]{(1, 1)}}
+\put(245, 47){\line(1, 1){35}}
+
+\put(280, 85){\makebox(0, 0)[b]{(2, 2)}}
+
+\put(220, 55){\makebox(0, 0)[b]{$a$}}
+
+\put(270, 55){\makebox(0, 0)[b]{$b$}}
+
+%\multiput(105,47)(5, 0){28}{\line(1, 0){3}}
+
+\end{picture}
+
+\end{frame}
+
+\begin{frame}{Strategies}
+\protect\hypertarget{strategies}{}
+
+\begin{itemize}
+\tightlist
+\item
+  A \textbf{strategy} for a game is a set of instructions for what to do
+  at each node of a game.
+\item
+  Even very small game trees there are a lot of possible strategies.
+\item
+  If there are \(k\) possible nodes a player could have a choice at, and
+  \(m\) possible moves at each of these nodes, then there are \(m^k\)
+  possible strategies.
+\item
+  Note that a strategy has to say what to do at nodes that are ruled out
+  by your own prior moves.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Threat Game Strategies}
+\protect\hypertarget{threat-game-strategies}{}
+
+\begin{itemize}
+\tightlist
+\item
+  For player I, there are just two strategies: \(A\) and \(B\).
+\item
+  For player II, there are two nodes, and two possible choices at each
+  node. So there are \(2^2 = 4\) possible strategies.
+\item
+  We'll write \(xy\) for the strategy of doing \(x\) in response to
+  \(A\), and \(y\) in response to \(B\).
+\item
+  And note I'm capitalising player I's moves, and using lower case for
+  player II's moves, to make things clearer.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Threat Game Strategies}
+\protect\hypertarget{threat-game-strategies-1}{}
+
+Here are the four strategies for player II:
+
+\begin{enumerate}
+\tightlist
+\item
+  \(aa\) - Do \(a\) no matter what.
+\item
+  \(ab\) - Do whatever player I does.
+\item
+  \(ba\) - Do the opposite of what player I does.
+\item
+  \(bb\) - Do \(b\) no matter what.
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Threat Game Strategy Tables}
+\protect\hypertarget{threat-game-strategy-tables}{}
+
+The strategies for the players determine the outcome. Here is the table
+for the game, given the strategies.
+
+\begin{center}
+\begin{tabular}{l r | c c c c}
+& & \multicolumn{4}{c}{Player II} \\
+& & aa & ab & ba & bb \\ \hline 
+\multirow{2}{*}{Player I} 
+& A & 4, 1 & 4, 1 & 1, 0 & 1, 0 \\
+& B & 1, 1 & 2, 2 & 1, 1 & 2, 2 
+\end{tabular}
+\end{center}
+
+\end{frame}
+
+\begin{frame}{Threat Game Strategy Tables}
+\protect\hypertarget{threat-game-strategy-tables-1}{}
+
+I've underlined the best responses.
+
+\begin{center}
+\begin{tabular}{l r | c c c c}
+& & \multicolumn{4}{c}{Player II} \\
+& & aa & ab & ba & bb \\ \hline 
+\multirow{2}{*}{Player I} 
+& A & \underline{4}, \underline{1} & \underline{4}, \underline{1} & \underline{1}, 0 & 1, 0 \\
+& B & 1, 1 & 2, \underline{2} & \underline{1}, 1 & \underline{2}, \underline{2} 
+\end{tabular}
+\end{center}
+
+There are three Nash equilibria.
+
+\begin{enumerate}
+\tightlist
+\item
+  \(A, aa\) - with result 4, 1
+\item
+  \(A, ab\) - with result 4, 1
+\item
+  \(B, bb\) - with result 2, 2
+\end{enumerate}
+
+\end{frame}
+
+\begin{frame}{Threat Game with Backward Induction}
+\protect\hypertarget{threat-game-with-backward-induction}{}
+
+\begin{picture}(350, 110)
+\linethickness{1pt}
+
+\put(175, 0){\makebox(0, 0)[b]{I}}
+\put(175, 12){\circle*{4}}
+\thicklines
+\put(175, 12){\line(-2, 1){70}}
+\thinlines
+\put(175, 12){\line(2, 1){70}}
+
+\put(135, 20){\makebox(0, 0)[b]{$A$}}
+
+\put(215, 20){\makebox(0, 0)[b]{$B$}}
+
+
+\put(105, 35){\makebox(0, 0)[b]{II}}
+\put(105, 47){\circle*{4}}
+\thicklines
+\put(105, 47){\line(-1, 1){35}}
+
+\put(70, 85){\makebox(0, 0)[b]{(4, 1)}}
+\thinlines
+\put(105, 47){\line(1, 1){35}}
+
+\put(140, 85){\makebox(0, 0)[b]{(1, 0)}}
+
+\put(80, 55){\makebox(0, 0)[b]{$a$}}
+
+\put(130, 55){\makebox(0, 0)[b]{$b$}}
+
+
+\put(245, 35){\makebox(0, 0)[b]{II}}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+
+\put(210, 85){\makebox(0, 0)[b]{(1, 1)}}
+\thicklines
+\put(245, 47){\line(1, 1){35}}
+\thinlines
+
+\put(280, 85){\makebox(0, 0)[b]{(2, 2)}}
+
+\put(220, 55){\makebox(0, 0)[b]{$a$}}
+
+\put(270, 55){\makebox(0, 0)[b]{$b$}}
+
+%\multiput(105,47)(5, 0){28}{\line(1, 0){3}}
+
+\end{picture}
+
+\begin{itemize}
+\tightlist
+\item
+  I've bolded the best moves at each node, assuming backward induction.
+\item
+  The path of best moves is the (in this case unique) backward induction
+  solution.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Threat Game}
+\protect\hypertarget{threat-game-1}{}
+
+\begin{itemize}
+\tightlist
+\item
+  There are three Nash equilibria of the game: strategy pairs that no
+  one can improve on by unilaterally changing strategy.
+\item
+  There is just one backward induction solution of the game: a strategy
+  pair where everyone does the best they can \textbf{at every node}
+  assuming others play rationally at every node.
+\end{itemize}
+
+\end{frame}
+
+\hypertarget{for-next-time}{%
+\section{For Next Time}\label{for-next-time}}
+
+\begin{frame}{Examples!}
+\protect\hypertarget{examples}{}
+
+We will talk over some examples where backward induction reasoning might
+help understand what's going on.
+
+\end{frame}
+
+\end{document}

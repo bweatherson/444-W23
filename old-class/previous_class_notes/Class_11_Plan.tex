@@ -1,0 +1,231 @@
+\documentclass[11pt,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+    \setmainfont[]{SF Pro Text Light}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Plan for Second SPE Class},
+            pdfauthor={Philosophy 444},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Plan for Second SPE Class}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Philosophy 444}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{9 October, 2019}
+
+\usepackage{gensymb}
+\usepackage{nicefrac}
+\usepackage{mathastext}
+\usepackage{multicol}
+
+\begin{document}
+\maketitle
+
+\hypertarget{lemons}{%
+\section{Lemons}\label{lemons}}
+
+\begin{itemize}
+\tightlist
+\item
+  Assume 80\% good, 20\% bad
+\item
+  Assume good are worth 15, bad are worth 5.
+\item
+  Assume seller will take a 10\% discount because need to sell
+\item
+  If no one knows about quality, all cars sell
+\item
+  If everyone knows about quality, all cars sell
+\item
+  If buyer knows and seller does not, all cars sell
+\item
+  If seller knows and buyer does not, no cars sell
+\end{itemize}
+
+\hypertarget{exit-or-play}{%
+\section{Exit or Play}\label{exit-or-play}}
+
+\begin{itemize}
+\tightlist
+\item
+  This is a big reason to use SPE
+\item
+  Choice between playing PD and getting 2, you take the 2
+\item
+  Same with these various mixed strategy NEs
+\item
+  Really works best when there is a single NE
+\end{itemize}
+
+\hypertarget{steering-towards-ne}{%
+\section{Steering towards NE}\label{steering-towards-ne}}
+
+\begin{itemize}
+\tightlist
+\item
+  Choice of getting 2 or playing Battle of Sexes
+\item
+  If you play, obviously intend to play to get 4
+\item
+  So that's what you'll get
+\item
+  Huge advantage here
+\item
+  Note that Battle of Sexes has three equilibria - but the other two are
+  ruled out by playing
+\end{itemize}
+
+\hypertarget{first-puzzle-about-spe---rules-out-too-much}{%
+\section{First Puzzle about SPE - rules out too
+much}\label{first-puzzle-about-spe---rules-out-too-much}}
+
+\begin{itemize}
+\tightlist
+\item
+  Chain store game
+\item
+  Go over the basic structure
+\item
+  First competitor chooses exit or entry
+\item
+  If exit, payoff is 5,1 (incumbent first)
+\item
+  If compete, then tough or conciliate
+\item
+  Tough = 0,0; Conciliate = 2,2
+\item
+  Nash says do either, SPE says Enter-Conciliate
+\item
+  And it says this if there are 100 successive possible entrants
+\item
+  But really?
+\end{itemize}
+
+\hypertarget{what-is-a-strategy}{%
+\section{What is a Strategy}\label{what-is-a-strategy}}
+
+\begin{itemize}
+\tightlist
+\item
+  Key point: strategies include moves to be made at ruled out nodes
+\item
+  How to interpret that?
+\item
+  Metaphysical - it's what to do if you screw up - but why include that
+  - and why assume you'll be able to carry it out
+\item
+  Epistemological - it's what the other person should believe
+\item
+  But now there are two problems
+\item
+  First, intuitively you choose a strategy, but you don't choose what
+  the other person believes
+\item
+  Second, why should they believe that you'll go back to SPE after not
+  doing it
+\item
+  This is particularly pressing in Chain Store Game
+\item
+  If I compete the first five times, the sixth competitor should get the
+  message
+\item
+  But the unique SPE has me cooperating at that very node
+\item
+  For Nash, we avoided this by saying it's all about the long run
+\item
+  But in SPE settings, the long run is just another game that SPE should
+  apply to
+\item
+  This is something of a mess, and I don't think anyone has a good way
+  out
+\item
+  At this point, some folks get off the bus and say we should just do
+  experimental work
+\end{itemize}
+
+\hypertarget{second-puzzle-about-spe---rules-out-too-litte}{%
+\section{Second Puzzle about SPE - rules out too
+litte}\label{second-puzzle-about-spe---rules-out-too-litte}}
+
+\begin{itemize}
+\tightlist
+\item
+  Money burning game
+\item
+  See other handout
+\end{itemize}
+
+
+\end{document}

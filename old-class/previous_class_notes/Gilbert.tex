@@ -1,0 +1,284 @@
+\documentclass[11pt,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+    \setmainfont[]{SF Pro Text Light}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Gilbert on Group Action},
+            pdfauthor={Philosophy 444},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Gilbert on Group Action}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Philosophy 444}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{18 November, 2019}
+
+\usepackage{mathastext}
+\usepackage{nicefrac}
+
+\begin{document}
+\maketitle
+
+\hypertarget{two-big-questions}{%
+\subsection{Two Big Questions}\label{two-big-questions}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Does Gilbert have the right analysis of ``walking together'', or other
+  small group activities?
+\item
+  Is it the right model for larger group activities?
+\end{enumerate}
+
+\hypertarget{a-traditional-way-of-thinking-about-problem}{%
+\subsection{A Traditional Way of Thinking About
+Problem}\label{a-traditional-way-of-thinking-about-problem}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What makes some people a \emph{group}, as opposed to merely some
+  people?
+\item
+  What makes it the case that that group is engaged in a group action,
+  shares a group intention, and so on?
+\end{enumerate}
+
+Gilbert's view is that this is the wrong way to look at things. Rather,
+these two questions should be answered simultaneously.
+
+\hypertarget{two-theories-of-group-action}{%
+\subsection{Two Theories of Group
+Action}\label{two-theories-of-group-action}}
+
+\begin{description}
+\tightlist
+\item[Weak Shared Plan]
+All the people in the group have the same plan.
+\item[Strong Shared Plan]
+All the people in the group have the same plan, and this is common
+knowledge.
+\end{description}
+
+The argument against the first of these is reasonably simple.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  If each person is trying to do X, and thinks they are the only one
+  trying to do X, then there is no group action of trying to do X.
+\item
+  If \textbf{Weak Shared Plan} is true, then in such a situation there
+  is a group action of trying to do X.
+\item
+  So \textbf{Weak Shared Plan} is false.
+\end{enumerate}
+
+The argument against the second is more controversial.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  If \textbf{Strong Shared Plan} is true, then the members of the group
+  have no obligation to the others to continue with the plan if they
+  lose interest in it.
+\item
+  In cases of group action, members of the group do have an obligation
+  to the others to continue with the plan even if they lose interest in
+  it.
+\item
+  So \textbf{Strong Shared Plan} is false.
+\end{enumerate}
+
+Both parts of this are controversial. Gilbert spends time on each, first
+defending 1, then clarifying 2.
+
+\hypertarget{why-no-obligation}{%
+\subsection{Why No Obligation}\label{why-no-obligation}}
+
+\begin{itemize}
+\tightlist
+\item
+  Because Strong Shared Plan gives you at most mutual reliance, not
+  trust.
+\item
+  Set out Baier's example of the difference between trust and reliance.
+\item
+  The kind of criticism you can make of someone who doesn't follow
+  through on the plan, according to Gilbert, is kind of like a breach of
+  trust.
+\item
+  What SSP would give you is kind of like known reliance.
+\item
+  \textbf{Objection}: Are we really sure that known reliance is not
+  enough?
+\end{itemize}
+
+\hypertarget{what-is-the-obligation}{%
+\subsection{What is the Obligation}\label{what-is-the-obligation}}
+
+It's not a moral obligation. Here is Gilbert's argument.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  You can have shared plan between people with no concept of moral
+  obligation.
+\item
+  If the obligation is moral obligation, that's impossible.
+\item
+  So the obligation is not moral obligation.
+\end{enumerate}
+
+This is, I think, a bad argument. 1 is only true for psychopaths, and
+not clear they can engage in group action. A better argument is
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  You can have a shared plan to do an immoral thing.
+\item
+  You don't have moral obligations to do immoral things.
+\item
+  So the obligation is not a moral obligation.
+\end{enumerate}
+
+It's also not a prudential obligation. This should be clear, but Gilbert
+spends a bit of time on it.
+
+So what kind of weird sui generis obligation is it? This is a big
+question for her to answer.
+
+\hypertarget{positive-view}{%
+\subsection{Positive View}\label{positive-view}}
+
+That there is a group action when (and only when) the people form a
+plural subject. What's that?
+
+\begin{itemize}
+\tightlist
+\item
+  I do not understand the difference between the positive view and the
+  things it is supposed to be distinguished from at the bottom of page
+  7.
+\item
+  The connection to philosophy of language is not good.
+\item
+  Sometimes I can use `we' to describe things that are not a group.
+\item
+  E.g., I can use it to pick out the people on a bus, or even an
+  internally hostile group. (``We are about to start killing each other
+  for food.'')
+\item
+  There is an important distinction between distributive and collective
+  readings of plural sentences, but this is not the same thing.
+\item
+  The good point around here is authority by doing. This is a real and
+  important and (to my mind) interesting phenomenon. Big question how
+  much actual political authority starts this way.
+\item
+  And note the point at the bottom of 11 top of 12 about the very
+  special nature of 2 person groups, namely that for now they have their
+  membership essentially. This I think is a huge problem for Gilbert's
+  view.
+\end{itemize}
+
+How accurate is it to take the obligations to just be the definition of
+the plural subject? That is how I end up reading it, though the textual
+evidence is not the strongest.
+
+\hypertarget{puzzle-cases}{%
+\subsection{Puzzle Cases}\label{puzzle-cases}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Large groups
+\item
+  Immoral group activities
+\item
+  Explicit disavowal of long term commitment
+\end{enumerate}
+
+
+\end{document}

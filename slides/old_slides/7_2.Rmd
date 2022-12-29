@@ -1,0 +1,130 @@
+---
+title: "444 Lecture 7.2 - Two Puzzles about Bayesian Equilibrium"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## First Puzzle
+
+\begin{center}
+\begin{istgame}
+%\setistgrowdirection'{east}
+\xtdistance{15mm}{30mm}
+\istroot(0){Alice}
+  \istb{A}[al]{(2,2)}
+  \istb{B}[r]
+  \istb{C}[ar]
+  \endist
+\xtdistance{10mm}{20mm}
+\istroot(1)(0-2)
+  \istb{l}[al]{(4,4)}
+  \istb{r}[ar]{(1,0)}
+  \endist
+\istroot(2)(0-3)
+  \istb{l}[al]{(3,0)}
+  \istb{r}[ar]{(0,4)}
+  \endist
+\xtInfoset(1)(2){Billie}
+\end{istgame}
+\end{center}
+
+- I don't really know what to do here.
+
+## Strategy Table
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+```{r}
+game <- tribble(
+  ~Moves,         ~l, ~r,
+  "A",  "2, 2", "2, 2", 
+  "B", "4, 4", "1, 0",
+  "C",  "3, 0", "0, 4"
+)
+gameformat(game)
+```
+
+Note that $\langle A, r \rangle$ is a Nash equilibrium, and B dominates C.
+
+## Bayesian Equilibrium
+
+The following is even a Bayesian Equilibrium
+
+- Alice plays A.
+- Billie believes with probability 1 that Alice will play A.
+- If Billie finds herself at the B/C set, she will believe that Alice played C.
+- So she will do what's best for her given this belief, i.e., play r.
+- Alice knows this.
+
+Alice plays A and gets 2, and she believes she would get 1 if she played B and 0 if she played C. So she's doing the thing that's best by her lights.
+
+## Wait a Minute!
+
+- Billie is disposed to believe that if Alice does something weird (play B or C), she will do something really weird (play a dominated strategy).
+- Is this an OK thing for Billie to believe?
+- It seems a bit weird.
+- Maybe if Alice has not given Billie conclusive evidence that she will do something bizarre - i.e., play a dominated strategy - it's wrong to believe that she's done something bizarre.
+- So if we get to B/C, Billie should believe we're at B, so should play l, and knowing that, Alice should play B.
+
+## Which is right?
+
+- I don't really know.
+- Here we're already into contested territory.
+- Let's take one further step into contested territory.
+
+## Second Puzzle
+
+\begin{center}
+\begin{istgame}
+%\setistgrowdirection'{east}
+\xtdistance{15mm}{30mm}
+\istroot(0){Alice}
+  \istb{A}[al]{(3,3)}
+  \istb{B}[r]
+  \istb{C}[ar]
+  \endist
+\xtdistance{10mm}{20mm}
+\istroot(1)(0-2)
+  \istb{l}[al]{(4,4)}
+  \istb{r}[ar]{(0,0)}
+  \endist
+\istroot(2)(0-3)
+  \istb{l}[al]{(2,0)}
+  \istb{r}[ar]{(1,4)}
+  \endist
+\xtInfoset(1)(2){Billie}
+\end{istgame}
+\end{center}
+
+- I really don't know what to do here.
+
+## Why is it Puzzling
+
+- $\langle A, r \rangle$ is a Bayesian (and Nash and subgame perfect) equilibrium.
+- But maybe Alice should choose B. \pause
+- Note that A dominates C.
+- So if Billie knows that Alice doesn't choose dominated options, and this survives learning that Alice has chosen B or C, then Billie will know that Alice has chosen B.
+- And then Billie will choose l, so Alice should choose B.
+
+## Two Big Questions
+
+1. Are there philosophical grounds to change our theory of equilibrium selection to make Alice choose B in both of these games?
+2. If we want to do that, what's the best mathematical theory that generates the intended result?
+
+- Both of these are hard questions, but not one's I'm going to address in this course. 
+- We have to stop somewhere, and there are always more questions like this to ask and answer. 
+- Instead I'm going to a special class of games: signaling games.

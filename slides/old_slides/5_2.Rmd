@@ -1,0 +1,109 @@
+---
+title: "444 Lecture 5.2 - Mixed Strategies"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## Plan
+
+Introduce the idea of mixed strategies
+
+## Reading
+
+Bonanno, section 6.2
+
+## Core Idea
+
+Flip a coin!
+
+## Motivation
+
+![Rock! Paper!! Scissors!!!](images/rps.png)
+
+## Payout
+
+If Row plays 60% Up and 40% Down, and Column plays Left, then Row's expected payout will be
+
+- 0.6 times the payout for Up/Left
+- 0.4 times the payout for Down/Left \pause
+
+When we evaluate a mixed strategy, we evaluate it by its expected payout, not its actual payout.
+
+## Payout
+
+If Row plays 60% Up and 40% Down, and Column plays Left, then Column's payout will be
+
+- 0.6 times the payout for Left/Up
+- 0.4 times the payout for Left/Down \pause
+
+We have to use expected values for evaluating even **pure** strategies like Left, once one player plays mixtures.
+
+## Both Mixing
+
+What if Column also mixes, playing 70% Left and 30% Right.
+
+- Then Row's expected payout is 0.7 times the **expected** payout of their mixed strategy when Column plays Left, plus 0.3 times the expected payout of their mixed strategy when Column plays right.
+- We have to use expected values twice over to get the philosophically important value of this strategy.
+
+## Independence
+
+- What we're assuming here is that the probabilities of each player are **independent**.
+- If they roll 20-sided dice or whatever, they roll different ones.
+- There is an interesting part of game theory where we drop that assumption, but I'm not going to cover it.
+- This is the part that deals with so-called **correlated equilibrium**.
+- Bonanno doesn't cover this, and I won't either.
+
+## What is a Mixed Strategy
+
+At least three interpretations.
+
+1. Random device
+2. Frequencies
+3. Epistemic
+
+## Random Device
+
+- I mean, you literally roll a die, flip a coin, use something on your phone or something.
+- This is the traditional interpretation, but it's become less popular.
+
+## Frequencies
+
+- In the long-run, your frequency of each play tracks the probabilities in the strategy.
+- And more specifically, your frequency of each play in each identifiable situation tracks the probabilities.
+- Alternating rock-then-paper-then-scissors isn't a way to play the mixed strategy 1/3 for each move.
+- Relatedly, you will lose.
+- On the frequency interpretation of mixed strategies, playing that mixed strategy means that after rock, you'll play 1/3 rock, 1/3 paper, 1/3 scissors, and after paper-then-scissors, you'll play ..., and so on.
+
+## Epistemic
+
+- A rational onlooker will not be able to figure out what you will do/are doing, beyond saying that you're playing each strategy with the specified probability.
+- It doesn't matter how you get there, as long as that's all that an onlooker (or co-player) can figure out.
+
+## Mixtures Always Available
+
+- Game theorists standardly assume that if some moves are available, so is any mixed strategy built out of them.
+- Philosophers do not assume this, and often think it's the least plausible thing about game theory.
+- Is this assume plausible?
+
+## What's a Mixed Theory
+
+- On the random device interpretation, it's very implausible.
+- Not all game players have arbitrary random devices available.
+- But on the other interpretations, it is more plausible.
+- A good player should be able to hide their strategy, even in repeated plays.
+
+## For Next Time
+
+We will look at a striking consequence of the existence of mixed strategies - every game has a Nash equilibrium.

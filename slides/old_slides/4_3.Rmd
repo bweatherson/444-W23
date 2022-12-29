@@ -1,0 +1,55 @@
+---
+title: "444 Lecture 4.3 - Strategies"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Plan
+
+To describe the notion of a strategy
+
+## Reading
+
+Bonanno, section 4.2.
+
+## Definition
+
+A **strategy** is a plan for what to do at each information set where the rules of the game give the player a choice.
+
+## Inputs to Strategy
+
+- Strategies are for information sets, not nodes.
+- Can't have a plan to do different things at different points in the information set.
+
+## Comprehensiveness
+
+- Strategies include plans for what to do at nodes that are ruled out by one's earlier choices.
+- Reason 1: Fallback.
+- Reason 2: Understanding decisions by other players
+
+## Strategic Form
+
+- We can turn any game, even ones with substantive information sets, into a single simultaneous move game.
+- Just take the possible moves to be the strategies.
+- In any realistic game, there will be a lot of these.
+
+## Strategic Form
+
+- But the strategic form can obscure things, as we saw in the case of non-credible threats.
+- Next time, we'll start looking at how to remove the obscurity.

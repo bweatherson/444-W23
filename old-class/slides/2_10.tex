@@ -1,0 +1,376 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 2.10 - Nash Equilibrium},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 2.10 - Nash Equilibrium}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Plan}
+\protect\hypertarget{plan}{}
+To think about why we should care about Nash Equilibrium.
+\end{frame}
+
+\begin{frame}{Reading}
+\protect\hypertarget{reading}{}
+Bonanno, section 2.6.
+\end{frame}
+
+\begin{frame}{A Philosophical Claim}
+\protect\hypertarget{a-philosophical-claim}{}
+In any game where it is common knowledge that all the players are
+rational, every player will play a strategy that forms part of a Nash
+Equilibrium.
+\end{frame}
+
+\begin{frame}{Status of Nash}
+\protect\hypertarget{status-of-nash}{}
+\begin{itemize}
+\tightlist
+\item
+  I think most economists and political scientists accept something like
+  this.
+\item
+  But I think philosophers who work on game theory more often do not
+  accept it.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Arguments for Nash}
+\protect\hypertarget{arguments-for-nash}{}
+\begin{itemize}
+\tightlist
+\item
+  Oddly, it's hard to find canonical arguments for the importance of
+  Nash.
+\item
+  It's so deeply embedded in game theory that it doesn't get discussed
+  in research articles, more in textbooks.
+\item
+  Bonanno has a passage on page 40 that you could (perhaps uncharitably)
+  count as a contribution to that genre.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Transparency of Reason Interpretation}
+\protect\hypertarget{transparency-of-reason-interpretation}{}
+\begin{quote}
+If players are all ``equally rational'' and Player 2 reaches the
+conclusion that she should play y, then Player 1 must be able to
+duplicate Player 2's reasoning process and come to the same conclusion;
+it follows that Player 1's choice of strategy is not rational unless it
+is a strategy x that is optimal against y. A similar argument applies to
+Player 2's choice of strategy (y must be optimal against x) and thus
+(x,y) is a Nash equilibrium.
+\end{quote}
+\end{frame}
+
+\begin{frame}{Transparency of Reason Interpretation}
+\protect\hypertarget{transparency-of-reason-interpretation-1}{}
+\begin{itemize}
+\tightlist
+\item
+  This doesn't look like a good argument for the Philosophical Claim.
+\item
+  All it shows is the weaker claim that if there is a uniquely rational
+  play for each player, those plays will form a Nash Equilibrium.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Viable recommendation interpretation}
+\protect\hypertarget{viable-recommendation-interpretation}{}
+\begin{quote}
+Imagine that a third party makes a public recommendation to each player
+on what strategy to play; then no player will have an incentive to
+deviate from the recommendation (if she believes that the other players
+will follow the recommendation) if and only if the recommended strategy
+profile is a Nash equilibrium.
+\end{quote}
+\end{frame}
+
+\begin{frame}{Viable recommendation interpretation}
+\protect\hypertarget{viable-recommendation-interpretation-1}{}
+\begin{itemize}
+\tightlist
+\item
+  Again, this argument only works if the third party makes a unique
+  recommendation.
+\item
+  If the third party says ``Do one of these three things'', there is no
+  argument that all three have to be Nash.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Self-enforcing agreement interpretation}
+\protect\hypertarget{self-enforcing-agreement-interpretation}{}
+\begin{quote}
+Imagine that the players are able to communicate before playing the game
+and reach a non-binding agreement expressed as a strategy profile s;
+then no player will have an incentive to deviate from the agreement (if
+she believes that the other player will follow the agreement) if and
+only if s is a Nash equilibrium.
+\end{quote}
+\end{frame}
+
+\begin{frame}{Self-enforcing agreement interpretation}
+\protect\hypertarget{self-enforcing-agreement-interpretation-1}{}
+\begin{itemize}
+\tightlist
+\item
+  This is right as far as it goes, but doesn't help defend the
+  philosophical claim in cases where no communication is possible.
+\item
+  And here it is particularly notable that Bonanno's purposes are not
+  quite the same as mine.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{No regret interpretation}
+\protect\hypertarget{no-regret-interpretation}{}
+\begin{quote}
+s is a Nash equilibrium if there is no player who, after observing the
+opponent's choice, regrets his own choice (in the sense that he could
+have done better with a different strategy of his, given the observed
+strategy of the opponent).
+\end{quote}
+
+\begin{itemize}
+\tightlist
+\item
+  This is a very good clear definition of what Nash is, but hard to see
+  how it's a an argument for the importance of Nash.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Other Arguments}
+\protect\hypertarget{other-arguments}{}
+\begin{itemize}[<+->]
+\tightlist
+\item
+  You might be being spied on.
+\item
+  The other player might be a mind-reader.
+\item
+  You might be playing repeatedly, and so your strategy will be (more or
+  less) revealed.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Repeated Games}
+\protect\hypertarget{repeated-games}{}
+\begin{itemize}
+\tightlist
+\item
+  The last one is, I think, the main reason in practice people care
+  about Nash.
+\item
+  But it turns out for one important game, the Prisoners Dilemma, it is
+  arguable that in the repeated game you should not play the Nash
+  equilibrium.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Prisoners' Dilemma}
+\protect\hypertarget{prisoners-dilemma}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Coop & Defect\\
+\midrule
+Coop & 3, 3 & 0, \fbox{5}\\
+Defect & \fbox{5}, 0 & \fbox{1}, \fbox{1}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  The only Nash equilinrium is both players defect.
+\item
+  And personally, I think in the one-shot game they should both defect.
+\item
+  But it is not at all obvious they should defect in the repeated game.
+\item
+  We will return to this point a lot in a few weeks.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{For Next Week}
+\protect\hypertarget{for-next-week}{}
+\begin{itemize}
+\tightlist
+\item
+  We will start looking at chapter 3, on games that have sequential
+  moves.
+\end{itemize}
+\end{frame}
+
+\end{document}

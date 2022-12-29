@@ -1,0 +1,122 @@
+---
+title: "444 Lecture 5.7 - Rationalizable Strategies"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Plan
+
+To introduce the idea of rationalizable strategies.
+
+## Reading
+
+Bonanno, section 6.4
+
+## Playing Best Responses
+
+```{r}
+game <- tribble(
+  ~Moves,         ~Left, ~Right,
+  "Up",  "3, 0", "0, 1", 
+  "Middle", "1, 1", "1, 0",
+  "Down",  "0, 0", "3, 1"
+)
+gameformat(game)
+```
+
+In this game, the best responses are:
+
+- Row can play Up (best response to Left) or Down (best response to Right);
+- Column can play Left (best response to Middle) or Right (best response to either Up or Down).
+
+## Playing Best Responses
+
+```{r}
+game <- tribble(
+  ~Moves,         ~Left, ~Right,
+  "Up",  "3, 0", "0, 1", 
+  "Middle", "1, 1", "1, 0",
+  "Down",  "0, 0", "3, 1"
+)
+gameformat(game)
+```
+
+- But Middle is not a best response.
+- It is dominated by the 50/50 mixture of Left and Right.
+
+## Iterated Best Responses
+
+```{r}
+game <- tribble(
+  ~Moves,         ~Left, ~Right,
+  "Up",  "3, 0", "0, 1", 
+  "Middle", "1, 1", "1, 0",
+  "Down",  "0, 0", "3, 1"
+)
+gameformat(game)
+```
+
+- So while Left is a best response...
+- It is not a best response to a best response.
+
+## Iterated Best Responses
+
+- That makes it seem irrational to play Middle. \pause
+- I could build more complicated examples, where we had cases that are best responses to best responses, but not best responses to best responses to best responses. \pause
+- Actually we've already seen such a case.
+- In the Ice Cream game, 2 is a best response to 1, which is a best response to 0. 
+- But 2 is not a best response to any best response to a best response.
+
+## Iterated Best Responses
+
+- Some strategies are at the start of an infinite chain $S_1, S_2, \dots$ where each strategy is a best response to the one that comes after it.
+- Call these the **rationalizable** strategies.
+
+## Infinite Chains
+
+Here is one way to get an infinite chain like this.
+
+- If the pair $\langle S_1, S_2 \rangle$ is a Nash equilibrium, ...
+- Then $S_1$ is a best response to $S_2$, which is a best response to $S_1$, which is a best response to $S_2$, which ... \pause
+- But you don't only need to use Nash equilibria.
+- Think about Rock, Paper, Scissors.
+- Rock is a best response to Scissors, which is a best response to Paper, which is a best response to Rock, which is...
+- But Rock is not part of a Nash equilibrium.
+
+## Rationalizability
+
+I'm not going to prove this, but the following turns out to be true.
+
+- The strategies that can be at the start of these infinite chains ...
+- Are exactly those strategies that survive iterated deletion of strongly dominated strategies ...
+- Provided we include dominance by mixtures when we're doing the deleting.
+
+## Philosophical Payoff
+
+Some economists, and a few philosophers, have argued that this is the key philosophical notion in game theory.
+
+- They say that a strategy is rational to play if and only if it is rationalizable in this sense. \pause
+- In economics, this is very much a **heterodox** view.
+- Note that this view is more permissive than the view that rational players will choose Nash equilibria.
+- All Nash equilibria are rationalizable, but some rationalizable strategies (e.g., Rock!), are not Nash equilibria. \pause
+- Most economists think that if there is a key notion in game theory, it is **less permissive** than Nash equilibrium.
+
+## For Next Time
+
+- We'll close this out by going back to Nash, and asking why Nash equilibrium is philosophically significant.

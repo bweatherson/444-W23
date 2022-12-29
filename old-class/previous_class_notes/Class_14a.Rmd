@@ -1,0 +1,81 @@
+---
+title: "Honest Signalling"
+output:
+  pdf_document:
+    toc: false
+    md_extensions: +startnum
+    df_print: kable
+    keep_tex: yes
+    latex_engine: xelatex
+    extra_dependencies: ["mathastext", "nicefrac"]
+    fig_caption: no
+fontsize: 11pt
+mainfont: SF Pro Text Light
+geometry: margin=1in
+author: Philosophy 444
+date: 30 October, 2019
+---
+
+## Big Themes
+
+- There are other signalling models than the Spence model. You can think that tail feathers or stotting or college attendance is signalling without thinking this is the right model.
+- The Spence model says that non-signallers **can** signal but **won't**. We should also think about models where non-signallers **would** signal but **can't**.
+
+## Three Big Questions
+
+1. Why does receiver take the signal seriously?
+2. Why does signaller send signal? In particular, why do they send this signal? Why don't signallers collectively organise a cheaper signal?
+3. Why don't non-signallers send signal?
+
+## Four Questions from Last Time
+
+1. What aspects of this model seem to resemble the world you (as in literally you personally) find yourself in?
+2. What aspects of it seem to differ from the world in significant ways?
+3. What empirical data would make you think this model was right in some important way?
+4. What empirical data would make you think this model was wrong in some important way?
+
+## My Answers
+
+1. The basic structure seems plausible. It isn't obvious how what we do here makes you a more valuable employee. It might make you better citizens, but employers don't care about that. And calculus class really is less pleasant for people who won't be as valuable.
+2. The wage premium is so high that it's hard to believe $c_2 > 1$. The same is true for the tail feathers and stotting examples. The payouts to Difficult are really really high, and calculus class isn't that differentially unpleasant.
+3. Restricting things to data I know exist - one thing that supports the model is the 'sheepskin effect'. If you divide the 'some college' group by how much college they got, the skills hypotheis would predict that the more college you did, the higher your wage premium. That might be approximately true. But it would also predict that if you're one course from graduation, you would get 95% or more of the wage premium. And that's wildly false.
+4. One thing that's trouble for the model is that the wage premium is really high among older workers. To make that work, you need one of a few implausible things. One possibility is that you need employers who are so unobservant that they can't tell the valuable workers from the not valuable workers after years and years of work, so they still have to rely on degrees as a signalling device.
+
+\newpage
+
+## Another Hypothesis
+
+So far we've assumed everyone can do Difficult or Easy, but it is more costly for Low than High. Maybe we should drop that assumption. Here is another kind of signalling model that we could consider.
+
+- The basic structure of sender, receiver, signal and receiver actions are the same.
+- Now the cost of Difficult is the same for High and Low.
+- But now Sender isn't in full control of their actions.
+- If they choose Easy, then Easy happens.
+- But if they choose Difficult, then they have to pay the cost $c$, but what happens, and what Receiver sees, is Difficult with probability $p$, and Easy with probability $1-p$.
+- And the probability is high for High and low for Low.
+- Again, we get a separating equilibrium.
+- Receiver does Risky if they see High, and Safe if they see Low. (Or the other way around in the stotting game.)
+- And the expected payouts are such that High should take the chance and do Difficult, while Low should not.
+- At the extreme, the probability of success is 1 for High and 0 for Low, but the model works even with much more balanced probabilities.
+
+This is sometimes called the **Honest Signalling** model, or the **Indexical Signalling** model, as opposed to the **Handicap Principle** model we started with.
+
+## Mixing the Hypotheses
+
+Maybe for some Senders, they have a choice about what costs to incur, with the more costs they incur increasing their probability of success.
+
+- This is easier to see in the college case. Imagine a person who has the skills to finish a college degree, but doesn't have the skills to finish while holding down a 40 hour job, and it would be really costly to give up the 40 hour job.
+- For that person, going to college and keeping the job might not be worth it - it would be like doing the low-probability Difficult signal, which usually just results in paying a cost and getting no return.
+- But going to college and giving up the job might not be worth it either. If the cost $c$ isn't just the tuition cost, but the money foresaken from the job, and perhaps the interest on the loans taken out to cover that money, then perhaps the cost is higher than the premium.
+
+In general, we might want to be a little sceptical that there is clean line between cases where a player chooses not to send a costly signal, and cases where that player doesn't have the ability to (reliably) send that signal. Maybe the signal success probability is a function of the costs incurred, and there is no level of costs they can justify spending.
+
+## For More information
+
+For stats on the college wage premium over time, see
+
+- https://fredblog.stlouisfed.org/2018/07/is-college-still-worth-it/
+
+For information on the college wealth premium, plus stats on the demographics of both the wage premium and the wealth premium, see
+
+- https://www.stlouisfed.org/~/media/files/pdfs/hfs/is-college-worth-it/emmons_symposium.pdf?la=en

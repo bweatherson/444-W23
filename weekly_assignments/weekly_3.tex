@@ -1,0 +1,240 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[Scale=MatchLowercase]{SF Pro Text Light}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1.5in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% https://github.com/rstudio/rmarkdown/issues/337
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+% https://github.com/rstudio/rmarkdown/pull/252
+\usepackage{titling}
+\setlength{\droptitle}{-2em}
+
+\pretitle{\vspace{\droptitle}\centering\huge}
+\posttitle{\par}
+
+\preauthor{\centering\large\emph}
+\postauthor{\par}
+
+\predate{\centering\large\emph}
+\postdate{\par}
+
+\usepackage[normalem]{ulem}
+\usepackage{gensymb}
+\usepackage{nicefrac}
+\usepackage{caption}
+\usepackage{istgame}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{siunitx}
+\usepackage[normalem]{ulem}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{calc}
+\usepackage{tabularx}
+\usepackage{threeparttable}
+\usepackage{wrapfig}
+\usepackage{adjustbox}
+\usepackage{hyperref}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Third Weekly Assignment},
+  pdfauthor={Philosophy 444},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Third Weekly Assignment}
+\author{Philosophy 444}
+\date{Due 3 February, 2023}
+
+\begin{document}
+\maketitle
+
+\hypertarget{question-1}{%
+\subsection{Question 1}\label{question-1}}
+
+Ankita and Beatrice would like to go on a date. They have two options:
+burgers at Fleetwood, or cocktails at Gandy Dancer. Ankita first chooses
+where to go, and knowing where Ankita went Beatrice also decides where
+to go. Ankita prefers Fleetwood, and Beatrice prefers Gandy Dancer. A
+player gets 3 if they end up with their preferred date, 1 if they end up
+with their unpreferred date, and 0 if they end up at different places.
+All these are common knowledge.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Find a subgame perfect equilibrium to this game.
+\item
+  Find a Nash equilibrium that is not subgame perfect.
+\end{enumerate}
+
+Modify the game a little bit: Beatrice does not automatically know where
+Ankita went, but she can learn without any cost. That is, now, without
+knowing where Ankita went, Beatrice first chooses between Learn and
+Not-Learn; if she chooses Learn, then she knows where Ankita went and
+then decides where to go; otherwise she chooses where to go without
+learning where Ankita went. The payoffs depend only on where each player
+goes, as before. (Again, it is common knowledge that Beatrice has the
+ability to learn what Ankita knows before deciding.)
+
+Now find a subgame perfect equilibrium of this new game in which the
+outcome (i.e., which place the two of them end up at) is the same as the
+outcome of the Nash equilibrium that is not subgame perfect in the
+original game.
+
+HINT: In the latter game, Beatrice has sixteen strategies, since there
+are four points that she could make a binary choice. First, she has to
+decide Learn or Not-Learn. Second, she has to decide what to do if
+Not-Learn; that's a single choice since she is in the same position
+whether Ankita goes to Fleetwood or Gandy Dancer. Third, what to do if
+she chooses Learn and Ankita goes to Fleetwood. Fourth, what to do if
+she chooses Learn and Ankita goes to Gandy Dancer.
+
+\textbf{Continued on other side}
+
+\newpage
+
+\hypertarget{question-two}{%
+\subsection{Question Two}\label{question-two}}
+
+The players are Coke and Pepsi. Coke is deciding whether to enter a
+market, Pepsi is already in the market. (Apparently this happened a lot
+in the 1990s, because there were plenty of countries where Pepsi had a
+dominant market position and Coke was a newcomer.) Coke has to make two
+decisions in the game - whether to enter the market or not, and if they
+enter, whether to play tough or not. Pepsi has to make one decision,
+whether to play tough or not. If Coke enters, here is the payoff table
+for the players, with T for Tough, A for Accommodate.
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[h!]
+\begin{centerbox}
+\begin{threeparttable}
+ \label{tab:unnamed-chunk-2}
+\setlength{\tabcolsep}{0pt}
+\begin{tabular}{l l l}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}|}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}r!{\huxvb{0, 0, 0}{0.4}}}{\huxtpad{0pt + 1em}\raggedleft \hspace{2pt} 
+ \hspace{2pt}\huxbpad{6pt}} &
+\multicolumn{1}{c!{\huxvb{0, 0, 0}{0}}}{\huxtpad{0pt + 1em}\centering \hspace{2pt} Pepsi Tough \hspace{2pt}\huxbpad{6pt}} &
+\multicolumn{1}{c!{\huxvb{0, 0, 0}{0}}}{\huxtpad{0pt + 1em}\centering \hspace{2pt} Pepsi Accommodate \hspace{2pt}\huxbpad{6pt}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}r!{\huxvb{0, 0, 0}{0.4}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{2pt} Coke Tough \hspace{2pt}\huxbpad{2pt}} &
+\multicolumn{1}{c!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\centering \hspace{2pt} -2, 1 \hspace{2pt}\huxbpad{2pt}} &
+\multicolumn{1}{c!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\centering \hspace{2pt} 0, -3 \hspace{2pt}\huxbpad{2pt}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}|}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}r!{\huxvb{0, 0, 0}{0.4}}}{\huxtpad{2pt + 1em}\raggedleft \hspace{2pt} Coke Accomodate \hspace{2pt}\huxbpad{2pt}} &
+\multicolumn{1}{c!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\centering \hspace{2pt} -3, 1 \hspace{2pt}\huxbpad{2pt}} &
+\multicolumn{1}{c!{\huxvb{0, 0, 0}{0}}}{\huxtpad{2pt + 1em}\centering \hspace{2pt} 1, 2 \hspace{2pt}\huxbpad{2pt}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}|}
+\arrayrulecolor{black}
+\end{tabular}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+Find all subgame perfect equilibria to the game with the following three
+constraints:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  If Coke doesn't enter, Coke gets 0, Pepsi gets 5. Coke first decides
+  whether to enter or not, and then both Coke and Pepsi find out whether
+  Coke decided to enter, then each company simultaneously decides on
+  Tough or Accommodate.
+\item
+  Coke decides whether to enter at the same time Pepsi decides whether
+  to be Tough or Accommodate. If Coke enters, it then decides whether to
+  be Tough or Accommodating, knowing what Pepsi has decided. If Coke
+  stays out, it gets 0, and Pepsi gets 0 if Accommodating, -1 if Tough.
+\item
+  Just like the previous case, but if Coke stays out, and Pepsi is
+  Tough, it gets +1.
+\end{enumerate}
+
+\hypertarget{due-friday-february-3rd-at-5pm}{%
+\subsection{Due Friday February 3rd, at
+5pm}\label{due-friday-february-3rd-at-5pm}}
+
+\end{document}

@@ -1,0 +1,145 @@
+\input{../styles/handout-leader}
+\def\mytitle{Arrow's Theorem}
+\def\myauthor{Brian Weatherson}
+\def\mydate{March 6, 2018}
+\usepackage{amssymb}
+\input{../styles/handout-begin}
+
+
+\section{Preference Ordering}
+\label{preferenceordering}
+
+We start with some options $x, y, z, \dots$. Each person is assumed to have a \textbf{preference ordering} over them. We write $x \geq y$ to say that $x$ is at least as good (by that person's standards) as $y$. And we assume two things about $\geq$. It is \textbf{transitive}. That is, from $x \geq y$ and $y \geq z$, we can infer $x \geq z$. And it is \textbf{connected}; for any $x, y$, either $x \geq y$ or $y \geq x$ (or both). We take these two properties to be definitional of a preference order.
+
+\section{Constitution}
+\label{constitution}
+
+A \textbf{constitution} is a function from the preference orders of the group to a preference ordering for the society.
+
+\begin{itemize}
+\item{} It is assumed to be \textbf{total}. No matter what preferences you feed in, it returns an option.
+
+\item{} And it is assumed to output a \textbf{preference order}; that is, a transitive and connected relation over the options.
+
+\item{} And it is assumed to be \textbf{functional}; fixing the inputs fixes the outputs. This rules out the use of randomising devices and the like.
+
+\end{itemize}
+\section{Strict Preference}
+\label{strictpreference}
+
+\begin{itemize}
+\item{} We write $x > y$ as shorthand for $x \geq y$ and $y \ngeq x$. Intuitively, it means that $x$ is better than $y$.
+
+\item{} From the assumptions we've made so far, it also follows that strict preference is transitive.
+
+\item{} But strict preference is not in general connected; it fails to be connected in the case of ties.
+
+\item{} But it only fails for ties; there can't be items that are just disconnected.
+
+\end{itemize}
+\section{Dictator and Fairness}
+\label{dictatorandfairness}
+
+There is a dictator, in Arrow's sense, if there is a person with the following feature:
+
+\begin{itemize}
+\item{} For any options $x, y$ if that person thinks $x > y$, then the group verdict includes $x > y$, no matter what the other people in the group think.
+
+\end{itemize}
+The \textbf{No Dictators} condition on constitutions is a weaker version of the following rule.
+
+\begin{description}
+\item[Permutation Invariance]
+
+If any two people swap preferences, the first adopts what was the second's preference ordering, and the second adopts the first's preference ordering, then the group verdict does not change.
+\end{description}
+Any system that satisfied Permutation Invariance satisfies No Dictators. But the converse is not true. Our system for electing Presidents satisfies No Dictators, but not Permutation Invariance. We could also define a \textbf{super-dictator} as follows:
+
+\begin{itemize}
+\item{} For any options $x, y$ if that person thinks $x \geq y$, then the group verdict includes $x \geq y$, no matter what the other people in the group think.
+
+\end{itemize}
+Then we could imagine a \textbf{No Super Dictators} condition. This is weaker than the No Dictators condition. If there are No Super Dictators then there are No Dictators, but the converse sometimes fails. Imagine the following constitution. If the King prefers $x$ to $y$, then so does the society. But if the King is indifferent between $x$ and $y$, then the Queen's preferences over $x$ and $y$ become society's preferences. The King is a dictator, but not a super-dictator, in the terminology we're using.
+
+\section{Pareto}
+\label{pareto}
+
+Here is the Pareto condition, sometimes called \textbf{Weak Pareto}.
+
+\begin{itemize}
+\item{} If $x > y$ for everyone in the group, then the group preference ordering includes $x > y$.
+
+\end{itemize}
+Note that this is a constraint on strict preferences. The Pareto condition as described is consistent with everyone in the group thinking $x \geq y$, but the group preference having $x \ngeq y$. That could happen in constitutions that have, for example, a very strong status quo bias, or a bias towards any particular outcome. The Pareto condition is a (natural) strengthening of the following condition
+
+\begin{description}
+\item[Citizen Sovereignty]
+
+For any possible social ordering, there is some set of individual orderings that produces that social ordering.
+\end{description}
+Pareto entails that, because the case where everyone agrees produces the desired outcomes.
+
+\section{Independence of Irrelevant Alternatives}
+\label{independenceofirrelevantalternatives}
+
+This is the trickiest of the conditions. Here is how I'd put it.
+
+\begin{itemize}
+\item{} Whether the social ordering includes $x \geq y$, or $y \geq x$, or both, depends solely on how the individuals in the group rank $x$ and $y$. You can't change the social ordering of $x, y$ without changing at least one individual's ranking of $x, y$.
+
+\end{itemize}
+It is easy to confuse this condition with a distinct condition. (Arrow himself made this confusion.)
+
+\begin{itemize}
+\item{} If an option is deleted, and every individual's preference order over the remaining items stays the same, then so does the group's preferences.
+
+\end{itemize}
+These aren't the same, because IIA only applies to variation with no change in options. But they are very closely related.
+
+\section{The Theorem}
+\label{thetheorem}
+
+There is no complete function from individual preference orderings to individual preference orderings satisfying
+
+\begin{itemize}
+\item{} No Dictators
+
+\item{} Pareto
+
+\item{} Independence of Irrelevant Alternatives
+
+\end{itemize}
+\section{How Constitutions Fail}
+\label{howconstitutionsfail}
+
+\begin{description}
+\item[Pairwise Majority]
+
+Does not produce a transitive preference ordering in Condorcet case.
+
+\item[Oligarchy (i.e., $x > y$ iff every oligarch says $x > y$)]
+
+Does not produce a connected preference ordering.
+
+\item[Plurality Voting, Runoff, Borda, Range]
+
+Violate Independence of Irrelevant Alternatives.
+
+\item[Liberalism (I'll talk this through in class)]
+
+Violates Pareto
+\end{description}
+\section{Single Peaked Preferences}
+\label{singlepeakedpreferences}
+
+Pairwise Majority works, i.e., always produces coherent and even sensible verdicts, if the following two conditions are met:
+
+\begin{itemize}
+\item{} There is an ordering of the options on some scale. Every voter has a `bliss point' on this scale, and prefers any option closer to the bliss point to any option (on the same side) that is further away.
+
+\item{} There are an odd number of voters.
+
+\end{itemize}
+The second condition is negotiable. But the first option is not. And big question: which social questions are \textbf{single peaked} in this sense.
+
+\end{document}

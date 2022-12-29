@@ -1,0 +1,138 @@
+---
+title: "Non-Cooperative Signalling"
+output:
+  pdf_document:
+    toc: false
+    md_extensions: +startnum
+    df_print: kable
+    keep_tex: yes
+    latex_engine: xelatex
+    extra_dependencies: ["mathastext", "nicefrac"]
+    fig_caption: no
+fontsize: 11pt
+mainfont: SF Pro Text Light
+geometry: margin=1in
+author: Philosophy 444
+date: 23 October, 2019
+---
+
+# Basic Game
+
+- Two states of the world - sender knows them, receiver doesn't. Call them 'High' and 'Low'. (Or H/L.) Assume for now that High is marginally more probable than Low.
+- Two possible signals/messages that sender can send - call them 'Difficult' and 'Easy' for reasons that we will get to. (Or D/E).
+- Two possible actions receiver can take - call them Risky and Safe (Or R/S).
+
+In words, here are the payoffs:
+
+- Sender pays 0 to perform Easy, but a cost $c > 0$ to perform Difficult. This is subtracted from whatever their ultimate payout is. (We will complicate this clause in a bit.)
+- Receiver gets a payout of 0 for doing Safe.
+- If Receiver plays Risky, they get 1 if High, and -1 if Low.
+- Sender gets 1 (minus whatever cost they incurred at round 1) if Risky, and 0 (minus whatever cost they incurred at round 1) if Low.
+
+In table form, here are the payouts. First, here are the payouts for High.
+
+|           | Risky    | Safe    |
+|----------:|:--------:|:-------:|
+| Difficult | $1-c, 1$ | $-c, 0$ |
+|      Easy | $1, 1$   | $0, 0$  |
+
+Now, here are the payouts for Low.
+
+|           | Risky     | Safe    |
+|----------:|:---------:|:-------:|
+| Difficult | $1-c, -1$ | $-c, 0$ |
+|      Easy | $1, -1$   | $0, 0$  |
+
+Let's try to work through what the equilibria are for different values of $c$.
+
+- First, assume $c < 1$.
+- Assume that Receiver will do different things if Difficult or Easy.
+- Then Sender will do whatever makes Receiver do Risky, whether it is D or E. So no separating equilibrium.
+- Now assume Receiver will do the same thing if Difficult or Easy.
+- Then of course Sender will do Easy and get that payout, whatever it is.
+- Again, no separating equilibrium.
+
+\newpage
+What does produce a separating equilibrium is if the cost is different in High and Low. Change the 'penalty' for playing Difficult so that in High, the penalty is $c_1 < 1$, and in Low, the penalty is $c_2 > 1$. Now we get the following equilibrium.
+
+- Sender does Difficult if High, Easy if Low.
+- Receiver does Risky if Difficult, Safe if Easy.
+
+(Aside: You also get one other really weird equilibrium where
+
+- Sender always does Easy.
+- Receiver does Risky if Easy, Safe if Difficult.
+
+This is mathematically interesting - and hence interesting to me - because it is not just a Nash equilibrium and subgame perfect, but also satisfies all the extra criteria developed in chapters 11 and 12 to rule out intuitively absurd equilibria like this one. But it is hard to see how it has any real-world relevance - it doesn't look like it could naturally evolve, for example - and I'll ignore it from here on.)
+
+So we get a separating equilibrium. And maybe we get a model of some fascinating real-world things. In most of these cases, Sender has something like a continuum of choices from Easy to Difficult, and Receiver has a continuum from Risky to Safe. But it arguably helps to look at the binary case first, and maybe we can generalise that to the real-world example. 
+
+Two caveats before we start the examples. 
+
+In practice, biologists seem happy to use this procedure - think about the binary model and then generalise to the continuous case - while economists prefer to start with the continuous case. My intuitions are normally with the economists, but here I'm acting like a biologist.
+
+And these are possible models of what we see. In every case, I'm going to eventually raise worries for the model. But I want to have them on the table.
+
+# Example One: Tail-Feathers
+
+Male peacocks have very colorful tails. On the face of it, this doesn't look like it serves any purpose in either collecting food or avoiding becoming food. (Quite the opposite in fact.) But maybe we should think of it as a move in a signalling game.
+
+- Sender is the male, choosing whether to have a normal tail (Easy) or a colourful tail (Difficult). 'Choosing' here is misleading - it's less misleading to say their genes choose.
+- Sender is either Strong (that's High) or Weak (that's Low).
+- It's resource-intensive to produce (and preserve) a colorful tail, but it's more costly for Weak than for Strong peacocks.
+- Receiver is a female, choosing a mate. They prefer Strong to Weak - since they want better genes for their children. (Again, it's hard to say this is what the individual female wants - better to say there are evolutionary advantages to acting as if that's what she wants.)
+- So perhaps an equilibrium is Strong have colorful tails, Weak don't, and females who have a choice prefer males with colorful tails.
+
+# Example Two: Stotting
+
+Stotting is where a quadruped leaps into the air, with legs relatively stiff. Stotting is common among young animals in various species. But the really odd thing is that among some gazelles, it only happens when a predator is nearby. And why they do this is a bit of a mystery. It doesn't seem that efficient as a means of propulsion. And revealing one's location this dramatically doesn't seem like a good tactic in predator avoidance. But maybe it's a move in a signalling game. In this game, the payouts are slightly changed. The gazelle is the sender, and the predator is the receiver, and the predator's payoffs are going to be different from the standard game.
+
+- High in this case is that the gazelle is strong (High means things are good from the predator's perspective.) Low is that the gazelle is weak.
+- Stotting is Difficult; Not-stotting is Easy.
+- Chasing this particular gazelle is Risky; leaving it is Safe.
+- But here we change the payoffs. Here receiver/predator gets -1 for doing Risky in High, and 1 for doing Risky in Safe. Otherwise the game is the same.
+
+Again, there is a separating equilibria.
+
+- Gazelle stotts if and only if they are strong.
+- Predator chases if and only if they don't see stotting.
+
+And so there is an advantage to stotting - you don't get chased - even though holding fixed the state of the world and the behavior of the predator, stotting is a cost with no benefit. It doesn't help you get away - it helps the predator not choose to attack.
+
+# Example Three: University
+
+According to recent research from the San Francisco Federal Reserve, here are the average hourly wages for Americans by educational level as of 2015. (I don't think the numbers have changed much since.) I've also added a column for what percentage of the workforce each of these groups are. Source: https://www.frbsf.org/economic-research/files/wp2016-17.pdf
+
+| Education          | Wage   | Ratio |
+|:------------------:|:------:|:-----:|
+| No degree          | $13.56 | 7.7%  |
+| High school degree | $17.98 | 25.6% |
+| Some college       | $21.59 | 27.8% |
+| Undergrad degree   | $30.93 | 24.7% |
+| Graduate degree    | $39.48 | 14.3% |
+
+What could explain the fact that college graduates earn almost 75% more per hour than high school graduates? There are two obvious possibilities.
+
+1. Universities impart lots of valuable skills, and employers are rationally responding to this value we add by paying more for more valuable employees.
+2. It's a selection effect - the people who come to college were more valuable before they came here, and employees are rationally responding to that underlying fact.
+
+These aren't exclusive, but let's pretend for now we're going to assume one of them is decisive, and we're trying to figure out which it is. There are two things missing in explanation 2. 
+
+First, why do all these smart people choose to go to college? On the one hand, it is mostly fun. On the other hand, it's expensive, and there are a lot of other fun things you could do with the money. If it's all about the climbing walls, you could join the fanciest gym in the country for a fraction of the cost. If it's about meeting new people, you could go backpacking around Europe. If it's about intellectual stimulation, you could take a gap year or four and spend your days reading and listening to educational podcasts.
+
+Second, why do employers look for college degrees as the signal of who they will pay high wages to? Why don't they simply ask to see your offer letters? If it's just a selection effect, then you can see who has been selected in as soon as the offer letters go out - and that should be enough to make employers happy. But it's not - they want degrees not just offer letters. (This seems really obvious, but I think it's kind of a striking fact about the modern world, and one that doesn't get enough attention in a lot of debates.)
+
+So we need a model that explains why we don't see, for example, valuable employees taking their offer letters and backpacking around Europe with Kindles and podcasts for their spare time. Spence's signalling model provides such an explanation.
+
+- Sender is the college graduate. They are either High - i.e., valuable to employers, or Low - not so valuable.
+- Receiver is the high wage employer. They can do the Risky thing - hire this person - or the Safe thing - not hire them.
+- Going to college is Difficult. But - and this is the crucial thing - on this model it is more Difficult for Low than for High. All those calculus classes are really unpleasant. But they are more unpleasant for Low - so much so that $c_2 > 1$.
+- So the separating equilibrium is High goes to college and Low hits the beach/workforce. Then high-wage employers hire college graduates only.
+- And all this happens even though college is a pure cost to everyone who goes there. Employer doesn't get any reward for hiring graduates - they get same reward for hiring High grads as High non-grads. And holding all else fixed, every young person is better off skipping college than going.
+
+Four questions for you to discuss.
+
+1. What aspects of this model seem to resemble the world you (as in literally you personally) find yourself in?
+2. What aspects of it seem to differ from the world in significant ways?
+3. What empirical data would make you think this model was right in some important way?
+4. What empirical data would make you think this model was wrong in some important way?

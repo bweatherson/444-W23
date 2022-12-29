@@ -1,0 +1,131 @@
+---
+title: "Group Beliefs"
+output:
+  pdf_document:
+    toc: false
+    md_extensions: +startnum
+    df_print: kable
+    keep_tex: yes
+    latex_engine: xelatex
+    extra_dependencies: ["mathastext", "nicefrac"]
+    fig_caption: no
+fontsize: 11pt
+mainfont: SF Pro Text Light
+geometry: margin=1in
+author: Philosophy 444
+date: 11 November, 2019
+---
+
+# Group Beliefs
+
+Why are we interested in group beliefs? Three possible circumstances.
+
+1. We are tasked with writing a group report, and we have to aggregate our views.
+2. We want to learn about an area, and there are several people to whom we could plausibly defer.
+3. We want to say, as theorists, what it is that such-and-such group thinks.
+
+The last question has a theoretical background question. Should we think of reports of group beliefs (e.g., "The CIA thinks...") as being literal or metaphorical? Are groups the kind of things that can really have beliefs? This will hover in the background for a bit, but it's something that we should keep in mind.
+
+# Core Puzzle
+
+The rule
+
+> Group $G$ believes that $A$ if and only if a majority of members of $G$ believe that $A$
+
+is incoherent. Or, at least, it commits some ordinary looking groups to incoherence. The circumstances where the incoherence arises are fairly banal.
+
+The CIA has three analysts working on corruption in Western Europe. We ask them what they think, and they give these reports.
+
+- A thinks that the French and German leaders are both corrupt.
+- B thinks that the French leader is corrupt, but the German leader is not.
+- C thinks that the German leader is corrupt, but the French leader is not.
+
+And we have to construct a report on behalf of the CIA, with this expert testimony. The report has to answer these questions.
+
+1. Is the French leader corrupt?
+2. Is the German leader corrupt?
+3. Are both the French and German leaders corrupt?
+
+And if we go by majority rule, the answers are, _Yes_, _Yes_ and _No_. And that would not make for a particularly satisfying Presidential Daily Briefing.
+
+# Three Big Options
+
+1. Try to aggregate inputs not outputs.
+2. Set an agenda of logically independent items, and answer questions as they come up, then set other questions not on the agenda by logic.
+3. Find experts on each individual question and defer to them.
+
+# Option One - Inputs Not Outputs
+
+- This is kind of what we do when we talk over a problem.
+- It's a good strategy!
+- In general, the group shouldn't aggregate its beliefs/desires/preferences, but it's evidence/values/reasons.
+- **Signature weakness**: When some people disagree about the function from inputs -> outputs.
+- Then all the other problems recur.
+- But let's not get too fancy - this is the right solution.
+
+# Option Two - Agenda
+
+- This is what List and Pettit spend a lot of time on.
+- We don't use majority rule for everything, just for things on the agenda.
+- So we don't have a meeting, or a vote, about whether both leaders are corrupt.
+- We, perhaps, vote on whether the first is corrupt, then we vote on whetehr the second is corrupt, then we are done. Logic then settles the answers to the conjunction question.
+- **Signature weakness**: Sensitive to the agenda. Could just as easily set agenda as "Is French leader corrupt?", and "Are both of them corrupt?".
+- Practical question: What is the right 'agenda' for a legal body like a jury or a court panel.
+- IANAL, but I think this one is really interesting and hard (and possibly does not get a stable answer)
+- Choice point: Do you set the agenda externally, or do you let features of the views of the participants set the agenda order?
+- For example, do you say that the first thing to do is find any proposition that **everyone** agrees on, and take that as given?
+- Either answer here leads to some odd results. Giving up on unanimity is weird, but so is fixing odd conjunctions/disjunctions before the start of play.
+- And do you treat factual and evaluative questions separately, or let them interact as well?
+
+# Option Three - Designate an Expert for Each question
+
+- In practice, we don't want to defer equally to each person.
+- We want to defer to the physics experts on physics, the hockey experts on hockey, etc.
+- Maybe we need to identify the person who knows France best, and they settle the French question etc.
+- The problem is, this turns out to be hard when there are propositions about multiple subject matters that we care about, and we care about conjunctions of such propositions.
+- A particularly vivid version of this problem is when one expert thinks two debates are linked, and another does not.
+
+# Probability
+
+- Linear averaging solves a lot of problems
+- The linear average of a bunch of probability functions is a probability function.
+- And it is often a very natural function to use as the group judgment.
+- Hooray, but wait a minute. There are two problems.
+- First is a problem about overlapping expertise
+- Second is a problem about independence.
+
+# Expert Problem
+
+A and B are experts on different subjects, and here are their probabilities.
+
+|                        |  A  |  B  |
+| :--------------------: | --- | --- |
+| $p \wedge q$           |  0  |  0  |
+| $p \wedge \neg q$      | 0.6 | 0.2 |
+| $\neg p \wedge q$      | 0.2 | 0.6 |
+| $\neg p \wedge \neg q$ | 0.2 | 0.2 |
+
+Assume A is the expert on $p$, and B is the expert on $q$. Then you can't do the following three things
+
+1. Have the probability in $p$ equal expert A's probability that $p$.
+2. Have the probability in $q$ equal expert B's probability that $q$.
+3. Assign probability 0 to the one thing your two experts agree is not going to happen.
+
+# Independence Problem
+
+A and B both know a lot about $p, q$, and they have long excellent track records of making probabilistic forecasts. Here is what they think about the four possibilities.
+
+|                        |  A    |  B    |
+| :--------------------: | :---: | :---: |
+| $p \wedge q$           | 0.81  | 0.01  |
+| $p \wedge \neg q$      | 0.09  | 0.09  |
+| $\neg p \wedge q$      | 0.09  | 0.09  |
+| $\neg p \wedge \neg q$ | 0.01  | 0.81  |
+
+Both think $p, q$ independent and equiprobable, but they have wildly different views about them. We can't do all the following
+
+- Agree with the experts that $p, q$ independent.
+- Agree with the experts about the two propositions that they agree on the probability.
+- Agree with the experts that $p, q$ are equiprobable.
+
+So which do we give up. And, frankly, what credences should we have? I have no idea on the answer to this last one.

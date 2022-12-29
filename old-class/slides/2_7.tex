@@ -1,0 +1,379 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 2.7 - Iterated Deletion of Weakly Dominated Strategies},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+
+\title{444 Lecture 2.7 - Iterated Deletion of Weakly Dominated Strategies}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Plan}
+\protect\hypertarget{plan}{}
+
+To look at two problems that arise when we delete strategies that are
+merely weakly dominated.
+
+\end{frame}
+
+\begin{frame}{Reading}
+\protect\hypertarget{reading}{}
+
+Bonanno, section 2.5.2.
+
+\end{frame}
+
+\begin{frame}{Two Issues}
+\protect\hypertarget{two-issues}{}
+
+\begin{itemize}
+\tightlist
+\item
+  Order effects.
+\item
+  Philosophical motivation.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Order Effects}
+\protect\hypertarget{order-effects}{}
+
+\begin{itemize}
+\tightlist
+\item
+  As Bonanno goes over, when deleting weakly dominated strategies, it
+  matters what order you do the deletions in.
+\item
+  Whether a strategy weakly dominates another at a point in the process
+  might depend on how you got to that point.
+\item
+  And the result is that different ways of applying the process lead to
+  different `solutions'.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Way Around This}
+\protect\hypertarget{way-around-this}{}
+
+\begin{itemize}
+\tightlist
+\item
+  Bonanno says (as I think is standard) that you solve this by saying
+  that at each stage, you delete every strategy that you possibly can.
+\item
+  There is still an issue I think about why that deletion process is
+  justified as opposed to some other.
+\item
+  It does have the nice advantage of actually being a well defined
+  process, so that's nice.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Philosophical Justification}
+\protect\hypertarget{philosophical-justification}{}
+
+\begin{itemize}
+\tightlist
+\item
+  The bigger issue is that it is a little hard to say why we should care
+  about the result of this procedure.
+\item
+  Saying what's special about the result of this strategy is not
+  completely obvious.
+\item
+  Bonanno alludes to this - let's go over it in a bit more detail.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Iterated Deletion}
+\protect\hypertarget{iterated-deletion}{}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|ccc}
+\toprule
+ & Left & Center & Right\\
+\midrule
+Up & 1, 1 & 1, 1 & 0, 0\\
+Middle & 1, 1 & 0, 0 & 1, 0\\
+Down & 0, 0 & 0, 1 & 1, 1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  Middle weakly dominates Down, and Center weakly dominates Right.
+\item
+  So let's delete them.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Iterated Deletion}
+\protect\hypertarget{iterated-deletion-1}{}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Center\\
+\midrule
+Up & 1, 1 & 1, 1\\
+Middle & 1, 1 & 0, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  Now Up weakly dominates Middle and Left weakly dominates Center.
+\item
+  So the solution is Up/Left, right?
+\item
+  Well, not so fast.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Iterated Deletion}
+\protect\hypertarget{iterated-deletion-2}{}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|ccc}
+\toprule
+ & Left & Center & Right\\
+\midrule
+Up & 1, 1 & 1, 1 & 0, 0\\
+Middle & 1, 1 & 0, 0 & 1, 0\\
+Down & 0, 0 & 0, 1 & 1, 1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  Think about it from Row's perspective.
+\item
+  We have an argument that Column will play Left.
+\item
+  If that argument works, Row shouldn't prefer Up - they should be
+  indifferent between Up and Middle.
+\item
+  Why does the argument say to play Up then?
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Iterated Deletion}
+\protect\hypertarget{iterated-deletion-3}{}
+
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|ccc}
+\toprule
+ & Left & Center & Right\\
+\midrule
+Up & 1, 1 & 1, 1 & 0, 0\\
+Middle & 1, 1 & 0, 0 & 1, 0\\
+Down & 0, 0 & 0, 1 & 1, 1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  The answer is that Middle is risky.
+\item
+  In the game after deletion, Middle has a risk of getting 0, but Up is
+  sure to get 1.
+\end{itemize}
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  But look at the original game - Up is risky too!
+\item
+  I think this makes it hard to philosophically defend IDWDS
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{For Next Time}
+\protect\hypertarget{for-next-time}{}
+
+We will look at a famous example of iterated deletion that's not in the
+book.
+
+\end{frame}
+
+\end{document}

@@ -1,0 +1,101 @@
+---
+title: "444 Lecture 5.5 - Dominance by Mixture"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Plan
+
+Discuss a new form of dominance reasoning - mixed strategy dominance.
+
+## Reading
+
+Bonanno, Section 6.4.
+
+## Basic Example
+
+```{r}
+game <- tribble(
+  ~Moves,         ~Left, ~Right,
+  "Up",  "3, 0", "0, 0", 
+  "Middle", "1, 0", "1, 0",
+  "Down",  "0, 0", "3, 0"
+)
+gameformat(game)
+```
+
+This is a bit boring for Column, but let's focus on Row for now.
+
+## Dominance Reasoning
+
+```{r}
+gameformat(game)
+```
+
+At first it looks like there are no dominated strategies.
+
+- Up does worse than Middle and Down if Column plays Right, so it doesn't dominate anything.
+- Middle does worse that Up if Column plays Left, and worse than Down if Column plays Right.
+- Down does worse than both of them if Column plays Left.
+
+## Dominance Reasoning
+
+```{r}
+gameformat(game)
+```
+
+But compare these two strategies.
+
+- Middle
+- The mixed strategy of Up with probability 0.5, and Down with probability 0.5.
+
+## Dominance Reasoning
+
+```{r}
+gameformat(game)
+```
+
+- Middle gets an actual return of 1 whatever Column does.
+- The mixed strategy gets an expected return of 1.5 whatever Column does.
+- So it has a higher expected return given Left (1.5 > 1), and a higher expected return given Right (1.5 > 1).
+
+## Dominance Reasoning
+
+```{r}
+gameformat(game)
+```
+
+- If that happens, then we'll say that Middle is dominated by this mixture.
+- When we're deleting dominated strategies, we should delete it too.
+
+## Nash and Dominance
+
+- A strategy that is dominated by a mixture like this can never be part of a Nash equilibrium.
+- After all, the player would be better off playing the mixture than playing it, so it fails the test that there is nothing better to do.
+- So being able to find these dominating mixtures can be very helpful in working out what the Nash equilibrium is.
+
+## Rational Play and Dominance
+
+- But even beyond that, it seems wrong to play strategies that are dominated in this way.
+- If you're thinking about playing Middle (as Row), you increase your expected return by simply flipping a coin to choose between Left and Right.
+- So that's what you should do.
+
+## For Next Time
+
+We'll connect this expanded notion of dominance up to an expanded notion of best responses.

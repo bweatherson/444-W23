@@ -1,0 +1,58 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{tabulary}
+\usepackage{mdwlist}
+\usepackage{hyperref}
+\usepackage{istgame}
+\usepackage{multicol}
+\usepackage{multirow}
+%\linespread{1.2}
+
+\begin{document}
+
+\begin{center}
+{\Large \textbf{Subgame Perfect Equilibrium}}
+\end{center}
+
+\section*{Question One}
+
+Ankita and Beatrice would like to go on a date. They have two options: a quick dinner at Fleetwood, or eating at Logan. Ankita first chooses where to go, and knowing where Ankita went Beatrice also decides where to go. Ankita prefers Fleetwood, and Beatrice prefers Logan. A player gets 3 out his/her preferred date, 1 out of his/her unpreferred date, and 0 if they end up at different places. All these are common knowledge.
+
+\begin{enumerate}
+\item Find a subgame perfect equilibrium to this game.
+\item Find a Nash equilibrium that is not subgame perfect.
+\end{enumerate}
+
+Modify the game a little bit: Beatrice does not automatically know where Ankita went, but she can learn without any cost. That is, now, without knowing where Ankita went, Beatrice first chooses between Learn and Not-Learn; if she chooses Learn, then she knows where Ankita went and then decides where to go; otherwise she chooses where to go without learning where Ankita went. The payoffs depend only on where each player goes, as before.\\
+
+Now find a subgame perfect equilibrium of this new game in which the outcome is the same as the outcome of the Nash equilibrium that is not subgame perfect in the original game. \\
+
+HINT: In the latter game, Beatrice has sixteen strategies, since there are four points that she could make a binary choice. First, she has to decide Learn or Not-Learn. Second, she has to decide what to do if Not-Learn; that's a single choice since she is in the same position whether Ankita goes to Fleetwood or Logan. Third, what to do if she chooses Learn and Ankita goes to Fleetwood. Fourth, what to do if she chooses Learn and Ankita goes to Logan. 
+
+\subsection*{Continued on other side}
+
+\newpage
+
+\section*{Question Two}
+
+The players are Coke and Pepsi. Coke is deciding whether to enter a market, Pepsi is already in the market. (Under communism, Eastern European governments allowed Pepsi but not Coke to sell in their countries, so you can imagine that this is playing out in some formerly communist country.) Coke has to make two decisions in the game - whether to enter the market or not, and if they enter, whether to play tough or not. Pepsi has to make one decision, whether to play tough or not. If Coke enters, here is the payoff table for the players, with T for Tough, A for Accommodate.\\
+
+\begin{tabular}{l r | c c}
+& & \multicolumn{2}{c}{\textbf{Pepsi}} \\
+& & T & A \\ \hline
+\multirow{2}{*}{\textbf{Coke}}
+& T & -2, -1 & 0, -3 \\
+& A & -3, 1 & 1, 2
+\end{tabular} \\
+
+Find all subgame perfect equilibria to the game with the following three constraints:
+
+\begin{enumerate}
+\item If Coke doesn't enter, Coke gets 0, Pepsi gets 5. Coke first decides whether to enter or not, and then both Coke and Pepsi find out what Coke decided, then each company simultaneously decides on Tough or Accommodate.
+\item Coke decides whether to enter at the same time Pepsi decides whether to be Tough or Accommodate. If Coke enters, it then decides whether to be Tough or Accommodating, knowing what Pepsi has decided. If Coke stays out, it gets 0, and Pepsi gets 0 if Accommodating, -1 if Tough.
+\item Just like the previous case, but if Coke stays out, and Pepsi is Tough, it gets +1.
+\end{enumerate}
+
+\subsection*{Due Friday Jan 26th, at 5pm}
+
+\end{document}

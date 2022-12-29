@@ -1,0 +1,97 @@
+---
+title: "444 Lecture 2.2 - Utility"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## Plan
+
+- To say what it means to talk about the outcomes of games in terms of **utility**.
+
+## Associated Reading
+
+Bonanno, section 2.1.
+
+```{r, include=FALSE}
+source("gameformat.R")
+```
+
+## Game Outcomes
+
+There are two natural ways to specify the outcome of a game.
+
+> 1. Describe the physical situation that results.
+> 2. Describe how much **utility** each player gets from that result.
+
+## Utility
+
+- We are usually going to be focused on the second.
+- That's because we want to know what makes sense from the players' perspectives.
+- And just knowing the physical outcomes doesn't tell us that.
+
+## What is Utility
+
+- It's not score.
+- The players are aiming to maximise their own number, not maximise the difference between the numbers.
+
+---
+
+![A memorable scoreboard](images/raith.jpg){height=65% width=65%}
+
+## What is Utility
+
+- The players would prefer a 3-4 result (i.e., 3 for them, 4 for other player) to a 2-1 result.
+- So this is very much unlike soccer, even though the numbers will often feel a lot like soccer scores.
+
+## What is Utility
+
+- It's not money, for two distinct reasons.
+- First, the players might care how much money the other players get.
+
+## Utility and Altruism
+
+Consider these three situations
+
+1. Billy gets $90, Suzy gets $100.
+2. Billy gets $100, Suzy gets nothing.
+3. Billy gets $110, Suzy gets $100.
+
+How do you order these in terms of utility to Billy, from highest to lowest?
+
+## Utility and Altruism
+
+> - We don't know given just this description.
+> - If Billy wants Suzy to get money, he might prefer option 1 to option 2.
+> - If Billy wants Suzy to not have money, he might prefer option 2 to option 3.
+
+## What is Utility
+
+- It's not money, for two distinct reasons.
+- Second, getting twice as much money typically doesn't produce twice as much utility.
+
+## What is Utility
+
+It is, more or less, desirability.
+
+- Outcome $O_1$ has more utility for player $X$ than outcome $O_2$ iff $X$ prefers to be in $O_1$ than $O_2$.
+
+## Utility and Numbers
+
+- Now you might have noticed something odd there.
+- We are trying to define this numerical quantity, but we've just told you something about when it is bigger or smaller.
+- Surely we need to say something more, like how much bigger or smaller it is in different situations.
+
+## For Next Time
+
+- We will start working on that very question.

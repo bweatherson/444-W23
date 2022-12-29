@@ -1,0 +1,374 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 12.2 - Bratman on Group Action},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+\usepackage{istgame}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Day Plan}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 12.2 - Bratman on Group Action}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Strategy}
+\protect\hypertarget{strategy}{}
+\begin{itemize}
+\tightlist
+\item
+  Like Gilbert, Bratman starts with a simple case, and builds up.
+\item
+  But for Bratman, the building isn't an impressionistic picture; it's a
+  set of conditions.
+\item
+  Of course, these conditions don't quite work in puzzle cases, so we
+  add complications.
+\item
+  The history of philosophy suggests this path does not have a great
+  record of success.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Three Conditions}
+\protect\hypertarget{three-conditions}{}
+\begin{enumerate}
+\tightlist
+\item
+  Mutual Responsiveness
+\item
+  Commitment to joint activity; i.e., we both intend to do this very
+  activity, under something like this description.
+\item
+  Commitment to mutual support; i.e., we both intend to help the other
+  should they falter, and not claim all the glory.
+\end{enumerate}
+
+The last condition is a strengthening of the idea that cooperative
+activity is not side-by-side activity.
+\end{frame}
+
+\begin{frame}{Many Person Groups}
+\protect\hypertarget{many-person-groups}{}
+\begin{itemize}
+\tightlist
+\item
+  Like with Gilbert, you might worry about the generalisation of these
+  to many person groups.
+\item
+  In a large group, I can intend that this group activity happen without
+  having any commitment to being part of it.
+\item
+  That can't happen in a two person group; if I leave, the group ceases
+  to exist.
+\item
+  So there is this tricky question about what kind of commitment is
+  needed on the part of each individual for a large group activity to
+  persist.
+\item
+  Thinking about two person cases is unlikely to help clarify that.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Extra-Personal Intentions}
+\protect\hypertarget{extra-personal-intentions}{}
+\begin{itemize}
+\tightlist
+\item
+  One of the central moves Bratman makes is that each person
+  individually intends that the group does something.
+\item
+  You might think this is odd; I can only intend that I do things.
+  \pause
+\item
+  But really there are lots of cases where I intend something not
+  entirely in my control.
+\item
+  I can intend to spend a sunny day at the beach, without intending the
+  sunshine. \pause
+\item
+  I can even, I think, do it without being 100\% sure of the sunshine.
+  \pause
+\item
+  Another example: I can intend to holiday in Paris, although I can't
+  control all the aspects of my getting to Paris.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Mesh}
+\protect\hypertarget{mesh}{}
+\begin{itemize}
+\tightlist
+\item
+  Bratman's idea that plans should mesh is, I think, a really nice way
+  of splitting the difference between the views that our plans must
+  match, and that there is no constraint on mutual plans.
+\item
+  Matching plans is too strong; I don't need to have views about what
+  you do.
+\item
+  No constraints is too weak; it isn't a joint activity if I don't have
+  some kinds of vetos.
+\item
+  Mesh is a nice attempt to get something between these.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Problems for Mesh}
+\protect\hypertarget{problems-for-mesh}{}
+\begin{itemize}
+\tightlist
+\item
+  But as stated it feels too strong.
+\item
+  Imagine that your job is to get the paint.
+\item
+  I have views about where to get the paint from (as in Bratman's
+  example), but also how to drive there.
+\item
+  This feels like it shouldn't matter; it's your job to get the paint.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Mesh and Counterfactuals}
+\protect\hypertarget{mesh-and-counterfactuals}{}
+From the other direction, it's fascinating to think through cases that
+turn on how counterfactually resilient mesh must be.
+
+\begin{itemize}
+\tightlist
+\item
+  Some level of resiliency is needed. If we are working side by side on
+  different projects, the fact that they happen to mesh doesn't make
+  them joint projects.
+\item
+  But total counterfactual resiliency isn't needed either. I can be in a
+  group with you, but be disposed to leave if you insist on singing
+  arias while we work.
+\item
+  I suspect there will be some vague cases in the middle here.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Coercion}
+\protect\hypertarget{coercion}{}
+\begin{itemize}
+\tightlist
+\item
+  Assuming that everyone plans to stay in the group, and to be
+  cooperative, it feels we should give each other some flexibility in
+  how they do their jobs.
+\item
+  There is something vaguely coercive about even having views about how
+  you should get to the store to buy the paint.
+\item
+  Of course, it's fine to be helpful, and there isn't really anything
+  wrong with having views about what is better and worse.
+\item
+  I don't really know to balance these considerations.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{What Counts as Support}
+\protect\hypertarget{what-counts-as-support}{}
+\begin{itemize}
+\tightlist
+\item
+  The single possible kind of support feels really weak.
+\item
+  What if there is a kind of thing I can't stand seeing anyone suffer
+  through?
+\item
+  Feels like we need a generic here not an existential.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Are Competitive Games SCAs, or Group Actions}
+\protect\hypertarget{are-competitive-games-scas-or-group-actions}{}
+\begin{itemize}
+\tightlist
+\item
+  Last case, because this is both a problem for Bratman and an
+  interesting puzzle that tells us something about the stakes of these
+  questions.
+\item
+  Is playing chess with a friend a shared cooperative activity?
+\item
+  It doesn't satisfy mesh, or support. I want to upset your plans.
+\item
+  But in some ways it is; a chess game involves a fair amount of
+  coordination and cooperation. \pause
+\item
+  What turns on calling it a shared activity or not?
+\end{itemize}
+\end{frame}
+
+\end{document}

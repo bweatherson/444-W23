@@ -1,0 +1,234 @@
+\documentclass[11pt,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+    \setmainfont[]{SF Pro Text Light}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Assigment 3},
+            pdfauthor={Philosophy 444},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Assigment 3}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Philosophy 444}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{Due 27 September, 2019}
+
+\usepackage{gensymb}
+\usepackage{nicefrac}
+\usepackage{caption}
+\usepackage{istgame}
+\usepackage{mathastext}
+
+\begin{document}
+\maketitle
+
+\hypertarget{questions-1-to-3}{%
+\subsection{Questions 1 to 3}\label{questions-1-to-3}}
+
+Farad wants to go to law school so he's going to university to study
+philosophy. He is deciding between Wisconsin and Minnesota.
+
+Suppose 2/10 of Wisconsin philosophy students who apply to law school
+get in, the rest go to teacher's college or medical school. For Farad,
+going to law school has utility 250, and going to teacher's college or
+medical school has utility 50.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  What is the expected utility of going to Wisconsin for Farad?
+\end{enumerate}
+
+Suppose Minnesota students have better odds of getting into law school:
+3/10. And 6/10 go to work for the government, which Farad would prefer
+to being unemployed. On the other hand, 1/10 of them don't get a job at
+all, which has utility −50 for Farad.
+
+Farad can't decide: Wisconsin and Minnesota seem equally good choices to
+him.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  How much utility does working for the government have for Farad?
+\end{enumerate}
+
+Farad ends up going to Wisconsin and now he's about to graduate.
+Unfortunately, his grades aren't as good as he'd hoped, so he would have
+to do a special summer program to improve his odds of getting into law
+school. Alternatively he can apply to medical school or teacher's
+college, where he would definitely get in.
+
+Farad has to choose between (i) taking the summer program, and (ii)
+going to medical school or teacher's college. He won't have time to do
+both. So if the summer program doesn't get him into law school, he'll
+end up unemployed.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  How high would his chances of getting into law school have to be for
+  him to risk taking the summer program?
+\end{enumerate}
+
+\hypertarget{question-4}{%
+\subsection{Question 4}\label{question-4}}
+
+Five percent of tablets made by the company Ixian have factory defects.
+Ten percent of the tablets made by their competitor company Guild do. A
+computer store buys 40\% of its tablets from Ixian, and 60\% from Guild.
+
+Find \(\Pr(I | D)\), the probability a tablet from this store is made by
+Ixian, given that it has a factory defect?
+
+\hypertarget{question-5}{%
+\subsection{Question 5}\label{question-5}}
+
+In the city of Elizabeth, the neighbourhood of Southside has lots of
+chemical plants. 2\% of Elizabeth's children live in Southside, and 14\%
+of those children have been exposed to toxic levels of lead. Elsewhere
+in the city, only 1\% of the children have toxic levels of exposure.
+
+Find \(\Pr(S | L)\), the probability that a randomly chosen child from
+Elizabeth who has toxic levels of lead exposure lives in Southside?
+
+\hypertarget{question-6}{%
+\subsection{Question 6}\label{question-6}}
+
+The probability that Nasim will study for her test is 4/10. The
+probability that she will pass, given that she studies, is 9/10. The
+probability that she passes, given that she does not study, is 3/10.
+What is the probability that she has studied, given that she passes?
+
+\hypertarget{question-7}{%
+\subsection{Question 7}\label{question-7}}
+
+At the height of flu season, roughly 1 in every 100 people have the flu.
+But some people don't show symptoms even when they have it: only half
+the people who have the virus show symptoms.
+
+Flu symptoms can also be caused by other things, like colds and
+allergies. So about 1 in every 20 people who don't have the flu still
+have flu-like symptoms.
+
+If someone has flu-like symptoms at the height of flu season, what is
+the probability that they actually have the flu?
+
+\hypertarget{question-8}{%
+\subsection{Question 8}\label{question-8}}
+
+A magic shop sells two kinds of trick coins. The first kind are biased
+towards heads: they come up heads 9 times out of 10 (the tosses are
+independent). The second kind are biased towards tails: they comes up
+tails 8 times out of 10 (tosses still independent). Half the coins are
+the first kind, half are the second kind. But they don't label the
+coins, so you have to experiment to find out which are which.
+
+You pick a coin at random and flip it once. Given that it comes up
+heads, what is the probability it's the first kind of coin?
+
+\hypertarget{question-9}{%
+\subsection{Question 9}\label{question-9}}
+
+A company makes websites, always powered by one of three server
+platforms: Bulldozer, Kumquat, or Penguin. Bulldozer crashes 1 out of
+every 10 visits, Kumquat crashes 1 in 50 visits, and Penguin only
+crashes 1 out of every 200 visits.
+
+Half of the websites are run on Bulldozer, 30\% are run on Kumquat, and
+20\% are run on Penguin.
+
+You visit one of their sites for the first time and it crashes. What is
+the probability it was run on Penguin?
+
+\hypertarget{question-10}{%
+\subsection{Question 10}\label{question-10}}
+
+The Emperor Hotel has two kinds of suites: singles have one bed, royal
+suites have three beds. There are 80 singles and 20 royals.
+
+In a single, the probability of bed bugs is 1/100. But every additional
+bed put in a suite doubles the chance of bed bugs.
+
+If a suite is inspected at random and bed bugs are found, what is the
+probability it's a royal?
+
+
+\end{document}

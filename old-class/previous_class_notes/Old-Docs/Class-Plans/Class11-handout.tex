@@ -1,0 +1,128 @@
+\input{../styles/handout-leader}
+\def\mytitle{Subgame Perfect Equilibrium}
+\def\myauthor{Brian Weatherson}
+\def\mydate{February 8, 2018}
+\input{../styles/handout-begin}
+
+Row and Column are going to play the following two-stage game. At stage 1, they will play this game, which has \textbf{games} as the `payouts', i.e., as the results. So they could end up in one of the four games below, depending on what they choose.
+
+%\begin{table}[htbp]
+\begin{minipage}{\linewidth}
+\setlength{\tymax}{0.5\linewidth}
+\centering
+\small
+\begin{tabulary}{\textwidth}{@{}rll@{}} \toprule
+ & Left & Right \\
+\midrule
+
+ Up & Game 1 & Game 2 \\
+ Down & Game 3 & Game 4 \\
+\bottomrule
+
+\end{tabulary}
+\end{minipage}
+%\end{table}
+
+\bigskip
+\bigskip
+Depending on what happened in stage 1, they'll play one of the following four games in stage 2.
+
+\begin{multicols}{2}
+\subsection*{Game 1}
+\label{game1}
+
+%%\begin{table}[htbp]
+\begin{minipage}{\linewidth}
+\setlength{\tymax}{0.5\linewidth}
+\centering
+\small
+\begin{tabulary}{\textwidth}{@{}rll@{}} \toprule
+ & Left & Right \\
+\midrule
+
+ Up & 10, 0 & 0, 2 \\
+ Down & 0, 2 & 2, 0 \\
+\bottomrule
+
+\end{tabulary}
+\end{minipage}
+%%\end{table}
+
+\subsection*{Game 3}
+\label{game2}
+
+%\begin{table}[htbp]
+\begin{minipage}{\linewidth}
+\setlength{\tymax}{0.5\linewidth}
+\centering
+\small
+\begin{tabulary}{\textwidth}{@{}rll@{}} \toprule
+ & Left & Right \\
+\midrule
+
+ Up & 2, 0 & 0, 2 \\
+ Down & 0, 6 & 2, 0 \\
+\bottomrule
+
+\end{tabulary}
+\end{minipage}
+%\end{table}
+
+
+\subsection*{Game 2}
+\label{game3}
+
+%\begin{table}[htbp]
+\begin{minipage}{\linewidth}
+\setlength{\tymax}{0.5\linewidth}
+\centering
+\small
+\begin{tabulary}{\textwidth}{@{}rll@{}} \toprule
+ & Left & Right \\
+\midrule
+
+ Up & 2, 0 & 0, 8 \\
+ Down & 0, 2 & 2, 0 \\
+\bottomrule
+
+\end{tabulary}
+\end{minipage}
+%\end{table}
+
+\subsection*{Game 4}
+\label{game4}
+
+%\begin{table}[htbp]
+\begin{minipage}{\linewidth}
+\setlength{\tymax}{0.5\linewidth}
+\centering
+\small
+\begin{tabulary}{\textwidth}{@{}rll@{}} \toprule
+ & Left & Right \\
+\midrule
+
+ Up & 2, 0 & 0, 2 \\
+ Down & 0, 2 & 4, 0 \\
+\bottomrule
+
+\end{tabulary}
+\end{minipage}
+%\end{table}
+\end{multicols}
+
+\subsection*{Question}
+\label{question}
+
+In the subgame perfect equilibrium, what is the probability that Row will receive the payoff 10?
+
+\bigskip
+
+\section*{Bonus Question}
+
+This is just if you are bored. An envelope has an amount of cash $x$ in it. The amount $x$ is drawn at random from a flat probability distribution over $[0, 100]$. Player A is shown the contents of the envelope; Player B is not. Both players know all these facts, and that for each player $U(x) = x$ - that is, that they have a non-declining marginal utility curve.
+
+The envelope will be auctioned in a sealed bid auction. Each player will get to make one bid, in ignorance of the other player's bid. The high bid will 'win'; that is, they will pay they amount they bid, and win the auction. Neither player cares about winning as such; they just want money.
+
+Find a Nash equilibrium for this game. That is, find a strategy for A and B such that neither can improve their expected outcome given the strategy the other player adopts.
+
+\end{document}

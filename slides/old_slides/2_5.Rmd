@@ -1,0 +1,151 @@
+---
+title: "444 Lecture 2.5 - Famous Games"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Plan
+
+- Set out some famous games
+
+## Associated Reading
+
+No particular reading; these are scattered through the book.
+
+## Prisoners' Dilemma
+
+```{r}
+game <- tribble(
+  ~Moves,       ~Coop, ~Defect,
+  "Coop",      "3, 3", "0, 5",
+  "Defect",    "5, 0", "1, 1"
+)
+gameformat(game)
+```
+
+## Generic Symmetric Game
+
+```{r}
+game <- tribble(
+  ~Moves,       ~X, ~Y,
+  "X",    "a, a", "b, c",
+  "Y",    "c, b", "d, d"
+)
+gameformat(game)
+```
+
+## Prisoners' Dilemma
+
+```{r}
+game <- tribble(
+  ~Moves,       ~X, ~Y,
+  "X",    "a, a", "b, c",
+  "Y",    "c, b", "d, d"
+)
+gameformat(game)
+```
+
+Ordinal constraints
+
+- $c > a, d > b$
+- $a > d$
+
+Cardinal constraints
+
+- $2a > b + c$
+
+## Stag Hunt
+
+```{r}
+game <- tribble(
+  ~Moves,       ~Coop, ~Defect,
+  "Coop",      "5, 5", "0, 4",
+  "Defect",    "4, 0", "2, 2"
+)
+gameformat(game)
+```
+
+## Stag Hunt
+
+```{r}
+game <- tribble(
+  ~Moves,       ~X, ~Y,
+  "X",    "a, a", "b, c",
+  "Y",    "c, b", "d, d"
+)
+gameformat(game)
+```
+
+Ordinal constraints
+
+- $a > c, d > b$
+- $a > d$
+
+Cardinal constraints
+
+- $a + b < c + d$
+
+## Battle of the Sexes
+
+```{r}
+game <- tribble(
+  ~Moves,       ~Row, ~Col,
+  "Row",    "4, 1", "0, 0",
+  "Col",    "0, 0", "1, 4"
+)
+gameformat(game)
+```
+
+## Battle of the Sexes (relabelled)
+
+```{r}
+game <- tribble(
+  ~Moves,       ~Self, ~Other,
+  "Self",    "0, 0", "4, 1",
+  "Other",    "1, 4", "0, 0"
+)
+gameformat(game)
+```
+
+## Chicken
+
+```{r}
+game <- tribble(
+  ~Moves,       ~Attack, ~Retreat,
+  "Attack",    "-99, -99", "2, 0",
+  "Retreat",    "0, 2", "1, 1"
+)
+gameformat(game)
+```
+
+## Rock Paper Scissors
+
+```{r}
+game <- tribble(
+  ~Moves,        ~Rock,   ~Paper, ~Scissors,
+  "Rock",       "0, 0",  "-1, 1", "1, -1",
+  "Paper",     "1, -1",   "0, 0", "-1, 1",
+  "Scissors",  "-1, 1",  "1, -1", "0, 0"
+  )
+gameformat(game)
+```
+
+## For Next Time
+
+We're jumping ahead to section 2.5 of Bonanno.

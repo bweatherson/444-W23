@@ -1,0 +1,450 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 11.2 - O'Connor Chapters 7-10},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+\usepackage{istgame}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Day Plan}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 11.2 - O'Connor Chapters 7-10}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Day Plan}
+\protect\hypertarget{day-plan}{}
+\tableofcontents
+\end{frame}
+
+\hypertarget{network-models}{%
+\section{Network Models}\label{network-models}}
+
+\begin{frame}{Networks and Ecosystems}
+\protect\hypertarget{networks-and-ecosystems}{}
+\begin{itemize}
+\tightlist
+\item
+  So far we've used models where in each round, everyone interacts with
+  everyone. (Or with a randomly selected portion of everyone; it won't
+  matter for modeling purposes.)
+\item
+  In a network model, people have `neighbors'.
+\item
+  In general we do not assume these are spatially arranged.
+\item
+  My neighbors might include my literal neighbors, but also my
+  workmates, the other parents at my kid's school, people I interact
+  with socially (including online), and so on.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Networks}
+\protect\hypertarget{networks}{}
+Interactions can have two effects.
+
+\begin{enumerate}
+\tightlist
+\item
+  They determine our payout in a given round.
+\item
+  They determine what we learn from for future rounds.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Network Models}
+\protect\hypertarget{network-models-1}{}
+This is a very promising way, I think, for modeling gender inequality.
+
+\begin{itemize}
+\tightlist
+\item
+  One thing about gender is that although there is a lot of
+  discrimination that persists to this day, it is very unevenly
+  distributed.
+\item
+  In some fields, there is \emph{relatively} little.
+\item
+  In other fields, there is a lot.
+\item
+  Using network models can give us the chance to model that.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Network Effects}
+\protect\hypertarget{network-effects}{}
+In some of these models, you get some really strange effects.
+
+\begin{itemize}
+\tightlist
+\item
+  Sometimes there are real benefits to cutting off certain connections.
+\item
+  By sticking in a smaller network for longer, sometimes you don't get
+  sucked into the bad practices of the group.
+\item
+  Of course, sometimes you build a bubble that is bad in lots of ways.
+\item
+  It's hard to know in advance which will swamp.
+\end{itemize}
+\end{frame}
+
+\hypertarget{bounded-rationality}{%
+\section{Bounded Rationality}\label{bounded-rationality}}
+
+\begin{frame}{Two Kinds of Models}
+\protect\hypertarget{two-kinds-of-models}{}
+\begin{enumerate}
+\tightlist
+\item
+  Everyone is perfectly rational, and this is common knowledge.
+\item
+  Everyone has a hard-wired strategy, and they will employ it even when
+  it will obviously get them killed.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Bounded Rationality}
+\protect\hypertarget{bounded-rationality-1}{}
+Obviously there are situations where we'd like something in between
+those two situations.
+\end{frame}
+
+\begin{frame}{Two Forms}
+\protect\hypertarget{two-forms}{}
+\begin{enumerate}[<+->]
+\tightlist
+\item
+  No ability to anticipate; the future will be just like the past.
+\item
+  Limited memory.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{A Third Form}
+\protect\hypertarget{a-third-form}{}
+You can easily mix these two.
+
+\begin{itemize}
+\tightlist
+\item
+  Maybe some agents will assume the future will look like the very
+  recent past.
+\item
+  Maybe some agents will have longer or shorter memories.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Extending the Model}
+\protect\hypertarget{extending-the-model}{}
+The point is not that these are correct models of reality. That's not
+the aim.
+
+\begin{itemize}
+\tightlist
+\item
+  But they are different to both the hyper-rational and the
+  hyper-mechanical models.
+\item
+  And they do this without sending the computational complexity to
+  infinity, or leaving too few constraints.
+\end{itemize}
+\end{frame}
+
+\hypertarget{changing-values}{%
+\section{Changing Values}\label{changing-values}}
+
+\begin{frame}{Bicchieri}
+\protect\hypertarget{bicchieri}{}
+\begin{itemize}
+\tightlist
+\item
+  I wanted to end by noting some relevant work by Penn
+  philosoper(/economist/cognitive scientist) Christina Bicchieri.
+\item
+  I had a note to mention how this work relates to Bicchieri's, then I
+  got to chapter 9 and saw that O'Connor already made that connection.
+  So I won't belabor the point.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Norms are Equilibria}
+\protect\hypertarget{norms-are-equilibria}{}
+\begin{itemize}
+\tightlist
+\item
+  So here's one way a practice can become stable in a community.
+\item
+  It's an equilibrium of a game that they are playing, so no one has an
+  incentive to deviate.
+\item
+  A very popular theory, one I think has got to be part of the true
+  story, is that social norms typically arise in this way.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Norms are Special Equilibria}
+\protect\hypertarget{norms-are-special-equilibria}{}
+Bicchieri's point is that norms, as opposed to other conventions for
+dealing with regularities, do more than steer us to an equilibrium
+point.
+
+\begin{itemize}
+\tightlist
+\item
+  They change the payoffs.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Two Kinds of Equilibria}
+\protect\hypertarget{two-kinds-of-equilibria}{}
+\begin{enumerate}[<+->]
+\tightlist
+\item
+  Everyone does X because it's valuable to do what everyone else does.
+  Opening hours are like this.
+\item
+  Everyone does X because it's valuable to do what everyone else does
+  \emph{and you'll get punished for doing otherwise}.
+\end{enumerate}
+
+\pause
+
+Arguably gender is like this.
+\end{frame}
+
+\begin{frame}{Policing Gender Norms}
+\protect\hypertarget{policing-gender-norms}{}
+\begin{itemize}
+\tightlist
+\item
+  Part of the story about gender is that not only do people signal it
+  fairly clearly (at least most people most of the time).
+\item
+  But there are strong social sanctions - sometimes including violence -
+  against people who do not signal in this way.
+\item
+  It's very hard to model this using either kinds of games that O'Connor
+  describes.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{General Pattern}
+\protect\hypertarget{general-pattern}{}
+Here is a hypothesis about what is going on here.
+
+\begin{enumerate}
+\tightlist
+\item
+  Gender norms developed for the kind of game-theoretic reasons that
+  O'Connor describes.
+\item
+  But over time, people internalised those norms, came to see them as
+  the way things should be done, and developed a disposition to punish
+  non-conformers.
+\end{enumerate}
+
+These stories are not incompatible; one is a story about generation, the
+other about persistence.
+\end{frame}
+
+\begin{frame}{Why Two Stories}
+\protect\hypertarget{why-two-stories}{}
+\begin{itemize}
+\tightlist
+\item
+  We need to explain relative stability of norms over time.
+\item
+  O'Connor complains that rational choice models can't deliver this
+  explanation.
+\item
+  But going all the way to mechanical biological models seems like
+  overkill.
+\item
+  A model of people internalising the norms, and thereby changing the
+  payout structure, seems more promising.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Where to Go Next}
+\protect\hypertarget{where-to-go-next}{}
+\begin{itemize}
+\tightlist
+\item
+  And thinking about changing payouts might be a more effective way of
+  moving to new solutions.
+\item
+  At least, it's a different way than trying to push people to different
+  equilibria of the same game.
+\end{itemize}
+\end{frame}
+
+\end{document}

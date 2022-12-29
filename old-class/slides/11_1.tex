@@ -1,0 +1,412 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 11.1 - O'Connor Chapter 6},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+\usepackage{istgame}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Day Plan}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 11.1 - O'Connor Chapter 6}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Day Plan}
+\protect\hypertarget{day-plan}{}
+\tableofcontents
+\end{frame}
+
+\hypertarget{variable-learning-rate}{%
+\section{Variable Learning Rate}\label{variable-learning-rate}}
+
+\begin{frame}{Benefits to Learning}
+\protect\hypertarget{benefits-to-learning}{}
+\begin{itemize}
+\tightlist
+\item
+  In normal situations, there is a benefit to learning more about your
+  environment.
+\item
+  Indeed, there is a famous proof of this, that makes reasonably weak
+  assumptions.
+\item
+  But in certain game theoretic contexts, the proof fails.
+\item
+  It is possible to benefit from being slow to learn.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Chicken}
+\protect\hypertarget{chicken}{}
+Imagine a real-life version of Chicken with each player playing the
+following strategy
+
+\begin{itemize}
+\tightlist
+\item
+  Stay straight unless you know that the other player will be staying
+  straight. \pause
+\end{itemize}
+
+In this case, the slower learner will win.
+\end{frame}
+
+\begin{frame}{Red King Effect}
+\protect\hypertarget{red-king-effect}{}
+\begin{itemize}
+\tightlist
+\item
+  This is what O'Connor is calling the Red King effect.
+\item
+  I mean this fairly literally; the games she is using in these models
+  are I think versions of Chicken.
+\item
+  And the reason fast learners do badly is that they learn that the
+  other party is doing something that will be disasterous if they both
+  do it.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Significance of This}
+\protect\hypertarget{significance-of-this}{}
+It's really hard to see how this can be a big part of the story of
+gender inequality.
+
+\begin{enumerate}[<+->]
+\tightlist
+\item
+  The magnitudes are small.
+\item
+  The circumstances in which it arises are fairly specific, and gender
+  inequality is everywhere.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Small Populations}
+\protect\hypertarget{small-populations}{}
+The key insight, which seems right, is that small groups learn about big
+groups more rapidly than big groups learn about small groups.
+
+\begin{itemize}
+\tightlist
+\item
+  Australian immigrants in America can tell you a lot more about
+  American social practices than native-born Americans can tell you
+  about Australian immigrants.
+\item
+  And something similar I suspect is true about American immigrants in
+  Australia.
+\item
+  And maybe, maybe, the result of that learning means that the small
+  group will head to the nearest equilibrium, even if it is one that is
+  bad for them.
+\end{itemize}
+\end{frame}
+
+\hypertarget{strategies}{%
+\section{Strategies}\label{strategies}}
+
+\begin{frame}{Clarification}
+\protect\hypertarget{clarification}{}
+I actually didn't quite understand the game on page 141.
+
+\begin{itemize}
+\tightlist
+\item
+  I think it's like the bargaining game from chapter 5 except one meets
+  people from both types.
+\item
+  And hence one's strategy can (I think) be sensitive to the type of
+  player on the other side.
+\item
+  Presumably we see strategies in which one does something other than
+  50/50 in intra-type play die out, though I'm not really sure.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Lab Experiment}
+\protect\hypertarget{lab-experiment}{}
+But then I really couldn't understand the experiment on page 142.
+
+\begin{itemize}
+\tightlist
+\item
+  If you only interact with out-group members, there shouldn't be an
+  effect of group size.
+\item
+  What matters is that these out-group interactions are common for one
+  group and rare for another.
+\end{itemize}
+\end{frame}
+
+\hypertarget{memory-length}{%
+\section{Memory Length}\label{memory-length}}
+
+\begin{frame}{A Quote}
+\protect\hypertarget{a-quote}{}
+\begin{quote}
+In all three cases, the fact that one side sees more makes them less
+reactive, and less likely to change strategies quickly. As Hwang et
+al.~(2014) put it, ``a larger scope of vision among the well off reduces
+their responsiveness to the idiosyncratic play of the poor''
+\end{quote}
+\end{frame}
+
+\begin{frame}{Puzzle}
+\protect\hypertarget{puzzle}{}
+\begin{itemize}
+\tightlist
+\item
+  I don't really get this.
+\item
+  I see how it works mathematically; if you're just reacting to what
+  happened in the very last round, then you'll bounce around all over
+  the place.
+\item
+  But who is that a decent model of?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Alternative Real-World Case}
+\protect\hypertarget{alternative-real-world-case}{}
+\begin{itemize}
+\tightlist
+\item
+  Everyone remembers their last X interactions.
+\item
+  When dealing with group g, they take the interactions with g of those
+  last X and take them to be typical. \pause
+\item
+  But now the small group will be the one who has less random moving
+  from one node to another.
+\item
+  I feel that this is one of those mathematical models you could just as
+  easily have used to `explain' why group differences fade over time as
+  why they stay.
+\end{itemize}
+\end{frame}
+
+\hypertarget{utility-scales-are-arbitrary}{%
+\section{Utility Scales are
+Arbitrary}\label{utility-scales-are-arbitrary}}
+
+\begin{frame}{Page 155}
+\protect\hypertarget{page-155}{}
+Look at the table in figure 6.14.
+
+\begin{itemize}
+\tightlist
+\item
+  In classical game theory, that is a perfectly symmetric game.
+\item
+  That's because utility scales are only defined up to positive affine
+  transformation.
+\item
+  And so here the parties get the same return (up to transformation) as
+  each other.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Classical vs Evolutionary Game Theory}
+\protect\hypertarget{classical-vs-evolutionary-game-theory}{}
+Here I think it's really important that we're using evolutionary models.
+
+\begin{itemize}
+\tightlist
+\item
+  Evolutionary payout functions do not have the same invariance profiles
+  as classical payout functions.
+\item
+  It really matters that one party gets an extra bonus.
+\item
+  And sure, I guess that makes sense.
+\item
+  But it's worth noting how far we've left anything like classical game
+  theory.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Big Picture}
+\protect\hypertarget{big-picture}{}
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Sometimes it seems that O'Connor is not making the hyper-rationality
+  assumptions characteristic of classical game theory. That's a very
+  good thing.
+\item
+  But sometimes it seems that she is making some strong irrationality
+  assumptions. And that's less obviously good.
+\end{itemize}
+\end{frame}
+
+\end{document}

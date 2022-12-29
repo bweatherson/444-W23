@@ -1,0 +1,482 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 3.5 - Incredible Threats},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 3.5 - Incredible Threats}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Plan}
+\protect\hypertarget{plan}{}
+\begin{itemize}
+\tightlist
+\item
+  To explain why some Nash equilibria do not seem like sensible plays.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Reading}
+\protect\hypertarget{reading}{}
+\begin{itemize}
+\tightlist
+\item
+  Bonanno, section 3.4.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Threat Game}
+\protect\hypertarget{threat-game}{}
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+
+\begin{picture}(350, 110)
+\linethickness{1pt}
+
+\put(175, 0){\makebox(0, 0)[b]{I}}
+\put(175, 12){\circle*{4}}
+%\thicklines
+\put(175, 12){\line(-2, 1){70}}
+%\thinlines
+\put(175, 12){\line(2, 1){70}}
+
+\put(135, 20){\makebox(0, 0)[b]{$A$}}
+
+\put(215, 20){\makebox(0, 0)[b]{$B$}}
+
+
+\put(105, 35){\makebox(0, 0)[b]{II}}
+\put(105, 47){\circle*{4}}
+%\thicklines
+\put(105, 47){\line(-1, 1){35}}
+
+\put(70, 85){\makebox(0, 0)[b]{(4, 1)}}
+%\thinlines
+\put(105, 47){\line(1, 1){35}}
+
+\put(140, 85){\makebox(0, 0)[b]{(1, 0)}}
+
+\put(80, 55){\makebox(0, 0)[b]{$a$}}
+
+\put(130, 55){\makebox(0, 0)[b]{$b$}}
+
+
+\put(245, 35){\makebox(0, 0)[b]{II}}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+
+\put(210, 85){\makebox(0, 0)[b]{(1, 1)}}
+%\thicklines
+\put(245, 47){\line(1, 1){35}}
+%\thinlines
+
+\put(280, 85){\makebox(0, 0)[b]{(2, 2)}}
+
+\put(220, 55){\makebox(0, 0)[b]{$a$}}
+
+\put(270, 55){\makebox(0, 0)[b]{$b$}}
+
+%\multiput(105,47)(5, 0){28}{\line(1, 0){3}}
+
+\end{picture}
+\end{frame}
+
+\begin{frame}{Strategies}
+\protect\hypertarget{strategies}{}
+\begin{itemize}
+\tightlist
+\item
+  A \textbf{strategy} for a game is a set of instructions for what to do
+  at each node of a game.
+\item
+  Even very small game trees there are a lot of possible strategies.
+\item
+  If there are \(k\) possible nodes a player could have a choice at, and
+  \(m\) possible moves at each of these nodes, then there are \(m^k\)
+  possible strategies.
+\item
+  Note that a strategy has to say what to do at nodes that are ruled out
+  by your own prior moves.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Threat Game Strategies}
+\protect\hypertarget{threat-game-strategies}{}
+\begin{itemize}
+\tightlist
+\item
+  Let's work through an example of that.
+\item
+  For player I, there are just two strategies: \(A\) and \(B\).
+\item
+  For player II, there are two nodes, and two possible choices at each
+  node. So there are \(2^2 = 4\) possible strategies.
+\item
+  We'll write \(xy\) for the strategy of doing \(x\) in response to
+  \(A\), and \(y\) in response to \(B\).
+\item
+  And note I'm capitalising player I's moves, and using lower case for
+  player II's moves, to make things clearer.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Threat Game Strategies}
+\protect\hypertarget{threat-game-strategies-1}{}
+Here are the four strategies for player II:
+
+\begin{enumerate}
+\tightlist
+\item
+  \(aa\) - Do \(a\) no matter what.
+\item
+  \(ab\) - Do whatever player I does.
+\item
+  \(ba\) - Do the opposite of what player I does.
+\item
+  \(bb\) - Do \(b\) no matter what.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Threat Game Strategy Tables}
+\protect\hypertarget{threat-game-strategy-tables}{}
+The strategies for the players determine the outcome. Here is the table
+for the game, given the strategies.
+
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cccc}
+\toprule
+ & aa & ab & ba & bb\\
+\midrule
+A & 4, 1 & 4, 1 & 1, 0 & 1, 0\\
+B & 1, 1 & 2, 2 & 1, 1 & 2, 2\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{Threat Game Strategy Tables}
+\protect\hypertarget{threat-game-strategy-tables-1}{}
+I've put boxes around the best responses.
+
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cccc}
+\toprule
+ & aa & ab & ba & bb\\
+\midrule
+A & \fbox{4}, \fbox{1} & \fbox{4}, \fbox{1} & \fbox{1}, 0 & 1, 0\\
+B & 1, 1 & \fbox{2}, \fbox{2} & \fbox{1}, 1 & \fbox{2}, \fbox{2}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+There are three Nash equilibria.
+
+\begin{enumerate}
+\tightlist
+\item
+  \(A, aa\) - with result 4, 1
+\item
+  \(A, ab\) - with result 4, 1
+\item
+  \(B, bb\) - with result 2, 2
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Threat Game with Backward Induction}
+\protect\hypertarget{threat-game-with-backward-induction}{}
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+
+\begin{picture}(350, 110)
+\linethickness{1pt}
+
+\put(175, 0){\makebox(0, 0)[b]{I}}
+\put(175, 12){\circle*{4}}
+\thicklines
+\put(175, 12){\line(-2, 1){70}}
+\thinlines
+\put(175, 12){\line(2, 1){70}}
+
+\put(135, 20){\makebox(0, 0)[b]{$A$}}
+
+\put(215, 20){\makebox(0, 0)[b]{$B$}}
+
+
+\put(105, 35){\makebox(0, 0)[b]{II}}
+\put(105, 47){\circle*{4}}
+\thicklines
+\put(105, 47){\line(-1, 1){35}}
+
+\put(70, 85){\makebox(0, 0)[b]{(4, 1)}}
+\thinlines
+\put(105, 47){\line(1, 1){35}}
+
+\put(140, 85){\makebox(0, 0)[b]{(1, 0)}}
+
+\put(80, 55){\makebox(0, 0)[b]{$a$}}
+
+\put(130, 55){\makebox(0, 0)[b]{$b$}}
+
+
+\put(245, 35){\makebox(0, 0)[b]{II}}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+
+\put(210, 85){\makebox(0, 0)[b]{(1, 1)}}
+\thicklines
+\put(245, 47){\line(1, 1){35}}
+\thinlines
+
+\put(280, 85){\makebox(0, 0)[b]{(2, 2)}}
+
+\put(220, 55){\makebox(0, 0)[b]{$a$}}
+
+\put(270, 55){\makebox(0, 0)[b]{$b$}}
+
+%\multiput(105,47)(5, 0){28}{\line(1, 0){3}}
+
+\end{picture}
+
+\begin{itemize}
+\tightlist
+\item
+  I've bolded the best moves at each node, assuming backward induction.
+\item
+  The path of best moves is the (in this case unique) backward induction
+  solution.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Threat Game}
+\protect\hypertarget{threat-game-1}{}
+\begin{itemize}
+\tightlist
+\item
+  There are three Nash equilibria of the game: strategy pairs that no
+  one can improve on by unilaterally changing strategy.
+\item
+  There is just one backward induction solution of the game: a strategy
+  pair where everyone does the best they can \textbf{at every node}
+  assuming others play rationally at every node.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Incredible Threats}
+\protect\hypertarget{incredible-threats}{}
+What makes \(\langle B, bb \rangle\) a Nash equilibrium is that Player
+II can make the following speech.
+
+\begin{quote}
+``I'm going to play b whatever you do. I want that 2 payout, and I'm
+going to get it. And since I'm going to play b whatever you do, you're
+better off playing B. That way you'll get 2, when you'd only get 1 if
+you played A. And you can tell I'm not bluffing because this strategy
+makes sense for me. Since you'll play B, since I'm committed to always
+playing b, it's in my best interests to stick to this strategy.''
+\end{quote}
+\end{frame}
+
+\begin{frame}{Incredible Threats}
+\protect\hypertarget{incredible-threats-1}{}
+What makes \(\langle B, bb \rangle\) not subgame perfect, what makes it
+an incredible threat, is that A can make the following reply.
+\end{frame}
+
+\begin{frame}
+\begin{quote}
+``That's an interesting plan. And if it was just a strategic game, I
+might even believe it. But the problem for you is that you have to stick
+to that bluff once you know that it's been called. To commit to always
+playing b means playing b even when you know I've played A. And I don't
+reckon you'll do it - it's worse for me (which doesn't matter), and it's
+worse for you (which does). If we were just choosing strategies, I might
+just about believe that you would adopt a disposition that's bad in some
+circumstances in the hope that by adopting it, you'll guarantee that
+those circumstances don't arise. But when you have to play in real time,
+I don't think you can do it.''
+\end{quote}
+\end{frame}
+
+\begin{frame}{Incredible Threats}
+\protect\hypertarget{incredible-threats-2}{}
+So I plays A, and they end up at the 4,1 outcome.
+\end{frame}
+
+\begin{frame}{For Next Time}
+\protect\hypertarget{for-next-time}{}
+\begin{itemize}
+\tightlist
+\item
+  We will look, very briefly, at a notable philosophical objection to
+  backwards induction reasoning.
+\end{itemize}
+\end{frame}
+
+\end{document}

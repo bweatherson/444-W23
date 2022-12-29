@@ -1,0 +1,455 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 8.2 - Axelrod Tournament},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+\usepackage{istgame}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 8.2 - Axelrod Tournament}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Overview}
+\protect\hypertarget{overview}{}
+This lecture covers some of the lessons from the Iterated Prisoners'
+Dilemma tournaments that Michigan professor Robert Axelrod ran in the
+early 1980s.
+\end{frame}
+
+\begin{frame}{Four Papers}
+\protect\hypertarget{four-papers}{}
+\begin{itemize}
+\tightlist
+\item
+  \href{https://www.jstor.org/stable/173932}{Effective Choice in the
+  Prisoner's Dilemma}, \emph{Journal of Conflict Resolution} 24 (1980):
+  3-25.
+\item
+  \href{https://www.jstor.org/stable/173638}{More Effective Choice in
+  the Prisoner's Dilemma}, \emph{Journal of Conflict Resolution} 24
+  (1980): 379-403.
+\item
+  \href{https://www.jstor.org/stable/1961366}{The Emergence of
+  Cooperation among Egoists}, \emph{The American Political Science
+  Review} 75 (1981): 306-318.
+\item
+  \href{https://www.jstor.org/stable/1685895}{The Evolution of
+  Cooperation} with William Hamilton, \emph{Science} 211 (1981):
+  1390-1396.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The First Tournament}
+\protect\hypertarget{the-first-tournament}{}
+\begin{itemize}
+\tightlist
+\item
+  Axelrod advertised the first round of his tournament, and called for
+  submissions.
+\item
+  This was far from trivial in pre-internet days, and he only got 13
+  submissions.
+\item
+  In the first tournament he said that \(k\) would be 100, but no one
+  actually exploited that fact.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The Winner}
+\protect\hypertarget{the-winner}{}
+Tit-for-Tat
+\end{frame}
+
+\begin{frame}{Tit-for-Tat}
+\protect\hypertarget{tit-for-tat}{}
+Two rules.
+
+\begin{enumerate}
+\tightlist
+\item
+  Play C at round 1.
+\item
+  In all subsequent rounds, do whatever the other player just did.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{The Second Tournament}
+\protect\hypertarget{the-second-tournament}{}
+\begin{itemize}
+\tightlist
+\item
+  So Axelrod wrote this up, including saying who won.
+\item
+  He called for more submissions, and now got 66.
+\item
+  Some of these were typed, some came to Ann Arbor on the huge magnetic
+  disks that were used way back then.
+\item
+  He ran the tournament again, this time with a random number of rounds.
+  \pause
+\item
+  And Tit-for-Tat won again.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Logic and Victory}
+\protect\hypertarget{logic-and-victory}{}
+\begin{itemize}
+\tightlist
+\item
+  This doesn't mean Tit-for-Tat is the best strategy.
+\item
+  Indeed, in each tournament it was easy in retrospect to describe
+  strategies that would have beaten everyone, including TFT, if they had
+  been entered.
+\item
+  But still, it's pretty impressive.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Four Features}
+\protect\hypertarget{four-features}{}
+Tit-for-Tat has five striking characteristics, each of which was
+positively correlated with success in the tournaments.
+
+\begin{itemize}
+\tightlist
+\item
+  Nice
+\item
+  Provocable
+\item
+  Forgiving
+\item
+  Not envious
+\item
+  Simple
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Nice}
+\protect\hypertarget{nice}{}
+The clearest distinction in the tournament was between strategies that
+were Nice and those that were Nasty.
+
+\begin{itemize}
+\tightlist
+\item
+  By definition, a strategy is Nice iff it is never the first to defect.
+\item
+  You don't have to be very nice in the intuitive sense to count as
+  Nice.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Grim Trigger}
+\protect\hypertarget{grim-trigger}{}
+Here is one nice strategy, one Axelrod calls Grim Trigger.
+
+\begin{enumerate}
+\tightlist
+\item
+  Cooperate on move 1.
+\item
+  If the other player ever defects, defect on every subsequent move.
+\end{enumerate}
+
+This strategy did really badly; it was the worst Nice strategy in round
+2. But still many Nasty strategies did worse.
+\end{frame}
+
+\begin{frame}{Nice Strategies}
+\protect\hypertarget{nice-strategies}{}
+\begin{itemize}
+\tightlist
+\item
+  In the evolutionary versions of the game, there can be a tendency for
+  strategies to tend towards being Nice.
+\item
+  Then evolution stops, because when two Nice strategies meet, the
+  payout is inevitably 3k to each.
+\item
+  Although the best strategies are all Nice, it is how they interact
+  with Nasty strategies that determines who wins.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Provocable}
+\protect\hypertarget{provocable}{}
+\begin{itemize}
+\tightlist
+\item
+  It's bad to get pushed around.
+\item
+  Nasty strategies are always looking for how much they can get away
+  with.
+\item
+  So you want to send a clear message that defections will not be
+  tolerated.
+\item
+  Obviously TFT does that.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Forgiving}
+\protect\hypertarget{forgiving}{}
+\begin{itemize}
+\tightlist
+\item
+  But you don't want to be Grim Trigger.
+\item
+  It's bad to be pushed around, but it's not much better to end up in
+  all defect land.
+\item
+  You need a way back to all cooperate land.
+\item
+  TFT has that, though notably it isn't perfect at this.
+\item
+  TFT can get into CD-DC-CD-etc cycles with a bunch of strategies.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Not Envious}
+\protect\hypertarget{not-envious}{}
+\begin{itemize}
+\tightlist
+\item
+  In any interaction, TFT never does better than who it is playing with.
+\item
+  Yet it comes out first overall.
+\item
+  This is kind of amazing.
+\item
+  It just does not care at all about winning against who it is facing
+  off with.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Not Envious To a Fault}
+\protect\hypertarget{not-envious-to-a-fault}{}
+\begin{itemize}
+\tightlist
+\item
+  Note that TFT doesn't always do that well in evolutionary games.
+\item
+  This is because it might take this a bit too far.
+\item
+  It doesn't look to exploit weaknesses in opponents.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Simple}
+\protect\hypertarget{simple}{}
+\begin{itemize}
+\tightlist
+\item
+  Other strategies try to figure out what their rivals are doing.
+\item
+  They normally get this wrong. \pause
+\item
+  Or they try and send complex signals.
+\item
+  These are usually misinterpreted. \pause
+\item
+  TFT keeps things simple, and doesn't lose points messing around
+  looking for any edges.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Variant Games}
+\protect\hypertarget{variant-games}{}
+\begin{itemize}
+\tightlist
+\item
+  The most interesting variant to me is the one where a strategy only
+  gets implemented with probability 0.99 on each move.
+\item
+  Sometimes there are performance errors.
+\item
+  TFT does terribly in this; it can't get out of randomly generated
+  defection cycles.
+\item
+  In this kind of game you need to be a bit more forgiving.
+\item
+  But also you can try to get away with a bit more; if the other person
+  will treat a defection as random, you can plan a few.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Rest of Day}
+\protect\hypertarget{rest-of-day}{}
+\begin{itemize}
+\tightlist
+\item
+  I'm not going to do slides/recordings about Oyun.
+\item
+  If you have questions about it (and it isn't obvious), come along to
+  class on Monday and we'll talk through how it works.
+\end{itemize}
+\end{frame}
+
+\end{document}

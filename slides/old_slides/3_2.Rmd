@@ -1,0 +1,405 @@
+---
+title: "444 Lecture 3.2 - Backward Induction"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## Plan
+
+To introduce backward induction (or backwards induction - either will do).
+
+## Reading
+
+Bonanno, section 3.2.
+
+## Class of Games We're Discussing
+
+> - Two-player
+> - Turn-taking
+> - Finite
+> - No hidden facts
+> - No randomness
+> - We'll start with zero-sum games, though drop this later.
+
+## Five
+
+- There are two players, who we'll call $A$ and $B$.
+- First $A$ moves, then $B$, then finally $A$ moves again. 
+- Each move involves announcing a number, 1 or 2. 
+- $A$ wins if after the three moves, the numbers announced sum to 5. 
+- $B$ wins otherwise. 
+
+## Five
+
+Question: How should you play this game?
+
+## Game Tree for Five {.fragile}
+
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+\begin{picture}(350, 150)
+\pictext{175}{0}{$A$}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\put(177, 13){\line(2, 1){69}}
+\pictext{135}{20}{1}
+\pictext{215}{20}{2}
+\pictext{105}{35}{$B$}
+\put(105, 47){\circle*{4}}
+\put(105, 47){\line(-1, 1){35}}
+\put(105, 47){\line(1, 1){35}}
+\pictext{80}{55}{1}
+\pictext{130}{55}{2}
+\pictext{245}{35}{$B$}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+\pictext{220}{55}{1}
+\pictext{270}{55}{2}
+\pictext{70}{70}{$A$}
+\put(70, 82){\circle*{4}}
+\put(70, 82){\line(-1, 2){20}}
+\pictext{50}{125}{$\mathpzc{L}$}
+\put(70, 82){\line(1, 2){20}}
+\pictext{90}{125}{$\mathpzc{L}$}
+\pictext{55}{95}{1}
+\pictext{85}{95}{2}
+\pictext{140}{70}{$A$}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+\pictext{120}{125}{$\mathpzc{L}$}
+\put(140, 82){\line(1, 2){20}}
+\pictext{160}{125}{$\mathpzc{W}$}
+\pictext{115}{95}{1}
+\pictext{155}{95}{2}
+\pictext{210}{70}{$A$}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+\pictext{190}{125}{$\mathpzc{L}$}
+\put(210, 82){\line(1, 2){20}}
+\pictext{230}{125}{$\mathpzc{W}$}
+\pictext{195}{95}{1}
+\pictext{225}{95}{2}
+\pictext{280}{70}{$A$}
+\put(280, 82){\circle*{4}}
+\put(280, 82){\line(-1, 2){20}}
+\pictext{260}{125}{$\mathpzc{W}$}
+\put(280, 82){\line(1, 2){20}}
+\pictext{300}{125}{$\mathpzc{L}$}
+\pictext{265}{95}{1}
+\pictext{295}{95}{2}
+\end{picture}
+
+$\mathpzc{W}$ means that $A$ wins, and $\mathpzc{L}$ means that $B$ wins.
+
+## How to Solve These Games
+
+> - Work backwards.
+> - First, find points where a player has a choice between two terminal nodes.
+> - Assume that they will make the choice that has higher value for them.$\pause$
+> - Mark that choice, e.g., by doubling the line (as the textbook does) or bolding the line (as I'll do).
+> - If there are ties, mark both of the lines. (This gets more complicated once we leave zero-sum games.)
+
+## How to Solve These Games
+
+> - Assign the value they choose to the choice node.
+> - So just the game assigns values to terminal nodes, we'll now assign value to choice nodes.
+> - In **Five**, we'll assign the value $\mathpzc{W}$ to the top right node.
+
+## Five (after one step) {.fragile}
+
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+\begin{picture}(350, 150)
+\pictext{175}{0}{$A$}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\put(177, 13){\line(2, 1){69}}
+\pictext{135}{20}{1}
+\pictext{215}{20}{2}
+\pictext{105}{35}{$B$}
+\put(105, 47){\circle*{4}}
+\put(105, 47){\line(-1, 1){35}}
+\put(105, 47){\line(1, 1){35}}
+\pictext{80}{55}{1}
+\pictext{130}{55}{2}
+\pictext{245}{35}{$B$}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+\pictext{220}{55}{1}
+\pictext{270}{55}{2}
+\pictext{70}{70}{$A$}
+\put(70, 82){\circle*{4}}
+\put(70, 82){\line(-1, 2){20}}
+\pictext{50}{125}{$\mathpzc{L}$}
+\put(70, 82){\line(1, 2){20}}
+\pictext{90}{125}{$\mathpzc{L}$}
+\pictext{55}{95}{1}
+\pictext{85}{95}{2}
+\pictext{140}{70}{$A$}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+\pictext{120}{125}{$\mathpzc{L}$}
+\put(140, 82){\line(1, 2){20}}
+\pictext{160}{125}{$\mathpzc{W}$}
+\pictext{115}{95}{1}
+\pictext{155}{95}{2}
+\pictext{210}{70}{$A$}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+\pictext{190}{125}{$\mathpzc{L}$}
+\put(210, 82){\line(1, 2){20}}
+\pictext{230}{125}{$\mathpzc{W}$}
+\pictext{195}{95}{1}
+\pictext{225}{95}{2}
+\pictext{280}{70}{$\mathpzc{W}$}
+\put(280, 82){\circle*{4}}
+\thicklines
+\put(280, 82){\line(-1, 2){20}}
+\thinlines
+\pictext{260}{125}{$\mathpzc{W}$}
+\put(280, 82){\line(1, 2){20}}
+\pictext{300}{125}{$\mathpzc{L}$}
+\pictext{265}{95}{1}
+\pictext{295}{95}{2}
+\end{picture}
+
+## Five (after first level) {.fragile}
+
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+\begin{picture}(350, 150)
+\pictext{175}{0}{$A$}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\put(177, 13){\line(2, 1){69}}
+\pictext{135}{20}{1}
+\pictext{215}{20}{2}
+\pictext{105}{35}{$B$}
+\put(105, 47){\circle*{4}}
+\put(105, 47){\line(-1, 1){35}}
+\put(105, 47){\line(1, 1){35}}
+\pictext{80}{55}{1}
+\pictext{130}{55}{2}
+\pictext{245}{35}{$B$}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+\pictext{220}{55}{1}
+\pictext{270}{55}{2}
+\pictext{70}{70}{$\mathpzc{L}$}
+\put(70, 82){\circle*{4}}
+\thicklines
+\put(70, 82){\line(-1, 2){20}}
+\pictext{50}{125}{$\mathpzc{L}$}
+\put(70, 82){\line(1, 2){20}}
+\thinlines
+\pictext{90}{125}{$\mathpzc{L}$}
+\pictext{55}{95}{1}
+\pictext{85}{95}{2}
+\pictext{140}{70}{$\mathpzc{W}$}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+\pictext{120}{125}{$\mathpzc{L}$}
+\thicklines
+\put(140, 82){\line(1, 2){20}}
+\thinlines
+\pictext{160}{125}{$\mathpzc{W}$}
+\pictext{115}{95}{1}
+\pictext{155}{95}{2}
+\pictext{210}{70}{$\mathpzc{W}$}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+\pictext{190}{125}{$\mathpzc{L}$}
+\thicklines
+\put(210, 82){\line(1, 2){20}}
+\thinlines
+\pictext{230}{125}{$\mathpzc{W}$}
+\pictext{195}{95}{1}
+\pictext{225}{95}{2}
+\pictext{280}{70}{$\mathpzc{W}$}
+\put(280, 82){\circle*{4}}
+\thicklines
+\put(280, 82){\line(-1, 2){20}}
+\thinlines
+\pictext{260}{125}{$\mathpzc{W}$}
+\put(280, 82){\line(1, 2){20}}
+\pictext{300}{125}{$\mathpzc{L}$}
+\pictext{265}{95}{1}
+\pictext{295}{95}{2}
+\end{picture}
+
+## Next Steps Back
+
+> - Now we do the same thing for $B$.
+> - We act as if $B$ is choosing between terminal nodes.
+> - It is as if $A$ doesn't have a choice - they will just make the choice that is best for them (i.e., worst for $B$).
+> - So $B$ knows what the outcome of each choice will be.
+
+## Five (After Two Rounds) {.fragile}
+
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+\begin{picture}(350, 150)
+\pictext{175}{0}{$A$}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\put(177, 13){\line(2, 1){69}}
+\pictext{135}{20}{1}
+\pictext{215}{20}{2}
+\pictext{105}{35}{$\mathpzc{L}$}
+\put(105, 47){\circle*{4}}
+\thicklines
+\put(105, 47){\line(-1, 1){35}}
+\thinlines
+\put(105, 47){\line(1, 1){35}}
+\pictext{80}{55}{1}
+\pictext{130}{55}{2}
+\pictext{245}{35}{$\mathpzc{W}$}
+\put(245, 47){\circle*{4}}
+\thicklines
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+\thinlines
+\pictext{220}{55}{1}
+\pictext{270}{55}{2}
+\pictext{70}{70}{$\mathpzc{L}$}
+\put(70, 82){\circle*{4}}
+\thicklines
+\put(70, 82){\line(-1, 2){20}}
+\pictext{50}{125}{$\mathpzc{L}$}
+\put(70, 82){\line(1, 2){20}}
+\thinlines
+\pictext{90}{125}{$\mathpzc{L}$}
+\pictext{55}{95}{1}
+\pictext{85}{95}{2}
+\pictext{140}{70}{$\mathpzc{W}$}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+\pictext{120}{125}{$\mathpzc{L}$}
+\thicklines
+\put(140, 82){\line(1, 2){20}}
+\thinlines
+\pictext{160}{125}{$\mathpzc{W}$}
+\pictext{115}{95}{1}
+\pictext{155}{95}{2}
+\pictext{210}{70}{$\mathpzc{W}$}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+\pictext{190}{125}{$\mathpzc{L}$}
+\thicklines
+\put(210, 82){\line(1, 2){20}}
+\thinlines
+\pictext{230}{125}{$\mathpzc{W}$}
+\pictext{195}{95}{1}
+\pictext{225}{95}{2}
+\pictext{280}{70}{$\mathpzc{W}$}
+\put(280, 82){\circle*{4}}
+\thicklines
+\put(280, 82){\line(-1, 2){20}}
+\thinlines
+\pictext{260}{125}{$\mathpzc{W}$}
+\put(280, 82){\line(1, 2){20}}
+\pictext{300}{125}{$\mathpzc{L}$}
+\pictext{265}{95}{1}
+\pictext{295}{95}{2}
+\end{picture}
+
+
+## Five (After Two Rounds)
+
+- So we act as if getting to the left hand node means $B$ wins, and getting to the right hand node means $A$ wins.
+- And now we just have to make the choice for the initial node, using this fact.
+
+## Five (Full Graph) {.fragile}
+
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+\begin{picture}(350, 150)
+\pictext{175}{0}{$\mathpzc{W}$}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\thicklines
+\put(177, 13){\line(2, 1){69}}
+\thinlines
+\pictext{135}{20}{1}
+\pictext{215}{20}{2}
+\pictext{105}{35}{$\mathpzc{L}$}
+\put(105, 47){\circle*{4}}
+\thicklines
+\put(105, 47){\line(-1, 1){35}}
+\thinlines
+\put(105, 47){\line(1, 1){35}}
+\pictext{80}{55}{1}
+\pictext{130}{55}{2}
+\pictext{245}{35}{$\mathpzc{W}$}
+\put(245, 47){\circle*{4}}
+\thicklines
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+\thinlines
+\pictext{220}{55}{1}
+\pictext{270}{55}{2}
+\pictext{70}{70}{$\mathpzc{L}$}
+\put(70, 82){\circle*{4}}
+\thicklines
+\put(70, 82){\line(-1, 2){20}}
+\pictext{50}{125}{$\mathpzc{L}$}
+\put(70, 82){\line(1, 2){20}}
+\thinlines
+\pictext{90}{125}{$\mathpzc{L}$}
+\pictext{55}{95}{1}
+\pictext{85}{95}{2}
+\pictext{140}{70}{$\mathpzc{W}$}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+\pictext{120}{125}{$\mathpzc{L}$}
+\thicklines
+\put(140, 82){\line(1, 2){20}}
+\thinlines
+\pictext{160}{125}{$\mathpzc{W}$}
+\pictext{115}{95}{1}
+\pictext{155}{95}{2}
+\pictext{210}{70}{$\mathpzc{W}$}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+\pictext{190}{125}{$\mathpzc{L}$}
+\thicklines
+\put(210, 82){\line(1, 2){20}}
+\thinlines
+\pictext{230}{125}{$\mathpzc{W}$}
+\pictext{195}{95}{1}
+\pictext{225}{95}{2}
+\pictext{280}{70}{$\mathpzc{W}$}
+\put(280, 82){\circle*{4}}
+\thicklines
+\put(280, 82){\line(-1, 2){20}}
+\thinlines
+\pictext{260}{125}{$\mathpzc{W}$}
+\put(280, 82){\line(1, 2){20}}
+\pictext{300}{125}{$\mathpzc{L}$}
+\pictext{265}{95}{1}
+\pictext{295}{95}{2}
+\end{picture}
+
+## Five - Full Analysis
+
+- The equilibrium state of the game is that $A$ wins.
+- $A$ plays 2 first.
+- Then $B$ can play anything they line.
+- But whatever they do, $A$ will win, by playing the opposite number.
+
+## Backwards Induction
+
+- This process is called backwards induction.
+- We start at the possible ends of the game.
+- At each step, we assume that each player makes the best decision they can, on the assumption that later players will do the same thing.
+- And eventually we can solve the game.

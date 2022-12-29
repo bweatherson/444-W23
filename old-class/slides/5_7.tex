@@ -1,0 +1,370 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 5.7 - Rationalizable Strategies},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 5.7 - Rationalizable Strategies}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Plan}
+\protect\hypertarget{plan}{}
+To introduce the idea of rationalizable strategies.
+\end{frame}
+
+\begin{frame}{Reading}
+\protect\hypertarget{reading}{}
+Bonanno, section 6.4
+\end{frame}
+
+\begin{frame}{Playing Best Responses}
+\protect\hypertarget{playing-best-responses}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 3, 0 & 0, 1\\
+Middle & 1, 1 & 1, 0\\
+Down & 0, 0 & 3, 1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+In this game, the best responses are:
+
+\begin{itemize}
+\tightlist
+\item
+  Row can play Up (best response to Left) or Down (best response to
+  Right);
+\item
+  Column can play Left (best response to Middle) or Right (best response
+  to either Up or Down).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Playing Best Responses}
+\protect\hypertarget{playing-best-responses-1}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 3, 0 & 0, 1\\
+Middle & 1, 1 & 1, 0\\
+Down & 0, 0 & 3, 1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  But Middle is not a best response.
+\item
+  It is dominated by the 50/50 mixture of Left and Right.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Iterated Best Responses}
+\protect\hypertarget{iterated-best-responses}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 3, 0 & 0, 1\\
+Middle & 1, 1 & 1, 0\\
+Down & 0, 0 & 3, 1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  So while Left is a best response\ldots{}
+\item
+  It is not a best response to a best response.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Iterated Best Responses}
+\protect\hypertarget{iterated-best-responses-1}{}
+\begin{itemize}
+\tightlist
+\item
+  That makes it seem irrational to play Middle. \pause
+\item
+  I could build more complicated examples, where we had cases that are
+  best responses to best responses, but not best responses to best
+  responses to best responses. \pause
+\item
+  Actually we've already seen such a case.
+\item
+  In the Ice Cream game, 2 is a best response to 1, which is a best
+  response to 0.
+\item
+  But 2 is not a best response to any best response to a best response.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Iterated Best Responses}
+\protect\hypertarget{iterated-best-responses-2}{}
+\begin{itemize}
+\tightlist
+\item
+  Some strategies are at the start of an infinite chain
+  \(S_1, S_2, \dots\) where each strategy is a best response to the one
+  that comes after it.
+\item
+  Call these the \textbf{rationalizable} strategies.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Infinite Chains}
+\protect\hypertarget{infinite-chains}{}
+Here is one way to get an infinite chain like this.
+
+\begin{itemize}
+\tightlist
+\item
+  If the pair \(\langle S_1, S_2 \rangle\) is a Nash equilibrium,
+  \ldots{}
+\item
+  Then \(S_1\) is a best response to \(S_2\), which is a best response
+  to \(S_1\), which is a best response to \(S_2\), which \ldots{} \pause
+\item
+  But you don't only need to use Nash equilibria.
+\item
+  Think about Rock, Paper, Scissors.
+\item
+  Rock is a best response to Scissors, which is a best response to
+  Paper, which is a best response to Rock, which is\ldots{}
+\item
+  But Rock is not part of a Nash equilibrium.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Rationalizability}
+\protect\hypertarget{rationalizability}{}
+I'm not going to prove this, but the following turns out to be true.
+
+\begin{itemize}
+\tightlist
+\item
+  The strategies that can be at the start of these infinite chains
+  \ldots{}
+\item
+  Are exactly those strategies that survive iterated deletion of
+  strongly dominated strategies \ldots{}
+\item
+  Provided we include dominance by mixtures when we're doing the
+  deleting.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Philosophical Payoff}
+\protect\hypertarget{philosophical-payoff}{}
+Some economists, and a few philosophers, have argued that this is the
+key philosophical notion in game theory.
+
+\begin{itemize}
+\tightlist
+\item
+  They say that a strategy is rational to play if and only if it is
+  rationalizable in this sense. \pause
+\item
+  In economics, this is very much a \textbf{heterodox} view.
+\item
+  Note that this view is more permissive than the view that rational
+  players will choose Nash equilibria.
+\item
+  All Nash equilibria are rationalizable, but some rationalizable
+  strategies (e.g., Rock!), are not Nash equilibria. \pause
+\item
+  Most economists think that if there is a key notion in game theory, it
+  is \textbf{less permissive} than Nash equilibrium.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{For Next Time}
+\protect\hypertarget{for-next-time}{}
+\begin{itemize}
+\tightlist
+\item
+  We'll close this out by going back to Nash, and asking why Nash
+  equilibrium is philosophically significant.
+\end{itemize}
+\end{frame}
+
+\end{document}

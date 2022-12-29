@@ -1,0 +1,100 @@
+\input{../styles/handout-leader}
+\def\mytitle{Mixed Strategies}
+\def\myauthor{Assignment 5}
+\def\mydate{Due February 10, 6pm}
+\input{../styles/handout-begin}
+
+\section{Questions One-Six}
+\label{questionsone-six}
+
+A thief wants to steal a particular diamond owned by the city council. The security firm guarding the diamond knows that the thief might strike tonight. They have to decide whether to put in Basic security (B) or Enhanced security (E). The thief has to decide whether to Steal (S) or Not steal (N) the diamond. The thief can evade basic security, but will be caught by enhanced security. Here is the payoff table for the two parties (with thief payouts first, since she's row).
+
+\begin{table}[htbp]
+\begin{minipage}{\linewidth}
+\setlength{\tymax}{0.5\linewidth}
+\centering
+\small
+\begin{tabulary}{\textwidth}{@{}rcc@{}} \toprule
+ & B & E \\
+\midrule
+
+ S & 1, 0 & --5, 2\\
+ N & 0, 1 & 0, 0 \\
+\bottomrule
+
+\end{tabulary}
+\end{minipage}
+\end{table}
+
+Intuitively, the thief wants the diamond, doesn't want to get caught, and cares way more about getting caught that the diamond. The security firm doesn't want the bad reputation of the diamond been stolen on their watch, or the cost of running Enhanced security, but they would like the reward for catching the thief.
+
+The following questions are all about the mixed strategy Nash equilibrium of this game. (Answers should be decimal, not fractions, and accurate to two decimal places.)
+
+\begin{enumerate}
+\item{} What is the probability of B?
+
+\item{} What is the probability of E?
+
+\item{} What is the probability of S?
+
+\item{} What is the probability of N?
+
+\item{} What is firm's expected return?
+
+\item{} What is thief's expected return?
+
+\end{enumerate}
+
+\section{Questions Seven-Nine}
+\label{questionsseven-nine}
+
+A tough-on-crime faction on the city council wants to prevent theft by increasing the punishment for being caught stealing. If they had their way, the payout in the upper-right cell (i.e., SE), would be -10, 2. If this change was made, how would the new equilibrium compare to the old equilibrium?
+
+\begin{enumerate}
+\setcounter{enumi}{6}
+\item{} Would firm's expected payout go up, go down, or be unchanged?
+
+\item{} Would thief's expected payout go up, go down, or be unchanged?
+
+\item{} Would the probability that the diamond gets stolen go up, go down, or be unchanged?
+
+\end{enumerate}
+
+\newpage
+\section{Questions Ten - Eleven}
+\label{questionsten-}
+
+The tough-on-crime faction is defeated, but there is a new dispute over exactly what we should do to the payout in the top right cell. There are three options
+
+\begin{itemize}
+\item{} Option one: leave it unchanged.
+
+\item{} Option two: change it to -10, 2, as the tough-on-crime faction wanted.
+
+\item{} Option three: change it to -5, 3, i.e., increase the reward for catching the thief.
+
+\end{itemize}
+
+Happily for the security firm, a nice bit of regulatory capture means that they control the deciding vote. So this is now a dynamic game. Firm will choose option one, two or three, and then choose Basic or Enhanced. Thief will find out whether one, two or three was chosen, then choose Steal or Not.
+
+The following questions concern the subgame perfect equilibrium of this game.
+
+\begin{enumerate}
+\setcounter{enumi}{9}
+\item{} What is firm's expected payout?
+
+\item{} What is the probability that the diamond gets stolen?
+
+\end{enumerate}
+
+\section*{Notes}
+
+\begin{itemize}
+
+\item All questions can be answered through Canvas.
+\item Answer as probabilities, i.e., as numbers between 0 and 1. So if there is a 1 in 3 chance of something, your answer should be 0.33, not $\frac{1}{3}$, or 33\%.
+\item There is an option question 12, for uploading workings out. This isn't required; you can get full marks by writing in the correct numbers/answers. But you can get partial marks for being on the right track.
+\item The deadline is later than normal, due to a conference happening in the department this week.
+\end{itemize} 
+
+\end{document}

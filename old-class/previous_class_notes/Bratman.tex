@@ -1,0 +1,242 @@
+\documentclass[11pt,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+    \setmainfont[]{SF Pro Text Light}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Bratman on Group Action},
+            pdfauthor={Philosophy 444},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Bratman on Group Action}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Philosophy 444}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{18 November, 2019}
+
+\usepackage{mathastext}
+\usepackage{nicefrac}
+
+\begin{document}
+\maketitle
+
+\hypertarget{two-initial-points}{%
+\section{Two Initial Points}\label{two-initial-points}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Gilbert on authority. How much real-life authority comes from being
+  the person who has been making the decisions and has others going
+  along with them? (See, for example, what's going on in Bolivia right
+  now.)
+\item
+  Bratman's picture. Start with a simple theory, and add complications
+  to deal with puzzle cases. The history of philosophy is that this
+  doesn't end well. Work through the details, but be cautious.
+\end{enumerate}
+
+\hypertarget{three-conditions}{%
+\section{Three Conditions}\label{three-conditions}}
+
+\begin{itemize}
+\tightlist
+\item
+  Mutual Responsiveness
+\item
+  Commitment to joint activity; i.e., we both intend to do this very
+  activity, under something like this description.
+\item
+  Commitment to mutual support; i.e., we both intend to help the other
+  should they falter, and not claim all the glory.
+\end{itemize}
+
+The last condition is a strengthening of the idea that cooperative
+activity is not side-by-side activity.
+
+\hypertarget{can-i-intend-that-we-f}{%
+\section{Can I intend that we F?}\label{can-i-intend-that-we-f}}
+
+\begin{itemize}
+\tightlist
+\item
+  Sure - I can intend to spend a sunny day at the beach, without
+  intending the sunshine
+\item
+  I can even, I think, do it without being 100\% sure of the sunshine
+\item
+  Don't need complete control
+\item
+  Another example: I can intend to holiday in Paris, although I can't
+  control all the aspects of my getting to Paris.
+\end{itemize}
+
+\hypertarget{mesh}{%
+\section{Mesh}\label{mesh}}
+
+\begin{itemize}
+\tightlist
+\item
+  As stated this feels too strong.
+\item
+  Imagine that your job is to get the paint. I have views about where to
+  get the paint from (as in Bratman's example), but also how to drive
+  there. This feels like it shouldn't matter; it's your job to get the
+  paint.
+\item
+  How much counterfactual resiliency of mesh is interesting here.
+  Bratman's pun about `beyond the pale' drives an interesting point.
+\item
+  In practice, it can feel almost coercive to include a strong
+  restriction on sub-plans.
+\end{itemize}
+
+\hypertarget{reflexivity}{%
+\section{Reflexivity}\label{reflexivity}}
+
+\begin{itemize}
+\tightlist
+\item
+  Long tradition of thinking about the point of intention is that action
+  is brought about as a result of this very intention.
+\item
+  Bratman is extending this to a group setting.
+\end{itemize}
+
+\hypertarget{what-exactly-counts-as-coercion}{%
+\section{What exactly counts as
+coercion?}\label{what-exactly-counts-as-coercion}}
+
+If I dictate all the terms, that's coercive. But where we draw the line
+between power imbalance and coercion is tricky. (Famously!)
+
+\hypertarget{what-counts-as-support}{%
+\section{What Counts as Support}\label{what-counts-as-support}}
+
+\begin{itemize}
+\tightlist
+\item
+  The single possible kind of support feels really weak.
+\item
+  What if there is a kind of thing I can't stand seeing anyone suffer
+  through.
+\item
+  Feels like we need a generic here not an existential
+\end{itemize}
+
+\hypertarget{explicit-disavowal-of-commitment}{%
+\section{Explicit disavowal of
+commitment}\label{explicit-disavowal-of-commitment}}
+
+\begin{itemize}
+\tightlist
+\item
+  Discuss these for a bit
+\item
+  Do they defeat shared intention; shared cooperative activity?
+\item
+  Do they
+\end{itemize}
+
+\hypertarget{can-we-get-commitment-from-elsewhere}{%
+\section{Can we get commitment from
+elsewhere}\label{can-we-get-commitment-from-elsewhere}}
+
+\begin{itemize}
+\tightlist
+\item
+  Typical case - assurances and responsibility to live up to assurances
+\item
+  Big picture - let people know what game they are playing
+\item
+  Let people rule out options
+\item
+  This is a good thing to do
+\end{itemize}
+
+\hypertarget{are-competitive-games-scas-or-group-actions}{%
+\section{Are Competitive Games SCAs, or Group
+Actions}\label{are-competitive-games-scas-or-group-actions}}
+
+\begin{itemize}
+\tightlist
+\item
+  I mean sort of yes, sort of no.
+\item
+  What turns on this question?
+\end{itemize}
+
+
+\end{document}

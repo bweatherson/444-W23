@@ -1,0 +1,84 @@
+---
+title: "Monty Hall"
+output:
+  pdf_document:
+    toc: false
+    md_extensions: +startnum
+    df_print: kable
+    keep_tex: yes
+    latex_engine: xelatex
+    extra_dependencies: ["mathastext"]
+    fig_caption: no
+fontsize: 11pt
+mainfont: SF Pro Text Light
+geometry: margin=1in
+author: Philosophy 444
+date: 25 September, 2019
+---
+
+I messed up the explanation of the Monty Hall Problem last time, so this is to go over a little more clear. 
+
+## Rules of the Game
+
+- There are three doors.
+- There is a prize behind one, and nothing behind the other two. The winning door has been chosen at random, with each door chosen with probability $\frac{1}{3}$.
+- Once you select a door, the host will show you a door.
+- This door is chosen to have two characteristics - it is not the door you chose, and it is not the door that has the prize.
+- If you chose incorrectly the first time, the host has no choice, there is only one possibility available to show you. (You should confirm for yourself this is true.)
+- If you chose correctly the first time, the host has a choice. In that case, we will assume that the probability that he chooses either door is $\frac{1}{2}$.
+
+## Terminology
+
+- I'll use $P_i$ for the proposition that the prize is behind door $i$.
+- And I'll use $S_i$ for the proposition that the host shows you door $i$.
+- One of the consequences of the rules of the game is that for each $i$, we know $S_i \rightarrow \neg P_i$; the prize is not behind the shown door.
+
+## Prior Probabilities
+
+Let's assume, as in class, that we choose door 3. Then there are four possibilities available.
+
+- $P_1 \wedge S_2$
+- $P_2 \wedge S_1$
+- $P_3 \wedge S_1$
+- $P_3 \wedge S_2$
+
+What are the probabilities of each? We can use the following formula. 
+
+> $\Pr(X \wedge Y) = \Pr(X | Y)\Pr(Y)$
+
+Note that this is just the conditional probability formula with each side multiplied by $\Pr(Y)$.
+
+By the rules of the game $\Pr(S_2 | P_1) = 1$. Given $P_1$, it is forced that you are shown door 2. And $\Pr(P_1) = \frac{1}{3}$. So $\Pr(S_2 \wedge P_1) = \Pr(S_2 | P_1) \times \Pr(P_1) = 1 \times \frac{1}{3} = \frac{1}{3}$.
+
+The same reasoning shows that $\Pr(S_1 \wedge P_2) = \frac{1}{3}$.
+
+What about $P_3 \wedge S_1$. Well, we can use the same approach. $\Pr(S_3 \wedge P_1) = \Pr(S_3 | P_1) \times \Pr(P_1)$. But now we need to know $\Pr(S_3 | P_1)$. The rules, however, say this is $\frac{1}{2}$ - this is the part that says the host will choose each door with equal probability if he has a free choice about what to do. So the calculation is $\Pr(S_3 \wedge P_1) = \Pr(S_3 | P_1) \times \Pr(P_1) = \frac{1}{2} \times \frac{1}{3} = \frac{1}{6}$.
+
+And the same kind of calculation shows that $\Pr(P_3 \wedge S_2) = \frac{1}{6}$.
+
+Summing all that up
+
+- $\Pr(P_1 \wedge S_2) = \frac{1}{3}$
+- $\Pr(P_2 \wedge S_1) = \frac{1}{3}$
+- $\Pr(P_3 \wedge S_1) = \frac{1}{6}$
+- $\Pr(P_3 \wedge S_2) = \frac{1}{6}$
+
+Let's assume door 2 is shown. (The calculations will be the same if door 1 is shown.) We need to flip the conditional probabilities around. We want $\Pr(P_1 | S_2)$. Here's the calculation for that.
+
+\begin{align*}
+\Pr(P_1 | S_2) &= \frac{\Pr(P_1 \wedge S_2)}{\Pr(S_2)} \\
+ &= \frac{\Pr(P_1 \wedge S_2)}{\Pr((S_2 \wedge P_1) \vee (S_2 \wedge P_3))} \\
+ &= \frac{\Pr(P_1 \wedge S_2)}{\Pr(S_2 \wedge P_1) + \Pr(S_2 \wedge P_3)} \\
+ &= \frac{\frac{1}{3}}{\frac{1}{3} + \frac{1}{6}} \\
+ &= \frac{2}{3}
+\end{align*}
+
+So you should switch. If you switch, you have a $\frac{2}{3}$ chance of getting the prize. Why then does it seem that you should have a 50/50 shot of getting the prize? Because the following is true.
+
+$$
+\Pr(P_1 | \neg P_2) = \frac{1}{2}
+$$
+
+On learning $\neg P_2$, and nothing else, you should think each remaining door is equally likely to have the prize behind it. And then you may as well stay.
+
+But the crucial philosophical point, and this is why it is the same kind of puzzle as the planes and bullets story, is that we have to distinguish what we've learned from the fact that we've learned it. Sometimes that latter fact tells us something really crucial. At a very general level of abstraction, it tells us that a certain process produced an output. That process might be a game show host choosing to show us a door, or planes making it back across the English Channel in, if not one piece, enough state they could get back. In all these cases you should think not just about what you're being told, but why you're being told it.

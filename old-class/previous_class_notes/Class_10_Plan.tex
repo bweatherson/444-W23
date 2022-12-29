@@ -1,0 +1,247 @@
+\documentclass[11pt,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+    \setmainfont[]{SF Pro Text Light}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Plan for Dynamic Class},
+            pdfauthor={Philosophy 444},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Plan for Dynamic Class}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Philosophy 444}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{7 October, 2019}
+
+\usepackage{gensymb}
+\usepackage{nicefrac}
+\usepackage{mathastext}
+\usepackage{multicol}
+
+\begin{document}
+\maketitle
+
+\hypertarget{information-sets}{%
+\section{Information sets}\label{information-sets}}
+
+\begin{itemize}
+\tightlist
+\item
+  Sets of nodes that player doesn't know which they are at
+\item
+  Gotta have same choices available
+\item
+  None is predecessor of the other
+\item
+  Perfect recall: her prior moves are same at each node
+\item
+  See violations of this on page 120
+\end{itemize}
+
+\hypertarget{how-to-represent-choice-followed-by-strategic-game}{%
+\section{How to represent choice followed by strategic
+game}\label{how-to-represent-choice-followed-by-strategic-game}}
+
+\begin{itemize}
+\tightlist
+\item
+  Would like to draw grids in the game, but we can't do that.
+\item
+  Instead we use a hack - pretend the moves are sequential, but
+  unrevealed
+\item
+  Feels like a hack, and sort of is
+\end{itemize}
+
+\hypertarget{strategies}{%
+\section{Strategies}\label{strategies}}
+
+\begin{itemize}
+\tightlist
+\item
+  A choice for each information set
+\item
+  This is a generalisation of what we previously had
+\end{itemize}
+
+\hypertarget{subgame}{%
+\section{Subgame}\label{subgame}}
+
+\begin{itemize}
+\tightlist
+\item
+  Only singleton nodes launch subgames
+\item
+  Every successor of the launch node must not `cut' info set
+\item
+  That is, no successor is in info set with non-successor
+\item
+  See example on page 127
+\item
+  This matters for definition of SPE
+\end{itemize}
+
+\hypertarget{spe}{%
+\section{SPE}\label{spe}}
+
+\begin{itemize}
+\tightlist
+\item
+  Strategy set is Nash in whole game and every subgame
+\item
+  Incredible threats are not SPEs
+\end{itemize}
+
+\hypertarget{spe-and-sequential-rationality}{%
+\section{SPE and sequential
+rationality}\label{spe-and-sequential-rationality}}
+
+\begin{itemize}
+\tightlist
+\item
+  Consider a game where A moves, then B, but B isn't told A's move
+\item
+  And what B would do is dominated (draw example of this b4 class)
+\item
+  Well, B is irrational
+\item
+  But that could be SPE (if A never goes where B dominated)
+\item
+  Feels like we need more
+\item
+  We'll get to this
+\item
+  The basic way to generate these games is to take an incredible threat
+  game, and then make the move that would be responded irrationally to
+  into a pair of moves.
+\item
+  So simple game is that I choose attack/defend, and then if attack you
+  choose counter/retreat. And one of the Nash equilibria is
+  Defend/Counter, but Counter is not backwards induction reliable.
+\item
+  Now complicate the game so I have three choices -
+  Attack+Coffee/Attack+Tea/Defend, and you're told whether Attack or
+  Not, but not whether Coffee or Tea
+\item
+  Now Defend/Counter could be a subgame perfect equilibrium, because
+  there isn't a subgame.
+\item
+  But this is obviously silly - so we need yet more detail
+\item
+  See also page 241 for another example
+\end{itemize}
+
+\hypertarget{chance-moves}{%
+\section{Chance moves}\label{chance-moves}}
+
+\begin{itemize}
+\tightlist
+\item
+  Need a basic story about probability
+\item
+  Additive to 1
+\item
+  Maybe talk through lemon example
+\end{itemize}
+
+\hypertarget{lemon-example-outcomes}{%
+\section{Lemon example outcomes}\label{lemon-example-outcomes}}
+
+\begin{itemize}
+\tightlist
+\item
+  Get and keep good car: 10, 0
+\item
+  Get and keep lemon: -5, 0
+\item
+  Get high price for good car: 5, 5
+\item
+  Get high price for lemon: 5, -5
+\item
+  Get low price for good car: 0, 10
+\item
+  Get low price for lemon: 0, 5
+\item
+  In equilibrium, accept all offers for lemon, reject for good car
+\item
+  So (roughly) would only ever make low offers
+\item
+  So would only offer to sell lemons
+\item
+  How does this extend to 3rd party buyer?
+\end{itemize}
+
+
+\end{document}

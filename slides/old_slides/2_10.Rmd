@@ -1,0 +1,108 @@
+---
+title: "444 Lecture 2.10 - Nash Equilibrium"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Plan
+
+To think about why we should care about Nash Equilibrium.
+
+## Reading
+
+Bonanno, section 2.6.
+
+## A Philosophical Claim
+
+In any game where it is common knowledge that all the players are rational, every player will play a strategy that forms part of a Nash Equilibrium.
+
+## Status of Nash
+
+- I think most economists and political scientists accept something like this.
+- But I think philosophers who work on game theory more often do not accept it.
+
+## Arguments for Nash
+
+- Oddly, it's hard to find canonical arguments for the importance of Nash.
+- It's so deeply embedded in game theory that it doesn't get discussed in research articles, more in textbooks.
+- Bonanno has a passage on page 40 that you could (perhaps uncharitably) count as a contribution to that genre.
+
+## Transparency of Reason Interpretation
+
+> If players are all "equally rational" and Player 2 reaches the conclusion that she should play y, then Player 1 must be able to duplicate Player 2’s reasoning process and come to the same conclusion; it follows that Player 1’s choice of strategy is not rational unless it is a strategy x that is optimal against y. A similar argument applies to Player 2’s choice of strategy (y must be optimal against x) and thus (x,y) is a Nash equilibrium.
+
+## Transparency of Reason Interpretation
+
+- This doesn't look like a good argument for the Philosophical Claim.
+- All it shows is the weaker claim that if there is a uniquely rational play for each player, those plays will form a Nash Equilibrium.
+
+## Viable recommendation interpretation
+
+> Imagine that a third party makes a public recommendation to each player on what strategy to play; then no player will have an incentive to deviate from the recommendation (if she believes that the other players will follow the recommendation) if and only if the recommended strategy profile is a Nash equilibrium.
+
+## Viable recommendation interpretation
+
+- Again, this argument only works if the third party makes a unique recommendation.
+- If the third party says "Do one of these three things", there is no argument that all three have to be Nash.
+
+## Self-enforcing agreement interpretation
+
+> Imagine that the players are able to communicate before playing the game and reach a non-binding agreement expressed as a strategy profile s; then no player will have an incentive to deviate from the agreement (if she believes that the other player will follow the agreement) if and only if s is a Nash equilibrium.
+
+## Self-enforcing agreement interpretation
+
+- This is right as far as it goes, but doesn't help defend the philosophical claim in cases where no communication is possible.
+- And here it is particularly notable that Bonanno's purposes are not quite the same as mine.
+
+## No regret interpretation
+
+> s is a Nash equilibrium if there is no player who, after observing the opponent’s choice, regrets his own choice (in the sense that he could have done better with a different strategy of his, given the observed strategy of the opponent).
+
+- This is a very good clear definition of what Nash is, but hard to see how it's a an argument for the importance of Nash.
+
+## Other Arguments
+
+> - You might be being spied on.
+> - The other player might be a mind-reader.
+> - You might be playing repeatedly, and so your strategy will be (more or less) revealed.
+
+## Repeated Games
+
+- The last one is, I think, the main reason in practice people care about Nash.
+- But it turns out for one important game, the Prisoners Dilemma, it is arguable that in the repeated game you should not play the Nash equilibrium.
+
+## Prisoners' Dilemma
+
+```{r}
+game <- tribble(
+  ~Moves,       ~Coop, ~Defect,
+  "Coop",      "3, 3", "0, \\fbox{5}",
+  "Defect",    "\\fbox{5}, 0", "\\fbox{1}, \\fbox{1}"
+)
+gameformat(game)
+```
+
+- The only Nash equilibrium is both players defect.
+- And personally, I think in the one-shot game they should both defect.
+- But it is not at all obvious they should defect in the repeated game.
+- We will return to this point a lot in a few weeks.
+
+## For Next Week
+
+- We will start looking at chapter 3, on games that have sequential moves.

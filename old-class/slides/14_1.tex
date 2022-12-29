@@ -1,0 +1,562 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 14.1 - Group Belief},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+\usepackage{caption}
+% Make caption package work with longtable
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+\usepackage{istgame}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Day Plan}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 14.1 - Group Belief}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Day Plan}
+\protect\hypertarget{day-plan}{}
+\tableofcontents
+\end{frame}
+
+\hypertarget{a-practical-problem}{%
+\section{A Practical Problem}\label{a-practical-problem}}
+
+\begin{frame}{Merging Experts}
+\protect\hypertarget{merging-experts}{}
+\begin{itemize}
+\tightlist
+\item
+  Let's say some experts have all opined on a particular question.
+\item
+  And the opinions are in probabilistic form.
+\item
+  We are not an expert, but we want to defer to expert opinion.
+\item
+  Unfortunately, the experts disagree.
+\item
+  What should we do?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{A Simple Answer}
+\protect\hypertarget{a-simple-answer}{}
+Arithmetic Mean
+\end{frame}
+
+\begin{frame}{Formal Version}
+\protect\hypertarget{formal-version}{}
+\[
+\Pr(p) = \frac {\sum {\Pr_i(p)}}{n}
+\]
+
+That is, you add up all the expert probabilities, and divide by the
+number of experts.
+\end{frame}
+
+\begin{frame}{Three Virtues}
+\protect\hypertarget{three-virtues}{}
+\begin{itemize}
+\tightlist
+\item
+  Simple.
+\item
+  Always gives you a probability.
+\item
+  Always gives you a value between the various expert opinions.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Three Problems}
+\protect\hypertarget{three-problems}{}
+\begin{itemize}
+\tightlist
+\item
+  May not always want to be between the experts.
+\item
+  Doesn't preserve independence.
+\item
+  Doesn't handle updating well.
+\end{itemize}
+\end{frame}
+
+\hypertarget{betweenness}{%
+\section{Betweenness}\label{betweenness}}
+
+\begin{frame}{Experts With Different Evidence}
+\protect\hypertarget{experts-with-different-evidence}{}
+Imagine the following case.
+
+\begin{itemize}
+\tightlist
+\item
+  Two trials of a new medicine are being run, one in Michigan and one in
+  California.
+\item
+  The theory behind the medicine is very speculative, and it's only
+  50/50 whether it will work as intended.
+\item
+  The trials aren't complete, and the evidence isn't released, but you
+  know each of the lead researchers, and you call them up separately.
+\item
+  They each say, ``This is going better than expected; I'd say it's 90\%
+  likely that the drug works.''
+\item
+  What should your probability be that the drug works?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{My View}
+\protect\hypertarget{my-view}{}
+I think it should not be between the expert views, it should be higher.
+
+\begin{itemize}
+\tightlist
+\item
+  But this is a special case.
+\item
+  You have evidence the experts don't have.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{How To Correct}
+\protect\hypertarget{how-to-correct}{}
+When we are making a group decision, like in GroupThink, we should first
+find out what everyone thinks and why, then adjust our individual
+probabilities, then merge those.
+
+\begin{itemize}
+\tightlist
+\item
+  Possibly by arithmetic averaging.
+\end{itemize}
+\end{frame}
+
+\hypertarget{independence}{%
+\section{Independence}\label{independence}}
+
+\begin{frame}{A Puzzle}
+\protect\hypertarget{a-puzzle}{}
+\begin{itemize}
+\tightlist
+\item
+  You are interested in two propositions, \(p\) and \(q\), as well as
+  their interactions.
+\item
+  There are two experts: \(A\) and \(B\).
+\item
+  Both experts think that \(A\) and \(B\) are probabilistically
+  independent.
+\item
+  But they disagree on the likelihoods.
+\item
+  \(A\) thinks that each has probability 0.9.
+\item
+  \(B\) thinks that each has probability 0.1.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Summary}
+\protect\hypertarget{summary}{}
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+Proposition & Expert A & Expert B \\
+\midrule
+\endhead
+\(p \wedge q\) & 0.81 & 0.01 \\
+\(p \wedge \neg q\) & 0.09 & 0.09 \\
+\(\neg p \wedge q\) & 0.09 & 0.09 \\
+\(\neg p \wedge \neg q\) & 0.01 & 0.81 \\
+\bottomrule
+\end{longtable}
+\end{frame}
+
+\begin{frame}{Arithmetic Mean}
+\protect\hypertarget{arithmetic-mean}{}
+\begin{longtable}[]{@{}cccc@{}}
+\toprule
+Proposition & Expert A & Expert B & Mean \\
+\midrule
+\endhead
+\(p \wedge q\) & 0.81 & 0.01 & 0.41 \\
+\(p \wedge \neg q\) & 0.09 & 0.09 & 0.09 \\
+\(\neg p \wedge q\) & 0.09 & 0.09 & 0.09 \\
+\(\neg p \wedge \neg q\) & 0.01 & 0.81 & 0.41 \\
+\bottomrule
+\end{longtable}
+
+You get \(\Pr(p) = \Pr(q) = 0.5\), as seems right. But
+\(\Pr(p | q) = 0.82\), which seems wrong.
+\end{frame}
+
+\hypertarget{learning}{%
+\section{Learning}\label{learning}}
+
+\begin{frame}{Two Orders of Updating}
+\protect\hypertarget{two-orders-of-updating}{}
+This case is a bit more complicated, but it's the most important one.
+
+\begin{itemize}
+\tightlist
+\item
+  There are two people, \(X\) and \(Y\), who want to learn from the
+  experts.
+\item
+  There is only one proposition that they care about: \(p\).
+\item
+  There are two experts \(A\) and \(B\).
+\item
+  In the morning, \(X\) goes to talk to them.
+\item
+  They say that they'll know more in the afternoon, after it is revealed
+  at midday whether \(q\) is true.
+\item
+  \(X\) says that they can update themselves, just give them the four
+  way table.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Expert Views}
+\protect\hypertarget{expert-views}{}
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+Proposition & Expert A & Expert B \\
+\midrule
+\endhead
+\(p \wedge q\) & 0.4 & 0.3 \\
+\(p \wedge \neg q\) & 0.3 & 0.2 \\
+\(\neg p \wedge q\) & 0.2 & 0.1 \\
+\(\neg p \wedge \neg q\) & 0.1 & 0.4 \\
+\bottomrule
+\end{longtable}
+
+\(X\) takes the average of those two probabilities, and comes away with
+\(\Pr(p | q) = 0.7\), and \(\Pr(p | \neg q) = 0.5\).
+\end{frame}
+
+\begin{frame}{Later That Day}
+\protect\hypertarget{later-that-day}{}
+\begin{itemize}
+\tightlist
+\item
+  It becomes public knowledge whether \(q\) happens. Let's say it
+  doesn't.
+\item
+  Now \(A\) thinks \(\Pr(p) = \frac{3}{4}\), and \(B\) thinks
+  \(\Pr(p) = \frac{1}{3}\).
+\item
+  Now \(Y\) asks for their expert views, learns them, and averages them.
+\item
+  So \(Y\) ends up with \(\Pr(p) = \frac{13}{24}\).
+\item
+  But \(X\) ends up with \(\Pr(p) = 0.5\).
+\item
+  Yet they did the same thing - defer to these two experts, and make
+  one's beliefs sensitive to \(q\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Order Invariance}
+\protect\hypertarget{order-invariance}{}
+Linear averaging has the following flaw.
+
+\begin{itemize}
+\tightlist
+\item
+  Learning from experts then updating gives a different answer to having
+  the experts update then learning from them.
+\item
+  And that's true even if it is public knowledge what everyone is
+  updating on, and there is complete agreement about how to update.
+\item
+  That seems bad, a rule for learning from experts shouldn't be order
+  dependent in this way.
+\end{itemize}
+\end{frame}
+
+\hypertarget{geometric-pooling}{%
+\section{Geometric Pooling}\label{geometric-pooling}}
+
+\begin{frame}{Geometric Mean}
+\protect\hypertarget{geometric-mean}{}
+In general the geometric mean of \(n\) numbers is:
+
+\[
+\sqrt[n]{x_1 x_2 \dots x_n}
+\]
+
+Multiply the numbers together, and take the n'th root.
+\end{frame}
+
+\begin{frame}{Geometric Mean of Probabilities}
+\protect\hypertarget{geometric-mean-of-probabilities}{}
+In general, if you take the geometric means of the expert's opinions
+about each elemtn of a probability space, the result will \textbf{not}
+be a probability.
+\end{frame}
+
+\begin{frame}{Old Example}
+\protect\hypertarget{old-example}{}
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+Proposition & Expert A & Expert B \\
+\midrule
+\endhead
+\(p \wedge q\) & 0.81 & 0.01 \\
+\(p \wedge \neg q\) & 0.09 & 0.09 \\
+\(\neg p \wedge q\) & 0.09 & 0.09 \\
+\(\neg p \wedge \neg q\) & 0.01 & 0.81 \\
+\bottomrule
+\end{longtable}
+
+If for each of the four possibilities, your probability is the geometric
+mean of the two experts, you will have probability 0.09 for each. But
+those numbers add to 0.36, not to 1.
+\end{frame}
+
+\begin{frame}{Re-Normalize}
+\protect\hypertarget{re-normalize}{}
+So there is one extra step.
+
+\begin{itemize}
+\tightlist
+\item
+  You have to re-normalize.
+\item
+  You multiply each of the values you get at step 1 by a constant so
+  that they sum to 1.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Advantages}
+\protect\hypertarget{advantages}{}
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Preserves Independence
+\item
+  Order Invariant
+\item
+  Apparently the only function that will do this.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Disadvantages}
+\protect\hypertarget{disadvantages}{}
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Not simple!
+\item
+  Still has a problem with the two drug trials case.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Open Questions}
+\protect\hypertarget{open-questions}{}
+\begin{itemize}[<+->]
+\tightlist
+\item
+  How to extend this to density functions.
+\item
+  Are there other problems? I think you get a problem with the \(XY\)
+  case if one of them just asks the experts about \(p\) and the other
+  asks about both \(p\) and \(q\). You end up with different answers.
+\item
+  What to say about the two drug trials case?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Philosophical Question}
+\protect\hypertarget{philosophical-question}{}
+Are these two cases the same?
+
+\begin{enumerate}
+\tightlist
+\item
+  There are \(n\) experts, you ask each for their opinion, and then
+  merge the answers.
+\item
+  There are \(n-1\) other experts plus you, you ask the rest of them for
+  their opinion and then do the rational thing with this evidence.
+\end{enumerate}
+
+I think this is one of the biggest questions in recent epistemology.
+Should members of a group treat themselves as just one more member of
+the group for judgment aggregation purposes?
+\end{frame}
+
+\end{document}

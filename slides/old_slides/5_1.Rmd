@@ -1,0 +1,103 @@
+---
+title: "444 Lecture 5.1 - Cardinal Games"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Plan
+
+Talk about why we might care about having cardinal payouts in games.
+
+## Reading
+
+Bonanno, section 6.1
+
+## Games with Lotteries
+
+Here is one thing we can do with cardinal utilities - include lotteries in the payoffs.
+
+- We can treat the lottery ticket as having a value equal to the **expected value** of the lottery.
+
+## Games with Lotteries
+
+Bonanno illustrates this with a game that involves an actual lottery - an auction where tied bids are resolved by a chance mechanism.
+
+- But philosophically, lots of things in life look like lottery ticket.
+- How much is $1  million worth? \pause
+- It depends a bit on whether there is lots of inflation in the near future. \pause
+- It also depends on whether there is a revolution soon and millionaires are in danger.
+
+## Everything's a Gamble
+
+The orthodox treatment of these questions, which I totally endorse, is that a quantity of money is just as much a gamble as a lottery ticket.
+
+- It's a relatively safe gamble; there hasn't been hyperinflation or anti-capitialist revolution in America in a long time.
+- But it's a gamble.
+- So even games with monetary payouts are gambles - gambles on the future value of money.
+
+## Chicken 1
+
+Here is a version of chicken using ordinal utility.
+
+```{r}
+game <- tribble(
+  ~Moves,         ~swerve, ~drive,
+  "Swerve",  "3, 3", "2, 4",
+  "Drive",  "4, 2", "1, 1"
+)
+gameformat(game)
+```
+
+## Chicken 2
+
+```{r}
+game <- tribble(
+  ~Moves,         ~swerve, ~drive,
+  "Swerve",  "1, 1", "0, 2",
+  "Drive",  "2, 0", "-5, -5"
+)
+gameformat(game)
+```
+
+I guess you mostly swerve in this game, but you think about driving.
+
+## Chicken 3
+
+```{r}
+game <- tribble(
+  ~Moves,         ~swerve, ~drive,
+  "Swerve",  "1, 1", "0, 2",
+  "Drive",  "2, 0", "-5000, -5000"
+)
+gameformat(game)
+```
+
+Please swerve! \pause
+
+- But (Swerve, swerve) is not Nash. We'll come back to this.
+
+## Cardinal Utility Matters
+
+- The last two games were alike in ordinal utility.
+- But they were unlike in how you should play them.
+- So more than ordinal utility matters for how you should play.
+
+## For Next Time
+
+We will introduce an important means for solving games like Chicken - the mixed strategy.

@@ -1,0 +1,356 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 7.5 - Going to College},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+\usepackage{istgame}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 7.5 - Going to College}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{The College Game}
+\protect\hypertarget{the-college-game}{}
+\begin{itemize}
+\tightlist
+\item
+  Sender is deciding whether to go to college.
+\item
+  There are two attributes of Sender that we're going to be interested
+  in.
+\item
+  They are either a High Value or Low Value employee.
+\item
+  They will either Like or Dislike college.
+\item
+  Let's assume that these attributes are perfectly correlated: all and
+  only the High Value employees Like college.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Features of College in this Game}
+\protect\hypertarget{features-of-college-in-this-game}{}
+\begin{itemize}[<+->]
+\tightlist
+\item
+  College does not change anyone's value to employers - High Value
+  employees are high value whether or not they go to college, and Low
+  Value employees are low value either way.
+\item
+  College is fun for people who Like it (i.e., the High Values), but
+  it's not so much fun to be actually worth the expense. But it's a
+  relatively minor overpay for the people who Like it, and both
+  unbearable and exorbitantly expensive for those who Dislike it.
+\item
+  I am \emph{not} saying either of these are true, though I don't
+  entirely disagree with the second.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The Hiring Decision}
+\protect\hypertarget{the-hiring-decision}{}
+\begin{itemize}
+\tightlist
+\item
+  Hearer is an employer who pays high salaries, but gets good value for
+  this high salary from High Value employees.
+\item
+  Unfortunately, they have literally no way of telling who is High Value
+  and who is Low Value.
+\item
+  All they know is that only 40\% of people are High Value.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Payouts}
+\protect\hypertarget{payouts}{}
+\begin{itemize}
+\tightlist
+\item
+  Everyone starts with 0 points, unless one of the conditions below is
+  triggered.
+\item
+  Sender gets 2 points if they get Recruited.
+\item
+  They lose 1 point if they Like college and go to college.
+\item
+  They lose 3 points if they Dislike college and go to college.
+\item
+  Hearer gets 1 point if they Recruit a High Value Sender.
+\item
+  They lose 1 point if they Recruit a Low Value Sender.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\begin{center}
+\begin{istgame}[scale=1.3]
+   \xtdistance{20mm}{20mm}
+   \istroot(0)[chance node]{$c$}
+     \istb<grow=left>{0.4}[a]
+     \istb<grow=right>{0.6}[a]
+     \endist
+   \xtdistance{10mm}{20mm}
+   \istroot(1)(0-1)<180>{1}
+     \istb<grow=north>{College}[l]
+     \istb<grow=south>{Beach}[l]
+     \endist
+   \istroot(2)(0-2)<0>{1}
+     \istb<grow=north>{College}[r]
+     \istb<grow=south>{Beach}[r]
+     \endist
+   \istroot'[north](a1)(1-1)
+     \istb{R}[bl]{2, 1}
+     \istb{P}[br]{-1,0}
+     \endist
+   \istroot(b1)(1-2)
+     \istb{R}[al]{3,1}
+     \istb{P}[ar]{0,0}
+     \endist
+   \istroot(a2)(2-2)
+     \istb{R}[al]{3,-1}
+     \istb{P}[ar]{0,0}
+     \endist
+   \istroot'[north](b2)(2-1)
+     \istb{R}[bl]{-1,-1}
+     \istb{P}[br]{-3,0}
+     \endist
+   \xtInfoset(a1)(b2){2}
+   \xtInfoset(b1)(a2){2}
+   \end{istgame}
+\end{center}
+\end{frame}
+
+\begin{frame}{Some Notes}
+\protect\hypertarget{some-notes}{}
+\begin{itemize}
+\tightlist
+\item
+  In the original Spence game, Sender gets to choose how much to spend
+  on education from a range. They have infinitely many choices, not just
+  the binary College/Beach choice. This doesn't really affect the
+  analysis.
+\item
+  What is crucial is that education is more costly for Low Value
+  employees.
+\item
+  There are a lot of equilibria to this game, but the most natural is
+  the separating equilibria, where Like/High go to college, and
+  Dislike/Low go to the Beach.
+\item
+  For reasons I don't know (but can guess about), the wikipedia page on
+  signaling games is dire. This is odd because most of the game theory
+  pages are really very good.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Plausibility}
+\protect\hypertarget{plausibility}{}
+Here are some ways in which the model (or at least the separating
+equilibrium of the model) does seem to look a bit like the real world.
+
+\begin{itemize}
+\tightlist
+\item
+  College grads get paid a lot more than non-grads.
+\item
+  It isn't immediately obvious how what we do here explains the higher
+  pay.
+\item
+  Yet there is a ton of demand for places in college (at least
+  pre-pandemic), and obviously a lot of demand for college grads.
+\item
+  College is more fun, i.e., less costly, for people with certain skills
+  (perserverence, curiosity, writing/mathematical aptitude) that are
+  independently valuable to employers.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Implausibility}
+\protect\hypertarget{implausibility}{}
+But there are several ways in which the model does not seem particularly
+plausible.
+
+\begin{itemize}
+\tightlist
+\item
+  At least after a few weeks/months/years in the job, employers have
+  some ability to tell who is High Value, so if education was purely a
+  signal, it should wear off after a little while.
+\item
+  The correlation between High Value and Liking college is a long way
+  from perfect. At least in my day, the people who \emph{really} liked
+  college were not at all what I'd think of as High Value employees for
+  most businesses.
+\item
+  Even if the people who Dislike college really really hate calculus
+  class, it's a little hard to see how they could hate it so much to
+  turn down the college wage premium.
+\end{itemize}
+\end{frame}
+
+\end{document}

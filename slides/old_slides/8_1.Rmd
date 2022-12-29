@@ -1,0 +1,130 @@
+---
+title: "444 Lecture 8.1 - Iterated Prisoners' Dilemma"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## Prisoners' Dilemma
+
+Basic Challenge:
+
+- Each player is better off defecting;
+- The players are collectively better off if both cooperate.
+
+## Tragedy of the Commons
+
+- In a two-player setting, we normally call this Prisoners' Dilemma, or PD.
+- In a multi-player setting it's sometimes called the Tragedy of the Commons.
+- The story (which may be wildly ahistorical) is that everyone grazed their herds on the commons - which was a good thing to do or else the herd would die - but collectively this made the commons unusable.
+- And in the standard story, private property was the solution to the tragedy.
+
+## Social Challenge
+
+> - How do we get to cooperation?
+> - First question is whether in this case we should want to get to cooperation.
+> - Second question is whether this really is PD.
+> - Let's assume that the answer in each case is _yes_, what do we do.
+
+## Change the Payouts
+
+One possible social response is to change the payouts.
+
+- _Snitches get stiches_ is kind of a version of this response.
+
+## Change the Options
+
+Another is to make it just impossible for everyone to do the defecting move.
+
+- Enclosures are sort of like this.
+- Just like with signaling games, the difference between making something expensive and making it impossible is a little vague, but it's useful conceptually to think of them as separate options.
+
+## Iterate the Game
+
+- But the simplest way to handle this kind of problem is to iterate the game.
+- Arguably it is in everyone's interests to be cooperative if they will have to interact with the other players repeatedly.
+
+## Robert Axelrod
+
+![Robert Axelrod](Axelrod.jpg){height=80%}
+
+## The Evolution of Cooperation
+
+![Axelrod's Famous 1984 Book](The_Evolution_of_Cooperation.jpg)
+
+## The One Shot Game
+
+Axelrod worked with this version of Prisoners' Dilemma (PD).
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+```{r}
+game <- tribble(
+  ~Moves,         ~c, ~d,
+  "C",  "3, 3", "0, 5", 
+  "D", "5, 0", "1, 1"
+)
+gameformat(game)
+```
+
+## Indefinite Iteration
+
+In the fancier version of the game, he didn't tell people how long the game would go.
+
+- Instead he just said there was a probability of it ending after each round; if I recall 0.005.
+- This was used to avoid backwards induction reasoning.
+- It turned out not to really mater a ton; no one uses backward induction reasoning in practice. But it's theoretically useful.
+
+## The Tournament
+
+- There are *n* strategies submitted.
+- Strategies are not quite full strategies in our sense; they just say what to do given what the other player did. (They don't account for possible errors in their own performance.)
+- Each will play *k* rounds of PD with each of the other *n*-1 strategies.
+- Their payouts will add up over the $k(n-1)$ rounds and the one with the highest total will win.
+
+## Cooperative and Competitive
+
+- This is not entirely a cooperative game; ultimately if I'm a strategy I want to win, and that means I want the other strategy I'm interaction with to lose.
+- But in the short run there is much to be gained by improving our mutual position vs the other $n-2$ strategies.
+- So in the short run there is a benefit to cooperation, even if we're ultimately rivals.
+
+## Iterated Axelrod Game
+
+- Axelrod famously ran a tournament just like the one described here.
+- But we can iterate the whole tournament in an interesting way. 
+- Imagine at the start each strategy is $1/n$ of the overall 'population'.
+- After playing all these games, where each strategy plays $k(n-1)$ versions of PD, each strategy gets a score.
+- In the next round, it's share of the population is a function of (a) its initial population, and (b) its score in this round.
+- And in future rounds, one's score is a weighted average of how well one does in games against the other strategies, where the weights are given by their populations.
+
+## Evolution of Cooperation
+
+- This is a useful model for thinking about the phenomena in the title of Axelrod's book: The Evolution of Cooperation.
+- We want strategies that do well not just when the world consists of random strategies, but when the world consists of strategies that themselves could have survived at least a little bit of evolution.
+- Theoretically this could make a difference.
+- Strategies that exploit dumb strategies could do well initially, but then fade away.
+- Alternatively, some strategies could do badly against bad strategies, but if they survive initial rounds, do well when there are sophisticated strategies around.
+
+## Spatial Evolution
+
+- To be even more realistic, you could imagine that each strategy lives 'somewhere' in a large grid.
+- And at each round, each strategy plays with a weighted average of strategies that live nearby.
+- This really does make a difference; some strategies that aren't great against the world in general are fairly immune to invasion, and can even expand their territory under a range of conditions.
+
+## For Next Time
+
+We'll go over the results of the Axelrod tournaments.
+

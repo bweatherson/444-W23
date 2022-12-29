@@ -1,0 +1,528 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 5.3 - Mixed Strategies in Equilibria},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 5.3 - Mixed Strategies in Equilibria}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Plan}
+\protect\hypertarget{plan}{}
+Discuss the existence of mixed strategy equilibria.
+\end{frame}
+
+\begin{frame}{Reading}
+\protect\hypertarget{reading}{}
+Bonanno, section 6.2
+\end{frame}
+
+\begin{frame}{Key Theorem}
+\protect\hypertarget{key-theorem}{}
+In any finite game in which all mixtures of strategies are available,
+there is at least one Nash equilibria.
+\end{frame}
+
+\begin{frame}{Example}
+\protect\hypertarget{example}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 2, 0 & 0, 3\\
+Down & 0, 1 & 1, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Let's discuss this game for a bit. Does it have an equilibrium?
+\end{frame}
+
+\begin{frame}{Example}
+\protect\hypertarget{example-1}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & \fbox{2}, 0 & 0, \fbox{3}\\
+Down & 0, \fbox{1} & \fbox{1}, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+No Nash equilibrium in pure strategies.
+\end{frame}
+
+\begin{frame}{A Strategy for Row}
+\protect\hypertarget{a-strategy-for-row}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 2, 0 & 0, 3\\
+Down & 0, 1 & 1, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Consider what happens if Row plays
+
+\begin{itemize}
+\tightlist
+\item
+  Up with probability \(\nicefrac{1}{4}\);
+\item
+  Down with probability \(\nicefrac{3}{4}\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Column's Expected Return}
+\protect\hypertarget{columns-expected-return}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 2, 0 & 0, 3\\
+Down & 0, 1 & 1, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Column's expected return from playing Left is
+
+\begin{itemize}
+\tightlist
+\item
+  0 with probability \(\nicefrac{1}{4}\) plus
+\item
+  1 with probability \(\nicefrac{3}{4}\), i.e.,
+\item
+  \(\nicefrac{3}{4}\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Column's Expected Return}
+\protect\hypertarget{columns-expected-return-1}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 2, 0 & 0, 3\\
+Down & 0, 1 & 1, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Column's expected return from playing Right is
+
+\begin{itemize}
+\tightlist
+\item
+  3 with probability \(\nicefrac{1}{4}\) plus
+\item
+  0 with probability \(\nicefrac{3}{4}\), i.e.,
+\item
+  \(\nicefrac{3}{4}\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Column's Expected Return}
+\protect\hypertarget{columns-expected-return-2}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 2, 0 & 0, 3\\
+Down & 0, 1 & 1, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  So either way, Column's expected return from playing a pure strategy
+  is \(\nicefrac{3}{4}\).
+\item
+  And hence Column's expected return from playing any mixture of the two
+  pure strategies is \(\nicefrac{3}{4}\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{A Strategy for Column}
+\protect\hypertarget{a-strategy-for-column}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 2, 0 & 0, 3\\
+Down & 0, 1 & 1, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Consider what happens if Column plays
+
+\begin{itemize}
+\tightlist
+\item
+  Left with probability \(\nicefrac{1}{3}\);
+\item
+  Right with probability \(\nicefrac{2}{3}\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Row's Expected Return}
+\protect\hypertarget{rows-expected-return}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 2, 0 & 0, 3\\
+Down & 0, 1 & 1, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Row's expected return from playing Up is
+
+\begin{itemize}
+\tightlist
+\item
+  2 with probability \(\nicefrac{1}{3}\) plus
+\item
+  0 with probability \(\nicefrac{2}{3}\), i.e.,
+\item
+  \(\nicefrac{2}{3}\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Column's Expected Return}
+\protect\hypertarget{columns-expected-return-3}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 2, 0 & 0, 3\\
+Down & 0, 1 & 1, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Row's expected return from playing Down is
+
+\begin{itemize}
+\tightlist
+\item
+  0 with probability \(\nicefrac{1}{3}\) plus
+\item
+  1 with probability \(\nicefrac{2}{3}\), i.e.,
+\item
+  \(\nicefrac{2}{3}\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Column's Expected Return}
+\protect\hypertarget{columns-expected-return-4}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 2, 0 & 0, 3\\
+Down & 0, 1 & 1, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  So either way, Row's expected return from playing a pure strategy is
+  \(\nicefrac{2}{3}\).
+\item
+  And hence Row's expected return from playing any mixture of the two
+  pure strategies is \(\nicefrac{2}{3}\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{An Equilibria}
+\protect\hypertarget{an-equilibria}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 2, 0 & 0, 3\\
+Down & 0, 1 & 1, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  What happens if they both play the mixed strategies we've been
+  discussing? \pause
+\item
+  It's an equilibria.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{An Equilibria}
+\protect\hypertarget{an-equilibria-1}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 2, 0 & 0, 3\\
+Down & 0, 1 & 1, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  Whatever Column does, their expected return is \(\nicefrac{3}{4}\).
+\item
+  So they can't do better than play this mixed strategy.
+\item
+  They can't do worse either, but the definition of equilibrium just
+  requires that they can't do better.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{An Equilibria}
+\protect\hypertarget{an-equilibria-2}{}
+\begin{table}[!h]
+\centering
+\begin{tabular}[t]{>{}r|cc}
+\toprule
+ & Left & Right\\
+\midrule
+Up & 2, 0 & 0, 3\\
+Down & 0, 1 & 1, 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{itemize}
+\tightlist
+\item
+  Whatever Row does, their expected return is \(\nicefrac{2}{3}\).
+\item
+  So they can't do better than play this mixed strategy.
+\item
+  They can't do worse either, but the definition of equilibrium just
+  requires that they can't do better.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Two General Points}
+\protect\hypertarget{two-general-points}{}
+\begin{enumerate}[<+->]
+\tightlist
+\item
+  There is always some equilibria like this (at least in finite games),
+  even if it doesn't look like it at first.
+\item
+  Typically, the way we find equilibria is making the other player
+  indifferent between a bunch of options.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{For Next Time}
+\protect\hypertarget{for-next-time}{}
+We will use that last point to work out how to compute the Nash
+equilibria for simple games.
+\end{frame}
+
+\end{document}

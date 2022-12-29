@@ -1,0 +1,83 @@
+---
+title: "Plan for Dynamic Class"
+output:
+  pdf_document:
+    toc: false
+    md_extensions: +startnum
+    df_print: kable
+    keep_tex: yes
+    latex_engine: xelatex
+    extra_dependencies: ["gensymb", "nicefrac", "mathastext", "multicol"]
+    fig_caption: no
+fontsize: 11pt
+mainfont: SF Pro Text Light
+geometry: margin=0.7in
+author: Philosophy 444
+date: 7 October, 2019
+---
+
+# Information sets
+
+* Sets of nodes that player doesn't know which they are at
+* Gotta have same choices available
+* None is predecessor of the other
+* Perfect recall: her prior moves are same at each node
+* See violations of this on page 120
+
+# How to represent choice followed by strategic game
+
+* Would like to draw grids in the game, but we can't do that.
+* Instead we use a hack - pretend the moves are sequential, but unrevealed
+* Feels like a hack, and sort of is
+
+# Strategies
+
+* A choice for each information set
+* This is a generalisation of what we previously had
+ 
+# Subgame
+
+* Only singleton nodes launch subgames
+* Every successor of the launch node must not 'cut' info set
+* That is, no successor is in info set with non-successor
+* See example on page 127
+* This matters for definition of SPE
+
+# SPE
+
+* Strategy set is Nash in whole game and every subgame
+* Incredible threats are not SPEs
+
+# SPE and sequential rationality
+
+* Consider a game where A moves, then B, but B isn't told A's move
+* And what B would do is dominated (draw example of this b4 class)
+* Well, B is irrational
+* But that could be SPE (if A never goes where B dominated)
+* Feels like we need more
+* We'll get to this
+* The basic way to generate these games is to take an incredible threat game, and then make the move that would be responded irrationally to into a pair of moves.
+* So simple game is that I choose attack/defend, and then if attack you choose counter/retreat. And one of the Nash equilibria is Defend/Counter, but Counter is not backwards induction reliable.
+* Now complicate the game so I have three choices - Attack+Coffee/Attack+Tea/Defend, and you're told whether Attack or Not, but not whether Coffee or Tea
+* Now Defend/Counter could be a subgame perfect equilibrium, because there isn't a subgame.
+* But this is obviously silly - so we need yet more detail
+* See also page 241 for another example
+
+# Chance moves
+
+* Need a basic story about probability
+* Additive to 1
+* Maybe talk through lemon example
+
+# Lemon example outcomes
+
+* Get and keep good car: 10, 0
+* Get and keep lemon: -5, 0
+* Get high price for good car: 5, 5
+* Get high price for lemon: 5, -5
+* Get low price for good car: 0, 10
+* Get low price for lemon: 0, 5
+* In equilibrium, accept all offers for lemon, reject for good car
+* So (roughly) would only ever make low offers
+* So would only offer to sell lemons
+* How does this extend to 3rd party buyer?

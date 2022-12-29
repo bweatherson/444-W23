@@ -1,0 +1,530 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 9.1 - O'Connor Chapter 1},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+\usepackage{caption}
+% Make caption package work with longtable
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+\usepackage{istgame}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Day Plan}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 9.1 - O'Connor Chapter 1}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Day Plan}
+\protect\hypertarget{day-plan}{}
+\tableofcontents
+\end{frame}
+
+\hypertarget{gender-division}{%
+\section{Gender Division}\label{gender-division}}
+
+\begin{frame}{Genders in Society}
+\protect\hypertarget{genders-in-society}{}
+\begin{itemize}
+\tightlist
+\item
+  The ubiquity of gender divisions in socities is really remarkable.
+\item
+  What other things are this ubiquitous? \pause
+\item
+  Definitely language use, which is itself remarkable.
+\item
+  And some age-related divisions, though with more variable
+  manifestations. \pause
+\item
+  Language is the closest thing to gender; we see it in all societies,
+  but the way we see it varies.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Other Divisions}
+\protect\hypertarget{other-divisions}{}
+Obviously there are other divisions we see in societies.
+
+\begin{itemize}
+\tightlist
+\item
+  Race
+\item
+  Religion
+\item
+  Class \pause
+\end{itemize}
+
+But note two things about these.
+
+\begin{enumerate}
+\tightlist
+\item
+  Not nearly as ubiquitous.
+\item
+  They complement gender, not replace.
+\end{enumerate}
+\end{frame}
+
+\hypertarget{types}{%
+\section{Types}\label{types}}
+
+\begin{frame}{Games with Types}
+\protect\hypertarget{games-with-types}{}
+\begin{itemize}
+\tightlist
+\item
+  Games with types are sort of `between' two familiar kinds of games in
+  complexity.
+\item
+  One is games where each player has a full awareness of the identity of
+  who they are playing with, and can plan strategies that discriminate
+  among these other players.
+\item
+  At the other end is where a player just has to pick a strategy in
+  complete ignorance of who the other player is.
+\item
+  With types we get in between; you don't know who the other player is,
+  but you know they are of type \(t\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Symmetry}
+\protect\hypertarget{symmetry}{}
+\begin{itemize}
+\tightlist
+\item
+  The formal effect of this is to open up a new range of
+  \textbf{symmetric} equilibria.
+\item
+  Without types, the only equilibrium in a complementary coordination
+  game is really bad.
+\end{itemize}
+
+\begin{longtable}[]{@{}rcc@{}}
+\toprule
+& A & B \\
+\midrule
+\endhead
+A & 0, 0 & 1, 1 \\
+B & 1, 1 & 0, 0 \\
+\bottomrule
+\end{longtable}
+
+\begin{itemize}
+\tightlist
+\item
+  The only symmetric equilibrium is that we both play the mixed strategy
+  half-A/half-B, with a return of 0.5.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Types}
+\protect\hypertarget{types-1}{}
+\begin{longtable}[]{@{}rcc@{}}
+\toprule
+& A & B \\
+\midrule
+\endhead
+A & 0, 0 & 1, 1 \\
+B & 1, 1 & 0, 0 \\
+\bottomrule
+\end{longtable}
+
+\begin{itemize}
+\tightlist
+\item
+  Now imagine that we will first be assigned type-A or type-B, with
+  probability 0.5 for each, and that types will be visible.
+\item
+  This opens up a new symmetric equilibrium: Play your type if the other
+  is different, randomise if the other is same.
+\item
+  And this has an expected return of 0.75. \pause
+\item
+  This will be called a \textbf{population equilibrium} in chapter 2,
+  and we'll return to it.
+\end{itemize}
+\end{frame}
+
+\hypertarget{complementary-and-correlative-games}{%
+\section{Complementary and Correlative
+Games}\label{complementary-and-correlative-games}}
+
+\begin{frame}{A Correlative Game}
+\protect\hypertarget{a-correlative-game}{}
+\begin{longtable}[]{@{}rcc@{}}
+\toprule
+& Bach & Stravinsky \\
+\midrule
+\endhead
+Bach & 2, 1 & 0, 0 \\
+Stravinsky & 0, 0 & 1, 2 \\
+\bottomrule
+\end{longtable}
+\end{frame}
+
+\begin{frame}{A Complementary Game}
+\protect\hypertarget{a-complementary-game}{}
+\begin{longtable}[]{@{}rcc@{}}
+\toprule
+& Favorite & Other \\
+\midrule
+\endhead
+Favorite & 0, 0 & 2, 1 \\
+Other & 1, 2 & 0, 0 \\
+\bottomrule
+\end{longtable}
+\end{frame}
+
+\begin{frame}{The Same Game?}
+\protect\hypertarget{the-same-game}{}
+\begin{itemize}
+\tightlist
+\item
+  Aren't these the same game? \pause
+\item
+  Not necessarily; depending on how we set the game up.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{What makes something a move}
+\protect\hypertarget{what-makes-something-a-move}{}
+\begin{itemize}
+\tightlist
+\item
+  The player must be physically capable of performing the move.
+\item
+  But they must also be capable of performing it under that description.
+  \pause
+\item
+  Question: Can I call up Barack Obama? \pause
+\item
+  Positive answer: it's just a matter of dialing the right number, and I
+  have the dexterity to hit the numbers. \pause
+\item
+  Negative answer: I don't know his phone number!
+\item
+  We're working with a system where the negative answer is the right
+  one; which seems very natural.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Correlative and Complementary}
+\protect\hypertarget{correlative-and-complementary}{}
+\begin{itemize}
+\tightlist
+\item
+  Lewis: Correlative vs Complementary is just a matter of relabelling,
+  it doesn't reflect a deep difference.
+\item
+  O'Connor: That relabelling might convert things that the player can do
+  under that very description into things they cannot do under that
+  description.
+\end{itemize}
+\end{frame}
+
+\hypertarget{norms-and-conventions}{%
+\section{Norms and Conventions}\label{norms-and-conventions}}
+
+\begin{frame}{Norms and Conventions}
+\protect\hypertarget{norms-and-conventions-1}{}
+\begin{itemize}
+\tightlist
+\item
+  The distinction here is tricky.
+\item
+  Conventions are things where everyone goes along because they'd expect
+  to do worse as long as everyone else is following the convention.
+\item
+  Norms are things where everyone goes along because they'd expect to do
+  worse as long as everyone else is endorsing the norm.
+\item
+  These seem really similar.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Norms and Conventions}
+\protect\hypertarget{norms-and-conventions-2}{}
+\begin{itemize}
+\tightlist
+\item
+  The difference is why they expect to do worse if they violate.
+\item
+  Roughly, social norms are where one expects to do worse because of
+  punishment behavior by others.
+\item
+  Conventions are where you do worse because of a failure to coordinate.
+  The restaurant won't punish me for knocking on the door at 3 in the
+  morning to see if they are open, they just won't open up. (Because
+  they aren't there!)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Examples of Norms and Conventions}
+\protect\hypertarget{examples-of-norms-and-conventions}{}
+\begin{itemize}
+\tightlist
+\item
+  I'm actually not convinced that driving on the socially approved side
+  is a norm in this sense; the downsides are much more due to others
+  behaving normally than due to punishment.
+\item
+  There is an intermediate case - where we internalise the convention,
+  and violating it generates \emph{guilt}.
+\item
+  This should probably go with the punishment - not all punishments are
+  by others.
+\end{itemize}
+\end{frame}
+
+\hypertarget{hawk-dove}{%
+\section{Hawk-Dove}\label{hawk-dove}}
+
+\begin{frame}{Hawk-Dove}
+\protect\hypertarget{hawk-dove-1}{}
+\begin{itemize}
+\tightlist
+\item
+  I haven't talked about this already, but I possibly should have.
+\item
+  When I talked last week about whether some games were Prisoners'
+  Dilemma or Stag Hunt, there was a third option, Hawk-Dove.
+\item
+  And maybe that's the right model for some cases we discussed.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{What is Hawk-Dove}
+\protect\hypertarget{what-is-hawk-dove}{}
+\begin{enumerate}
+\tightlist
+\item
+  Everyone wants the other person to be Dove; that's the cooperative
+  move.
+\item
+  If everyone is a Hawk, it's a disaster. It's even worse than in PD.
+\item
+  But if everyone is a Dove, it's better to defect and play Hawk. That's
+  like PD and unlike SH.
+\end{enumerate}
+
+Everyone wants to be the only defector.
+\end{frame}
+
+\begin{frame}{Simple Models}
+\protect\hypertarget{simple-models}{}
+\begin{itemize}
+\tightlist
+\item
+  We will come back to Hawk-Dove in chapter 2, so we'll talk about it
+  more then.
+\item
+  But for now it's good to have simple models in mind.
+\item
+  Don't think \emph{This coordination problem isn't PD, so must be SH}.
+\item
+  It could be Hawk-Dove instead.
+\end{itemize}
+\end{frame}
+
+\hypertarget{notes}{%
+\section{Notes}\label{notes}}
+
+\begin{frame}{Military}
+\protect\hypertarget{military}{}
+\begin{itemize}
+\tightlist
+\item
+  Just one small note this week.
+\item
+  Is it really true that militaries need strict hierarchies to be
+  successful?
+\item
+  I think this turns on what you call a `military'.
+\item
+  The slave rebellion in what's now Haiti was pretty successful, without
+  a particularly clear hierarchy.
+\item
+  The guerilla war the Spanish people waged against Napoleon was much
+  more successful than anyone their own army did.
+\item
+  I don't think this makes a big difference to the story, but I was
+  surprised to see this stated so categorically.
+\end{itemize}
+\end{frame}
+
+\end{document}

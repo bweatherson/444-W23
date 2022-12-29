@@ -1,0 +1,97 @@
+---
+title: "Gilbert on Group Action"
+output:
+  pdf_document:
+    toc: false
+    md_extensions: +startnum
+    df_print: kable
+    keep_tex: yes
+    latex_engine: xelatex
+    extra_dependencies: ["mathastext", "nicefrac"]
+    fig_caption: no
+fontsize: 11pt
+mainfont: SF Pro Text Light
+geometry: margin=1in
+author: Philosophy 444
+date: 18 November, 2019
+---
+
+## Two Big Questions
+
+1. Does Gilbert have the right analysis of "walking together", or other small group activities?
+2. Is it the right model for larger group activities?
+
+## A Traditional Way of Thinking About Problem
+
+1. What makes some people a _group_, as opposed to merely some people?
+2. What makes it the case that that group is engaged in a group action, shares a group intention, and so on?
+
+Gilbert's view is that this is the wrong way to look at things. Rather, these two questions should be answered simultaneously.
+
+## Two Theories of Group Action
+
+Weak Shared Plan
+:    All the people in the group have the same plan.
+
+Strong Shared Plan
+:    All the people in the group have the same plan, and this is common knowledge.
+
+The argument against the first of these is reasonably simple.
+
+1. If each person is trying to do X, and thinks they are the only one trying to do X, then there is no group action of trying to do X.
+2. If **Weak Shared Plan** is true, then in such a situation there is a group action of trying to do X.
+3. So **Weak Shared Plan** is false.
+
+The argument against the second is more controversial.
+
+1. If **Strong Shared Plan** is true, then the members of the group have no obligation to the others to continue with the plan if they lose interest in it.
+2. In cases of group action, members of the group do have an obligation to the others to continue with the plan even if they lose interest in it.
+3. So **Strong Shared Plan** is false.
+
+Both parts of this are controversial. Gilbert spends time on each, first defending 1, then clarifying 2.
+
+## Why No Obligation
+
+- Because Strong Shared Plan gives you at most mutual reliance, not trust.
+- Set out Baier's example of the difference between trust and reliance.
+- The kind of criticism you can make of someone who doesn't follow through on the plan, according to Gilbert, is kind of like a breach of trust.
+- What SSP would give you is kind of like known reliance.
+- **Objection**: Are we really sure that known reliance is not enough?
+
+## What is the Obligation
+
+It's not a moral obligation. Here is Gilbert's argument.
+
+1. You can have shared plan between people with no concept of moral obligation.
+2. If the obligation is moral obligation, that's impossible.
+3. So the obligation is not moral obligation.
+
+This is, I think, a bad argument. 1 is only true for psychopaths, and not clear they can engage in group action. A better argument is
+
+1. You can have a shared plan to do an immoral thing.
+2. You don't have moral obligations to do immoral things.
+3. So the obligation is not a moral obligation.
+
+It's also not a prudential obligation. This should be clear, but Gilbert spends a bit of time on it.
+
+So what kind of weird sui generis obligation is it? This is a big question for her to answer.
+
+## Positive View
+
+That there is a group action when (and only when) the people form a plural subject. What's that?
+
+- I do not understand the difference between the positive view and the things it is supposed to be distinguished from at the bottom of page 7.
+- The connection to philosophy of language is not good.
+- Sometimes I can use 'we' to describe things that are not a group.
+- E.g., I can use it to pick out the people on a bus, or even an internally hostile group. ("We are about to start killing each other for food.")
+- There is an important distinction between distributive and collective readings of plural sentences, but this is not the same thing.
+- The good point around here is authority by doing. This is a real and important and (to my mind) interesting phenomenon. Big question how much actual political authority starts this way.
+- And note the point at the bottom of 11 top of 12 about the very special nature of 2 person groups, namely that for now they have their membership essentially. This I think is a huge problem for Gilbert's view.
+
+How accurate is it to take the obligations to just be the definition of the plural subject? That is how I end up reading it, though the textual evidence is not the strongest.
+
+## Puzzle Cases
+
+1. Large groups
+2. Immoral group activities
+3. Explicit disavowal of long term commitment

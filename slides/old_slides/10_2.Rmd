@@ -1,0 +1,131 @@
+---
+title: "444 Lecture 10.2 - O'Connor Chapter 5"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+        - toc.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+
+## Day Plan
+
+\tableofcontents
+
+# Demand Game
+
+## Demand Game
+
+First, a brief note on the structure of the games at the heart of this chapter.
+
+- These are simultaneous move games.
+- They are not like the ultimatum game that you may have heard about.
+- Nor are they like real world negotiations.
+
+## Negotiations
+
+But they are a bit like negotiations.
+
+- They are at least a little bit like strategies for a real world negotiation, espcially if it works by something like English Auction.
+- The numbers are something like a reserve price.
+- In principle you could complicate the game a bit more by adding in extra strategies within each round.
+- But this is probably the best way to think about it.
+
+# Basins
+
+## Basins of Attraction
+
+I don't have much to say here, but I really wanted to draw attention to the very surprising graph on page 114 (figure 5.3).
+
+- I guess up to this point most of the models hadn't been _that_ different from what I would have guessed a priori.
+- But this one really was surprisingly different.
+- Would be kind of interested in running another version of this with multiple overlapping games.
+
+# Equity
+
+## What is Fair
+
+- We've talked about this a bit, but it's really worth thinking about what counts as a 'fair' distribution.
+- This can have effects both for the payoffs (people value fairness) and for dynamics (people move towards fair)
+
+## Fairness and Markets
+
+- This matters a lot in market economies.
+- Often the fair outcome is the one driven by the market.
+- And that's true even if different forms of market infrastrcture would have produced different outcomes.
+
+## Fairness and Deontology
+
+- It also matters in the contexts of norms like "Don't Steal".
+- Sometimes whether an outcome is coded as fair depends on how it relates to an initial condition that we accept as fair.
+- And that in turn might depend on facts that, if we thought about them directly, we would not think of as morally significant.
+
+# Disagreement Points
+
+## Disagreement Points
+
+The fact that different people are differentially able to walk away from a game is really important. But...
+
+- I'm kinda suspicious of Figure 5.5 (page 119).
+- The basins of attraction of the equilibria where the type with more ability to walk away end up with less are surprisingly large.
+- Is there a real world situation that is like this?
+- Or is this a case where the model doesn't really reflect reality?
+
+# Punishment
+
+## Punishment
+
+I've been worried a bit over the course of this that we've changed what we're talking about when we discuss punishment. In particular, do we mean:
+
+1. Changing the payoffs; or
+2. Choosing a strategy that leads to lower payoffs for the 'punished'.
+
+These are both important things, but I'm not sure they are the same thing
+
+## Punishment
+
+And around page 126 we see some movement between these two notions.
+
+- In the game table, punishment for a high bid is depicted as the payoffs being externally lowered.
+- But then we get discussions of non-equilibrium moves within games.
+- Maybe these are the same thing?
+- Feels like we should keep them separate.
+
+# Varieties of Disagreement Points
+
+## Population Divergence
+
+I really liked the stuff around page 126 on what happens if there is divergence within the population.
+
+- Most of the games so far have essentially presupposed uniform populations, at least within types.
+- Here we get a nice effect of the existence of a sub-population within one but not the other type.
+
+## Credible Signals
+
+And this I think really does matter to the real world.
+
+- Sometimes what matters in these games is not what your disagreement point is, but what you can credibly signal that it is.
+- We're getting back here to things that would come up if we modelled each interaction as a negotiation over time.
+- Anyway, sometimes it is really obvious what your type is, but there is no way to credibly signal willingness to walk away.
+- And in that case, the other player might (quite rationally!) assume that your disagreement point is something like the average of your type, whatever non-credible signal you send.
+
+# Building Power
+
+## Building Power
+
+I was a bit confused by the game on page 128 and after, where success causes one to have a higher disagreement point.
+
+- I don't really see the causal mechanism for this; it seemed much more plausible in the other direction.
+- Maybe it's that the returns to the game come in resources that can be saved?
+- Maybe it's that there will be other games to play - where your type by default gets the good side of the equilibrium?
+- It's a nice game, but I would like to hear more about the real world application.

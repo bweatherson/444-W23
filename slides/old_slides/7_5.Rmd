@@ -1,0 +1,110 @@
+---
+title: "444 Lecture 7.5 - Going to College"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## The College Game
+
+- Sender is deciding whether to go to college.
+- There are two attributes of Sender that we're going to be interested in.
+- They are either a High Value or Low Value employee.
+- They will either Like or Dislike college.
+- Let's assume that these attributes are perfectly correlated: all and only the High Value employees Like college.
+
+## Features of College in this Game
+
+> - College does not change anyone's value to employers - High Value employees are high value whether or not they go to college, and Low Value employees are low value either way.
+> - College is fun for people who Like it (i.e., the High Values), but it's not so much fun to be actually worth the expense. But it's a relatively minor overpay for the people who Like it, and both unbearable and exorbitantly expensive for those who Dislike it.
+> - I am *not* saying either of these are true, though I don't entirely disagree with the second.
+
+## The Hiring Decision
+
+- Hearer is an employer who pays high salaries, but gets good value for this high salary from High Value employees.
+- Unfortunately, they have literally no way of telling who is High Value and who is Low Value.
+- All they know is that only 40% of people are High Value.
+
+## Payouts
+
+- Everyone starts with 0 points, unless one of the conditions below is triggered.
+- Sender gets 2 points if they get Recruited.
+- They lose 1 point if they Like college and go to college.
+- They lose 3 points if they Dislike college and go to college.
+- Hearer gets 1 point if they Recruit a High Value Sender.
+- They lose 1 point if they Recruit a Low Value Sender.
+
+
+---
+
+\begin{center}
+\begin{istgame}[scale=1.3]
+   \xtdistance{20mm}{20mm}
+   \istroot(0)[chance node]{$c$}
+     \istb<grow=left>{0.4}[a]
+     \istb<grow=right>{0.6}[a]
+     \endist
+   \xtdistance{10mm}{20mm}
+   \istroot(1)(0-1)<180>{1}
+     \istb<grow=north>{College}[l]
+     \istb<grow=south>{Beach}[l]
+     \endist
+   \istroot(2)(0-2)<0>{1}
+     \istb<grow=north>{College}[r]
+     \istb<grow=south>{Beach}[r]
+     \endist
+   \istroot'[north](a1)(1-1)
+     \istb{R}[bl]{2, 1}
+     \istb{P}[br]{-1,0}
+     \endist
+   \istroot(b1)(1-2)
+     \istb{R}[al]{3,1}
+     \istb{P}[ar]{0,0}
+     \endist
+   \istroot(a2)(2-2)
+     \istb{R}[al]{3,-1}
+     \istb{P}[ar]{0,0}
+     \endist
+   \istroot'[north](b2)(2-1)
+     \istb{R}[bl]{-1,-1}
+     \istb{P}[br]{-3,0}
+     \endist
+   \xtInfoset(a1)(b2){2}
+   \xtInfoset(b1)(a2){2}
+   \end{istgame}
+\end{center}
+
+## Some Notes
+
+- In the original Spence game, Sender gets to choose how much to spend on education from a range. They have infinitely many choices, not just the binary College/Beach choice. This doesn't really affect the analysis.
+- What is crucial is that education is more costly for Low Value employees.
+- There are a lot of equilibria to this game, but the most natural is the separating equilibria, where Like/High go to college, and Dislike/Low go to the Beach.
+- For reasons I don't know (but can guess about), the wikipedia page on signaling games is dire. This is odd because most of the game theory pages are really very good.
+
+## Plausibility
+
+Here are some ways in which the model (or at least the separating equilibrium of the model) does seem to look a bit like the real world.
+
+- College grads get paid a lot more than non-grads.
+- It isn't immediately obvious how what we do here explains the higher pay.
+- Yet there is a ton of demand for places in college (at least pre-pandemic), and obviously a lot of demand for college grads.
+- College is more fun, i.e., less costly, for people with certain skills (perserverence, curiosity, writing/mathematical aptitude) that are independently valuable to employers.
+
+## Implausibility
+
+But there are several ways in which the model does not seem particularly plausible.
+
+- At least after a few weeks/months/years in the job, employers have some ability to tell who is High Value, so if education was purely a signal, it should wear off after a little while.
+- The correlation between High Value and Liking college is a long way from perfect. At least in my day, the people who _really_ liked college were not at all what I'd think of as High Value employees for most businesses.
+- Even if the people who Dislike college really really hate calculus class, it's a little hard to see how they could hate it so much to turn down the college wage premium.

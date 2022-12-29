@@ -1,0 +1,156 @@
+---
+title: "444 Lecture 2.6 - Iterated Deletion"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Plan
+
+To describe the strategy of solving games by iteratively deleting strategies.
+
+## Reading
+
+Bonanno, section 2.5
+
+## Initial Idea
+
+> - If an option is strongly dominated, it shouldn't be chosen.
+> - In the simple case, if all options but one are strongly dominated, that one should be chosen.
+> - But we can say more than this.
+> - If a strategy only makes sense if the other player plays a dominated strategy, then it doesn't make sense.
+> - Let's work through some examples to see how this works in practice.
+
+## Easy Example
+
+```{r}
+game <- tribble(
+  ~Moves,  ~Left, ~Right,
+  "Up",   "4, 1", "2, 2",
+  "Down", "3, 3", "1, 4"
+)
+gameformat(game)
+```
+
+We can solve this using just domination.
+
+> - Up dominates Down, so Row should play Up.
+> - Right dominates Left, so Column should play Right.
+> - So the solution is Up/Right.
+
+## Only Slightly Harder Example
+
+```{r}
+game <- tribble(
+  ~Moves,  ~Left, ~Right,
+  "Up",   "4, 0", "2, 1",
+  "Down", "3, 1", "1, 0"
+)
+gameformat(game)
+```
+
+Now Column doesn't have a dominating option, but that doesn't stop us.
+
+> - Up dominates Down, so Row should play Up.
+> - If Row is playing Up, Right is better than Left (1 beats 0).
+> - So since Row is playing Up, Column should play Right.
+> - So the solution (again) is Up/Right.
+
+## Iterated Dominance
+
+```{r}
+game <- tribble(
+  ~Moves,    ~Left, ~Center, ~Right,
+  "Up",     "4, 2",  "3, 1", "0, 0",
+  "Middle", "3, 0",  "2, 2", "1, 1",
+  "Down",   "2, 0",  "1, 0", "0, 3"
+)
+gameformat(game)
+```
+
+We can't immediately solve this with dominance, but we can in a few steps.
+
+## Iterated Dominance
+
+```{r}
+game <- tribble(
+  ~Moves,    ~Left, ~Center, ~Right,
+  "Up",     "4, 2",  "3, 1", "0, 0",
+  "Middle", "3, 0",  "2, 2", "1, 1",
+  "Down",   "2, 0",  "1, 0", "0, 3"
+)
+gameformat(game)
+```
+
+- Note first that Middle dominates Down.
+- So Down should not be played.
+- In fact, we might even act as if it is not there.
+
+## Iterated Dominance
+
+```{r}
+game <- tribble(
+  ~Moves,    ~Left, ~Center, ~Right,
+  "Up",     "4, 2",  "3, 1", "0, 0",
+  "Middle", "3, 0",  "2, 2", "1, 1"
+)
+gameformat(game)
+```
+
+- Here's what happens if we **delete** the dominated option Down.
+- Now Center dominates Right.
+- It didn't a minute ago - Right is a better response to Down than Center is - but Down is deleted.
+- So Right is out, and we'll delete it too.
+
+## Iterated Dominance
+
+```{r}
+game <- tribble(
+  ~Moves,    ~Left, ~Center,
+  "Up",     "4, 2",  "3, 1",
+  "Middle", "3, 0",  "2, 2"
+)
+gameformat(game)
+```
+
+- In this game, Up dominates Middle.
+- So Middle has to go.
+
+## Iterated Dominance
+
+```{r}
+game <- tribble(
+  ~Moves,    ~Left, ~Center,
+  "Up",     "4, 2",  "3, 1"
+)
+gameformat(game)
+```
+
+- And in this game, Left dominates Center.
+- So the solution to the game is Up/Left.
+
+## General Strategy
+
+- Start deleting dominated strategies.
+- Then see if some strategies are dominated in the new version of the game.
+- If you're lucky, the result will be that just one option for each player is left.
+- If so, we'll call that the solution of the game.
+
+## For Next Time
+
+- We'll see some complications that arise when we delete weakly dominated strategies.

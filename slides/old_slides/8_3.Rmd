@@ -1,0 +1,107 @@
+---
+title: "444 Lecture 8.3 - Stag Hunt"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Stag Hunt
+
+```{r}
+game <- tribble(
+  ~Moves,     ~gather,     ~hunt,
+  "Gather",      "x, x", "y, z",
+  "Hunt",    "z, y", "w, w"
+)
+gameformat(game)
+```
+
+With the following constraints:
+
+- $x > z$
+- $w > y$
+- $w > x$
+- $x + y > z + w$
+
+## Concrete Example of Stag Hunt
+
+```{r}
+game <- tribble(
+  ~Moves,     ~gather,     ~hunt,
+  "Gather",      "2, 2", "4, 0",
+  "Hunt",    "0, 4", "5, 5"
+)
+gameformat(game)
+```
+
+## Differences with Prisoners' Dilemma
+
+- Again, there is a cooperative move (in this case Hunt), which is socially better than the individualistic move (Gather).
+- But in this case, cooperation is an equilibrium; it isn't dominated.
+- The problem is that there are nevertheless reasons to do the individualistic thing.
+
+## Regret Based Reasons
+
+- Whatever you do in Stag Hunt, you're hoping/guessing that the other player does the same thing.
+- If you guess wrong, you'll regret your choice. \pause
+- If you Gather when the other player Hunts, you'll get 4 and you could have got 5 - a regret of 1. \pause
+- If you Hunt when the other player Gathers, you'll get 0 and you could have got 2 - a regret of 2. \pause
+- Mistakenly Hunting leads to higher regret than mistakenly Gathering.
+- Minimising regret, which a lot of people think is important in decisions under radical uncertainty, implies Gathering.
+
+## Random Choice
+
+- There are two equilibria.
+- Maybe it's reasonable, as a first pass, to have equal probabilities in each hypothesis about what the other player will pick.
+- So in this case, you'd be (as a first pass), 50/50 about whether the other person will Gather or Hunt. \pause
+- But then it maximises expected utility to Gather.
+- That has expected utility 3, while Hunting has expected utility 2.5.
+
+## Evolutionary Explanations
+
+- Imagine an Axelrod type evolutionary situation, that starts out with equal numbers of Gatherers and Hunters.
+- Each person interacts with everyone else in the community, and they add up their score.
+- Then in the next generation, the number of Gatherers and Hunters is proportionate to the score that Gatherers and Hunters get in this generation. \pause
+- Well, in fairly short order, you have a population of more or less all Gatherers.
+- Indeed, that happens unless you start with at least 2/3 Hunters.
+
+## Social Challenge
+
+- How do we get people to be cooperative, i.e., Hunt?
+- Note that we don't have to imagine changing the payouts, i.e., punishing, or taking away options.
+- It suffices to get everyone to (truly) believe that others will Hunt.
+- This isn't trivial, but it's a very different kind of challenge than in PD.
+
+## Modeling Challenge
+
+- Which cases are really Stag Hunt not PD?
+- I'm going to talk about this a bit more, but it's really worth thinking through real life cases.
+- Is there a genuine equilibrium where merely by everyone believing that everyone else will Hunt, it becomes in their own interest to Hunt? \pause
+- Note that it is really great if this is so.
+- The view from Hobbes on was that getting out of PD required heavy handed intervention.
+- But getting to the cooperative equilibrium in Stag Hunt might just require nudging.
+
+## Mixing the Issues
+
+- The modeling challenge and the social challenge can run together.
+- If we want to change behavior, it helps to know what kind of game people are, or take themselves, to be playing.
+- So the theoretical question of how to conceptualise a practice might be related to the social question of how to repair it.
+
+## For Next Time
+
+I'll go over a bit what PD and Stag Hunt look like in $n$ player cases.

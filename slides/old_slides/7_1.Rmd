@@ -1,0 +1,172 @@
+---
+title: "444 Lecture 7.1 - Bayesian Equilibrium"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## What is Rational Here?
+
+<!-- \begin{center} -->
+<!-- \begin{istgame} -->
+<!-- %\setistgrowdirection'{east} -->
+<!-- \xtdistance{15mm}{30mm} -->
+<!-- \istroot(0){Alice} -->
+<!--   \istb{A}[al]{(1,1)} -->
+<!--   \istb{D}[ar] -->
+<!--   \endist -->
+<!-- \istroot(1)(0-2)<above right>{Alice} -->
+<!--   \istb{L}[al] -->
+<!--   \istb{R}[ar] -->
+<!--   \endist -->
+<!-- \xtdistance{10mm}{20mm} -->
+<!-- \istroot(2)(1-1) -->
+<!--   \istb{l}[al]{(2,2)} -->
+<!--   \istb{𝓇}[ar]{(0,0)} -->
+<!--   \endist -->
+<!-- \istroot(3)(1-2) -->
+<!--   \istb{l}[al]{(2,2)} -->
+<!--   \istb{𝓇}[ar]{(0,0)} -->
+<!--   \endist -->
+<!-- \xtInfoset(2)(3){Billie} -->
+<!-- \end{istgame} -->
+<!-- \end{center} -->
+
+\begin{center}
+\begin{istgame}
+%\setistgrowdirection'{east}
+\xtdistance{15mm}{30mm}
+\istroot(0){Alice}
+  \istb{A}[al]{(1,1)}
+  \istb{B}[r]
+  \istb{C}[ar]
+  \endist
+\xtdistance{10mm}{20mm}
+\istroot(1)(0-2)
+  \istb{l}[al]{(2,2)}
+  \istb{r}[ar]{(0,0)}
+  \endist
+\istroot(2)(0-3)
+  \istb{l}[al]{(2,2)}
+  \istb{r}[ar]{(0,0)}
+  \endist
+\xtInfoset(1)(2){Billie}
+\end{istgame}
+\end{center}
+
+> - Intuitively we should end up with one of the 2,2 outcomes.
+> - But how theoretically can we get that?
+
+## Strategy Table
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+```{r}
+game <- tribble(
+  ~Moves,         ~l, ~r,
+  "A",  "1, 1", "1, 1", 
+  "B", "2, 2", "0, 0",
+  "C",  "2, 2", "0, 0"
+)
+gameformat(game)
+```
+
+Note that $\langle A, r \rangle$ is a Nash equilibrium.
+
+## Subgame Perfection
+
+\begin{center}
+\begin{istgame}
+%\setistgrowdirection'{east}
+\xtdistance{15mm}{30mm}
+\istroot(0){Alice}
+  \istb{A}[al]{(1,1)}
+  \istb{B}[r]
+  \istb{C}[ar]
+  \endist
+\xtdistance{10mm}{20mm}
+\istroot(1)(0-2)
+  \istb{l}[al]{(2,2)}
+  \istb{r}[ar]{(0,0)}
+  \endist
+\istroot(2)(0-3)
+  \istb{l}[al]{(2,2)}
+  \istb{r}[ar]{(0,0)}
+  \endist
+\xtInfoset(1)(2){Billie}
+\end{istgame}
+\end{center}
+
+- There are no subgames (think about why) - so $\langle A, r \rangle$ is also subgame perfect.
+
+## Intuition
+
+- It is absurd for Billie to play r if it gets that far.
+- We need a theory that says this is absurd.
+- This is just the kind of thing subgame perfect equilibrium was introduced for, but it isn't working for technical reasons about the definition of subgames.
+- I'm not sure if there is a completely standard solution here, but I wanted to set out an approach that's consistent with current philosophy.
+
+## Bayesian Equilibrium
+
+- An equilibrium is a pair of behavioral dispositions.
+- Each behavioral disposition gives a probability of each choice at each node the player may have to choose at.
+- In equilibrium, each player has their own disposition from the pair, and believes (with certainty) that the other player has the other disposition from the pair.
+- If there is a move made by Nature, each player has the correct probability for each of Nature's possible moves.
+- At every stage, each Player maximises expected utility given their beliefs about the other.
+
+## Re-formulation
+
+This is more or less equivalent.
+
+- Each player starts with a probability distribution over outcomes of the game.
+- In equilibrium, these are the same, and the players have correct probabilities about the moves nature will make.
+- When something happens (a move is revealed), the players update by conditionalisation if the event has positive probability.
+- When something unexpected (probability zero) happens, the players just pick a new probability.
+- In equilibrium, both players know how both players are disposed to react in each of these cases.
+- Everyone is always maximising expected utility.
+
+## Back to the Game
+
+\begin{center}
+\begin{istgame}
+%\setistgrowdirection'{east}
+\xtdistance{15mm}{30mm}
+\istroot(0){Alice}
+  \istb{A}[al]{(1,1)}
+  \istb{B}[r]
+  \istb{C}[ar]
+  \endist
+\xtdistance{10mm}{20mm}
+\istroot(1)(0-2)
+  \istb{l}[al]{(2,2)}
+  \istb{r}[ar]{(0,0)}
+  \endist
+\istroot(2)(0-3)
+  \istb{l}[al]{(2,2)}
+  \istb{r}[ar]{(0,0)}
+  \endist
+\xtInfoset(1)(2){Billie}
+\end{istgame}
+\end{center}
+
+> - At the B/C information set, Billie must have some probability between B and C.
+> - Whatever it is, l has higher expected utility that r.
+> - Alice knows this, so will choose B or C rather than A.
+
+## For Next Time
+
+- I'll look at two puzzle cases.
+- If you're pressed for time, skip ahead to the following lecture.

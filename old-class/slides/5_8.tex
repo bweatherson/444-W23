@@ -1,0 +1,311 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 5.8 - Why Nash?},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 5.8 - Why Nash?}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Plan}
+\protect\hypertarget{plan}{}
+To look at the philosophical significance of Nash Equilibria.
+\end{frame}
+
+\begin{frame}{Reading}
+\protect\hypertarget{reading}{}
+Bonanno, sections 2.6 (which we discussed earlier) and 6.4.
+\end{frame}
+
+\begin{frame}{Two Conjectures}
+\protect\hypertarget{two-conjectures}{}
+\begin{enumerate}
+\tightlist
+\item
+  It is rational to play any rationalizable strategy.
+\item
+  It is only rational to play Nash Equilibrium strategies
+\end{enumerate}
+
+I'm going to end this week talking a bit about why people might prefer 2
+over 1.
+\end{frame}
+
+\begin{frame}{One Intuitive Idea}
+\protect\hypertarget{one-intuitive-idea}{}
+\begin{itemize}
+\tightlist
+\item
+  Don't just play Rock - the other person will figure it out.
+\item
+  Rock every time is rationalizable.
+\item
+  But you shouldn't do it.
+\item
+  Therefore principle 1 must be false.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Response 1}
+\protect\hypertarget{response-1}{}
+\begin{itemize}
+\tightlist
+\item
+  Yeah, you shouldn't play Rock every single time, that's dumb.
+\item
+  But on any given occasion, it's fine.
+\item
+  And we know, from e.g., Prisoners' Dilemma, that we shouldn't infer
+  what to do in a single shot game from what happens in the repeated
+  game.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Response 2}
+\protect\hypertarget{response-2}{}
+\begin{itemize}
+\tightlist
+\item
+  The orthodox solution (i.e., principle 2) actually doesn't give you
+  the result you might want here.
+\item
+  It is possible that the randomising device will come up Rock every
+  single time.
+\item
+  So if you think it's always irrational to play Rock repeatedly, you
+  have to think both of these are wrong.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Response 3}
+\protect\hypertarget{response-3}{}
+\begin{itemize}
+\tightlist
+\item
+  If principle 2 is right, all rational players will randomise every
+  time.
+\item
+  So the expected return of Rock is just the same as the expected return
+  of randomisation.
+\item
+  So it can't be wrong to play it.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Mixing Response 2 and Response 3}
+\protect\hypertarget{mixing-response-2-and-response-3}{}
+\begin{itemize}
+\tightlist
+\item
+  If principle 2 is right, and it's common knowledge that the players
+  are rational, then the rational way to interpret the other player
+  playing Rock every time is ``Wow, their random device is having a
+  freaky run.''
+\item
+  But if that's right, there isn't anything wrong with playing Rock
+  every time.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Other Direction}
+\protect\hypertarget{other-direction}{}
+\begin{itemize}
+\tightlist
+\item
+  As we'll see when we get to O'Connor's book, you mostly see people
+  wanting more restrictions on moves than Nash.
+\item
+  But Bonanno ends chapter 6 with an interesting reason for thinking
+  even rationalisability (i.e., IDSDS) is too strong. \pause
+\item
+  It's really incredibly unrealistic to know the utility function that
+  the other player has.
+\item
+  You might know the physical outcomes of the game, but knowing what
+  utility each player gets is a huge assumption.
+\item
+  So in practice, you should probably not rely too heavily on theories
+  or policies that rely on this knowledge.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{For Next Time}
+\protect\hypertarget{for-next-time}{}
+\begin{itemize}
+\tightlist
+\item
+  Next week we will do a bit of revision of probability theory.
+\item
+  It's completely optional; if you want a week off, take a week off.
+\item
+  After that, we'll look at how game theorists think about signals and
+  messages.
+\end{itemize}
+\end{frame}
+
+\end{document}

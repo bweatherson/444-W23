@@ -1,0 +1,344 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 4.2 - Structure of Information Sets},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 4.2 - Structure of Information Sets}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Plan}
+\protect\hypertarget{plan}{}
+To discuss some presuppositions of the theory of information sets.
+\end{frame}
+
+\begin{frame}{Reading}
+\protect\hypertarget{reading}{}
+This isn't in the books; it's not something game theorists discuss.
+\end{frame}
+
+\begin{frame}{Three Features of Information Sets}
+\protect\hypertarget{three-features-of-information-sets}{}
+\begin{enumerate}
+\tightlist
+\item
+  Reflexive
+\item
+  Symmetric
+\item
+  Transitive
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Reflexive}
+\protect\hypertarget{reflexive}{}
+Each point is in its own information set.
+
+\begin{itemize}
+\tightlist
+\item
+  This seems fair enough; if you're somewhere, then for all you know,
+  you are there.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Symmetric}
+\protect\hypertarget{symmetric}{}
+\begin{itemize}
+\tightlist
+\item
+  If when you're at \(a\) you might be at \(b\), then
+\item
+  When you're at \(b\) you might be at \(a\).
+\item
+  In information set terms, if \(b\) is in \(a\)'s information set, then
+  \(a\) is in \(b\)'s information set.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Symmetry}
+\protect\hypertarget{symmetry}{}
+What this means is that what happens earlier in the game can't affect a
+player's powers of discrimination.
+
+\begin{itemize}
+\tightlist
+\item
+  This seems like an inappropriate assumption in, e.g., drinking games.
+\item
+  At least in some games, one's ability to discriminate between some
+  options will be dependent on the path taken to get to those options.
+\item
+  The standard treatment of partial information doesn't allow us to
+  represent this.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Transitive}
+\protect\hypertarget{transitive}{}
+\begin{itemize}
+\tightlist
+\item
+  If when you're at \(a\) you might be at \(b\), and
+\item
+  When you're at \(b\) you might be at \(c\), then
+\item
+  When you're at \(a\) you might be at \(c\).
+\item
+  In information set terms, if \(b\) is in \(a\)'s information set, and
+  \(c\) is in \(b\)'s information set, then it must be that \(c\) is in
+  \(a\)'s information set.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Transitivity}
+\protect\hypertarget{transitivity}{}
+This rules out games where players can tell that they are in a certain
+`neighbourhood'. For example,
+
+\begin{itemize}
+\tightlist
+\item
+  Player 1 puts some jelly beans in a jar and gives it to Player 2.
+\item
+  It matters to Player 2 how many jelly beans are in the jar, but she
+  doesn't have direct access to that.
+\item
+  Still, she isn't totally ignorant. She can see the jar and guess the
+  number to the nearest, say 10.
+\item
+  So if there are 160 jelly beans in the jar, she knows that there are
+  between 150 and 170.
+\item
+  And in fact, though Player 2 doesn't know this, that's true - there
+  are 160 jelly beans.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Transitivity}
+\protect\hypertarget{transitivity-1}{}
+\begin{itemize}
+\tightlist
+\item
+  Let \(a\) be the node where there are 160 jelly beans in the jar.
+\item
+  And \(b\) be the node where there are 150 jelly beans in the jar.
+\item
+  And \(c\) be the node where there are 140 jelly beans in the jar.
+\item
+  Player 2 knows she's not at \(c\); her information set should exclude
+  that.
+\item
+  And her information set should include \(a\) - reflexivity guarantees
+  that.
+\item
+  Should it include \(b\)?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{A Challenge}
+\protect\hypertarget{a-challenge}{}
+\begin{itemize}
+\tightlist
+\item
+  On the one hand, it should - since from \(a\) all she knows is that
+  there are between 150 and 170 jelly beans in the jar.
+\item
+  On the other hand, it should not - since she can rule out \(c\), and
+  if \(b\) were actual, she could not rule out \(c\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{What To Do}
+\protect\hypertarget{what-to-do}{}
+\begin{itemize}
+\tightlist
+\item
+  In theory, there is an opening here for someone working out a theory
+  of games with imperfect information that drops either the symmetry or
+  transitivity assumption.
+\item
+  In practice, no one has actually worked out that theory, and I'm not
+  going to try teaching a non-existent theory.
+\item
+  There is a little work on games involving ``unawareness'', which gets
+  close to this, but it's way too novel a field to know where it will
+  go.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{For Next Time}
+\protect\hypertarget{for-next-time}{}
+\begin{itemize}
+\tightlist
+\item
+  We will return to orthodoxy, and look at the notion of a strategy.
+\end{itemize}
+\end{frame}
+
+\end{document}

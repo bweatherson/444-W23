@@ -1,0 +1,46 @@
+---
+title: "Essay Questions"
+output:
+  pdf_document:
+    toc: false
+    md_extensions: +startnum
+    df_print: kable
+    keep_tex: yes
+    latex_engine: xelatex
+    extra_dependencies: ["mathastext", "nicefrac"]
+    fig_caption: no
+fontsize: 11pt
+mainfont: SF Pro Text Light
+geometry: margin=1in
+author: Philosophy 444
+date: Due Tuesday December 17
+---
+
+Answer **one** of the following questions in an essay of about 2500 words. The paper should engage with the relevant readings, and all references to works of other authors should be properly cited. (We don't particularly care which citation method you use, as long as all direct and indirect references are properly cited.)
+
+If you want feedback on a draft, you need to get it to Angela Sun by **Tuesday, December 3**. You don't have to do this, but it is strongly encouraged.
+
+# Question One
+
+What does it mean to say that acquiring education provides a signal to prospective employers, in the sense of Spence's work on job market signalling? How plausible is the claim that the primary role of college education is to provide such signals?
+
+# Question Two
+
+Describe a situation where the preferences of each individual in a group conflict with rights that individuals intuitively have. The situation should be described in some detail. You should not use abstracta (like A prefers X to Y), but instead fill in the details. And the situation should be different from the examples described in the literature (such as Sen's example involving Lady Chatterley's Lover).
+
+In such a situation, what is the best outcome? Should the preferences of everyone in the group (including the person whose rights are potentially violated) be respected, or should the rights of the individual be respected?
+
+What do situations like this tell us about the best way to design institutions for group decision making?
+
+# Question Three
+
+Abraham Roth says that on Margaret Gilbert's view of shared action, ''participants in shared activity are obligated to do their part in it.'' What is meant by this claim about obligation? Why does Gilbert defend it? Why does Michael Bratman think it is false, at least as a claim about what is essential to shared action?
+
+# Question Four
+
+Are there situations where a group knows that _p_, but few people in the group know that _p_? Are there situations where a group knows that _p_, but no people in the group know that _p_?
+
+Defend your answers, with reference to the papers we read on group knowledge.
+
+
+

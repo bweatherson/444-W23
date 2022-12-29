@@ -1,0 +1,169 @@
+---
+title: "444 Lecture 2.9 - Nash Equilibrium"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Plan
+
+To introduce the most famous concept in game theory, Nash Equilibrium.
+
+## Reading
+
+Bonanno, section 2.6.
+
+## John Nash
+
+::: {.columns align=center}
+
+:::: column
+![John Nash (via Hollywood)](images/crowe.png){width=75% height=75%}
+::::
+
+:::: column
+- Nash Equilibrium is named after the American mathematician John Nash.
+- Except I seem to have a picture of Russell Crowe here.
+::::
+
+:::
+
+## John Nash
+
+::: {.columns align=center}
+
+:::: column
+![John Nash](images/nash.jpg){width=75% height=75%}
+::::
+
+:::: column
+- Nash Equilibrium is named after the American mathematician John Nash (1928-2015).
+- It is the core concept of contemporary game theory.
+::::
+
+:::
+
+## Best Response
+
+- We will build up to it in stages.
+- The first important notion is that of a best response.
+- Strategy $S$ is a best response to strategies by the other players iff no other strategy can do better, given what the other players are doing.
+
+## Example
+
+```{r}
+game <- tribble(
+  ~Moves,     ~Left, ~Center, ~Right,
+  "Up",      "4, 3", "2, 0", "0, 5", 
+  "Middle",  "6, 2", "0, 4", "3, 1",
+  "Down",    "3, 0", "2, 1", "4, 2"
+)
+gameformat(game)
+```
+
+- If Column plays Left, the best Row can do is play Middle.
+- They get 6 that way, and 3 or 4 from other plays.
+- So Middle is the best response to Left.
+
+## Example
+
+```{r}
+game[[2,2]] <- "\\fbox{6},2"
+gameformat(game)
+```
+
+- We will represent the fact that it is a best response by putting a box around the payout.
+- There are all sorts of notations you'll see used for this; we'll just use a box.
+
+## Example
+
+```{r}
+game[[3,4]] <- "\\fbox{4},2"
+gameformat(game)
+```
+
+- If Column plays Right, the best Row can do is play Down.
+- So we'll put a Box around it as well.
+
+## Example
+
+```{r}
+game[[1,3]] <- "\\fbox{2},0"
+game[[3,3]] <- "\\fbox{2},1"
+gameformat(game)
+```
+
+- Now if Column plays Middle, Row has two options that are tied for best: Top and Bottom.
+- They are both best responses.
+- So we'll put boxes around each.
+
+## Example
+
+```{r}
+game[[1,4]] <- "0,\\fbox{5}"
+gameformat(game)
+```
+
+- I find it a little trickier to keep track of the best responses for Column, so I have to go a little slower.
+- If Row plays Top, Column has a choice of 3 (if they play Left), 0 (if they play Middle), or 5 (if they play Right).
+- 5 is best, so the best response is Right.
+
+## Example
+
+```{r}
+game[[2,3]] <- "0,\\fbox{4}"
+gameformat(game)
+```
+
+- If Row plays Middle, Column has a choice of 2 (if they play Left), 4 (if they play Middle), or 1 (if they play Right).
+- 4 is best, so the best response is Middle.
+
+## Example
+
+```{r}
+game[[3,4]] <- "\\fbox{4}, \\fbox{2}"
+gameformat(game)
+```
+
+- If Row plays Down, Column has a choice of 0 (if they play Left), 1 (if they play Middle), or 2 (if they play Right).
+- 2 is best, so the best response is Right.
+- We've now labelled all the (pure strategy) best responses.
+
+## Nash Equilibrium
+
+- A strategy set for all the players is a Nash Equilibrium if each player is making a best response to what the others are doing.
+- In these games, that means that both payoffs in the cell are boxed.
+
+## Nash Equilibrium
+
+```{r}
+gameformat(game)
+```
+
+- In this game, the unique Nash Equilibrium is Row plays Down, and Column plays Right.
+- That's the only cell where both players are making a best response to the other players' strategy.
+
+## Nash Equilibrium
+
+- The general idea is that some strategies form an equilibrium if no one could do better by unilaterally changing strategy.
+- It's possible that players could do better if they both simultaneously changed - and we'll spend some time on cases where that happens.
+- But everyone is doing as well as they can given what everyone else is doing.
+
+## For Next Time
+
+- We'll think a bit about why this might be philosophically significant.

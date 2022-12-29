@@ -1,0 +1,144 @@
+\input{../styles/handout-leader}
+\def\mytitle{Voting Systems}
+\def\myauthor{Brian Weatherson}
+\def\mydate{February 22, 2018}
+\input{../styles/handout-begin}
+
+\noindent We're going to be interested in five rules for counting the votes in an election. They are:
+
+\section{Plurality Voting}
+\label{pluralityvoting}
+
+Every voter marks a single candidate as their choice. The candidate with the most votes wins.
+
+\section{Runoff Voting}
+\label{runoffvoting}
+
+There are up to two rounds of voting. The first stage is just like plurality voting. If a candidate gets a majority of the votes, they win. If no candidate gets a majority, there is a second round of voting, at which only the top two candidates from the first round are eligible. Every voter chooses one of these two. The one with the most votes wins.
+
+\section{Instant Runoff Voting}
+\label{instantrunoffvoting}
+
+Every voter rank orders all the candidates. (A variant allow them to just rank order some of the candidates.) The count proceeds in stages.
+
+\begin{itemize}
+\item{} At the first stage, each candidate is assigned the votes of every voter who put them 1st.
+
+\item{} If (at any time) any candidate has a majority of the votes, they win.
+
+\item{} At the end of a stage, if no candidate has a majority of the votes, then the candidate with the fewest votes is eliminated. (If there is a tie, a coin flip decides who to eliminate.)
+
+\item{} When a candidate is eliminated, the votes they had are redistributed one-by-one, in each case to the non-eliminated candidate who has the highest rank on the voter's ballot. So in the second round, we look at the votes for the least popular candidate, and give them to whoever the voter ranked second. At subsequent rounds it is trickier, because you might have to look at 3rd, 4th etc preferences to find the highest ranked uneliminated candidates.
+
+\item{} This continues until we have a candidate with the majority of the votes.
+
+\end{itemize}
+
+\section{Borda}
+\label{borda}
+
+Each voter ranks all the candidates. Each ranking corresponds to a point. The easiest way to do this is to give 0 points to the last placed candidate, 1 point to the second last placed candidate, and so on up to $n-1$ points to the top candidate (where $n$ is the number of candidates). We add up the points, and most points wins.
+
+\section{Range Voting}
+\label{rangevoting}
+
+Each voter gives each candidate a score out of 10. (Or any other number, but 10 is a useful way to think about it.) We add up the scores, and the candidate with the highest sum of scores wins.
+
+\newpage
+
+\section{Case Study One}
+\label{casestudyone}
+
+Imagine the voters are sorted into four groups with the following preferences, and everyone votes sincerely:
+
+\begin{table}[htbp]
+\begin{minipage}{\linewidth}
+\setlength{\tymax}{0.5\linewidth}
+\centering
+\small
+\begin{tabulary}{\textwidth}{@{}cc@{}} \toprule
+ Ranking & Votes \\
+\midrule
+
+ ADCB & 29 \\
+ BDCA & 26 \\
+ CDBA & 25 \\
+ DCAB & 20 \\
+\bottomrule
+
+\end{tabulary}
+\end{minipage}
+\end{table}
+\noindent Who wins given (a) Plurality, (b) Runoff, (c) Instant Runoff and (d) Borda?
+
+\section{Condorcet Condition}
+\label{condorcetcondition}
+
+A voting method satisfies the Condorcet condition just in case the following is true.
+
+\begin{itemize}
+\item{} A candidate is a \textbf{Condorcet Winner} just in case in every two-way matchup, the majority of voters prefer that candidate to any other given candidate. So A is a condorcet winner iff more than half the voters prefer A to B, and more than half prefer A to C, and so on.
+
+\item{} The \textbf{Condorcet Condition} is that if there is a Condorcet winner, they win the election.
+
+\end{itemize}
+In Case Study 1, is there a Condorcet winner? If so, who is it?
+
+\section{Case Studies 2 and 3}
+\label{casestudies2and3}
+
+There are just 3 candidates this time. So the difference between runoff and instant runoff mostly goes away. Here are the preferences for Case Study 2.
+
+\begin{table}[htbp]
+\begin{minipage}{\linewidth}
+\setlength{\tymax}{0.5\linewidth}
+\centering
+\small
+\begin{tabulary}{\textwidth}{@{}cc@{}} \toprule
+ Ranking & Votes \\
+\midrule
+
+ ABC & 47 \\
+ BAC & 30 \\
+ CBA & 23 \\
+\bottomrule
+
+\end{tabulary}
+\end{minipage}
+\end{table}
+\noindent And here are the preferences for Case Study 3.
+
+\begin{table}[htbp]
+\begin{minipage}{\linewidth}
+\setlength{\tymax}{0.5\linewidth}
+\centering
+\small
+\begin{tabulary}{\textwidth}{@{}cc@{}} \toprule
+ Ranking & Votes \\
+\midrule
+
+ ABC & 39 \\
+ BAC & 30 \\
+ CBA & 31 \\
+\bottomrule
+
+\end{tabulary}
+\end{minipage}
+\end{table}
+\noindent Who wins in each of these Case Studies? What is puzzling here?
+
+\section{Criteria for Assessing Voting Methods}
+\label{criteriaforassessingvotingmethods}
+
+\begin{enumerate}
+\item{} In any given contest, how well does it do at selecting a fair winner?
+
+\item{} How will voters respond to the incentives the voting system provides, and are those responses we want to encourage, or discourage? How does the answer to question 1 change when we think about strategic voting?
+
+\item{} How will candidates (or parties) respond to the incentives the voting system provides, and are those responses we want to encourage, or discourage?
+
+\item{} How much work does the system put on voters, and is that a fair or unfair burden?
+
+\end{enumerate}
+
+\end{document}

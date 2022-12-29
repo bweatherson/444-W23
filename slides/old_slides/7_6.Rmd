@@ -1,0 +1,100 @@
+---
+title: "444 Lecture 7.6 - Honest Signaling"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## Signaling by Showing
+
+- Change the game so that what options Sender has is a function of what type Sender is.
+- In the extreme case, one type of Sender has two options, the other has one.
+- In this case, Sender doing the thing that only their type can do is called **honest signaling** or **indexical signaling**.
+
+## The Chase
+
+- Sender sees that Hearer is trying to catch them, and it will be bad if Hearer succeeds.
+- Maybe Hearer is a mugger, or maybe they are a cheetah and Sender is a springbok.
+- Sender is either Strong or Weak.
+- If they are Strong, they have the option of Jumping in the air before running away.
+- This will slow them down, but will display their type to Hearer.
+
+## Payoffs
+
+- Sender loses 10 if they are chased and get caught.
+- Hearer gains 5 if they catch Sender; but they lose 3 if they chase and fail (this might be an opportunity cost).
+- Fast sender has a 20% chance of being caught if they don't Jump, and a 30% chance of being caught if they Jump.
+- Slow sender can't jump, and has a 50% chance of being caught.
+
+
+
+---
+
+\begin{center}
+\begin{istgame}[scale=1.3]
+   \xtdistance{20mm}{20mm}
+   \istroot(0)[chance node]{$c$}
+     \istb<grow=left>{0.4}[a]
+     \istb<grow=right>{0.6}[a]
+     \endist
+   \xtdistance{10mm}{20mm}
+   \istroot(1)(0-1)<180>{1}
+     \istb<grow=north>{Jump}[l]
+     \istb<grow=south>{Run}[l]
+     \endist
+   \istroot(2)(0-2)<0>{1}
+     \istb<grow=south>{Run}[r]
+     \endist
+   \istroot'[north](a1)(1-1)
+     \istb{C}[bl]{-3, -0.6}
+     \istb{NC}[br]{0,0}
+     \endist
+   \istroot(b1)(1-2)
+     \istb{C}[al]{-2,-1.4}
+     \istb{NC}[ar]{0,0}
+     \endist
+   \istroot(a2)(2-1)
+     \istb{C}[al]{-5,1}
+     \istb{NC}[ar]{0,0}
+     \endist
+   \xtInfoset(b1)(a2){2}
+   \end{istgame}
+\end{center}
+
+## Equilibria
+
+- This one really looks like it should only have one equilibrium.
+- If everyone does the same thing, i.e., Run, then Hearer's expected utility from Chasing is positive, so they will Chase everyone.
+- But Fast Senders don't want this; they would prefer Jump plus No Chase to Run plus Chase.
+- And if they Jump, Hearer will know it isn't worth Chasing.
+- So the only sensible equilibrium is that Fast Senders Jump, and Hearer chases all and only Senders who Run (rather than Jumping).
+
+## College
+
+- Could there be an honest signaling explanation of why there is a college wage premium?
+- Maybe; it seems relevant that some people aren't admitted to college and others could not complete it.
+- But I don't know what such an explanation could look like.
+
+## Can't/Won't
+
+- In real life the boundary between a game where signaling is costly for one type and where it is impossible can be hard to draw.
+- Especially for non-human animals, what exactly does it mean to say they could do something but choose not to because it is too expensive, rather than say that they can't.
+- And for humans, we don't even consider some things to be viable options because they are prohibitively expensive.
+- Are these cases where something is not an option, or where it is rationally not chosen for expense.
+- It isn't clear that much could, or should, turn on this.
+
+## For Next Time
+
+- For next class I don't have slides, just a long-ish handout.
+- Next week we will look more closely at Iterated Prisoners' Dilemma.

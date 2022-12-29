@@ -1,0 +1,130 @@
+---
+title: "444 Lecture 2.4 - Dominance"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Plan
+
+- Explain strong dominance and weak dominance.
+
+## Associated Reading
+
+Bonanno, section 2.2.
+
+## A Simple Game
+
+```{r}
+game <- tribble(
+  ~Moves,     ~Left,     ~Right,
+  "Up",      "4, 1", "2, 0",
+  "Down",    "3, 0", "1, 1"
+)
+gameformat(game)
+```
+
+Here's how to read this table.
+
+> 1. Two players, call them Row and Column.
+> 2. Row chooses the row, Column chooses the column - between them they choose a cell.
+> 3. Each cell has two numbers - the first is Row's payout, the second is Column's payout.
+
+## Strong Dominance
+
+```{r}
+game <- tribble(
+  ~Moves,     ~Left,     ~Right,
+  "Up",      "4, 1", "2, 0",
+  "Down",    "3, 0", "1, 1"
+)
+gameformat(game)
+```
+
+- Whatever Column does, Row is better off playing Up rather than Down.
+- We say that Up **strongly dominates** Down.
+
+## Strong Dominance
+
+```{r}
+game <- tribble(
+  ~Moves,     ~Left,     ~Right,
+  "Up",      "4, 1", "2, 0",
+  "Middle",  "5, 0", "0, 0",
+  "Down",    "3, 0", "1, 1"
+)
+gameformat(game)
+```
+
+- Adding options doesn't change things.
+- Up still dominates Down, even if it isn't always best.
+
+## Strong Dominance
+
+```{r}
+game <- tribble(
+  ~Moves,     ~Left,     ~Right,
+  "Up",      "3, 1", "0, 0",
+  "Middle",  "2, 0", "2, 0",
+  "Down",    "0, 0", "3, 1"
+)
+gameformat(game)
+```
+
+- This is **not** a case of dominance.
+- Even though Middle is never the highest value, it isn't dominated by any one option.
+
+## Strong Dominance
+
+Strategy $S_1$ strongly dominates strategy $S_2$ if for any strategy $S$ by the other player(s), if $S$ is played, then $S_1$ returns a higher payoff than $S_2$.
+
+## Weak Dominance
+
+Strategy $S_1$ weakly dominates strategy $S_2$ if for any strategy $S$ by the other player(s), if $S$ is played, then $S_1$ returns a payoff that is at least as high $S_2$, and for some strategy by the other player(s), $S_1$ returns a higher payoff than $S_2$.
+
+- The difference is that weak dominance allows for **ties**.
+
+## Two Dominance Notions
+
+Strong Dominance
+
+- Always better.
+
+Weak Dominance
+
+- Never worse.
+- Sometimes better.
+
+## Weak Dominance
+
+```{r}
+game <- tribble(
+  ~Moves,     ~Left,     ~Right,
+  "Up",      "4, 1", "2, 0",
+  "Down",    "3, 0", "\\textbf{2}, 1"
+)
+gameformat(game)
+```
+
+- I've changed the payoffs in the bottom right cell.
+- Now Up does not strongly dominate Down.
+- But it does weakly dominate Down.
+
+## For Next Time
+
+We'll look at some examples of famous two by two by two games.

@@ -1,0 +1,315 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 3.4 - Strategies in Dynamic Games},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 3.4 - Strategies in Dynamic Games}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Plan}
+\protect\hypertarget{plan}{}
+\begin{itemize}
+\tightlist
+\item
+  To relate game trees back to one-shot games.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Reading}
+\protect\hypertarget{reading}{}
+\begin{itemize}
+\tightlist
+\item
+  Bonanno, section 3.3.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{A Strategy}
+\protect\hypertarget{a-strategy}{}
+\begin{itemize}
+\tightlist
+\item
+  Imagine that you're coaching someone who is going to play a dynamic
+  game.
+\item
+  And imagine that you're a really really controlling coach, and they
+  have a good memory.
+\item
+  Then you could tell them what to do in every possible situation.
+\item
+  That's a strategy.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Control Freaks}
+\protect\hypertarget{control-freaks}{}
+\begin{itemize}
+\tightlist
+\item
+  That metaphor might understate how controlling a strategy is supposed
+  to be.
+\item
+  A strategy says what the player should do at every node in the tree.
+\item
+  That includes nodes that are ruled out by their earlier play.
+\item
+  So a strategy for chess might include the instructions ``Open with e4,
+  then if the first two moves are d4-d5, follow with c4.''
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Why be a Control Freak?}
+\protect\hypertarget{why-be-a-control-freak}{}
+\begin{itemize}
+\tightlist
+\item
+  Strategies serve two roles.
+\item
+  They get followed by one player.
+\item
+  And they get reasoned about by the other players, in order to create
+  their own strategies.
+\item
+  And to play the latter role, sometimes you need these weird steps.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Why be a Control Freak?}
+\protect\hypertarget{why-be-a-control-freak-1}{}
+\begin{itemize}
+\tightlist
+\item
+  Sometimes in games we're interested in situations where there is a gap
+  between giving an order and carrying it out.
+\item
+  When opposing generals are watching a battle play out, they can't
+  assume that their instructions will be carried out to the letter, or
+  that what they see on the battlefield is the result of the other side
+  carrying out instructions properly.
+\item
+  In these cases, it is clear why a strategy should include ``What to do
+  if you haven't done what I said you should do so far.''
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Back to Nash}
+\protect\hypertarget{back-to-nash}{}
+\begin{itemize}
+\tightlist
+\item
+  Go back to the coaching metaphor.
+\item
+  And imagine the other player in the dynamic game also has a coach.
+\item
+  Then you and the other coach are playing a one-shot, simultaneous move
+  game.
+\item
+  Each of you have a lot of options - but you get one shot to choose one
+  of them, and the other player makes their choice at the same time
+  (more or less) as you.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Strategic (Normal) Form}
+\protect\hypertarget{strategic-normal-form}{}
+\begin{itemize}
+\tightlist
+\item
+  For any two player game tree, we can write out all the strategies for
+  each player.
+\item
+  I mean, we can in principle.
+\item
+  In chess there are probably more strategies than atoms in the
+  universe, so in practice it would be hard, but in theory it can be
+  done.
+\item
+  And from that we can form a table, and compute what would happen for
+  each strategy pair.
+\item
+  And then we can do all the fun stuff from last week, like eliminating
+  dominated strategies, finding best responses and Nash equilibria etc.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The End of Time?}
+\protect\hypertarget{the-end-of-time}{}
+\begin{itemize}
+\tightlist
+\item
+  So does that mean we don't need to think about dynamics at all?
+\item
+  No, and next time we'll look at why.
+\item
+  Some strategy pairs that make sense in a one-shot game don't seem to
+  make sense in a dynamic game.
+\end{itemize}
+\end{frame}
+
+\end{document}

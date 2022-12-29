@@ -1,0 +1,138 @@
+---
+title: "444 Lecture 10.1 - O'Connor Chapter 4"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+        - toc.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## Day Plan
+
+\tableofcontents
+
+# Conventionality
+
+## Degrees of Conventionality
+
+This is a really good point - we shouldn't think of social outcomes as being either purely conventional, or explained by the superiority of the ultimate outcome.
+
+- There are in between cases.
+- And there are cases that are closer to one end than the other.
+- We need a scale.
+
+## Language
+
+To see this, think about how we ended up with the distribution of languages we have today.
+
+- Why are English, Spanish and Mandarin Chinese spoken so widely, and other languages less so?
+
+## Non-Conventional Stories
+
+- Some languages are easier to learn than others.
+- They don't have large dictionaries (though English does);
+- They don't make you learn messy things like gender or formality (though Spanish does);
+- They don't make you produce sounds that are hard to acquire in adulthood (I'm not sure if any of these three do)
+- These are all reasons why it would be surprising for Welsh or Xhosa to become widespread.
+
+## Conventional Stories
+
+- But none of these factors explain why English is more widely spoken than, say, Dutch.
+- The reason for that seems more connected to how New Amsterdam became New York than to anything about language.
+- It happened that various English-speaking settlements in the Americas thrived, Dutch-speaking ones did not, and here we are.
+
+## Measuring Conventionality
+
+- O'Connor offers a measure of how conventional an outcome is.
+- I don't love it as a measure; as she notes, it varies depending on how finely we divide up the alternative options.
+- Better I think to do pairwise comparisons directly.
+- English is more widely spoken than Welsh for somewhat functional reasons.
+- English is more widely spoken than Dutch for almost entirely conventional reasons.
+
+# Pairing
+
+## Normal Households
+
+Here's a quote from page 101.
+
+> Especially in recent Western history, the vast majority of households involved one man and one woman.
+
+And I don't really know if this is true, especially in the time frame needed to make the explanation work.
+
+## Post War America
+
+In post-war America, you see the following three factors.
+
+1. Few households with multiple adult generations.
+2. High marriage rates and low divorce rates.
+3. Low rates of mid-life death.
+
+You really need all three to get "the vast majority of households involved one man and one woman", and I don't really know how many times/places have all three.
+
+## Household Structure
+
+So open question.
+
+- In what societies (other than mid-20th-century America/Canada/Australia) was it true that the vast majority of households involved one man and one woman?
+
+My guess is not that many. And since gender divisions are _everywhere_, this can't really be the story.
+
+# MFEO Games
+
+## How Common are MFEO Games?
+
+- We need specialisation to make modern society run.
+- But question: how many real world situations are there where we need 1/2 the (adult) population to do X, and the other half to do Y?
+- A lot of specialisation tasks are more than we need some single digit percentage of the population to do them.
+- Why don't we get more types correlating with those needed specialisations.
+
+## Households and MFEO
+
+- This is really a version of the previous question.
+- If it is really common to have 1M/1F households, then sure there will be lots of MFEO games where it is useful to have 50/50 splits.
+- But without that, I don't really see them being frequent enough for this analysis.
+
+## Child Making
+
+Now there's one thing that does require 1M/1F, namely child making.
+
+- If you have a society where the two biological parents of a child have a distinctive role in child rearing, then sure, that will lead to these two player games.
+- But this leads us back to questions of household composition, and I'm not sure there is a good answer.
+
+## Functionality Given Pregnancy
+
+Can you get more out of thinking about reproduction?
+
+- Some jobs are hard to do while pregnant or nursing.
+- Now 'hard' doesn't mean impossible, but maybe there is a story here.
+- But do you need 1/2 the population to engage in those jobs?
+- Some of this might turn on hard questions about the prevalence of big game hunting in human societies.
+
+# Multiple Games
+
+## Hawk-Dove and MFEO
+
+- This I thought was one of the best parts of the chapter.
+- It seems really crucial to understanding what's going on.
+- The point of gender roles is not that there is this one thing where men do one thing and women do another.
+- It's that there is a systematic pattern of differential behavior across a huge range of parts of life.
+- Thinking about how games interact could be a big part of the story.
+
+## To Be Explained
+
+One challenge in this chapter is to go beyond explaining why typing occurs to explaining why gender is universal.
+
+- There is an attempt at this by noting the benefits of the equal division.
+- But this is, I think, an artifact of the game chosen.
+- It comes back to whether it is useful to have 50% specialise in some task.
+- I think it's more likely that thinking about interlocking games is more promising.

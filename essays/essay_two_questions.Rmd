@@ -1,0 +1,36 @@
+---
+title: 'Essay Questions'
+author: "Phil 444"
+date: "Due April 26"
+output:
+  pdf_document:
+    keep_tex: yes
+    fig_caption: yes
+    latex_engine: xelatex
+    extra_dependencies: ["multicol"]
+  html_document:
+    df_print: paged
+geometry: margin=1.5in
+mainfont: SF Pro Rounded
+mainfontoptions: 
+ - BoldFont = SF Pro Rounded Semibold
+ - Scale = MatchLowercase
+mathfont: Fira Math
+header-includes: \linespread{1.05}
+---
+
+
+Answer **one** of the following questions in an essay of about 1500 words. The paper should engage with the relevant readings, and all references to works of other authors should be properly cited. (We don’t particularly care which citation method you use, as long as all direct and indirect references are properly cited.)
+
+## Question One {-}
+
+Abraham Roth says that on Margaret Gilbert’s view of shared action, "participants in shared activity are obligated to do their part in it." What is meant by this claim about obligation? Why does Gilbert defend it? Why does Michael Bratman think it is false, at least as a claim about what is essential to shared action?
+
+## Question Two {-}
+
+Can an unstructured group know that $p$ without any of its members knowing that $p$? Does you answer change if the group is structured rather than unstructured? Does your answer to either question change if we ask about whether the group can know how to do something that none of its members know how to do?
+
+## Question Three {-}
+
+Are there epistemic vices that it is, epistemically, collectively good that people have?
+

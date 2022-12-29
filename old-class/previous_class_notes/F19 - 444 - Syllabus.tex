@@ -1,0 +1,270 @@
+%------------------------------------
+% Dario Taraborelli
+% Typesetting your academic CV in LaTeX
+%
+% URL: http://nitens.org/taraborelli/cvtex
+% DISCLAIMER: This template is provided for free and without any guarantee 
+% that it will correctly compile on your system if you have a non-standard  
+% configuration.
+% Some rights reserved: http://creativecommons.org/licenses/by-sa/3.0/
+%------------------------------------
+
+%TEX encoding = UTF-8 Unicode
+
+\documentclass[10pt]{article}
+%\usepackage{fontspec} 
+\usepackage{mdwlist}
+
+% DOCUMENT LAYOUT
+\usepackage{geometry} 
+\geometry{letterpaper, textwidth=5.5in, textheight=8.5in, marginparsep=7pt, marginparwidth=.6in}
+\setlength\parindent{0in}
+%\usepackage[garamond]{mathdesign}
+\usepackage[no-math]{fontspec}
+%\setmainfont[Ligatures=TeX, BoldFont = Garamond Bold]{Adobe Garamond Pro}
+\setmainfont[Ligatures=TeX]{Adobe Garamond Pro}
+
+% FONTS
+\usepackage[usenames,dvipsnames]{color}
+%\usepackage{xunicode}
+%\usepackage{xltxtra}
+%\defaultfontfeatures{Mapping=tex-text}
+%\setromanfont [Ligatures={Common}, Numbers={OldStyle}, Variant=01]{Linux Libertine O}
+%\setmonofont[Scale=0.8]{Monaco}
+
+% ---- CUSTOM COMMANDS
+%\chardef\&="E050
+\newcommand{\html}[1]{\href{#1}{\scriptsize\textsc{[html]}}}
+\newcommand{\pdf}[1]{\href{#1}{\scriptsize\textsc{[pdf]}}}
+\newcommand{\doi}[1]{\href{#1}{\scriptsize\textsc{[doi]}}}
+\newcommand{\bull}{\raisebox{1.5pt}{{\scriptsize \textbullet}}}
+% ---- MARGIN YEARS
+\usepackage{marginnote}
+%\newcommand{\amper{}}{\chardef\amper="E0BD }
+\newcommand{\years}[1]{\vspace{2pt}\marginnote{\scriptsize #1}}
+\renewcommand*{\raggedleftmarginnote}{}
+\setlength{\marginparsep}{7pt}
+\reversemarginpar
+
+% HEADINGS
+\usepackage{sectsty} 
+\usepackage[normalem]{ulem} 
+\sectionfont{\mdseries\upshape\Large}
+\subsectionfont{\mdseries\scshape\normalsize} 
+\subsubsectionfont{\mdseries\upshape\large} 
+\usepackage{marvosym}
+
+% PDF SETUP
+% ---- FILL IN HERE THE DOC TITLE AND AUTHOR
+\usepackage[bookmarks, colorlinks, breaklinks, 
+% ---- FILL IN HERE THE TITLE AND AUTHOR
+ pdftitle={Syllabus - Philosophy 444 - Winter 2018},
+ pdfauthor={Brian Weatherson},
+ pdfproducer={http://brian.weatherson.org/}
+]{hyperref}  
+\hypersetup{linkcolor=blue,citecolor=blue,filecolor=black,urlcolor=MidnightBlue} 
+
+% DOCUMENT
+\begin{document}
+{\LARGE Philosophy 444 - Groups and Choices}\\[0.5cm]
+{\large Fall 2019}
+
+\section*{Instructor}
+
+Brian Weatherson \\
+Department of Philosophy \\
+2207 Angell Hall \\
+
+\Letter: \href{mailto:weath@umich.edu}{weath@umich.edu}
+
+\ComputerMouse: \href{http://canvas.umich.edu}{http://canvas.umich.edu} 
+
+Office Hours: Friday 11-1, 2207 Angell Hall \\
+Lecture: Monday/Wednesday 1-2.30, 3437 Mason Hall  \\
+Last Updated: \today
+
+%%\hrule
+\section*{Course Description}
+
+This course discusses the theory of choice in groups. We start with game theory, focussing on how thinking about how others will choose, and how others will think about one, affects the best choice. Then we move on to social choice theory, looking at the ways to best combine individual choices into a group choice. Finally, we look at whether groups have beliefs and desires, and make choices, and if they do, how this relates to the beliefs, desires and choices of members of the group.
+
+\section*{Canvas}
+
+There is a Canvas site for this course, which can be accessed from \url{https://canvas.umich.edu}. Course documents (syllabus, lecture notes, assignments) will be available from this site. Please make sure that you can access this site. Consult the site regularly for announcements, including changes to the course schedule. And there are many tools on the site to communicate with each other, and with me. 
+
+\section*{Readings}
+
+Two books, which can be downloaded. The first is required, the second recommended.
+
+\begin{itemize*}
+\item Giacomo Bonanno, \textit{Game Theory}, Available at \\ \url{http://faculty.econ.ucdavis.edu/faculty/bonanno/PDF/GT_book.pdf}
+\item Martin Robinson and Ariel Rubenstein, \textit{A Course in Game Theory}, Available at \\ \url{http://gametheory.tau.ac.il/arielDocs/}.
+\end{itemize*}
+
+You might also like to look at Kevin Leyton-Brown and Yoav Shoham, \textit{Essentials of Game Theory}, which is  at \url{http://www.morganclaypool.com/doi/abs/10.2200/S00108ED1V01Y200802AIM003}, as long as you are logged into a UM computer. \smallskip
+
+There will also be lecture notes, and a number of readings. Some of the readings will be via open access websites; those are linked in this PDF. Some of them are available via the University library. 
+
+\newpage
+
+%\section*{Electronics in Classroom}
+%
+%In this class there is a ban on using laptops, tablets, smart phones, etc. during lecture. Research indicates that the use of electronics in the classroom has a bad effect on people sitting around you. \smallskip
+%
+%If you have a special reason to need electronic equipment for note-taking, please contact me or see me for a waiver from this ban. I don't want the ban to inconvenience people who do need electronic equipment; but I also don't want disruptions throughout the classroom.
+
+\section*{Course Requirements}
+
+\begin{enumerate}
+\item \emph{Do six weekly assignments}. During the term seven weekly assignments will be posted. You have to do \textbf{six} of them. \smallskip
+
+The assignments will be primarily in the first half of the course, though there are a couple to do at the end of the course as well. Each assignment will be due at \textbf{7pm} on Friday. We will spend some time the following Monday discussing the assignment.\smallskip
+
+Note that there are seven assignments, but you are only required to do six. If for whatever reason you cannot do an assignment, that's fine - it won't count towards your grade. If you do complete all seven, then the assignment with the lowest grade will not count towards your course grade. \smallskip
+
+Since we will be discussing the answers to the assignments in class, and you can skip any one assignment for any reason whatsoever, there are no extensions for these assignments. It is, however, possible to collaborate on the assignments, provided you note on the assignments who you have worked with, and you work with no one other person on more than three of the assignments.\smallskip
+
+Each assignment counts for 10\% of the grade, so collectively they count for 60\% of the grade. 
+
+\item \emph{Do an essay}. This will be 10-12 pages long, and will count for 30\% of the course grade. You are encouraged (but not required) to submit a draft of it two weeks before it is due. The essay will be due on the scheduled exam day of the course, which is Thursday April 19, at 4pm. You are strongly encouraged to submit it well before then, especially if you have exams in other courses to study for!
+
+\item \emph{Discussion Section}. Attendance and participation in discussion section will count for 10\% of the course grade. Angela Sun (the discussion section leader) will explain how this is calculated in the syllabus for the discussion sections.
+
+\end{enumerate}
+
+\section*{Grade Breakdown}
+
+\begin{itemize*}
+\item Assignments: 60\%
+\item Essay: 30\% 
+\item Discussion Section: 10\%
+\end{itemize*}
+
+
+\newpage
+\section*{Plagiarism}
+
+\noindent  You are responsible for making sure that none of your work is plagiarized. Be sure to cite work that you use, both direct quotations and paraphrased ideas. Any citation method that is tolerably clear is permitted, but if you'd like a good description of a citation scheme that works well in philosophy, look at \url{http://bit.ly/VDhRJ4}.\smallskip
+
+You are encouraged to discuss the course material, including assignments, with your classmates, but all written work that you hand in under your own name must be your own. If work is handed is as the work of multiple people, you are affirming that each person did a fair share of the work. (Note that when you're submitting work on Canvas, you have to each submit the paper, even if it is co-authored. That way Canvas knows that everyone has turned in work.)\smallskip
+
+You should also be familiar with the academic integrity policies of the College of Literature, Science \& the Arts at the University of Michigan, which are available here: \url{http://www.lsa.umich.edu/academicintegrity/}. Violations of these policies will be reported to the Office of the Assistant Dean for Student Academic Affairs, and sanctioned with a course grade of F.
+
+\section*{Disability}
+
+\noindent  The University of Michigan abides by the Americans with Disabilities Act of 1990, Section 504 of the Rehabilitation Act of 1973, and other applicable federal and state laws that prohibit discrimination on the basis of disability, which mandate that reasonable accommodations be provided for qualified students with disabilities. \smallskip
+
+If you have a disability, and may require some type of instructional and\slash or examination accommodation, please contact me early in the semester. If you have not already done so, you will also need to register with the Office of Services for Students with Disabilities. The office is located at G664 Haven Hall. \smallskip
+
+For more information on disability services at the University of Michigan, go to \url{http://ssd.umich.edu}. 
+
+\vfill{}
+
+\begin{center}
+{\scriptsize  Last updated: \today. 
+% ---- PLEASE LEAVE THIS BACKLINK FOR ATTRIBUTION AS PER CC-LICENSE
+Typeset in Garamond. Based on a design by \href{http://nitens.org/taraborelli/cvtex}{Dario Taraborelli}.
+
+% ---- FILL IN THE FULL URL TO YOUR CV HERE
+\href{http://canvas.umich.edu}{http://canvas.umich.edu}}
+\end{center}
+
+\newpage
+\section*{Course Outline \& Readings}
+
+Each week you should do the readings \textbf{before} the start of the week. I would love to start each class by just going over questions people had about the reading; that way we'll figure out in real time what needs most attention.
+
+\years{9/4} Introduction to basic concepts of game theory; No reading or assignment.
+
+\years{9/9-11} Games in Strategic Form \\ 
+\textbf{Reading}: Bonanno, Chapter 2 \\
+\textbf{Background Reading}: Osborne and Rubenstein, Chapter 2\\
+\textbf{Assignment}: Dominance Arguments Problem Set, due 7pm, Sept 13.
+
+\years{9/16-18} Dynamic games with perfect information \\
+\textbf{Reading}: Bonanno, Chapter 3\\
+\textbf{Background Reading}:  Osborne and Rubenstein, Chapter 6 \\
+\textbf{Assignment}: Backward Induction Problem Set, due 7pm, Sept 20.
+
+\years{9/23-25} Probability and Utility \\
+\textbf{Reading}: Bonanno, Chapter 5\\
+\textbf{Background Reading}:  Osborne and Rubenstein, Chapter 3 \\
+\textbf{Assignment}: Probability Problem Set, due 7pm, Sept 27.
+
+\years{9/30-10/2} Mixed Strategies\\
+\textbf{Reading}:  Bonanno, Chapter 6  \\
+\textbf{Assignment}: Mixed Strategies Problem Set, due 7pm, Oct 4.
+
+\years{10/7-10/9} Dynamic Games with Imperfect Information \\
+\textbf{Reading}: Bonanno, Chapters 4 and 7 \\
+\textbf{Background Reading}:  Osborne and Rubenstein, Chapter 11 \\
+\textbf{Assignment}: Dynamic Games Problem Set, due 7pm, Oct 11.
+
+\years{10/16} Sequential Equilibrium \\
+\textbf{Reading}: Bonanno, Chapters 11 and 12 \\
+\textbf{Background Reading}: Osborne and Rubenstein, Chapter 12 \\
+\textbf{Assignment}: None this week.
+
+\years{10/21-10/23} Signalling Games \\
+\textbf{Reading}: Giacomo Bonanno, ``\href{http://faculty.econ.ucdavis.edu/faculty/bonanno/teaching/200C/Signaling.pdf}{Spence’s model of Signaling in the job market}'' \\ 
+Simon Huttegger et al, ``\href{https://www.journals.uchicago.edu/doi/full/10.1086/683435}{The Handicap Principle is an Artifact}'' \\
+\textbf{Background Reading}: Osborne and Rubenstein, Section 12.3 \\ Michael Spence, ``\href{https://www.jstor.org/stable/1882010?seq=1#metadata_info_tab_contents}{Job Market Signaling}''. \\
+\textbf{Assignment}: None this week.
+
+\years{10/28-10/30} Arrow's Paradox and Responses to It \\
+\textbf{Reading}: Michael Moreau, ``\href{https://plato.stanford.edu/entries/arrows-theorem/}{Arrow's Theorem}'' \\
+Christian List, ``\href{http://plato.stanford.edu/entries/social-choice/}{Social Choice Theory}'' \\ 
+\textbf{Background Reading}: FairVote, ``\href{https://www.fairvote.org/electoral_systems#research_electoralsystems101}{Electoral Systems}'' \\
+\textbf{Assignment}: Voting and Arrow's Paradox assignment, due 7pm, Nov 1.
+
+\years{11/4-11/6} Sen on Social Choice \\
+\textbf{Reading}: Amartya Sen, ``\href{https://www.jstor.org/stable/1829633}{The Impossibility of a Paretian Liberal}'' \\
+Amartya Sen, ``\href{https://www.jstor.org/stable/117024}{The Possibility of Social Choice}''. \\
+\textbf{Assignment}: None this week.
+
+\years{11/11-11/13} Judgment Aggregation \\
+\textbf{Reading}: Christian List and Phillip Pettit, ``\href{https://philpapers.org/rec/LISASO-3}{Aggregating Sets of Judgments: An Impossibility Result}''\\
+Jeffrey Sanford Russell, John Hawthorne and Lara Buchak, ``\href{https://philpapers.org/rec/RUSG}{Groupthink}'' \\
+\textbf{Background Reading}: Julia Staffel, ``\href{https://philpapers.org/rec/STADAE-4}{Disagreement and Epistemic Compromise}'' \\
+\textbf{Assignment}: Aggregation Problem Set, due 7pm, Nov 15. (This is the last assignment.)
+
+\newpage
+\years{11/18-11/27} Group Intention and Action \\
+\textbf{Reading}: Margaret Gilbert, ``\href{https://philpapers.org/rec/GILWTA}{Walking Together: A Paradigmatic Social Phenomenon}'' \\
+Michael Bratman, ``\href{https://philpapers.org/rec/BRASCA}{Shared Cooperative Activity}'' \\
+\textbf{Background Reading}: Abraham Sesshu Roth, ``\href{http://plato.stanford.edu/entries/shared-agency/}{Shared Agency}''\\
+David P. Schweikard and Hans Bernhard Schmid, ``\href{https://plato.stanford.edu/entries/collective-intentionality/}{Collective Intentionality}'' \\
+Facundo Alonso, ``\href{https://philpapers.org/rec/ALORVO}{Reductive Views of Shared Intention}''
+
+\years{12/2-12/4} Group Knowledge \\
+\textbf{Reading}: Jennifer Lackey, ``\href{https://philpapers.org/rec/LACSEK}{Socially Extended Knowledge} ''\\
+Neil Levy and Mark Alfano, ``\href{https://philpapers.org/rec/LEVKFV}{Knowledge From Vice: Deeply Social Epistemology}'' \\
+\textbf{Background Reading}: Alexander Bird, ``\href{https://philpapers.org/rec/BIRSKT}{Social knowing: The social sense of 'scientific knowledge'}'' \\
+J. Adam Carter, ``\href{https://philpapers.org/rec/CARGKA-3}{Group Knowledge and Epistemic Defeat}'' \\
+\textbf{Assignment}: None this week.
+
+\years{12/9-12/11} Group Belief \\
+\textbf{Reading}: Jennifer Lackey, ``\href{https://philpapers.org/rec/LACWIJ}{What is Justified Group Belief}'' \\
+\textbf{Assignment}: None this week.
+%
+%\years{3/27-3/29} Group Belief \\
+%\textbf{Reading}: Alvin Goldman and Thomas Blanchard, ``\href{http://plato.stanford.edu/entries/epistemology-social/}{Social Epistemology}'' \\
+%Raimo Tuomela, ``Group Beliefs'' 
+%
+%\years{4/3-4/5} Group Knowledge \\
+%\textbf{Reading}: Jennifer Lackey, ``Socially Extended Knowledge'' 
+%
+%\years{4/10-4/12} Group Intention \\
+%\textbf{Reading}: Abraham Sesshu Roth, ``\href{http://plato.stanford.edu/entries/shared-agency/}{Shared Agency}''\\
+%Margaret Gilbert, ``Walking Together: A Paradigmatic Social Phenomenon'' \\
+%Michael Bratman, ``Shared Cooperative Activity''
+%
+%
+%
+
+\end{document}\documentclass[]{article}
+
+
+% https://philpapers.org/rec/LACWIJ - Lackey
+% https://academic.oup.com/mind/advance-article/doi/10.1093/mind/fzz017/5456847 - Levy and Alfano
+% https://philarchive.org/archive/ALORVO - Reductive Views

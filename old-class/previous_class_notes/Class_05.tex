@@ -1,0 +1,230 @@
+\documentclass[11pt,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+    \setmainfont[]{SF Pro Text Light}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Backwards Induction},
+            pdfauthor={Philosophy 444},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Backwards Induction}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Philosophy 444}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{18 September, 2019}
+
+\usepackage{gensymb}
+\usepackage{nicefrac}
+\usepackage{caption}
+\usepackage{istgame}
+
+\begin{document}
+\maketitle
+
+I want you to divide into groups of 2-3, and work through these
+problems. After a few minutes, we'll talk through the first, then
+regroup, then talk about the second, and so on. But if you're done with
+the first, move onto the subsequent problems; we'll get time to talk
+about them.
+
+All the problems are from William Spaniel's \emph{Game Theory 101}. This
+is a not bad introduction to game theory, less technical than the book
+we're using, and only a few dollars on Kindle. (And he has a bunch of
+videos to go with it.)
+
+Note that in none of the texts describing the games am I specifying
+precisely what the payoffs to each player are. I'll usually say enough
+to specify that, but in cases of ambiguity, it's worth thinking about,
+and discussing, what the payoffs will be.
+
+\hypertarget{burning-bridges}{%
+\subsection{Burning Bridges}\label{burning-bridges}}
+
+A small island sits between two countries Each country has only one
+bridge that can access it. Although valuable, the island is not worth
+fighting over; each side would rather concede the territory to its
+opponent than fight a battle over the territory.
+
+\begin{itemize}
+\tightlist
+\item
+  The first country crosses its bridge to occupy the island. Afterward,
+  the soldiers decide whether to burn the bridge behind them.
+\item
+  The second country decides whether to invade.
+\item
+  If the first country has no bridge to use as an escape route, it must
+  fight a battle.
+\item
+  However, if the bridge still stands, the first country decides whether
+  to fight or retreat.
+\end{itemize}
+
+Draw the game tree, and find the backwards induction solution to the
+game.
+
+\hypertarget{tying-hands}{%
+\subsection{Tying Hands}\label{tying-hands}}
+
+A boss notices that one of his unscrupulous employees has been stealing
+company materials lately. He values honesty in himself and his
+employees, but the stolen property was not valuable. Consequently, the
+boss prefers keeping her around rather than having to hire and train a
+replacement. Nevertheless, he would ideally like stop her from stealing.
+
+At the company meeting today, he is thinking about issuing a warning:
+the next person caught stealing any company property will be immediately
+fired.
+
+Should he issue such a warning?
+
+\newpage
+
+\hypertarget{commitment-problem}{%
+\subsection{Commitment Problem}\label{commitment-problem}}
+
+Suppose you are a college graduate from San Diego, California, and you
+were recently admitted to a PhD program in political science in
+Rochester, New York. Naturally, you pack up all of your earthly
+belongings into your compact Honda Civic, cover everything with an old
+sheet to shield the items from the prying eyes of a potential thief, and
+embark on a cross-country adventure to your new home.
+
+But trouble strikes halfway there. As you are driving through a small
+town police lights flash behind you. You pull over and roll down your
+window.
+
+The officer explains that the town is in the middle of a drug war and
+that you appear suspicious, coming from California in a vehicle filled
+with unknown objects under a sheet. He politely requests to search your
+vehicle.
+
+You tell him you are a graduate student moving from San Diego to
+Rochester and object to such a search, noting that he has no legal right
+to look through your belongings. Begrudgingly, the officer accepts that
+he cannot search your vehicle without permission. However, he notes that
+he could call in a K-9 unit to sniff around the vehicle. But the K-9
+unit is stationed a half hour away, so it would take a while for it to
+arrive.
+
+He suggests a compromise: you allow him to conduct a quick search, and
+you can be on your way in a few minutes. He stresses that the quick
+search will be better than the K-9 for both parties, as neither of you
+will have to wait in the hot summer sun. Should you take the officer's
+offer?
+
+Having studied game theory, you mentally draw out the game tree. Your
+move is first: you can either demand the K-9 unit or allow the officer
+to search. If you allow the search, the officer decides between
+conducting a quick search as he originally offered or reneging on that
+agreement and conducting an extensive search. You most prefer a quick
+search and least prefer an invasive extensive search. Meanwhile, the
+police officer would most like to conduct an extensive search to ensure
+you are not carrying drugs but least prefers waiting a long time for the
+K-9 to arrive.
+
+Find the backwards induction solution to this game, and discuss what
+small changes to the game would result in a different solution.
+
+\hypertarget{pirates-hard}{%
+\subsection{Pirates! (Hard)}\label{pirates-hard}}
+
+The Dread Pirate Nash captures 10 pieces of gold from the Selten, the
+Saltwater Scoundrel. He must decide how to divide the coins among the
+four other members of the crew.
+
+According to pirate tradition, the captain of the crew proposes a
+division of the coins to his crew. If at least half of the crew (captain
+included) accepts the offer, coins are divided according to the
+proposal, and bargaining ends. If a majority rejects the proposal,
+however, the captain must walk the plank. Afterward, the second in
+command takes over as captain and proposes a new division with the same
+rules as before. Bargaining continues until all of the pirates are dead
+or at least half accept an offer. The Dread Pirate Nash, Pirate 2,
+Pirate 3, Pirate 4, and Pirate 5 primarily want to survive. Given their
+survival, they then want to maximize their share of the gold coins. And
+given a certain allotment of coins, they prefer having that number and
+having a higher rank in the chain of command than having that same
+number and a lower rank.
+
+Assume that voting is non-strategic; that is, the pirates always vote
+according to their preferences. (Although having strategic voting would
+not change the game's outcome, it does make an already complicated game
+even more convoluted.)
+
+Find the backwards induction solution.
+
+
+\end{document}

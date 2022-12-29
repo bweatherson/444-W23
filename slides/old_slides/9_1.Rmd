@@ -1,0 +1,169 @@
+---
+title: "444 Lecture 9.1 - O'Connor Chapter 1"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+        - toc.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## Day Plan
+
+\tableofcontents
+
+# Gender Division
+
+## Genders in Society
+
+- The ubiquity of gender divisions in socities is really remarkable.
+- What other things are this ubiquitous? \pause
+- Definitely language use, which is itself remarkable.
+- And some age-related divisions, though with more variable manifestations. \pause
+- Language is the closest thing to gender; we see it in all societies, but the way we see it varies.
+
+## Other Divisions
+
+Obviously there are other divisions we see in societies.
+
+- Race
+- Religion
+- Class \pause
+
+But note two things about these.
+
+1. Not nearly as ubiquitous.
+2. They complement gender, not replace.
+
+# Types
+
+## Games with Types
+
+- Games with types are sort of 'between' two familiar kinds of games in complexity.
+- One is games where each player has a full awareness of the identity of who they are playing with, and can plan strategies that discriminate among these other players.
+- At the other end is where a player just has to pick a strategy in complete ignorance of who the other player is.
+- With types we get in between; you don't know who the other player is, but you know they are of type $t$.
+
+## Symmetry
+
+- The formal effect of this is to open up a new range of **symmetric** equilibria.
+- Without types, the only equilibrium in a complementary coordination game is really bad.
+
+|        |  A  | B |
+|-------:|:------:|:------:|
+| A   |  0, 0  |  1, 1  |
+| B |  1, 1  |  0, 0  |
+
+- The only symmetric equilibrium is that we both play the mixed strategy half-A/half-B, with a return of 0.5.
+
+## Types
+
+|        |  A  | B |
+|-------:|:------:|:------:|
+| A   |  0, 0  |  1, 1  |
+| B |  1, 1  |  0, 0  |
+
+- Now imagine that we will first be assigned type-A or type-B, with probability 0.5 for each, and that types will be visible.
+- This opens up a new symmetric equilibrium: Play your type if the other is different, randomise if the other is same.
+- And this has an expected return of 0.75. \pause
+- This will be called a **population equilibrium** in chapter 2, and we'll return to it.
+
+# Complementary and Correlative Games
+
+## A Correlative Game
+
+|        |  Bach  | Stravinsky |
+|-------:|:------:|:------:|
+| Bach   |  2, 1  |  0, 0  |
+| Stravinsky |  0, 0  |  1, 2  |
+
+
+## A Complementary Game
+
+|        |  Favorite  | Other |
+|-------:|:------:|:------:|
+| Favorite   |  0, 0  |  2, 1  |
+| Other |  1, 2  |  0, 0  |
+
+## The Same Game?
+
+- Aren't these the same game? \pause
+- Not necessarily; depending on how we set the game up.
+
+## What makes something a move
+
+- The player must be physically capable of performing the move.
+- But they must also be capable of performing it under that description. \pause
+- Question: Can I call up Barack Obama? \pause
+- Positive answer: it's just a matter of dialing the right number, and I have the dexterity to hit the numbers. \pause
+- Negative answer: I don't know his phone number!
+- We're working with a system where the negative answer is the right one; which seems very natural.
+
+## Correlative and Complementary
+
+- Lewis: Correlative vs Complementary is just a matter of relabelling, it doesn't reflect a deep difference.
+- O'Connor: That relabelling might convert things that the player can do under that very description into things they cannot do under that description.
+
+# Norms and Conventions
+
+## Norms and Conventions
+
+- The distinction here is tricky.
+- Conventions are things where everyone goes along because they'd expect to do worse as long as everyone else is following the convention.
+- Norms are things where everyone goes along because they'd expect to do worse as long as everyone else is endorsing the norm.
+- These seem really similar.
+
+## Norms and Conventions
+
+- The difference is why they expect to do worse if they violate.
+- Roughly, social norms are where one expects to do worse because of punishment behavior by others.
+- Conventions are where you do worse because of a failure to coordinate. The restaurant won't punish me for knocking on the door at 3 in the morning to see if they are open, they just won't open up. (Because they aren't there!)
+
+## Examples of Norms and Conventions
+
+- I'm actually not convinced that driving on the socially approved side is a norm in this sense; the downsides are much more due to others behaving normally than due to punishment.
+- There is an intermediate case - where we internalise the convention, and violating it generates *guilt*.
+- This should probably go with the punishment - not all punishments are by others.
+
+# Hawk-Dove
+
+## Hawk-Dove
+
+- I haven't talked about this already, but I possibly should have.
+- When I talked last week about whether some games were Prisoners' Dilemma or Stag Hunt, there was a third option, Hawk-Dove.
+- And maybe that's the right model for some cases we discussed.
+
+## What is Hawk-Dove
+
+1. Everyone wants the other person to be Dove; that's the cooperative move.
+2. If everyone is a Hawk, it's a disaster. It's even worse than in PD.
+3. But if everyone is a Dove, it's better to defect and play Hawk. That's like PD and unlike SH.
+
+Everyone wants to be the only defector.
+
+## Simple Models
+
+- We will come back to Hawk-Dove in chapter 2, so we'll talk about it more then.
+- But for now it's good to have simple models in mind.
+- Don't think _This coordination problem isn't PD, so must be SH_.
+- It could be Hawk-Dove instead.
+
+# Notes
+
+## Military
+
+- Just one small note this week.
+- Is it really true that militaries need strict hierarchies to be successful?
+- I think this turns on what you call a 'military'.
+- The slave rebellion in what's now Haiti was pretty successful, without a particularly clear hierarchy.
+- The guerilla war the Spanish people waged against Napoleon was much more successful than anyone their own army did.
+- I don't think this makes a big difference to the story, but I was surprised to see this stated so categorically.

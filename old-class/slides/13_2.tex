@@ -1,0 +1,430 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 13.2 - Private Vices and Public Virtues},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+\usepackage{istgame}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Day Plan}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 13.2 - Private Vices and Public Virtues}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Day Plan}
+\protect\hypertarget{day-plan}{}
+\tableofcontents
+\end{frame}
+
+\hypertarget{virtues-and-vices}{%
+\section{Virtues and Vices}\label{virtues-and-vices}}
+
+\begin{frame}{Epistemic Virtue}
+\protect\hypertarget{epistemic-virtue}{}
+The tradition they are working in traces back to Aristotle's ethics, and
+its emphasis on virtue.
+
+\begin{itemize}
+\tightlist
+\item
+  Or, more precisely, it traces back to the mid-20th Century
+  rediscovery/reinvention of Aristotelian ethics.
+\item
+  The very general picture is that ethics is abut character traits, not
+  outcomes (like in consequentialism) or actions (as in deontology).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Aristotelian Medians}
+\protect\hypertarget{aristotelian-medians}{}
+Aristotle had a particular take on virtue that we may, but don't have
+to, adopt.
+
+\begin{itemize}
+\tightlist
+\item
+  Virtues are midpoints between two vices.
+\item
+  So courage is the midpoint between cowardice and foolishness.
+\item
+  Is this what virtue always consists in? I'm not sure; and the fact
+  that we can ask that question means that we can sensibly talk about
+  virtue theory independent of its Aristotelian origin.
+\end{itemize}
+\end{frame}
+
+\hypertarget{virtue-epistemology}{%
+\section{Virtue Epistemology}\label{virtue-epistemology}}
+
+\begin{frame}{Dharmottara Cases}
+\protect\hypertarget{dharmottara-cases}{}
+\begin{itemize}
+\tightlist
+\item
+  Virtue epistemology was originally introduced to solve Dharmottara
+  cases.
+\item
+  Knowledge is true belief obtained via the exercise of an epistemic
+  virtue.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Other Applications}
+\protect\hypertarget{other-applications}{}
+But the theory is both more and less interesting than that.
+
+\begin{itemize}
+\tightlist
+\item
+  Less because like all other solutions to the puzzle raised by
+  Dharmottara's example, it doesn't work.
+\item
+  But more because there are a lot of epistemic virtues that are
+  interesting in their own right.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Other Virtues}
+\protect\hypertarget{other-virtues}{}
+\begin{itemize}[<+->]
+\tightlist
+\item
+  Open-mindedness
+\item
+  Inquisitiveness
+\item
+  Modesty
+\item
+  Curiosity
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Two Questions}
+\protect\hypertarget{two-questions}{}
+\begin{enumerate}[<+->]
+\tightlist
+\item
+  Which of these are about belief, as opposed to inquiry?
+\item
+  Which of these are Aristotelian means?
+\end{enumerate}
+\end{frame}
+
+\hypertarget{private-vices-as-public-goods}{%
+\section{Private Vices as Public
+Goods}\label{private-vices-as-public-goods}}
+
+\begin{frame}{Historical Precedents}
+\protect\hypertarget{historical-precedents}{}
+\begin{itemize}
+\tightlist
+\item
+  Mandeville's \emph{Fable of the Bees} (on one interpretation): saving
+  is private virtue but public vice.
+\item
+  Being excessively confident, and going in for exploration or
+  innovation, might be private vice but public virtue.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Epistemic Equivalents?}
+\protect\hypertarget{epistemic-equivalents}{}
+\begin{enumerate}[<+->]
+\tightlist
+\item
+  Cultural evolution - over imitation is irrational but useful for
+  spreading new ideas.
+\item
+  Argumentation - It's good if people are over-invested in defending
+  their own view/finding flaws in others
+\end{enumerate}
+\end{frame}
+
+\hypertarget{objections}{%
+\section{Objections}\label{objections}}
+
+\begin{frame}{Two Obvious Objections}
+\protect\hypertarget{two-obvious-objections}{}
+\begin{enumerate}[<+->]
+\tightlist
+\item
+  These aren't public goods. Or, at least, they aren't epistemic public
+  goods.
+\item
+  These aren't private vices. I'll spend more time on this.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Imitation and Discrimination}
+\protect\hypertarget{imitation-and-discrimination}{}
+Someone who headbutts a light switch because they are imitating looks
+fairly silly. But are they irrational?
+
+\begin{itemize}
+\tightlist
+\item
+  They aren't actually maximising utility, but that's too high a
+  standard.
+\item
+  What does it really mean to say someone is ``over-imitating''?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Imitation and Discrimination}
+\protect\hypertarget{imitation-and-discrimination-1}{}
+Remember there are very good reasons for imitation.
+
+\begin{itemize}
+\tightlist
+\item
+  If someone does something, and they subsequently get a good result,
+  that is evidence that the `something' leads to a good result.
+\item
+  This is especially true because the `something' didn't just happen, it
+  was an action.
+\item
+  It's a good general practice to assume that things you see people do
+  are done for reasons.
+\item
+  That's especially true for the things you see successful people do.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Second Order Evidence}
+\protect\hypertarget{second-order-evidence}{}
+Very often, we get a reason to believe that \(p\) not by being given
+direct evidence of it, but by being given evidence that someone else has
+evidence of it.
+
+\begin{itemize}
+\tightlist
+\item
+  The fact that someone who wanted to achieve outcome O did action A to
+  get it, and got outcome O, is in fact two bits of evidence.
+\item
+  From the success, we get direct evidence that A leads to O.
+\item
+  From the fact they did it, we get indirect evidence that A is a good
+  way to get to O.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Vigilence}
+\protect\hypertarget{vigilence}{}
+But surely this is defeasible, and the claim is that ordinary people
+don't let it get defeated often enough?
+
+\begin{itemize}
+\tightlist
+\item
+  True, but that doesn't mean we have to check for ourselves that each
+  bit of imitation is worthwhile.
+\item
+  It certainly doesn't mean each bit of imitation has to be worthwhile.
+\item
+  It just means that we have to be \textbf{vigilant}.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Vigilence}
+\protect\hypertarget{vigilence-1}{}
+To my mind, this is one of the most important ideas in recent
+epistemology.
+
+\begin{itemize}
+\tightlist
+\item
+  Good epistemic activity requires vigilence.
+\item
+  Example: walking down crowded street.
+\item
+  Really hard question: how do you implement vigilence in an artificial
+  system?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Imitation with vigilence}
+\protect\hypertarget{imitation-with-vigilence}{}
+My take on these examples is that copying with vigilence is good, i.e.,
+is virtuous.
+
+\begin{itemize}
+\tightlist
+\item
+  So this isn't a public virtue that's a private vice.
+\item
+  But maybe that's too optimistic a take on what the individuals are up
+  to.
+\end{itemize}
+\end{frame}
+
+\end{document}

@@ -1,0 +1,5 @@
+\beamer@sectionintoc {1}{Dynamic Games}{2}{0}{1}
+\beamer@sectionintoc {2}{Value of Games}{33}{0}{2}
+\beamer@sectionintoc {3}{Generalising}{39}{0}{3}
+\beamer@sectionintoc {4}{Strategies and Threats}{48}{0}{4}
+\beamer@sectionintoc {5}{For Next Time}{57}{0}{5}

@@ -1,0 +1,150 @@
+\documentclass[11pt,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+    \setmainfont[]{SF Pro Text Light}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Essay Questions},
+            pdfauthor={Philosophy 444},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Essay Questions}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Philosophy 444}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{Due Tuesday December 17}
+
+\usepackage{mathastext}
+\usepackage{nicefrac}
+
+\begin{document}
+\maketitle
+
+Answer \textbf{one} of the following questions in an essay of about 2500
+words. The paper should engage with the relevant readings, and all
+references to works of other authors should be properly cited. (We don't
+particularly care which citation method you use, as long as all direct
+and indirect references are properly cited.)
+
+If you want feedback on a draft, you need to get it to Angela Sun by
+\textbf{Tuesday, December 3}. You don't have to do this, but it is
+strongly encouraged.
+
+\hypertarget{question-one}{%
+\section{Question One}\label{question-one}}
+
+What does it mean to say that acquiring education provides a signal to
+prospective employers, in the sense of Spence's work on job market
+signalling? How plausible is the claim that the primary role of college
+education is to provide such signals?
+
+\hypertarget{question-two}{%
+\section{Question Two}\label{question-two}}
+
+Describe a situation where the preferences of each individual in a group
+conflict with rights that individuals intuitively have. The situation
+should be described in some detail. You should not use abstracta (like A
+prefers X to Y), but instead fill in the details. And the situation
+should be different from the examples described in the literature (such
+as Sen's example involving Lady Chatterley's Lover).
+
+In such a situation, what is the best outcome? Should the preferences of
+everyone in the group (including the person whose rights are potentially
+violated) be respected, or should the rights of the individual be
+respected?
+
+What do situations like this tell us about the best way to design
+institutions for group decision making?
+
+\hypertarget{question-three}{%
+\section{Question Three}\label{question-three}}
+
+Abraham Roth says that on Margaret Gilbert's view of shared action,
+`'participants in shared activity are obligated to do their part in
+it.'' What is meant by this claim about obligation? Why does Gilbert
+defend it? Why does Michael Bratman think it is false, at least as a
+claim about what is essential to shared action?
+
+\hypertarget{question-four}{%
+\section{Question Four}\label{question-four}}
+
+Are there situations where a group knows that \emph{p}, but few people
+in the group know that \emph{p}? Are there situations where a group
+knows that \emph{p}, but no people in the group know that \emph{p}?
+
+Defend your answers, with reference to the papers we read on group
+knowledge.
+
+
+\end{document}

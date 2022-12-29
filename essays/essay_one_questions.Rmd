@@ -1,0 +1,26 @@
+---
+title: "Essay Questions"
+author: "Brian Weatherson"
+date: "Due March 31"
+output:
+  pdf_document:
+    latex_engine: xelatex
+    toc: no
+    keep_tex: yes
+    fig_caption: no
+    number_sections: true
+    extra_dependencies: 
+      mathastext: ["italic"]
+mainfont: Merriweather
+mainfontoptions: Scale=MatchLowercase
+geometry: margin=1.5in
+linestretch: 1.15
+fontsize: 11pt
+---
+
+You can write on any particular part of the book that you like, but I know that it is hard to come up with an essay question. So here are some that you can choose from. (Or, again, you can do an essay on any part of the book that you would like, as long as you're clear what you are writing about.)
+
+1. Describe some ways in which the evolutionary game theory that O'Connor uses differs from the classical, rational choice, game theory that we studied in Bonanno's textbook. How does the use of evolutionary game theory make her models more plausible? How does it make them less plausible.
+2. Compare the coordination games that are central to part I with the bargaining games that are central to part II. Which real world situations are best modelled by one or other of these games? Which real world situations relevant to the growth or persistence of gender inequality are not well modelled by either?
+3. Which parts of O'Connor's argument require an assumption that society will be organised around male-female pairs? Which parts do not require this assumption?
+4. O'Connor's explanation for the development of gender inequality relies on the idea that there are advantages to using _types_ to resolve certain kinds of games, especially coordination games and bargaining games. If this is why gender inequality develops, should we expect gender norms and gender inequality to be everywhere, or should we expect that some communities will use different types to play the role that gender plays in societies we are familiar with?

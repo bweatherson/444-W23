@@ -1,0 +1,329 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 2.3 - Ordinal and Cardinal Utility},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+\usepackage{caption}
+% Make caption package work with longtable
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 2.3 - Ordinal and Cardinal Utility}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Plan}
+\protect\hypertarget{plan}{}
+\begin{itemize}
+\tightlist
+\item
+  Explain the difference between ordinal and cardinal utility.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Associated Reading}
+\protect\hypertarget{associated-reading}{}
+Bonanno, section 2.1.
+\end{frame}
+
+\begin{frame}{Utility}
+\protect\hypertarget{utility}{}
+A utility function (for a particular agent) is a mapping \(U\) from
+situations to numbers satsifying this constraint.
+
+\begin{itemize}
+\tightlist
+\item
+  \(U(S_1) > U(S_2)\) iff the agent is better off in \(S_1\) than in
+  \(S_2\).
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Welfare}
+\protect\hypertarget{welfare}{}
+This isn't part of the formal theory, but we usually implicitly assume
+(at least in our narratives), the following principle.
+
+\begin{quote}
+The agent is better off in \(S_1\) than in \(S_2\) iff, given a choice
+and assuming they are fully informed, they prefer being in \(S_1\) to
+\(S_2\).
+\end{quote}
+
+That is, we'll usually speak as if a radically subjectivist view of
+welfare is correct. I've been doing this already, and I'm going to keep
+doing it.
+\end{frame}
+
+\begin{frame}{Ordinal Utility}
+\protect\hypertarget{ordinal-utility}{}
+\begin{itemize}
+\tightlist
+\item
+  When we say that we're working with \textbf{ordinal} utility
+  functions, really the only principle that applies is the one from two
+  slides back.
+\item
+  Higher utilities are better, i.e., are preferred.
+\item
+  The term \textbf{ordinal} should make you think of `orders'; all an
+  ordinal utility function does is provide a rank \textbf{ordering} of
+  the outcomes.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Two Functions}
+\protect\hypertarget{two-functions}{}
+So if we're working in ordinal utility, these two functions describe the
+same underlying reality.
+
+\begin{longtable}[]{@{}lcc@{}}
+\toprule
+& \(U_1\) & \(U_2\) \\ \addlinespace
+\midrule
+\endhead
+\(O_1\) & 1 & 1 \\ \addlinespace
+\(O_2\) & 2 & 10 \\ \addlinespace
+\(O_3\) & 3 & 500 \\ \addlinespace
+\(O_4\) & 4 & 7329 \\ \addlinespace
+\bottomrule
+\end{longtable}
+\end{frame}
+
+\begin{frame}{Cardinal Utility}
+\protect\hypertarget{cardinal-utility}{}
+\begin{itemize}
+\tightlist
+\item
+  In cardinal utility theory, the differences between the numbers
+  matter.
+\item
+  The numbers now express quantities, and the two functions from the
+  previous slide do not represent the same underlying reality.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Cardinal Utility (Detail)}
+\protect\hypertarget{cardinal-utility-detail}{}
+\begin{itemize}
+\tightlist
+\item
+  There is a fussy point here that's worth going over.
+\item
+  Even cardinal utility functions don't come with a scale.
+\item
+  So two functions with different numbers in them can still express the
+  same underlying reality.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Cardinal Utility (Detail)}
+\protect\hypertarget{cardinal-utility-detail-1}{}
+The standard way to put this is that (cardinal) utility is defined only
+up to a \textbf{positive, affine transformation}. That means that if
+\(U_1\) and \(U_2\) are related by the following formula, then they
+represent the same state of affairs.
+
+\[
+U_2(o) = aU_1(o) + b \text{ where } a > 0
+\]
+\end{frame}
+
+\begin{frame}{Celsius and Farenheit}
+\protect\hypertarget{celsius-and-farenheit}{}
+\begin{itemize}
+\tightlist
+\item
+  The main real world cases of scales that are related in this way are
+  temperature scales.
+\item
+  To convert between Celsius and Farenheit you use the formula
+  \(F = 1.8C + 32\).
+\item
+  But the scales are just two ways of representing the same physical
+  reality.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Cardinal Utility (Detail)}
+\protect\hypertarget{cardinal-utility-detail-2}{}
+\begin{itemize}
+\tightlist
+\item
+  So there is no such thing as one outcome being \emph{twice as good} as
+  another.
+\item
+  But we can say a lot of things about differences.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Cardinal Utility (Detail)}
+\protect\hypertarget{cardinal-utility-detail-3}{}
+\begin{itemize}[<+->]
+\tightlist
+\item
+  If the difference between \(O_1\) and \(O_2\) is the same as the
+  difference between \(O_2\) and \(O_3\), that will stay the same under
+  any positive affine transformation.
+\item
+  Indeed, for any \(k\), if the difference between \(O_1\) and \(O_2\)
+  is \(k\) times the difference between \(O_2\) and \(O_3\), that will
+  stay the same under any positive affine transformation.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{For Next Time}
+\protect\hypertarget{for-next-time}{}
+\begin{itemize}
+\tightlist
+\item
+  We will start on section 2.2.
+\end{itemize}
+\end{frame}
+
+\end{document}

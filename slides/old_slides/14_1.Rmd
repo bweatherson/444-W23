@@ -1,0 +1,214 @@
+---
+title: "444 Lecture 14.1 - Group Belief"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+        - toc.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## Day Plan
+
+\tableofcontents
+
+# A Practical Problem
+
+## Merging Experts
+
+- Let's say some experts have all opined on a particular question.
+- And the opinions are in probabilistic form.
+- We are not an expert, but we want to defer to expert opinion.
+- Unfortunately, the experts disagree.
+- What should we do?
+
+## A Simple Answer
+
+Arithmetic Mean
+
+## Formal Version
+
+$$
+\Pr(p) = \frac {\sum {\Pr_i(p)}}{n}
+$$
+
+That is, you add up all the expert probabilities, and divide by the number of experts.
+
+## Three Virtues
+
+- Simple.
+- Always gives you a probability.
+- Always gives you a value between the various expert opinions.
+
+## Three Problems
+
+- May not always want to be between the experts.
+- Doesn't preserve independence.
+- Doesn't handle updating well.
+
+# Betweenness
+
+## Experts With Different Evidence
+
+Imagine the following case.
+
+- Two trials of a new medicine are being run, one in Michigan and one in California.
+- The theory behind the medicine is very speculative, and it's only 50/50 whether it will work as intended.
+- The trials aren't complete, and the evidence isn't released, but you know each of the lead researchers, and you call them up separately.
+- They each say, "This is going better than expected; I'd say it's 90% likely that the drug works."
+- What should your probability be that the drug works?
+
+## My View
+
+I think it should not be between the expert views, it should be higher.
+
+- But this is a special case.
+- You have evidence the experts don't have.
+
+## How To Correct
+
+When we are making a group decision, like in GroupThink, we should first find out what everyone thinks and why, then adjust our individual probabilities, then merge those.
+
+- Possibly by arithmetic averaging.
+
+# Independence
+
+## A Puzzle
+
+- You are interested in two propositions, $p$ and $q$, as well as their interactions.
+- There are two experts: $A$ and $B$.
+- Both experts think that $A$ and $B$ are probabilistically independent.
+- But they disagree on the likelihoods.
+- $A$ thinks that each has probability 0.9.
+- $B$ thinks that each has probability 0.1.
+
+## Summary
+
+  Proposition                  Expert A          Expert B
+------------------------    -------------     -------------
+ $p \wedge q$                    0.81          0.01
+ $p \wedge \neg q$               0.09          0.09
+ $\neg p \wedge q$               0.09          0.09
+ $\neg p \wedge \neg q$          0.01          0.81
+ 
+## Arithmetic Mean
+
+
+  Proposition                  Expert A          Expert B        Mean
+------------------------    -------------     -------------    --------
+ $p \wedge q$                    0.81          0.01               0.41
+ $p \wedge \neg q$               0.09          0.09               0.09
+ $\neg p \wedge q$               0.09          0.09               0.09
+ $\neg p \wedge \neg q$          0.01          0.81               0.41
+ 
+You get $\Pr(p) = \Pr(q) = 0.5$, as seems right. But $\Pr(p | q) = 0.82$, which seems wrong.
+
+# Learning
+
+## Two Orders of Updating
+
+This case is a bit more complicated, but it's the most important one.
+
+- There are two people, $X$ and $Y$, who want to learn from the experts.
+- There is only one proposition that they care about: $p$.
+- There are two experts $A$ and $B$.
+- In the morning, $X$ goes to talk to them.
+- They say that they'll know more in the afternoon, after it is revealed at midday whether $q$ is true.
+- $X$ says that they can update themselves, just give them the four way table.
+
+## Expert Views
+
+  Proposition                  Expert A          Expert B
+------------------------    -------------     -------------
+ $p \wedge q$                    0.4            0.3
+ $p \wedge \neg q$               0.3            0.2
+ $\neg p \wedge q$               0.2            0.1
+ $\neg p \wedge \neg q$          0.1            0.4
+
+$X$ takes the average of those two probabilities, and comes away with $\Pr(p | q) = 0.7$, and $\Pr(p | \neg q) = 0.5$.
+
+## Later That Day
+
+- It becomes public knowledge whether $q$ happens. Let's say it doesn't.
+- Now $A$ thinks $\Pr(p) = \frac{3}{4}$, and $B$ thinks $\Pr(p) = \frac{1}{3}$.
+- Now $Y$ asks for their expert views, learns them, and averages them.
+- So $Y$ ends up with $\Pr(p) = \frac{13}{24}$.
+- But $X$ ends up with $\Pr(p) = 0.5$.
+- Yet they did the same thing - defer to these two experts, and make one's beliefs sensitive to $q$.
+
+## Order Invariance
+
+Linear averaging has the following flaw.
+
+- Learning from experts then updating gives a different answer to having the experts update then learning from them.
+- And that's true even if it is public knowledge what everyone is updating on, and there is complete agreement about how to update.
+- That seems bad, a rule for learning from experts shouldn't be order dependent in this way.
+
+# Geometric Pooling
+
+## Geometric Mean
+
+In general the geometric mean of $n$ numbers is:
+
+$$
+\sqrt[n]{x_1 x_2 \dots x_n}
+$$
+
+Multiply the numbers together, and take the n'th root.
+
+## Geometric Mean of Probabilities
+
+In general, if you take the geometric means of the expert's opinions about each elemtn of a probability space, the result will **not** be a probability.
+
+## Old Example
+
+  Proposition                  Expert A          Expert B
+------------------------    -------------     -------------
+ $p \wedge q$                    0.81          0.01
+ $p \wedge \neg q$               0.09          0.09
+ $\neg p \wedge q$               0.09          0.09
+ $\neg p \wedge \neg q$          0.01          0.81
+ 
+If for each of the four possibilities, your probability is the geometric mean of the two experts, you will have probability 0.09 for each. But those numbers add to 0.36, not to 1.
+
+## Re-Normalize
+
+So there is one extra step.
+
+- You have to re-normalize.
+- You multiply each of the values you get at step 1 by a constant so that they sum to 1.
+
+## Advantages
+
+> - Preserves Independence 
+> - Order Invariant
+> - Apparently the only function that will do this.
+
+## Disadvantages
+
+> - Not simple!
+> - Still has a problem with the two drug trials case.
+
+## Open Questions
+
+> - How to extend this to density functions.
+> - Are there other problems? I think you get a problem with the $XY$ case if one of them just asks the experts about $p$ and the other asks about both $p$ and $q$. You end up with different answers.
+> - What to say about the two drug trials case?
+
+## Philosophical Question
+
+Are these two cases the same?
+
+1. There are $n$ experts, you ask each for their opinion, and then merge the answers.
+2. There are $n-1$ other experts plus you, you ask the rest of them for their opinion and then do the rational thing with this evidence.
+
+I think this is one of the biggest questions in recent epistemology. Should members of a group treat themselves as just one more member of the group for judgment aggregation purposes?

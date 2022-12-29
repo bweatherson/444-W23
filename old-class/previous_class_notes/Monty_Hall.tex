@@ -1,0 +1,233 @@
+\documentclass[11pt,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+    \setmainfont[]{SF Pro Text Light}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Monty Hall},
+            pdfauthor={Philosophy 444},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Monty Hall}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Philosophy 444}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{25 September, 2019}
+
+\usepackage{mathastext}
+
+\begin{document}
+\maketitle
+
+I messed up the explanation of the Monty Hall Problem last time, so this
+is to go over a little more clear.
+
+\hypertarget{rules-of-the-game}{%
+\subsection{Rules of the Game}\label{rules-of-the-game}}
+
+\begin{itemize}
+\tightlist
+\item
+  There are three doors.
+\item
+  There is a prize behind one, and nothing behind the other two. The
+  winning door has been chosen at random, with each door chosen with
+  probability \(\frac{1}{3}\).
+\item
+  Once you select a door, the host will show you a door.
+\item
+  This door is chosen to have two characteristics - it is not the door
+  you chose, and it is not the door that has the prize.
+\item
+  If you chose incorrectly the first time, the host has no choice, there
+  is only one possibility available to show you. (You should confirm for
+  yourself this is true.)
+\item
+  If you chose correctly the first time, the host has a choice. In that
+  case, we will assume that the probability that he chooses either door
+  is \(\frac{1}{2}\).
+\end{itemize}
+
+\hypertarget{terminology}{%
+\subsection{Terminology}\label{terminology}}
+
+\begin{itemize}
+\tightlist
+\item
+  I'll use \(P_i\) for the proposition that the prize is behind door
+  \(i\).
+\item
+  And I'll use \(S_i\) for the proposition that the host shows you door
+  \(i\).
+\item
+  One of the consequences of the rules of the game is that for each
+  \(i\), we know \(S_i \rightarrow \neg P_i\); the prize is not behind
+  the shown door.
+\end{itemize}
+
+\hypertarget{prior-probabilities}{%
+\subsection{Prior Probabilities}\label{prior-probabilities}}
+
+Let's assume, as in class, that we choose door 3. Then there are four
+possibilities available.
+
+\begin{itemize}
+\tightlist
+\item
+  \(P_1 \wedge S_2\)
+\item
+  \(P_2 \wedge S_1\)
+\item
+  \(P_3 \wedge S_1\)
+\item
+  \(P_3 \wedge S_2\)
+\end{itemize}
+
+What are the probabilities of each? We can use the following formula.
+
+\begin{quote}
+\(\Pr(X \wedge Y) = \Pr(X | Y)\Pr(Y)\)
+\end{quote}
+
+Note that this is just the conditional probability formula with each
+side multiplied by \(\Pr(Y)\).
+
+By the rules of the game \(\Pr(S_2 | P_1) = 1\). Given \(P_1\), it is
+forced that you are shown door 2. And \(\Pr(P_1) = \frac{1}{3}\). So
+\(\Pr(S_2 \wedge P_1) = \Pr(S_2 | P_1) \times \Pr(P_1) = 1 \times \frac{1}{3} = \frac{1}{3}\).
+
+The same reasoning shows that \(\Pr(S_1 \wedge P_2) = \frac{1}{3}\).
+
+What about \(P_3 \wedge S_1\). Well, we can use the same approach.
+\(\Pr(S_3 \wedge P_1) = \Pr(S_3 | P_1) \times \Pr(P_1)\). But now we
+need to know \(\Pr(S_3 | P_1)\). The rules, however, say this is
+\(\frac{1}{2}\) - this is the part that says the host will choose each
+door with equal probability if he has a free choice about what to do. So
+the calculation is
+\(\Pr(S_3 \wedge P_1) = \Pr(S_3 | P_1) \times \Pr(P_1) = \frac{1}{2} \times \frac{1}{3} = \frac{1}{6}\).
+
+And the same kind of calculation shows that
+\(\Pr(P_3 \wedge S_2) = \frac{1}{6}\).
+
+Summing all that up
+
+\begin{itemize}
+\tightlist
+\item
+  \(\Pr(P_1 \wedge S_2) = \frac{1}{3}\)
+\item
+  \(\Pr(P_2 \wedge S_1) = \frac{1}{3}\)
+\item
+  \(\Pr(P_3 \wedge S_1) = \frac{1}{6}\)
+\item
+  \(\Pr(P_3 \wedge S_2) = \frac{1}{6}\)
+\end{itemize}
+
+Let's assume door 2 is shown. (The calculations will be the same if door
+1 is shown.) We need to flip the conditional probabilities around. We
+want \(\Pr(P_1 | S_2)\). Here's the calculation for that.
+
+\begin{align*}
+\Pr(P_1 | S_2) &= \frac{\Pr(P_1 \wedge S_2)}{\Pr(S_2)} \\
+ &= \frac{\Pr(P_1 \wedge S_2)}{\Pr((S_2 \wedge P_1) \vee (S_2 \wedge P_3))} \\
+ &= \frac{\Pr(P_1 \wedge S_2)}{\Pr(S_2 \wedge P_1) + \Pr(S_2 \wedge P_3)} \\
+ &= \frac{\frac{1}{3}}{\frac{1}{3} + \frac{1}{6}} \\
+ &= \frac{2}{3}
+\end{align*}
+
+So you should switch. If you switch, you have a \(\frac{2}{3}\) chance
+of getting the prize. Why then does it seem that you should have a 50/50
+shot of getting the prize? Because the following is true.
+
+\[
+\Pr(P_1 | \neg P_2) = \frac{1}{2}
+\]
+
+On learning \(\neg P_2\), and nothing else, you should think each
+remaining door is equally likely to have the prize behind it. And then
+you may as well stay.
+
+But the crucial philosophical point, and this is why it is the same kind
+of puzzle as the planes and bullets story, is that we have to
+distinguish what we've learned from the fact that we've learned it.
+Sometimes that latter fact tells us something really crucial. At a very
+general level of abstraction, it tells us that a certain process
+produced an output. That process might be a game show host choosing to
+show us a door, or planes making it back across the English Channel in,
+if not one piece, enough state they could get back. In all these cases
+you should think not just about what you're being told, but why you're
+being told it.
+
+
+\end{document}

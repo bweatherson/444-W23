@@ -1,0 +1,387 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  ignorenonframetext,
+]{beamer}
+\usepackage{pgfpages}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{caption label separator}{: }
+\setbeamercolor{caption name}{fg=normal text.fg}
+\beamertemplatenavigationsymbolsempty
+% Prevent slide breaks in the middle of a paragraph
+\widowpenalties 1 10000
+\raggedbottom
+\setbeamertemplate{part page}{
+  \centering
+  \begin{beamercolorbox}[sep=16pt,center]{part title}
+    \usebeamerfont{part title}\insertpart\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{section page}{
+  \centering
+  \begin{beamercolorbox}[sep=12pt,center]{part title}
+    \usebeamerfont{section title}\insertsection\par
+  \end{beamercolorbox}
+}
+\setbeamertemplate{subsection page}{
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center]{part title}
+    \usebeamerfont{subsection title}\insertsubsection\par
+  \end{beamercolorbox}
+}
+\AtBeginPart{
+  \frame{\partpage}
+}
+\AtBeginSection{
+  \ifbibliography
+  \else
+    \frame{\sectionpage}
+  \fi
+}
+\AtBeginSubsection{
+  \frame{\subsectionpage}
+}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[BoldFont = SF Pro Rounded Semibold]{SF Pro Rounded}
+  \setmathfont[]{STIX Two Math}
+\fi
+\usefonttheme{serif} % use mainfont rather than sansfont for slide text
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={444 Lecture 9.2 - O'Connor Chapters 2-3},
+  pdfauthor={Brian Weatherson},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\newif\ifbibliography
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\let\Tiny=\tiny
+
+ \setbeamertemplate{navigation symbols}{} 
+
+% \usetheme{Madrid}
+ \usetheme[numbering=none, progressbar=foot]{metropolis}
+ \usecolortheme{wolverine}
+ \usepackage{color}
+ \usepackage{MnSymbol}
+% \usepackage{movie15}
+
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\DeclareSymbolFont{symbolsC}{U}{txsyc}{m}{n}
+\DeclareMathSymbol{\boxright}{\mathrel}{symbolsC}{128}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
+
+\AtBeginSection[]
+{
+\begin{frame}
+	\Huge{\color{darkblue} \insertsection}
+\end{frame}
+}
+
+\renewenvironment*{quote}	
+	{\list{}{\rightmargin   \leftmargin} \item } 	
+	{\endlist }
+
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{darkblue}{rgb}{0,0,0.8}
+
+\usepackage[italic]{mathastext}
+\usepackage{nicefrac}
+\usepackage{istgame}
+
+\setbeamertemplate{caption}{\raggedright\insertcaption}
+
+%\def\toprule{}
+%\def\bottomrule{}
+%\def\midrule{}
+\usepackage{etoolbox}
+\AfterEndEnvironment{description}{\vspace{9pt}}
+\AfterEndEnvironment{oltableau}{\vspace{9pt}}
+\BeforeBeginEnvironment{oltableau}{\vspace{9pt}}
+\AfterEndEnvironment{center}{\vspace{9pt}}
+\BeforeBeginEnvironment{tabular}{\vspace{9pt}}
+\AfterEndEnvironment{longtable}{\vspace{-6pt}}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable} 
+\usepackage{threeparttablex} 
+\usepackage[normalem]{ulem} 
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{ulem}
+
+\setlength\heavyrulewidth{0ex}
+\setlength\lightrulewidth{0.08ex}
+
+\aboverulesep=0ex
+\belowrulesep=0ex
+\renewcommand{\arraystretch}{1.2}
+\AtBeginSection[]
+{
+    \begin{frame}
+        \frametitle{Day Plan}
+        \tableofcontents[currentsection]
+    \end{frame}
+}
+\ifluatex
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{444 Lecture 9.2 - O'Connor Chapters 2-3}
+\author{Brian Weatherson}
+\date{}
+
+\begin{document}
+\frame{\titlepage}
+
+\begin{frame}{Day Plan}
+\protect\hypertarget{day-plan}{}
+\tableofcontents
+\end{frame}
+
+\hypertarget{types}{%
+\section{Types}\label{types}}
+
+\begin{frame}{Types}
+\protect\hypertarget{types-1}{}
+\begin{itemize}
+\tightlist
+\item
+  Remember that the key thing abut types is that they are visible.
+\item
+  In any interaction, everyone knows who is of which type.
+\item
+  And everyone knows everyone knows that.
+\item
+  So part of the theory is that a method of typing will have to go
+  along, socially, with visible markers.
+\item
+  This is interesting in the context of religious typing - and worth
+  thinking about how religious groups have voluntarily or involuntarily
+  adopted visible markers.
+\end{itemize}
+\end{frame}
+
+\hypertarget{resumuxe9-studies}{%
+\section{Resumé Studies}\label{resumuxe9-studies}}
+
+\begin{frame}{Resumé Studies}
+\protect\hypertarget{resumuxe9-studies-1}{}
+\begin{itemize}
+\tightlist
+\item
+  These are really fascinating, and worth looking up.
+\item
+  You can find some of them at this UM site:
+  \url{https://advance.umich.edu/stride-readings/}
+\item
+  Do be careful about dates.
+\item
+  Obviously racism/sexism have not gone away in the last 40 years.
+\item
+  But they have changed some, and results from 40 years ago might not
+  replicate now.
+\end{itemize}
+\end{frame}
+
+\hypertarget{handfield-model}{%
+\section{Handfield Model}\label{handfield-model}}
+
+\begin{frame}{Handfield Model}
+\protect\hypertarget{handfield-model-1}{}
+This is the model discussed on page 60 of the book, and we spent a bit
+of time on it last time.
+
+\begin{itemize}[<+->]
+\tightlist
+\item
+  O'Connor thinks it puts too much weight on rational choice. We'll come
+  back to her alternative to rational choice models in a bit.
+\item
+  She also thinks it can't explain the stability of gender roles. I'm
+  not really sure why that is true.
+\item
+  I'm worried that it requires 100\% pairing; even with a 90\%
+  likelihood of pairing, you'd expect to see non-trivial investment in
+  non-normative skills, as basically insurance. But we often didn't see
+  even that.
+\end{itemize}
+\end{frame}
+
+\hypertarget{basins-of-attraction}{%
+\section{Basins of Attraction}\label{basins-of-attraction}}
+
+\begin{frame}{Basins of Attraction}
+\protect\hypertarget{basins-of-attraction-1}{}
+\begin{itemize}
+\tightlist
+\item
+  These are going to be significant, and I encourage you to ask about
+  them if you're not following.
+\item
+  Here's one thing about them that threw me at first.
+\item
+  As O'Connor is using them, these are population level models.
+\item
+  When there is an equilibrium point that is 70\% A/30\% not-A (or
+  whatever), that doesn't mean each player adopts the mixed strategy 0.7
+  A, 0.3 not A.
+\item
+  Rather, it means 70\% of the population do A, and 30\% do not-A.
+\item
+  That doesn't amount to much mathematically, but it matters for how we
+  interpret the model.
+\end{itemize}
+\end{frame}
+
+\hypertarget{two-types-of-game-theory}{%
+\section{Two Types of Game Theory}\label{two-types-of-game-theory}}
+
+\begin{frame}{Two Types}
+\protect\hypertarget{two-types}{}
+\begin{itemize}
+\tightlist
+\item
+  (Rational Choice) Game Theory
+\item
+  Evolutionary Game Theory
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Sociological Question}
+\protect\hypertarget{sociological-question}{}
+A lot of economists believe all of the following things.
+
+\begin{enumerate}
+\tightlist
+\item
+  Game theory is useful in economic modelling.
+\item
+  Economic actors for the most part (more or less) act rationally.
+\item
+  Economic actors that don't act rationally tend to become economically
+  insignificant.
+\item
+  Points 2 and 3 complement each other; failures of rationality will
+  become less significant because they are made by people/firms who will
+  become less significant.
+\end{enumerate}
+
+I think that picture (which I'm sympathetic to!) looks much stronger if
+you don't distinguish (rational choice) game theory from evolutionary
+game theory.
+\end{frame}
+
+\begin{frame}{The Differences}
+\protect\hypertarget{the-differences}{}
+(Rational choice) game theory
+
+\begin{itemize}
+\tightlist
+\item
+  High rationality assumptions
+\item
+  Comparative statics method
+\end{itemize}
+
+Evolutionary game theory
+
+\begin{itemize}
+\tightlist
+\item
+  Low rationality assumptions
+\item
+  Dynamic method
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Big Picture Worries}
+\protect\hypertarget{big-picture-worries}{}
+\begin{itemize}[<+->]
+\tightlist
+\item
+  The dynamism of evolutionary views is just good. Who cares if a
+  position is stable if it could never be reached?
+\item
+  And not requiring full rationality is good too.
+\item
+  But \ldots{} requiring not full rationality is a bit iffy I think.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Two Approaches O'Connor Takes}
+\protect\hypertarget{two-approaches-oconnor-takes}{}
+\begin{enumerate}[<+->]
+\tightlist
+\item
+  Behavior acquisition is completely arational; it's just copying the
+  successful. That makes more sense evolutionarily than behaviorally.
+  Sure we copy somewhat, but is that all we do?
+\item
+  ``Bounded rationality'' approaches, where people do the best they can
+  assuming that the population structure they've observed in the
+  (immediate) past is the population structure of the present.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Back to Rationality?}
+\protect\hypertarget{back-to-rationality}{}
+\begin{itemize}
+\tightlist
+\item
+  I'm not sure if there is a fully rational dynamical model we ever get.
+\item
+  But we do get models where these arational/irrational dynamics get to
+  an end state that is rationally stable.
+\item
+  Is that rationality enough?
+\end{itemize}
+\end{frame}
+
+\end{document}

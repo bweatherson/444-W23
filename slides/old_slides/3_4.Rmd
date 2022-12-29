@@ -1,0 +1,73 @@
+---
+title: "444 Lecture 3.4 - Strategies in Dynamic Games"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## Plan
+
+- To relate game trees back to one-shot games.
+
+## Reading
+
+- Bonanno, section 3.3.
+
+## A Strategy
+
+- Imagine that you're coaching someone who is going to play a dynamic game.
+- And imagine that you're a really really controlling coach, and they have a good memory.
+- Then you could tell them what to do in every possible situation.
+- That's a strategy.
+
+## Control Freaks
+
+- That metaphor might understate how controlling a strategy is supposed to be.
+- A strategy says what the player should do at every node in the tree.
+- That includes nodes that are ruled out by their earlier play.
+- So a strategy for chess might include the instructions "Open with e4, then if the first two moves are d4-d5, follow with c4."
+
+## Why be a Control Freak?
+
+- Strategies serve two roles.
+- They get followed by one player.
+- And they get reasoned about by the other players, in order to create their own strategies.
+- And to play the latter role, sometimes you need these weird steps.
+
+## Why be a Control Freak?
+
+- Sometimes in games we're interested in situations where there is a gap between giving an order and carrying it out.
+- When opposing generals are watching a battle play out, they can't assume that their instructions will be carried out to the letter, or that what they see on the battlefield is the result of the other side carrying out instructions properly.
+- In these cases, it is clear why a strategy should include "What to do if you haven't done what I said you should do so far."
+
+## Back to Nash
+
+- Go back to the coaching metaphor.
+- And imagine the other player in the dynamic game also has a coach.
+- Then you and the other coach are playing a one-shot, simultaneous move game.
+- Each of you have a lot of options - but you get one shot to choose one of them, and the other player makes their choice at the same time (more or less) as you.
+
+## Strategic (Normal) Form
+
+- For any two player game tree, we can write out all the strategies for each player.
+- I mean, we can in principle.
+- In chess there are probably more strategies than atoms in the universe, so in practice it would be hard, but in theory it can be done.
+- And from that we can form a table, and compute what would happen for each strategy pair.
+- And then we can do all the fun stuff from last week, like eliminating dominated strategies, finding best responses and Nash equilibria etc.
+
+## The End of Time?
+
+- So does that mean we don't need to think about dynamics at all?
+- No, and next time we'll look at why.
+- Some strategy pairs that make sense in a one-shot game don't seem to make sense in a dynamic game.

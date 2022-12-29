@@ -1,0 +1,268 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[11pt,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+    \setmainfont[]{SF Pro Text Light}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdftitle={Assigment 6},
+            pdfauthor={Philosophy 444},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{gensymb}
+\usepackage{nicefrac}
+\usepackage{caption}
+\usepackage{istgame}
+\usepackage{mathastext}
+
+\title{Assigment 6}
+\author{Philosophy 444}
+\date{Due November 8, 2019}
+
+\begin{document}
+\maketitle
+
+In each of the following sets of questions, there is an election between
+four candidates A, B, C and D. The question sets start with a table
+showing how many voters have each of the 24 possible preference
+orderings over the four candidates. Your job is to figure out how the
+election would go under different voting systems. You should assume
+(unrealistically) that every voter votes sincerely, and not
+strategically. So if a candidate prefers A to B to C to D, they will
+vote A in a plurality election, vote B if it is two candidate run off
+between B and C, and write down the order ABCD if they are asked to rank
+the candidates.
+
+In the tables that follow, higher ranked candidates are to the left. So
+the first row of the table shows you the number of voters (339 as it
+turns out) who have A as their top choice, then B as their second
+choice, then C, and finally D as the last choice.
+
+\newpage
+
+\hypertarget{questions-1-to-2}{%
+\section{Questions 1 to 2}\label{questions-1-to-2}}
+
+Here is the table of voters.
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Ranking & Voters\tabularnewline
+\midrule
+\endhead
+ABCD & 339\tabularnewline
+ABDC & 710\tabularnewline
+ACBD & 312\tabularnewline
+ACDB & 798\tabularnewline
+ADBC & 151\tabularnewline
+ADCB & 592\tabularnewline
+BACD & 956\tabularnewline
+BADC & 243\tabularnewline
+BCAD & 939\tabularnewline
+BCDA & 114\tabularnewline
+BDAC & 984\tabularnewline
+BDCA & 632\tabularnewline
+CABD & 598\tabularnewline
+CADB & 902\tabularnewline
+CBAD & 574\tabularnewline
+CBDA & 245\tabularnewline
+CDAB & 860\tabularnewline
+CDBA & 74\tabularnewline
+DABC & 438\tabularnewline
+DACB & 759\tabularnewline
+DBAC & 245\tabularnewline
+DBCA & 378\tabularnewline
+DCAB & 397\tabularnewline
+DCBA & 526\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Who would win the election if was run as a plurality election?
+\item
+  Who would win the election if there was a runoff, with the top 2
+  candidates advancing to the runoff?
+\end{enumerate}
+
+\newpage
+
+\hypertarget{questions-3-to-5}{%
+\section{Questions 3 to 5}\label{questions-3-to-5}}
+
+Here is the table of voters
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Ranking & Voters\tabularnewline
+\midrule
+\endhead
+ABCD & 704\tabularnewline
+ABDC & 169\tabularnewline
+ACBD & 773\tabularnewline
+ACDB & 401\tabularnewline
+ADBC & 879\tabularnewline
+ADCB & 299\tabularnewline
+BACD & 667\tabularnewline
+BADC & 121\tabularnewline
+BCAD & 769\tabularnewline
+BCDA & 725\tabularnewline
+BDAC & 346\tabularnewline
+BDCA & 456\tabularnewline
+CABD & 900\tabularnewline
+CADB & 184\tabularnewline
+CBAD & 668\tabularnewline
+CBDA & 647\tabularnewline
+CDAB & 103\tabularnewline
+CDBA & 493\tabularnewline
+DABC & 240\tabularnewline
+DACB & 687\tabularnewline
+DBAC & 968\tabularnewline
+DBCA & 194\tabularnewline
+DCAB & 498\tabularnewline
+DCBA & 79\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Who would win the election if was run as a plurality election?
+\item
+  Who would win the election if there was a runoff, with the top 2
+  candidates advancing to the runoff?
+\item
+  Imagine that it was still being run as a runoff, but some number of
+  A's voters changed their mind and voted for some other candidate. Find
+  the smallest number of such voters that are sufficient to make A
+  \emph{win} the election.
+\end{enumerate}
+
+\newpage
+
+\hypertarget{questions-6-to-10}{%
+\section{Questions 6 to 10}\label{questions-6-to-10}}
+
+Here is the table of voters
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Ranking & Voters\tabularnewline
+\midrule
+\endhead
+ABCD & 10\tabularnewline
+ABDC & 61\tabularnewline
+ACBD & 46\tabularnewline
+ACDB & 25\tabularnewline
+ADBC & 54\tabularnewline
+ADCB & 62\tabularnewline
+BACD & 74\tabularnewline
+BADC & 73\tabularnewline
+BCAD & 45\tabularnewline
+BCDA & 14\tabularnewline
+BDAC & 66\tabularnewline
+BDCA & 73\tabularnewline
+CABD & 34\tabularnewline
+CADB & 98\tabularnewline
+CBAD & 87\tabularnewline
+CBDA & 15\tabularnewline
+CDAB & 14\tabularnewline
+CDBA & 65\tabularnewline
+DABC & 90\tabularnewline
+DACB & 23\tabularnewline
+DBAC & 67\tabularnewline
+DBCA & 1\tabularnewline
+DCAB & 22\tabularnewline
+DCBA & 36\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Imagine that the election is being run using the Borda score. The
+  candidate with the highest Borda score will win. Who wins the
+  election?
+\item
+  Imagine that candidate A drops out, so there are just three candidates
+  remaining, but no voter changes their view about the relative ranking
+  of the other candidates. Who wins the election now?
+\item
+  Imagine that candidate B drops out, so there are just three candidates
+  remaining, but no voter changes their view about the relative ranking
+  of the other candidates. Who wins the election now?
+\item
+  Imagine that candidate C drops out, so there are just three candidates
+  remaining, but no voter changes their view about the relative ranking
+  of the other candidates. Who wins the election now?
+\item
+  Imagine that candidate D drops out, so there are just three candidates
+  remaining, but no voter changes their view about the relative ranking
+  of the other candidates. Who wins the election now?
+\end{enumerate}
+
+\end{document}

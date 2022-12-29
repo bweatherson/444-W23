@@ -1,0 +1,96 @@
+---
+title: "444 Lecture 4.2 - Structure of Information Sets"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Plan
+
+To discuss some presuppositions of the theory of information sets.
+
+## Reading
+
+This isn't in the books; it's not something game theorists discuss.
+
+## Three Features of Information Sets
+
+1. Reflexive
+2. Symmetric
+3. Transitive
+
+## Reflexive
+
+Each point is in its own information set.
+
+- This seems fair enough; if you're somewhere, then for all you know, you are there.
+
+## Symmetric
+
+- If when you're at $a$ you might be at $b$, then
+- When you're at $b$ you might be at $a$.
+- In information set terms, if $b$ is in $a$'s information set, then $a$ is in $b$'s information set.
+
+## Symmetry
+
+What this means is that what happens earlier in the game can't affect a player's powers of discrimination.
+
+- This seems like an inappropriate assumption in, e.g., drinking games.
+- At least in some games, one's ability to discriminate between some options will be dependent on the path taken to get to those options.
+- The standard treatment of partial information doesn't allow us to represent this.
+
+## Transitive
+
+- If when you're at $a$ you might be at $b$, and
+- When you're at $b$ you might be at $c$, then
+- When you're at $a$ you might be at $c$.
+- In information set terms, if $b$ is in $a$'s information set, and $c$ is in $b$'s information set, then it must be that $c$ is in $a$'s information set.
+
+## Transitivity
+
+This rules out games where players can tell that they are in a certain 'neighbourhood'. For example,
+
+- Player 1 puts some jelly beans in a jar and gives it to Player 2.
+- It matters to Player 2 how many jelly beans are in the jar, but she doesn't have direct access to that.
+- Still, she isn't totally ignorant. She can see the jar and guess the number to the nearest, say 10.
+- So if there are 160 jelly beans in the jar, she knows that there are between 150 and 170.
+- And in fact, though Player 2 doesn't know this, that's true - there are 160 jelly beans.
+
+## Transitivity
+
+- Let $a$ be the node where there are 160 jelly beans in the jar.
+- And $b$ be the node where there are 150 jelly beans in the jar.
+- And $c$ be the node where there are 140 jelly beans in the jar.
+- Player 2 knows she's not at $c$; her information set should exclude that.
+- And her information set should include $a$ - reflexivity guarantees that.
+- Should it include $b$?
+
+## A Challenge
+
+- On the one hand, it should - since from $a$ all she knows is that there are between 150 and 170 jelly beans in the jar.
+- On the other hand, it should not - since she can rule out $c$, and if $b$ were actual, she could not rule out $c$.
+
+## What To Do
+
+- In theory, there is an opening here for someone working out a theory of games with imperfect information that drops either the symmetry or transitivity assumption.
+- In practice, no one has actually worked out that theory, and I'm not going to try teaching a non-existent theory.
+- There is a little work on games involving "unawareness", which gets close to this, but it's way too novel a field to know where it will go.
+
+## For Next Time
+
+- We will return to orthodoxy, and look at the notion of a strategy.

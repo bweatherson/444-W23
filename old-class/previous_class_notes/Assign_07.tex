@@ -1,0 +1,186 @@
+\documentclass[11pt,]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+    \setmainfont[]{SF Pro Text Light}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Assigment 7},
+            pdfauthor={Philosophy 444},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\providecommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Assigment 7}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Philosophy 444}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{Due November 8, 2019}
+
+\usepackage{gensymb}
+\usepackage{nicefrac}
+\usepackage{caption}
+\usepackage{istgame}
+\usepackage{mathastext}
+
+\begin{document}
+\maketitle
+
+Answer \textbf{one} of the two following questions, in about 400-500
+words. You should answer the question at the end, defend your answer,
+and say a bit about the best argument for the opposing answer, and why
+you don't think that argument works.
+
+\hypertarget{question-one}{%
+\section{Question One}\label{question-one}}
+
+Alice, Betty, Carla, Daria and Elise are deciding where to go for
+brunch. They have two choices, Fred's and George's. They have talked
+about each of the following propositions, and have settled views about
+each of them.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Which place has tastier food?
+\item
+  Which places serve only free-range eggs?
+\item
+  Should we boycott places that serve eggs that aren't free range?
+\item
+  Where should we go?
+\end{enumerate}
+
+They each agree that they want the tastiest food at a place they aren't
+boycotting, but beyond that they don't agree on much. Here are their
+answers.
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+& Q1 & Q2 & Q3 & Verdict\tabularnewline
+\midrule
+\endhead
+Alice & Fred's & Only George's & Yes & George's\tabularnewline
+Betty & Fred's & Only George's & No & Fred's\tabularnewline
+Carla & Fred's & Both & Yes & Fred's\tabularnewline
+Daria & George's & Only George's & Yes & George's\tabularnewline
+Elise & Fred's & Both & No & Fred's\tabularnewline
+\bottomrule
+\end{longtable}
+
+Where should the friends eat?
+
+(Question Two is on the next page)
+
+\newpage
+
+\hypertarget{question-two}{%
+\section{Question Two}\label{question-two}}
+
+Alice is offered a choice of two bets that concern a pair of basketball
+games. Neither of them can lose money, so this is just a gift, but how
+much they win, and how likely they are to win, varies between the bets.
+The Ducks are playing in the first game, and the Emus are playing in the
+second game.
+
+\begin{itemize}
+\tightlist
+\item
+  Option A wins \$100 if the Ducks and Emus both win, and nothing
+  otherwise.
+\item
+  Option B wins \$50 if either the Ducks or the Emus lose (i.e., if it
+  is not the case that Option A wins), and nothing otherwise.
+\end{itemize}
+
+Alice must chose one, and just one, of these options.
+
+Alice knows almost nothing about basketball, so she asks her two friends
+Betty and Carla. They both have lots of knowledge about basketball, and
+have extremely good track records at forecasting basketball games.
+
+Betty says that the two games are probabilistically independent, and
+each team (the Ducks and the Emus) has an 80\% chance to win their game.
+So the chance that Option A will win is 64\%, and the chance that Option
+B will win is 36\%.
+
+Carla says that the two games are probabilistically independent, and
+each team (the Ducks and the Emus) has an 30\% chance to win their game.
+So the chance that Option A will win is 9\%, and the chance that Option
+B will win is 91\%.
+
+Alice has no other information about the games. Which option should she
+take?
+
+
+\end{document}

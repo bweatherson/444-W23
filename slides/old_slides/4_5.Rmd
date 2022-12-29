@@ -1,0 +1,120 @@
+---
+title: "444 Lecture 4.5 - Subgame Perfect Equilibrium"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Plan
+
+To describe the notion of subgame perfect equilibrium.
+
+## Reading
+
+Bonanno, section 4.4.
+
+## Definition
+
+A set of strategies for each of the players is a subgame perfect equilibrium if and only if
+
+- The set forms a Nash equilibrium.
+- In every subgame, the set forms a Nash equilibrium.
+
+## Subgame Perfect and Nash
+
+The second clause is non-trivial.
+
+- It rules out players doing certain kinds of odd things at nodes that are not reached.
+- At subgame perfect equilibrium, each player's strategies make sense given the other player's strategies, and they are disposed to keep making sense under different assumptions about what they might do.
+
+## Finding Subgame Perfect Equilibrium
+
+- Find the minimal subgames.
+- Act as if the initial node of that subgame is a terminal node, with its payouts being the equilibrium payouts of the subgame.
+- If there are multiple equilibria, duplicate the tree enough times to cover each of them - you'll have multiple subgame perfect equilibria.
+- Repeat until you've covered the whole tree.
+
+---
+
+![The large game](images/04_03.png){height=80%}
+
+---
+
+![The left subgame](images/04_04.png){height=80%}
+
+---
+
+![The left subgame with labeled best responses](images/04_05.png){height=80%}
+
+---
+
+![The big game with reduced left subgame](images/04_06.png){height=80%}
+
+---
+
+![The middle subgame with labeled best responses](images/04_07.png){height=80%}
+
+---
+
+![The big game with reduced middle subgame](images/04_08.png){height=80%}
+
+## The right subgame
+
+```{r}
+game <- tribble(
+  ~Moves, ~A, ~B,
+  "e",  "1, 1", "2, 0",
+  "f",  "2, 1", "0, 1"
+)
+gameformat(game)
+```
+
+- Player 2 is row
+- Player 3 is column
+- Player 1 is ignored, because they have no moves
+
+## The right subgame with labeled best responses
+
+```{r}
+game <- tribble(
+  ~Moves, ~A, ~B,
+  "e",  "1, \\fbox{1}", "\\fbox{2}, 0",
+  "f",  "\\fbox{2}, \\fbox{1}", "0, \\fbox{1}"
+)
+gameformat(game)
+```
+
+---
+
+![The big game with reduced right subgame](images/04_09.png){height=70%}
+
+- Only Nash equilibrium is Player 1 plays $b$.
+
+## Summary
+
+So the subgame perfect equilibrium is:
+
+- Player 1 plays $b, C$.
+- Player 2 plays $d, f, F$.
+- Player 3 plays $h, A$.
+
+And the payouts are reverse order of their names: 3, 2, 1.
+
+## For Next Time
+
+We will start looking at games with cardinal utility.

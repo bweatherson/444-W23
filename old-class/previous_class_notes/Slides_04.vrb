@@ -1,0 +1,100 @@
+\frametitle{Five (Full Graph)}
+\protect\hypertarget{five-full-graph}{}
+
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+\begin{picture}(350, 150)
+
+\put(175, 0){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\thicklines
+\put(177, 13){\line(2, 1){69}}
+\thinlines
+
+\put(135, 20){\makebox(0, 0)[b]{1}}
+
+\put(215, 20){\makebox(0, 0)[b]{2}}
+
+\put(105, 35){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\put(105, 47){\circle*{4}}
+\thicklines
+\put(105, 47){\line(-1, 1){35}}
+\thinlines
+\put(105, 47){\line(1, 1){35}}
+
+\put(80, 55){\makebox(0, 0)[b]{1}}
+
+\put(130, 55){\makebox(0, 0)[b]{2}}
+
+\put(245, 35){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(245, 47){\circle*{4}}
+\thicklines
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+\thinlines
+
+\put(220, 55){\makebox(0, 0)[b]{1}}
+
+\put(270, 55){\makebox(0, 0)[b]{2}}
+
+\put(70, 70){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\put(70, 82){\circle*{4}}
+\thicklines
+\put(70, 82){\line(-1, 2){20}}
+
+\put(50, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\put(70, 82){\line(1, 2){20}}
+\thinlines
+
+\put(90, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+
+\put(55, 95){\makebox(0, 0)[b]{1}}
+
+\put(85, 95){\makebox(0, 0)[b]{2}}
+
+\put(140, 70){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+
+\put(120, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\thicklines
+\put(140, 82){\line(1, 2){20}}
+\thinlines
+
+\put(160, 125){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+
+\put(115, 95){\makebox(0, 0)[b]{1}}
+
+\put(155, 95){\makebox(0, 0)[b]{2}}
+
+\put(210, 70){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+
+\put(190, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+\thicklines
+\put(210, 82){\line(1, 2){20}}
+\thinlines
+
+\put(230, 125){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+
+\put(195, 95){\makebox(0, 0)[b]{1}}
+
+\put(225, 95){\makebox(0, 0)[b]{2}}
+
+\put(280, 70){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(280, 82){\circle*{4}}
+\thicklines
+\put(280, 82){\line(-1, 2){20}}
+\thinlines
+
+\put(260, 125){\makebox(0, 0)[b]{$\mathpzc{W}$}}
+\put(280, 82){\line(1, 2){20}}
+
+\put(300, 125){\makebox(0, 0)[b]{$\mathpzc{L}$}}
+
+\put(265, 95){\makebox(0, 0)[b]{1}}
+
+\put(295, 95){\makebox(0, 0)[b]{2}}
+\end{picture}
+

@@ -1,0 +1,130 @@
+---
+title: "444 Lecture 13.2 - Private Vices and Public Virtues"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+        - toc.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+## Day Plan
+
+\tableofcontents
+
+# Virtues and Vices
+
+## Epistemic Virtue
+
+The tradition they are working in traces back to Aristotle's ethics, and its emphasis on virtue.
+
+- Or, more precisely, it traces back to the mid-20th Century rediscovery/reinvention of Aristotelian ethics.
+- The very general picture is that ethics is abut character traits, not outcomes (like in consequentialism) or actions (as in deontology).
+
+## Aristotelian Medians
+
+Aristotle had a particular take on virtue that we may, but don't have to, adopt.
+
+- Virtues are midpoints between two vices.
+- So courage is the midpoint between cowardice and foolishness.
+- Is this what virtue always consists in? I'm not sure; and the fact that we can ask that question means that we can sensibly talk about virtue theory independent of its Aristotelian origin.
+
+# Virtue Epistemology
+
+## Dharmottara Cases
+
+- Virtue epistemology was originally introduced to solve Dharmottara cases.
+- Knowledge is true belief obtained via the exercise of an epistemic virtue.
+
+## Other Applications
+
+But the theory is both more and less interesting than that.
+
+- Less because like all other solutions to the puzzle raised by Dharmottara's example, it doesn't work.
+- But more because there are a lot of epistemic virtues that are interesting in their own right.
+
+## Other Virtues
+
+> - Open-mindedness
+> - Inquisitiveness
+> - Modesty
+> - Curiosity
+
+## Two Questions
+
+> 1. Which of these are about belief, as opposed to inquiry?
+> 2. Which of these are Aristotelian means?
+
+# Private Vices as Public Goods
+
+## Historical Precedents
+
+- Mandeville's _Fable of the Bees_ (on one interpretation): saving is private virtue but public vice.
+- Being excessively confident, and going in for exploration or innovation, might be private vice but public virtue.
+
+## Epistemic Equivalents?
+
+> 1. Cultural evolution - over imitation is irrational but useful for spreading new ideas.
+> 2. Argumentation - It's good if people are over-invested in defending their own view/finding flaws in others
+
+# Objections
+
+## Two Obvious Objections
+
+> 1. These aren't public goods. Or, at least, they aren't epistemic public goods.
+> 2. These aren't private vices. I'll spend more time on this.
+
+## Imitation and Discrimination
+
+Someone who headbutts a light switch because they are imitating looks fairly silly. But are they irrational?
+
+- They aren't actually maximising utility, but that's too high a standard.
+- What does it really mean to say someone is "over-imitating"?
+
+## Imitation and Discrimination
+
+Remember there are very good reasons for imitation.
+
+- If someone does something, and they subsequently get a good result, that is evidence that the 'something' leads to a good result.
+- This is especially true because the 'something' didn't just happen, it was an action.
+- It's a good general practice to assume that things you see people do are done for reasons.
+- That's especially true for the things you see successful people do.
+
+## Second Order Evidence
+
+Very often, we get a reason to believe that $p$ not by being given direct evidence of it, but by being given evidence that someone else has evidence of it.
+
+- The fact that someone who wanted to achieve outcome O did action A to get it, and got outcome O, is in fact two bits of evidence.
+- From the success, we get direct evidence that A leads to O.
+- From the fact they did it, we get indirect evidence that A is a good way to get to O.
+
+## Vigilence
+
+But surely this is defeasible, and the claim is that ordinary people don't let it get defeated often enough?
+
+- True, but that doesn't mean we have to check for ourselves that each bit of imitation is worthwhile.
+- It certainly doesn't mean each bit of imitation has to be worthwhile.
+- It just means that we have to be **vigilant**.
+
+## Vigilence
+
+To my mind, this is one of the most important ideas in recent epistemology.
+
+- Good epistemic activity requires vigilence.
+- Example: walking down crowded street.
+- Really hard question: how do you implement vigilence in an artificial system?
+
+## Imitation with vigilence
+
+My take on these examples is that copying with vigilence is good, i.e., is virtuous.
+
+- So this isn't a public virtue that's a private vice.
+- But maybe that's too optimistic a take on what the individuals are up to.

@@ -1,0 +1,129 @@
+---
+title: "Assignment Week 2"
+output:
+  pdf_document:
+    toc: false
+    keep_tex: yes
+    latex_engine: xelatex
+    extra_dependencies: ["gensymb", "nicefrac", "caption"]
+    fig_caption: no
+    includes:
+      in_header: 
+        - compact-title.tex
+fontsize: 11pt
+classoption: twocolumn
+mainfont: SF Pro Text Light
+mainfontoptions: "Scale=MatchLowercase"
+geometry: margin=1in
+author: Philosophy 444
+date: Due 14 January, 2022
+---
+
+\captionsetup[table]{labelformat=empty}
+\pagenumbering{gobble}
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, include = FALSE}
+require(knitr)
+require(tidyverse)
+require(huxtable)
+
+knitr::opts_chunk$set(echo = FALSE, results = "asis")
+
+gameformat <- function(game){
+  as_hux(game) %>%
+    set_markdown_contents(1, 1, "") %>%
+    set_right_border(everywhere, 1, value = 0.4) %>%
+    set_bottom_border(1, everywhere, value = 0.4) %>%
+    set_align(everywhere, everywhere, "center") %>%
+    set_align(everywhere, 1, "right") %>%
+    set_valign(1, everywhere, "middle") %>%
+    set_all_padding(everywhere, everywhere, 2) %>%
+    set_top_padding(1, everywhere, 0) %>%
+    set_bottom_padding(1, everywhere, 6) %>%
+    set_latex_float("h!")
+}
+```
+
+
+```{r}
+game <- tribble(
+  ~Moves, ~Left, ~Right,
+  "Up", "1, -1", "2, -2",
+  "Down", "4, -4", "3, -3"
+)
+gameformat(game) %>%
+  set_caption("Game One")
+```
+
+```{r}
+game <- tribble(
+  ~Moves, ~Left, ~Right,
+  "Up", "1, -1", "4, -4",
+  "Down", "2, -2", "3, -3"
+)
+gameformat(game) %>%
+  set_caption("Game Two")
+```
+
+```{r}
+game <- tribble(
+  ~Moves, ~Left, ~Middle, ~Right,
+  "Up",       "5, -5", "3, -3", "1, -1",
+  "Straight", "6, -6", "2, -2", "1, -1",
+  "Down",     "1, -1", "0, 0",  "0, 0"
+)
+gameformat(game) %>%
+  set_caption("Game Three")
+```
+
+```{r}
+game <- tribble(
+  ~Moves, ~Left, ~Middle, ~Right,
+  "Up",       "5, -5", "3, -3", "2, -2",
+  "Straight", "6, -6", "4, -4", "3, -3",
+  "Down",     "1, -1", "6, -6", "0, 0"
+)
+gameformat(game) %>%
+  set_caption("Game Four")
+```
+
+```{r}
+game <- tribble(
+  ~Moves, ~Left, ~Right,
+  "Up",   "2, 4", "1, 0",
+  "Down", "6, 5", "4, 2"
+)
+gameformat(game) %>%
+  set_caption("Game Five")
+```
+
+\newpage
+
+```{r}
+game <- tribble(
+  ~Moves, ~Left, ~Right,
+  "Up",   "1, 1", "0, 1",
+  "Down", "1, 0", "1, 1"
+)
+gameformat(game) %>%
+  set_caption("Game Six")
+```
+
+```{r}
+game <- tribble(
+  ~Moves, ~Left, ~Middle, ~Right,
+  "Up",       "0, 1",  "9, 0",  "2, 3",
+  "Straight", "5, 9",  "7, 3",  "1, 7",
+  "Down",     "7, 5", "10, 10", "3, 5"
+)
+gameformat(game) %>%
+  set_caption("Game Seven")
+```
+
+## Questions 1a to 7b
+
+For each of the 7 games listed above, find which strategies remain after iterated deletion of strongly dominated strategies. There are seven games, and two questions for each game (which strategy or strategies remain for Row, and which for Column) making 14 questions. Note that for any one of these 14 questions, there may be one or more than one answer, and you will only get credit for stating all (and only) the correct answers.
+
+## Question 8
+
+Which of the answers to questions 1-14 would change if you were asked to iteratively delete weakly dominated strategies, not strongly dominated strategies?

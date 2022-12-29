@@ -1,0 +1,121 @@
+---
+title: "444 Lecture 11.1 - O'Connor Chapter 6"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+        - toc.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## Day Plan
+
+\tableofcontents
+
+# Variable Learning Rate
+
+## Benefits to Learning
+
+- In normal situations, there is a benefit to learning more about your environment.
+- Indeed, there is a famous proof of this, that makes reasonably weak assumptions.
+- But in certain game theoretic contexts, the proof fails.
+- It is possible to benefit from being slow to learn.
+
+## Chicken
+
+Imagine a real-life version of Chicken with each player playing the following strategy
+
+- Stay straight unless you know that the other player will be staying straight. \pause
+
+In this case, the slower learner will win.
+
+## Red King Effect
+
+- This is what O'Connor is calling the Red King effect.
+- I mean this fairly literally; the games she is using in these models are I think versions of Chicken.
+- And the reason fast learners do badly is that they learn that the other party is doing something that will be disasterous if they both do it.
+
+## Significance of This
+
+It's really hard to see how this can be a big part of the story of gender inequality.
+
+> 1. The magnitudes are small.
+> 2. The circumstances in which it arises are fairly specific, and gender inequality is everywhere.
+
+## Small Populations
+
+The key insight, which seems right, is that small groups learn about big groups more rapidly than big groups learn about small groups.
+
+- Australian immigrants in America can tell you a lot more about American social practices than native-born Americans can tell you about Australian immigrants.
+- And something similar I suspect is true about American immigrants in Australia.
+- And maybe, maybe, the result of that learning means that the small group will head to the nearest equilibrium, even if it is one that is bad for them.
+
+# Strategies
+
+## Clarification
+
+I actually didn't quite understand the game on page 141.
+
+- I think it's like the bargaining game from chapter 5 except one meets people from both types.
+- And hence one's strategy can (I think) be sensitive to the type of player on the other side.
+- Presumably we see strategies in which one does something other than 50/50 in intra-type play die out, though I'm not really sure.
+
+## Lab Experiment
+
+But then I really couldn't understand the experiment on page 142.
+
+- If you only interact with out-group members, there shouldn't be an effect of group size.
+- What matters is that these out-group interactions are common for one group and rare for another.
+
+# Memory Length
+
+## A Quote
+
+> In all three cases, the fact that one side sees more makes them less reactive, and less likely to change strategies quickly. As Hwang et al. (2014) put it, “a larger scope of vision among the well off reduces their responsiveness to the idiosyncratic play of the poor”
+
+## Puzzle
+
+- I don't really get this.
+- I see how it works mathematically; if you're just reacting to what happened in the very last round, then you'll bounce around all over the place.
+- But who is that a decent model of?
+
+## Alternative Real-World Case
+
+- Everyone remembers their last X interactions.
+- When dealing with group g, they take the interactions with g of those last X and take them to be typical. \pause
+- But now the small group will be the one who has less random moving from one node to another.
+- I feel that this is one of those mathematical models you could just as easily have used to 'explain' why group differences fade over time as why they stay.
+
+# Utility Scales are Arbitrary
+
+## Page 155
+
+Look at the table in figure 6.14.
+
+- In classical game theory, that is a perfectly symmetric game.
+- That's because utility scales are only defined up to positive affine transformation.
+- And so here the parties get the same return (up to transformation) as each other.
+
+## Classical vs Evolutionary Game Theory
+
+Here I think it's really important that we're using evolutionary models.
+
+- Evolutionary payout functions do not have the same invariance profiles as classical payout functions.
+- It really matters that one party gets an extra bonus.
+- And sure, I guess that makes sense.
+- But it's worth noting how far we've left anything like classical game theory.
+
+## Big Picture
+
+> - Sometimes it seems that O'Connor is not making the hyper-rationality assumptions characteristic of classical game theory. That's a very good thing.
+> - But sometimes it seems that she is making some strong irrationality assumptions. And that's less obviously good.
+

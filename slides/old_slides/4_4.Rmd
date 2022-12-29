@@ -1,0 +1,79 @@
+---
+title: "444 Lecture 4.4 - Subgames"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Plan
+
+To describe the notion of a subgame.
+
+## Reading
+
+Bonanno, section 4.3.
+
+## Definition
+
+Roughly, a subgame is a part of the game that could be a complete game.
+
+## First Constraint
+
+A subgame has an initial node.
+
+- All nodes in the subgame are downstream of that node.
+- Remember that in general, there is only one way to get to a node.
+
+## Histories
+
+So don't think of nodes as like positions in a chess game.
+
+- You can get to the same position multiple ways.
+- Rather, think of them as like the history of the moves.
+
+## Second Constraint
+
+The subgame consists of all the nodes downstream of that initial node.
+
+- If $a$ is the initial node, and in the original game you can get from $a$ to $b$, then $b$ is in the subgame.
+
+## Third Constraint
+
+The subgame does not 'cut' any information sets.
+
+- If $b$ is in the subgame, and $c$ is in the information set that includes $b$, then $c$ is in the subgame.
+
+## Common Knowledge
+
+Put another way, $a$ has to be a point such that when you get to it, it is common knowledge you are there.
+
+- It being in a singleton information set is necessary for that (if not, the player who has to play doesn't know you are there) but not sufficient.
+
+---
+
+![A violation of third constraint](images/04_02.png){height=80%}
+
+## Summing Up
+
+- A subgame consists of all and only the points that are 'downstream' of some initial node.
+- That initial node has to be such that if/when it is reached, it is common knowledge among the players that it is reached.
+
+## For Next Time
+
+- We will use this notion of a subgame to develop a new constraint on how to play games.
+

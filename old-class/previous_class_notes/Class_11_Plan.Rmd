@@ -1,0 +1,77 @@
+---
+title: "Plan for Second SPE Class"
+output:
+  pdf_document:
+    toc: false
+    md_extensions: +startnum
+    df_print: kable
+    keep_tex: yes
+    latex_engine: xelatex
+    extra_dependencies: ["gensymb", "nicefrac", "mathastext", "multicol"]
+    fig_caption: no
+fontsize: 11pt
+mainfont: SF Pro Text Light
+geometry: margin=0.7in
+author: Philosophy 444
+date: 9 October, 2019
+---
+
+# Lemons
+
+- Assume 80% good, 20% bad
+- Assume good are worth 15, bad are worth 5.
+- Assume seller will take a 10% discount because need to sell
+- If no one knows about quality, all cars sell
+- If everyone knows about quality, all cars sell
+- If buyer knows and seller does not, all cars sell
+- If seller knows and buyer does not, no cars sell
+
+# Exit or Play
+
+- This is a big reason to use SPE
+- Choice between playing PD and getting 2, you take the 2
+- Same with these various mixed strategy NEs
+- Really works best when there is a single NE
+
+# Steering towards NE
+
+- Choice of getting 2 or playing Battle of Sexes
+- If you play, obviously intend to play to get 4
+- So that's what you'll get
+- Huge advantage here
+- Note that Battle of Sexes has three equilibria - but the other two are ruled out by playing
+
+# First Puzzle about SPE - rules out too much
+
+- Chain store game
+- Go over the basic structure
+- First competitor chooses exit or entry
+- If exit, payoff is 5,1 (incumbent first)
+- If compete, then tough or conciliate
+- Tough = 0,0; Conciliate = 2,2
+- Nash says do either, SPE says Enter-Conciliate
+- And it says this if there are 100 successive possible entrants
+- But really?
+
+# What is a Strategy
+
+- Key point: strategies include moves to be made at ruled out nodes
+- How to interpret that?
+- Metaphysical - it's what to do if you screw up - but why include that - and why assume you'll be able to carry it out
+- Epistemological - it's what the other person should believe
+- But now there are two problems
+- First, intuitively you choose a strategy, but you don't choose what the other person believes
+- Second, why should they believe that you'll go back to SPE after not doing it
+- This is particularly pressing in Chain Store Game
+- If I compete the first five times, the sixth competitor should get the message
+- But the unique SPE has me cooperating at that very node
+- For Nash, we avoided this by saying it's all about the long run
+- But in SPE settings, the long run is just another game that SPE should apply to
+- This is something of a mess, and I don't think anyone has a good way out
+- At this point, some folks get off the bus and say we should just do experimental work
+
+# Second Puzzle about SPE - rules out too litte
+
+- Money burning game
+- See other handout
+

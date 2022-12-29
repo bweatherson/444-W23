@@ -1,0 +1,174 @@
+---
+title: "444 Lecture 7.3 - Signaling Game"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+---
+
+\begin{center}
+\begin{istgame}[scale=0.9]
+   \xtdistance{20mm}{20mm}
+   \istroot(0)[chance node]{$c$}
+     \istb<grow=left>{0.6}[a]
+     \istb<grow=right>{0.4}[a]
+     \endist
+   \xtdistance{10mm}{20mm}
+   \istroot(1)(0-1)<180>{1}
+     \istb<grow=north>{a}[l]
+     \istb<grow=south>{b}[l]
+     \endist
+   \istroot(2)(0-2)<0>{1}
+     \istb<grow=north>{a}[r]
+     \istb<grow=south>{b}[r]
+     \endist
+   \istroot'[north](a1)(1-1)
+     \istb{L}[bl]{1,1}
+     \istb{R}[br]{0,0}
+     \endist
+   \istroot(b1)(1-2)
+     \istb{L}[al]{1,1}
+     \istb{R}[ar]{0,0}
+     \endist
+   \istroot(a2)(2-2)
+     \istb{L}[al]{0,0}
+     \istb{R}[ar]{1,1}
+     \endist
+   \istroot'[north](b2)(2-1)
+     \istb{L}[bl]{0,0}
+     \istb{R}[br]{1,1}
+     \endist
+   \xtInfoset(a1)(b2){2}
+   \xtInfoset(b1)(a2){2}
+   \end{istgame}
+\end{center}
+
+This is a basic signaling game.
+
+---
+
+\begin{center}
+\begin{istgame}[scale=0.9]
+   \xtdistance{20mm}{20mm}
+   \istroot(0)[chance node]{$c$}
+     \istb<grow=left>{0.6}[a]
+     \istb<grow=right>{0.4}[a]
+     \endist
+   \xtdistance{10mm}{20mm}
+   \istroot(1)(0-1)<180>{1}
+     \istb<grow=north>{a}[l]
+     \istb<grow=south>{b}[l]
+     \endist
+   \istroot(2)(0-2)<0>{1}
+     \istb<grow=north>{a}[r]
+     \istb<grow=south>{b}[r]
+     \endist
+   \istroot'[north](a1)(1-1)
+     \istb{L}[bl]{1,1}
+     \istb{R}[br]{0,0}
+     \endist
+   \istroot(b1)(1-2)
+     \istb{L}[al]{1,1}
+     \istb{R}[ar]{0,0}
+     \endist
+   \istroot(a2)(2-2)
+     \istb{L}[al]{0,0}
+     \istb{R}[ar]{1,1}
+     \endist
+   \istroot'[north](b2)(2-1)
+     \istb{L}[bl]{0,0}
+     \istb{R}[br]{1,1}
+     \endist
+   \xtInfoset(a1)(b2){2}
+   \xtInfoset(b1)(a2){2}
+   \end{istgame}
+\end{center}
+
+1. Nature moves left or right, and reveals this to Sender (1).
+2. Sender moves up or down, and reveals this to Hearer (2).
+3. Hearer moves left or right.
+
+---
+
+\begin{center}
+\begin{istgame}[scale=0.9]
+   \xtdistance{20mm}{20mm}
+   \istroot(0)[chance node]{$c$}
+     \istb<grow=left>{0.6}[a]
+     \istb<grow=right>{0.4}[a]
+     \endist
+   \xtdistance{10mm}{20mm}
+   \istroot(1)(0-1)<180>{1}
+     \istb<grow=north>{a}[l]
+     \istb<grow=south>{b}[l]
+     \endist
+   \istroot(2)(0-2)<0>{1}
+     \istb<grow=north>{a}[r]
+     \istb<grow=south>{b}[r]
+     \endist
+   \istroot'[north](a1)(1-1)
+     \istb{L}[bl]{1,1}
+     \istb{R}[br]{0,0}
+     \endist
+   \istroot(b1)(1-2)
+     \istb{L}[al]{1,1}
+     \istb{R}[ar]{0,0}
+     \endist
+   \istroot(a2)(2-2)
+     \istb{L}[al]{0,0}
+     \istb{R}[ar]{1,1}
+     \endist
+   \istroot'[north](b2)(2-1)
+     \istb{L}[bl]{0,0}
+     \istb{R}[br]{1,1}
+     \endist
+   \xtInfoset(a1)(b2){2}
+   \xtInfoset(b1)(a2){2}
+   \end{istgame}
+\end{center}
+
+- This is a purely cooperative version.
+- Each player gets 1 if Hearer makes same move as Nature, and 0 otherwise.
+
+## Four Equilibria
+
+> 1. Sender does Up if Left, Down if Right. Hearer does what Nature does.
+> 2. Sender does Up if Right, Down if Left. Hearer does what Nature does.
+> 3. Sender does the same thing no matter what. Hearer does Left no matter what.
+> 4. Sender speaks randomly. Hearer does Left no matter what.
+
+## Equilibria Types
+
+- The first two are **separating** equilibria. This is what we hope happens!
+- The third is a **pooling** equilibria. This is not great.
+- The fourth is a **babbling** equilibria. This might be worse.
+
+When nature has only two possible states, there isn't much conceptual difference between pooling and babbling. But in the more general case, we want to distinguish between partially pooling equilibria and partially babbling equilibria.
+
+## Conceptual Load
+
+- We're normally interested in games where each player is perfectly rational, and is basically a genius game player.
+- But it's important for the purposes that signaling games are put that you can sustain a separating equilibrium when the players are really not very sophisticated.
+- Sender needs to be able to detect what Nature is doing, and differentially respond.
+- Hearer needs to differentially respond to Sender's response - so they also need to be able to detect what Sender is doing, and use that detection to guide action.
+- That's not nothing - two rocks couldn't do it - but it's not a lot.
+
+## Tiny Players
+
+- Cells, for example, can detect some things and differentially respond.
+- Certainly animals can do this.
+- And probably a lot of plants can as well, at least for some possible signals.
+- So you can use signaling games to explain all sorts of biological interactions, both between organisms and within them.
+- But this isn't a (philosophy of) biology class, so I'll leave that to another day.

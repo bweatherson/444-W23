@@ -1,0 +1,80 @@
+---
+title: "444 Lecture 3.3 - Backward Induction and Ties"
+author: "Brian Weatherson"
+mainfont: SF Pro Rounded
+output:
+  beamer_presentation:
+    md_extensions: +link_attributes+fenced_divs
+    keep_tex: yes
+    latex_engine: xelatex
+    includes:
+      in_header: 
+        - 444-beamer-header.tex
+        - extra-space.tex
+        - kableextra-dependencies.tex
+mathfont: STIX Two Math
+mainfontoptions: BoldFont = SF Pro Rounded Semibold
+---
+
+## Plan
+
+To address a bug in the backwards induction algorithm - ties.
+
+## Reading
+
+Bonanno, section 3.2.
+
+## Backwards Induction in Positive Sum Games
+
+![Three player game tree](images/3_3a.png){height=60%}
+
+- This is three player, but crucially, it is not zero sum.
+
+---
+
+![Three player game tree](images/3_3a.png){height=60%}
+
+> - In the bottom right, Player 3 doesn't care which choice is made.
+> - So we can't infer what Player 3 will do.
+
+---
+
+![Three player game tree](images/3_3a.png){height=60%}
+
+> - But the other players do care what Player 3 will do.
+> - So we can't just ignore this choice.
+
+---
+
+![Three player game tree](images/3_3a.png){height=60%}
+
+- The solution is to build two trees, one for each of Player 3's choices.
+
+---
+
+![Solution One](images/3_3b.png){height=60%}
+
+- First, assume 3 plays g.
+- Then 2 would play f at node y.
+- So 1 will actually play a.
+
+---
+
+![Solution One](images/3_3c.png){height=60%}
+
+- Now, assume 3 plays h.
+- Then 2 would play e at node y.
+- So 1 will actually play b triggering this play.
+
+## Multiple Solutions
+
+- This is a game with multiple backwards induction solutions.
+- The solutions don't just differ in what Player 3, who faces the tie, plays.
+- They differ in the very first move!
+- This is the totally general case; most solution concepts are like this.
+- But it's a pain to deal with.
+
+## For Next Time
+
+- We will look at how game trees relate to what we did last week.
+

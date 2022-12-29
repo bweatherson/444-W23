@@ -1,0 +1,220 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt,
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[Scale=MatchLowercase]{SF Pro Text Light}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Assigment 1},
+  pdfauthor={Philosophy 444},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\usepackage{gensymb}
+\usepackage{nicefrac}
+\usepackage{caption}
+
+\title{Assigment 1}
+\author{Philosophy 444}
+\date{Due 13 September, 2019}
+
+\begin{document}
+\maketitle
+
+\captionsetup[table]{labelformat=empty}
+
+\hypertarget{games}{%
+\section{Games}\label{games}}
+
+In each of these games, Row picks a row, and Column picks a column.
+Row's payouts are listed first, and Column's payouts are listed second.
+
+\begin{longtable}[]{@{}lcc@{}}
+\caption{Game One}\tabularnewline
+\toprule
+& Left & Right\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+& Left & Right\tabularnewline
+\midrule
+\endhead
+Up & 1, -1 & 2, -2\tabularnewline
+Down & 4, -4 & 3, -3\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{longtable}[]{@{}lcc@{}}
+\caption{Game Two}\tabularnewline
+\toprule
+& Left & Right\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+& Left & Right\tabularnewline
+\midrule
+\endhead
+Up & 1, -1 & 4, -4\tabularnewline
+Down & 2, -2 & 3, -3\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{longtable}[]{@{}lccc@{}}
+\caption{Game Three}\tabularnewline
+\toprule
+& Left & Middle & Right\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+& Left & Middle & Right\tabularnewline
+\midrule
+\endhead
+Up & 5, -5 & 3, -3 & 1, -1\tabularnewline
+Straight & 6, -6 & 2, -2 & 1, -1\tabularnewline
+Down & 1, -1 & 0, 0 & 0, 0\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{longtable}[]{@{}lccc@{}}
+\caption{Game Four}\tabularnewline
+\toprule
+& Left & Middle & Right\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+& Left & Middle & Right\tabularnewline
+\midrule
+\endhead
+Up & 5, -5 & 3, -3 & 2, -2\tabularnewline
+Straight & 6, -6 & 4, -4 & 3, -3\tabularnewline
+Down & 1, -1 & 6, -6 & 0, 0\tabularnewline
+\bottomrule
+\end{longtable}
+
+\newpage
+
+\begin{longtable}[]{@{}lcc@{}}
+\caption{Game Five}\tabularnewline
+\toprule
+& Left & Right\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+& Left & Right\tabularnewline
+\midrule
+\endhead
+Up & 2, 4 & 1, 0\tabularnewline
+Down & 6, 5 & 4, 2\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{longtable}[]{@{}lcc@{}}
+\caption{Game Six}\tabularnewline
+\toprule
+& Left & Right\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+& Left & Right\tabularnewline
+\midrule
+\endhead
+Up & 1, 1 & 0, 1\tabularnewline
+Down & 1, 0 & 1, 1\tabularnewline
+\bottomrule
+\end{longtable}
+
+\begin{longtable}[]{@{}lccc@{}}
+\caption{Game Seven}\tabularnewline
+\toprule
+& Left & Middle & Right\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+& Left & Middle & Right\tabularnewline
+\midrule
+\endhead
+Up & 0, 1 & 9, 0 & 2, 3\tabularnewline
+Straight & 5, 9 & 7, 3 & 1, 7\tabularnewline
+Down & 7, 5 & 10, 10 & 3, 5\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{questions-1a-to-7b}{%
+\subsection{Questions 1a to 7b}\label{questions-1a-to-7b}}
+
+For each of the 7 games listed above, find which strategies remain after
+iterated deletion of strongly dominated strategies. There are seven
+games, and two questions for each game (which strategy or strategies
+remain for Row, and which for Column) making 14 questions. Note that for
+any one of these 14 questions, there may be one or more than one answer,
+and you will only get credit for stating all (and only) the correct
+answers.
+
+\hypertarget{question-8}{%
+\subsection{Question 8}\label{question-8}}
+
+Which of the answers to questions 1-14 would change if you were asked to
+iteratively delete weakly dominated strategies, not strongly dominated
+strategies?
+
+\end{document}
