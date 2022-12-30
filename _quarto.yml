@@ -1,0 +1,29 @@
+format: 
+  beamer: 
+    classoption: 
+      - '`xcolor={dvipsnames}`{=latex}'
+    papersize: letter
+    navigation: empty
+    incremental: true
+    innertheme: default
+    outertheme: miniframes
+    colortheme: wolverine
+    mainfont: SF Pro Rounded
+    mainfontoptions: BoldFont = SF Pro Text Semibold, Scale = MatchLowercase
+    mathfont: STIX Two Math
+    keep-tex: true
+    md_extensions: +link_attributes+fenced_divs
+    include-in-header:
+        - 444-beamer-header.tex
+        - extra-space.tex
+
+       \captionsetup[figure]{labelformat=empty}
+       \usepackage{pgfpages}
+       \setbeamertemplate{itemize item}[circle]
+       \setbeamertemplate{footline}[frame number]{}
+       \mode<handout>{\pgfpagesuselayout{6 on 1}[letterpaper, border shrink=8mm]}
+       \AtBeginSection{%
+          \begin{frame}
+              \tableofcontents[currentsection]
+          \end{frame}
+       }
