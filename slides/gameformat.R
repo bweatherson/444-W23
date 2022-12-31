@@ -8,7 +8,7 @@ gameformat <- function(game){
   as_hux(game) %>%
     set_markdown_contents(1, 1, "") %>%
     set_right_border(everywhere, 1, value = 0.4) %>%
-    set_bottom_border(1, everywhere, value = 0.4) %>%
+    set_bottom_border(1, everywhere, value = 8) %>%
     set_align(everywhere, everywhere, "center") %>%
     set_align(everywhere, 1, "right") %>%
     set_valign(1, everywhere, "middle") %>%

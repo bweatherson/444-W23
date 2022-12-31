@@ -20,23 +20,24 @@ mainfontoptions: BoldFont = SF Pro Rounded Semibold
 source("kableformat.R")
 ```
 
-## Plan
-
-To describe the strategy of solving games by iteratively deleting strategies.
-
-## Reading
-
-Bonanno, section 2.5
+# Iterative Deletion
 
 ## Initial Idea
 
-> - If an option is strongly dominated, it shouldn't be chosen.
-> - In the simple case, if all options but one are strongly dominated, that one should be chosen.
-> - But we can say more than this.
-> - If a strategy only makes sense if the other player plays a dominated strategy, then it doesn't make sense.
-> - Let's work through some examples to see how this works in practice.
+- If an option is strongly dominated, it shouldn't be chosen.
+- In the simple case, if all options but one are strongly dominated, that one should be chosen.
+- But we can say more than this.
+
+## Initial Idea 
+
+- If a strategy only makes sense if the other player plays a dominated strategy, then it doesn't make sense.
+- Let's work through some examples to see how this works in practice.
 
 ## Easy Example
+
+::: {.columns}
+
+:::: {.column width="40%"}
 
 ```{r}
 game <- tribble(
@@ -46,14 +47,47 @@ game <- tribble(
 )
 gameformat(game)
 ```
+::::
+
+:::: {.column width="60%"}
+
 
 We can solve this using just domination.
 
-> - Up dominates Down, so Row should play Up.
-> - Right dominates Left, so Column should play Right.
-> - So the solution is Up/Right.
+::::
+
+:::
+
+## Easy Example
+
+::: {.columns}
+
+:::: {.column width="40%"}
+
+```{r}
+game <- tribble(
+  ~Moves,  ~Left, ~Right,
+  "Up",   "4, 1", "2, 2",
+  "Down", "3, 3", "1, 4"
+)
+gameformat(game)
+```
+::::
+
+:::: {.column width="60%"}
+
+
+- Up dominates Down, so Row should play Up.
+- Right dominates Left, so Column should play Right.
+- So the solution is Up/Right.
+
+::::
+
+:::
 
 ## Only Slightly Harder Example
+
+
 
 ```{r}
 game <- tribble(

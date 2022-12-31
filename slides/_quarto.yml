@@ -1,0 +1,21 @@
+author: "Brian Weatherson"
+format: 
+  beamer:
+    aspectratio: 169
+    fontsize: 14pt
+    papersize: letter
+    navigation: empty
+    incremental: true
+    innertheme: default
+    outerthemeoptions: subsection = false
+    colortheme: wolverine
+    mainfont: SF Pro Text Light
+    mainfontoptions: BoldFont = SF Pro Text Semibold, Scale = MatchLowercase
+    keep-tex: true
+    include-in-header:
+        - 444-beamer-header.tex
+        - kableextra-dependencies.tex
+
+
+
+
