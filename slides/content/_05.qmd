@@ -1,0 +1,425 @@
+---
+title: "444 Lecture 5"
+subtitle: "Dyanmic Games"
+date: "January 19, 2023"
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+# Strategies in Dynamic Games
+
+## A Strategy
+
+- Imagine that you're coaching someone who is going to play a dynamic game.
+- And imagine that you're a really really controlling coach, and they have a good memory.
+- Then you could tell them what to do in every possible situation.
+- That's a strategy.
+
+## Control Freaks
+
+- That metaphor might understate how controlling a strategy is supposed to be.
+- A strategy says what the player should do at every node in the tree.
+- That includes nodes that are ruled out by their earlier play.
+- So a strategy for chess might include the instructions "Open with e4, then if the first two moves are d4-d5, follow with c4."
+
+## Why be a Control Freak?
+
+- Strategies serve two roles.
+- They get followed by one player.
+- And they get reasoned about by the other players, in order to create their own strategies.
+- And to play the latter role, sometimes you need these weird steps.
+
+## Why be a Control Freak?
+
+- Sometimes in games we're interested in situations where there is a gap between giving an order and carrying it out.
+- When opposing generals are watching a battle play out, they can't assume that their instructions will be carried out to the letter, or that what they see on the battlefield is the result of the other side carrying out instructions properly.
+- In these cases, it is clear why a strategy should include "What to do if you haven't done what I said you should do so far."
+
+## Back to Nash
+
+- Go back to the coaching metaphor.
+- And imagine the other player in the dynamic game also has a coach.
+- Then you and the other coach are playing a one-shot, simultaneous move game.
+- Each of you have a lot of options - but you get one shot to choose one of them, and the other player makes their choice at the same time (more or less) as you.
+
+## Strategic (Normal) Form
+
+- For any two player game tree, we can write out all the strategies for each player.
+- I mean, we can in principle.
+- In chess there are probably more strategies than atoms in the universe, so in practice it would be hard, but in theory it can be done.
+
+## Strategic (Normal) Form
+
+- Once we have listed all the strategies for each player, we can form a table, and compute what would happen for each strategy pair.
+- And then we can do all the fun stuff from last week, like eliminating dominated strategies, finding best responses and Nash equilibria etc.
+
+## The End of Time?
+
+- So does that mean we don't need to think about dynamics at all?
+- No, and next time we'll look at why.
+- Some strategy pairs that make sense in a one-shot game don't seem to make sense in a dynamic game.
+
+# Incredible Threats
+
+## Threat Game {.fragile}
+
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+
+\begin{picture}(350, 110)
+\linethickness{1pt}
+\pictext{175}{0}{I}
+\put(175, 12){\circle*{4}}
+%\thicklines
+\put(175, 12){\line(-2, 1){70}}
+%\thinlines
+\put(175, 12){\line(2, 1){70}}
+\pictext{135}{20}{$A$}
+\pictext{215}{20}{$B$}
+
+\pictext{105}{35}{II}
+\put(105, 47){\circle*{4}}
+%\thicklines
+\put(105, 47){\line(-1, 1){35}}
+\pictext{70}{85}{(4, 1)}
+%\thinlines
+\put(105, 47){\line(1, 1){35}}
+\pictext{140}{85}{(1, 0)}
+\pictext{80}{55}{$a$}
+\pictext{130}{55}{$b$}
+
+\pictext{245}{35}{II}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+\pictext{210}{85}{(1, 1)}
+%\thicklines
+\put(245, 47){\line(1, 1){35}}
+%\thinlines
+\pictext{280}{85}{(2, 2)}
+\pictext{220}{55}{$a$}
+\pictext{270}{55}{$b$}
+
+%\multiput(105,47)(5, 0){28}{\line(1, 0){3}}
+
+\end{picture}
+
+## Strategies
+
+- A \textbf{strategy} for a game is a set of instructions for what to do at each node of a game.
+- Even very small game trees there are a lot of possible strategies.
+- If there are $k$ possible nodes a player could have a choice at, and $m$ possible moves at each of these nodes, then there are $m^k$ possible strategies.
+- Note that a strategy has to say what to do at nodes that are ruled out by your own prior moves.
+
+## Threat Game Strategies
+
+- Let's work through an example of that.
+- For player I, there are just two strategies: $A$ and $B$.
+- For player II, there are two nodes, and two possible choices at each node. So there are $2^2 = 4$ possible strategies.
+- We'll write $xy$ for the strategy of doing $x$ in response to $A$, and $y$ in response to $B$.
+- And note I'm capitalising player I's moves, and using lower case for player II's moves, to make things clearer.
+
+## Threat Game Strategies
+
+Here are the four strategies for player II:
+
+1. $aa$ - Do $a$ no matter what.
+2. $ab$ - Do whatever player I does.
+3. $ba$ - Do the opposite of what player I does.
+4. $bb$ - Do $b$ no matter what.
+
+## {.plain}
+
+The strategies for the players determine the outcome. Here is the table for the game, given the strategies.
+
+```{r}
+game <- tribble(
+  ~Moves,         ~aa, ~ab, ~ba, ~bb,
+  "A",  "4, 1", "4, 1", "1, 0", "1, 0",
+  "B",  "1, 1", "2, 2", "1, 1", "2, 2" 
+)
+gameformat(game)
+```
+
+
+## {.plain}
+
+```{r}
+game <- tribble(
+  ~Moves,         ~aa, ~ab, ~ba, ~bb,
+  "A",  "\\fbox{4}, \\fbox{1}", "\\fbox{4}, \\fbox{1}", "\\fbox{1}, 0", "1, 0",
+  "B",  "1, 1", "\\fbox{2}, \\fbox{2}", "\\fbox{1}, 1", "\\fbox{2}, \\fbox{2}" 
+)
+gameformat(game)
+```
+
+I've put boxes around the best responses, so you can see there are three Nash equilibria.
+
+1. $A, aa$ - with result 4, 1
+2. $A, ab$ - with result 4, 1
+3. $B, bb$ - with result 2, 2
+
+## {.fragile .plain}
+
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+
+\begin{picture}(350, 110)
+\linethickness{1pt}
+\pictext{175}{0}{I}
+\put(175, 12){\circle*{4}}
+\thicklines
+\put(175, 12){\line(-2, 1){70}}
+\put(175, 13){\line(-2, 1){70}}
+\thinlines
+\put(175, 12){\line(2, 1){70}}
+\pictext{135}{20}{$A$}
+\pictext{215}{20}{$B$}
+
+\pictext{105}{35}{II}
+\put(105, 47){\circle*{4}}
+\thicklines
+\put(105, 47){\line(-1, 1){35}}
+\put(105, 48){\line(-1, 1){35}}
+\pictext{70}{85}{(4, 1)}
+\thinlines
+\put(105, 47){\line(1, 1){35}}
+\pictext{140}{85}{(1, 0)}
+\pictext{80}{55}{$a$}
+\pictext{130}{55}{$b$}
+
+\pictext{245}{35}{II}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+\pictext{210}{85}{(1, 1)}
+\thicklines
+\put(245, 47){\line(1, 1){35}}
+\put(245, 48){\line(1, 1){35}}
+\thinlines
+\pictext{280}{85}{(2, 2)}
+\pictext{220}{55}{$a$}
+\pictext{270}{55}{$b$}
+
+%\multiput(105,47)(5, 0){28}{\line(1, 0){3}}
+
+\end{picture}
+
+- I've bolded the best moves at each node, assuming backward induction.
+- The path of best moves is the (in this case unique) backward induction solution.
+
+## Threat Game
+
+- There are three Nash equilibria of the game: strategy pairs that no one can improve on by unilaterally changing strategy.
+- There is just one backward induction solution of the game: a strategy pair where everyone does the best they can \textbf{at every node} assuming others play rationally at every node.
+
+## Incredible Threats
+
+What makes $\langle B, bb \rangle$ a Nash equilibrium is that Player II can make the following speech.
+
+> "I'm going to play b whatever you do. I want that 2 payout, and I'm going to get it. And since I'm going to play b whatever you do, you're better off playing B. That way you'll get 2, when you'd only get 1 if you played A. And you can tell I'm not bluffing because this strategy makes sense for me. Since you'll play B, since I'm committed to always playing b, it's in my best interests to stick to this strategy."
+
+## Incredible Threats
+
+What makes $\langle B, bb \rangle$ not subgame perfect, what makes it an incredible threat, is that A can make the following reply.
+
+## {.plain}
+
+> "That's an interesting plan. And if it was just a strategic game, I might even believe it. But the problem for you is that you have to stick to that bluff once you know that it's been called. To commit to always playing b means playing b even when you know I've played A. And I don't reckon you'll do it - it's worse for me (which doesn't matter), and it's worse for you (which does). If we were just choosing strategies, I might just about believe that you would adopt a disposition that's bad in some circumstances in the hope that by adopting it, you'll guarantee that those circumstances don't arise. But when you have to play in real time, I don't think you can do it."
+
+## Incredible Threats
+
+So I plays A, and they end up at the 4,1 outcome.
+
+# The Backward Induction Paradox
+
+## Reading
+
+- No required reading, but if you want to see more, read "The Backward Induction Paradox" by Philip Pettit and Robert Sugden, _Journal of Philosophy_ 1989.
+
+## Backward Induction in Economics
+
+- I once heard an economist say the biggest controversy about backward induction reasoning was whether you say "backward induction" or "backwards induction".
+- What he meant, and what's true, is that among mainstream economists, this is more controversial than whether the reasoning behind it is sound.
+- In philosophy there is somewhat more controversy.
+
+## The Backward Induction Paradox
+
+::: {.columns align=center}
+
+:::: column
+![Pettit and Sugden's Paper](images/3_6.png){height=75%}
+::::
+
+:::: column
+That's in part due to this paper.
+::::
+
+:::
+
+## Iterated Prisoners Dilemma
+
+- It's time to get on the table a game we'll be spending some time on: Iterated Prisoners Dilemma.
+- It turns out the central event in the history of the study of this game happened at the University of Michigan, but that's a story for another day.
+- A and B will play 100 rounds of the game on the next slide
+
+## Axelrod's Version of Prisoners Dilemma
+
+```{r}
+game <- tribble(
+  ~Moves,       ~Coop, ~Defect,
+  "Coop",      "3, 3", "0, 5",
+  "Defect",    "5, 0", "1, 1"
+)
+gameformat(game)
+```
+
+## Scoring
+
+- This is still a non-competitive game: they are trying to maximise points, not maximise lead over the other.
+- But the points add up over all the rounds. (And they don't decay or melt.)
+- So each party wants to maximise their sum score over 100 plays of the game.
+
+## Strategy
+
+- At each play, each party knows what the other did on all the previous rounds.
+- The strategic form of this is impossibly big; even the two round game has 32 strategies per player, so 1024 cells.
+
+## One Shot Reasoning
+
+At any given round, the following reasoning seems sound.
+
+1. If the other player Cooperates, I'm better off Defecting.
+2. If the other player Defects, I'm better off Defecting.
+3. So either way, I'm better off Defecting.
+4. So, I'm better off Defecting.
+
+## Repeated Play
+
+But in round one of a repeated game, the following reasoning also looks sound.
+
+1. The best outcome in the long run is if we both Cooperate as much as possible.
+2. A plausible way to get that would be to signal that I will Cooperate if, but only if, the other player does.
+
+## Repeated Play
+
+3. A natural way to implement that is to start Cooperating, then Defect when the other player does (this strategy has become known as Tit-for-Tat).
+4. So at round 1 I'll cooperate - if the other player is thinking the same way as me, we'll both make a lot of utility, and relative to how much there is to gain, it's only a small loss if I'm wrong.
+
+## Backward Induction
+
+But there is a counter argument.
+
+1. At round 100, there is no signalling value of Cooperating; I just get more from Defecting.
+2. Everyone knows this is true.
+3. So at round 99, there is no signalling value of Cooperating; the other player will Defect at round 100 whatever I do at 99.
+4. Everyone knows this is true.
+4. So at round 98, there is no signalling value of Cooperating;...
+
+## Temporary Conclusion
+
+- Backward induction suggests that we should defect every round.
+- Eventually there will be no signalling benefit to cooperation, and backward induction pushes the moment where that happens back to the start of the game.
+
+## Pettit and Sugden
+
+This reasoning is self-defeating.
+
+- Imagine I'm thinking about cooperating for signalling purposes at round one.
+- I might worry that the other player will defect come what may at round 2 because of the backward induction argument.
+- But the premises of the backward induction argument imply that I'll defect at round 1.
+
+## Pettit and Sugden
+
+- And at round 2, the other player will know that I did not actually defect at round 1.
+- So I should only worry if I think the other player will use an argument whose premises they know to be false.
+- And that's not something to worry about.
+
+## Short Version
+
+To give up on cooperation requires believing that the other player will think as follows.
+
+- Game theoretic rationality requires defection at every round, so that's what the other player will do from round 3 onwards, so I may as well defect.
+- And I know that the other player will do what's game theoretically rational even though they totally did not do that the very last time I interacted with them.
+- That's absurd.
+
+## Game Theorists Respond
+
+- You should always think the other player is rational.
+- If you observe a departure from rationality, you should assume it is a performance error, not a competence error (to use Chomsky's terminology).
+- Or, to use the terminology of game theorists, you should assume it was a "trembling hand" error.
+
+## A Further Puzzle
+
+> - The argument for defecting at round 100 is unaffected by Pettit and Sugden's argument, you should totally defect then.
+> - And I'm not sure that the argument for defecting at round 99 is affected either.
+> - Is round 98 different?
+> - If you are convinced by their argment that the backward induction argument fails in general, when does it start failing?
+
+# Zero-Sum Turn-Taking Games
+
+## A Famous Theorem
+
+Every turn taking zero sum game has a **value**.
+
+## The Class of Games Under Discussion
+
+::: {.nonincremental}
+- Two-player
+- Turn-taking
+- Finite
+- No hidden facts
+- No randomness
+- Zero-sum
+:::
+
+That is a lot of restrictions, but it includes classic games like chess, checkers, go, othello and more.
+
+## Theorem
+
+Every one of these games has a **value**.
+
+- The value of the game is an outcome that each player can guarantee that they get at least that good a result.
+- Since the game is zero-sum, it follows that no player can guarantee that they do better.
+
+## Proof Schema
+
+- We prove this by induction on the nodes.
+- The value of a terminal node is given by the definition.
+- Say a penultimate node (at any stage of the process) is a node such that whatever move is made, the next node has a value.
+- The value of that node is the best value of the subsequent nodes, by the lights of the player who has to play.
+- So if player 1 has to play, and one nodes leads to a draw, and the other to Player 2 winning, the value of that node is draw.
+
+## Proof Schema
+
+- Since the game is finite, a finite number of steps of this process will assign a value to every node in the tree.
+- So eventually the initial node will get a value.
+- And that's the value of the game.
+
+## Proof Schema
+
+- The way we've constructed that value shows that each player always has a path to ensure they never do worse.
+- If it is their move, there will be a move that preserves value.
+- And if it is the other players' move, the value is by definition the most harm they can do with that move.
+
+## Consequences
+
+- Consider any game with just two outcomes, one player wins or the other.
+- Whatever the tree is, we know the table will have one of the following two features.
+
+1. There is a row where every result is that Player 1 wins; or
+2. There is a column where every result is that Player 2 wins.
+
+## Consequences
+
+> - In chess, at least one player has a strategy that guarantees not losing.
+> - For some chess like games this is not a surprise - if player 2 had a winning strategy, player 1 could as it were execute it first. This isn't quite right for chess, but no one really thinks that player 2 has a winning strategy in chess.
+> - Probably the value of chess is a draw, but this isn't known yet.
+
+## Solved Games
+
+![Wikipedia page on solved games](images/solved.png){height=70%}
+
+## For Next Week
+
+We will start chapter 4, on games involving hidden information.

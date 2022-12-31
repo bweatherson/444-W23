@@ -1,0 +1,328 @@
+---
+title: "444 Lecture 6"
+subtitle: "Games and Uncertainty"
+date: "January 24, 2023"
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+# Information Sets
+
+## Basic Idea
+
+- Sometimes when a player has to make a choice, they know they are at one of a set of nodes in the tree, but they don't know which one.
+- We will illustrate this by drawing a circle around the nodes.
+- The circle means that the player making a choice knows that they are in that circle somewhere, but the rules of the game don't guarantee that they know which point they are in.
+
+## Cheating Game
+
+- Professor decides to either give every student the same exam, or give different exams to different students.
+- Student doesn't know what professor did, and has to decide whether to copy off (known to be good at the course) neighbour.
+
+## {.plain}
+
+![Payoff tree for cheating game](images/04_01.png){height=80%}
+
+## How To Read Tree
+
+- Professor makes a choice.
+- Then student makes a choice.
+- When student chooses, there is a fact about where in the tree we are.
+- But student isn't told that fact - they are just told that we are at one of the nodes in the circled set.
+
+## Circles Everywhere
+
+- We don't normally draw them, but you should imagine these circles everywhere on the tree.
+- If a node doesn't have a circle around it, that means that its circle just contains itself.
+
+## Information Set
+
+- We will call the circle associate with each point its **information set**.
+- Each node is in precisely one information set.
+- That set may be a singleton; it might just be that node.
+- But that's not the general case.
+
+## Constraints on Information Sets - Outputs
+
+Every node in an information set must have the same outputs.
+
+- You can't have an information set where the Player has three options from one node, but only two from another.
+- The player knows how many options they have.
+- So if the options were different, they could figure out which node they were at.
+
+## Constraints on Information Sets - Inputs
+
+Every node in an information set has the same history of moves by the player whose turn it is.
+
+- We assume everyone knows what moves they have made.
+- It is an interesting fact that some real life board games rely on the falsity of this assumption.
+- But as on previous slide, if the nodes have a different history for this player, that means the player knows which node they are at.
+
+# Structure of Information Sets
+
+## Disclaimer
+
+This isn't in the books; it's not something game theorists discuss. And it really isn't on the test. But this is a philosophy class, and this is philosophically important, so we're going to pause over it for 10-15 minutes.
+
+## Three Features of Information Sets
+
+1. Reflexive
+2. Symmetric
+3. Transitive
+
+## Reflexive
+
+Each point is in its own information set.
+
+- This seems fair enough; if you're somewhere, then for all you know, you are there.
+
+## Symmetric
+
+- If when you're at $a$ you might be at $b$, then
+- When you're at $b$ you might be at $a$.
+- In information set terms, if $b$ is in $a$'s information set, then $a$ is in $b$'s information set.
+
+## Symmetry
+
+What this means is that what happens earlier in the game can't affect a player's powers of discrimination.
+
+- This seems like an inappropriate assumption in, e.g., drinking games.
+- At least in some games, one's ability to discriminate between some options will be dependent on the path taken to get to those options.
+- The standard treatment of partial information doesn't allow us to represent this.
+
+## Transitive
+
+- If when you're at $a$ you might be at $b$, and
+- When you're at $b$ you might be at $c$, then
+- When you're at $a$ you might be at $c$.
+
+## Transitive
+
+In information set terms, if $b$ is in $a$'s information set, and $c$ is in $b$'s information set, then it must be that $c$ is in $a$'s information set.
+
+## Transitivity
+
+This rules out games where players can tell that they are in a certain 'neighbourhood'. For example,
+
+- Player 1 puts some jelly beans in a jar and gives it to Player 2.
+- It matters to Player 2 how many jelly beans are in the jar, but she doesn't have direct access to that.
+
+## Transitivity
+
+This rules out games where players can tell that they are in a certain 'neighbourhood'. For example,
+
+- Still, she isn't totally ignorant. She can see the jar and guess the number to the nearest, say 10.
+- So if there are 160 jelly beans in the jar, she knows that there are between 150 and 170.
+- And in fact, though Player 2 doesn't know this, that's true - there are 160 jelly beans.
+
+## {.plain}
+
+- Let $n_{140}$ be the node where there are 160 jelly beans in the jar.
+- And $n_{150}$ be the node where there are 150 jelly beans in the jar.
+- And $n_{160}$ be the node where there are 140 jelly beans in the jar.
+- Player 2 knows she's not at $n_{140}$; her information set should exclude that.
+- And her information set should include $n_{160}$ - reflexivity guarantees that.
+- Should it include $n_{150}$?
+
+## A Challenge
+
+- On the one hand, it should - since from $n_{160}$ all she knows is that there are between 150 and 170 jelly beans in the jar.
+- On the other hand, it should not - since she can rule out $n_{140}$, and if $n_{150}$ were actual, she could not rule out $n_{140}$.
+
+## What To Do
+
+- In theory, there is an opening here for someone working out a theory of games with imperfect information that drops either the symmetry or transitivity assumption.
+- In practice, no one has actually worked out that theory, and I'm not going to try teaching a non-existent theory.
+- There is a little work on games involving "unawareness", which gets close to this, but it's way too novel a field to know where it will go.
+
+# Strategies
+
+## Back to Orthodoxy
+
+We're back onto what normal game theorists talk about, and up to 4.2 of Bonanno.
+
+## Definition
+
+A **strategy** is a plan for what to do at each information set where the rules of the game give the player a choice.
+
+## Inputs to Strategy
+
+- Strategies are for information sets, not nodes.
+- Can't have a plan to do different things at different points in the information set.
+
+## Comprehensiveness
+
+- Strategies include plans for what to do at nodes that are ruled out by one's earlier choices.
+- Reason 1: Fallback.
+- Reason 2: Understanding decisions by other players
+
+## Strategic Form
+
+- We can turn any game, even ones with substantive information sets, into a single simultaneous move game.
+- Just take the possible moves to be the strategies.
+- In any realistic game, there will be a lot of these.
+
+## Strategic Form
+
+- But the strategic form can obscure things, as we saw in the case of non-credible threats.
+- Next section, we'll start looking at how to remove the obscurity.
+
+# Subgames
+
+## Definition
+
+Roughly, a subgame is a part of the game that could be a complete game.
+
+## First Constraint
+
+A subgame has an initial node.
+
+- All nodes in the subgame are downstream of that node.
+- Remember that in general, there is only one way to get to a node.
+
+## Histories
+
+So don't think of nodes as like positions in a chess game.
+
+- You can get to the same position multiple ways.
+- Rather, think of them as like the history of the moves.
+
+## Second Constraint
+
+The subgame consists of all the nodes downstream of that initial node.
+
+- If $a$ is the initial node, and in the original game you can get from $a$ to $b$, then $b$ is in the subgame.
+
+## Third Constraint
+
+The subgame does not 'cut' any information sets.
+
+- If $b$ is in the subgame, and $c$ is in the information set that includes $b$, then $c$ is in the subgame.
+
+## Common Knowledge
+
+Put another way, $a$ has to be a point such that when you get to it, it is common knowledge you are there.
+
+- It being in a singleton information set is necessary for that (if not, the player who has to play doesn't know you are there) but not sufficient.
+
+## {.plain}
+
+![A violation of third constraint](images/04_02.png){height=70%}
+
+## Summing Up
+
+- A subgame consists of all and only the points that are 'downstream' of some initial node.
+- That initial node has to be such that if/when it is reached, it is common knowledge among the players that it is reached.
+
+# Subgame Perfect Equilibrium
+
+## Definition
+
+A set of strategies for each of the players is a subgame perfect equilibrium if and only if
+
+- The set forms a Nash equilibrium.
+- In every subgame, the set forms a Nash equilibrium.
+
+## Subgame Perfect and Nash
+
+The second clause is non-trivial.
+
+- It rules out players doing certain kinds of odd things at nodes that are not reached.
+- At subgame perfect equilibrium, each player's strategies make sense given the other player's strategies, and they are disposed to keep making sense under different assumptions about what they might do.
+
+## Finding Subgame Perfect Equilibrium
+
+- Find the minimal subgames.
+- Act as if the initial node of that subgame is a terminal node, with its payouts being the equilibrium payouts of the subgame.
+- If there are multiple equilibria, duplicate the tree enough times to cover each of them - you'll have multiple subgame perfect equilibria.
+- Repeat until you've covered the whole tree.
+
+## {.plain}
+
+![The large game](images/04_03.png){height=80%}
+
+## {.plain}
+
+![The left subgame](images/04_04.png){height=80%}
+
+## {.plain}
+
+![The left subgame with labeled best responses](images/04_05.png){height=80%}
+
+## {.plain}
+
+![The big game with reduced left subgame](images/04_06.png){height=80%}
+
+## {.plain}
+
+![The middle subgame with labeled best responses](images/04_07.png){height=80%}
+
+## {.plain}
+
+![The big game with reduced middle subgame](images/04_08.png){height=80%}
+
+## The right subgame
+
+::: {.columns}
+
+:::: {.column width="50%"}
+```{r}
+game <- tribble(
+  ~Moves, ~A, ~B,
+  "e",  "1, 1", "2, 0",
+  "f",  "2, 1", "0, 1"
+)
+gameformat(game)
+```
+::::
+
+:::: {.column width="50%"}
+
+::::: {.nonincremental}
+- Player 2 is row
+- Player 3 is column
+- Player 1 is ignored, because they have no moves
+:::::
+
+::::
+
+:::
+
+
+## The right subgame with labeled best responses
+
+```{r}
+game <- tribble(
+  ~Moves, ~A, ~B,
+  "e",  "1, \\fbox{1}", "\\fbox{2}, 0",
+  "f",  "\\fbox{2}, \\fbox{1}", "0, \\fbox{1}"
+)
+gameformat(game)
+```
+
+## {.plain}
+
+![The big game with reduced right subgame](images/04_09.png){height=70%}
+
+- Only Nash equilibrium is Player 1 plays $b$.
+
+## Summary
+
+So the subgame perfect equilibrium is:
+
+- Player 1 plays $b, C$.
+- Player 2 plays $d, f, F$.
+- Player 3 plays $h, A$.
+
+And the payouts are reverse order of their names: 3, 2, 1.
+
+## For Next Time
+
+We will start looking at games with cardinal utility.
+
+## Remember
+
+- No class Thursday; I'm away at a conference.
+- Happy Republic Day to all who celebrate it.

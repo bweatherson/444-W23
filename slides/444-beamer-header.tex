@@ -37,7 +37,7 @@
 
 \mode<handout>{\pgfpagesuselayout{6 on 1}[letterpaper, border shrink=8mm]}
   \AtBeginSection{
-          \begin{frame}
+          \begin{frame}{Day Plan}
               \tableofcontents[currentsection]
           \end{frame}
        }
@@ -55,3 +55,5 @@
 \let\olditem\item
 \renewcommand{\item}{%
 \olditem\vspace{6pt}}
+
+\captionsetup[figure]{labelformat=empty}

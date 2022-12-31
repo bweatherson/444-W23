@@ -11,7 +11,7 @@ format:
     colortheme: wolverine
     mainfont: SF Pro Text Light
     mainfontoptions: BoldFont = SF Pro Text Semibold, Scale = MatchLowercase
-    keep-tex: true
+    keep-tex: false
     include-in-header:
         - 444-beamer-header.tex
         - kableextra-dependencies.tex

@@ -1,0 +1,2 @@
+
+{{< include content/_07.qmd >}}

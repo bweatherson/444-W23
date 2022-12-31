@@ -1,0 +1,7 @@
+---
+format: 
+  beamer: 
+    classoption: handout
+---
+
+{{< include content/_07.qmd >}}

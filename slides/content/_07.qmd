@@ -1,0 +1,320 @@
+---
+title: "444 Lecture 7"
+subtitle: "Utility"
+date: "January 31, 2023"
+---
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Big Plan
+
+To introduce the notion of utility.
+
+## Reading for Day
+
+Bonanno, chapter 5 - though note we aren't following the book precisely in this chapter.
+
+# Cardinal Utility
+
+## Ranking
+
+- So far the theories we've looked just solve games using the **rankings** of various options. 
+- It doesn't look at how much a player prefers one option over another, just on what is preferred to what.
+
+## Ordinal Utility
+
+- To use the technical language, so far our theories have just used  **ordinal utilities**. 
+- The term **ordinal** here means that we only look at the **order** of the options. 
+
+## Cardinal Utility
+
+- The rules that we'll look at from now on use **cardinal utilities**.
+- Whenever we're associating outcomes with numbers in a way that the magnitudes of the differences between the numbers matters, we're using cardinal utilities.
+
+## Utility
+
+- Intuitively, think of utilities as measuring how good an outcome is. 
+- The theory we're building towards is thoroughly subjectivist, so think of 'how good' as meaning 'how good along all and only dimensions the agent making the decision cares about'. 
+
+## Scale
+
+- Utilities aren't really measured on any scale. 
+- Indeed, like temperature measures, or year numberings, they don't even have a fixed zero point. 
+- It is usually convenient to associate 0 utility with the status quo, and then have negative numbers for outcomes worse than status quo, and positive numbers for outcomes better than status quo. 
+
+## Scale
+
+- Setting 0 to the status quo is just a convention; you can set the 0 wherever you like. 
+- And you can set the utility 1 point at anything better than 0.
+
+## Scale (continued)
+
+- But that's where the convention stops.
+- Once you fix the 0 and 1 points, nothing else is fixed by pure convention.
+- Temperatures are like this too.
+- Though years are not - all the different calendars have years of the same length.
+
+## Meaning of the Scale
+
+We will come back to this much more in the future, but here is the key equation.
+
+$$
+U(B) = \frac{U(A) + U(C)}{2}
+$$
+
+Means that the agent is indifferent between getting $B$ for sure, and a coin flip that means they get $A$ if Heads and $C$ if Tails.
+
+## Meaning of the Scale
+
+It's a little unintuitive to think about this (though it helps if you've moved between Celsius and Farenheit countries).
+
+- What matters is the ratio of differences.
+- If $U(A) - U(B) = U(B) - U(C)$, that's really meaningful, even if none of the individual numbers are meaningful.
+
+# Money and Utility
+
+## Don't Equate Dollars and Money
+
+That's the message!
+
+## Don't Equate Dollars and Money
+
+1. Players might care how much money other players get.
+2. Players might not assign the same utility to each dollar.
+
+## Altruism
+
+Consider an outcome where Player 1 gets $10 and Player 2 gets $20.
+
+- Don't just say that's a utility of 10 for Player 1 and 20 for Player 2.
+- Maybe Player 1 likes Player 2, and is happy they get some money - so this outcome has higher utility than one where Player 1 gets $10 and Player 2 gets $10.
+- Maybe Player 1 has a hypotrophied sense of fairness and hates other people getting more - so this outcome has lower utility than one where Player 1 gets $10 and Player 2 gets $10.
+
+## Resolving Social Problems
+
+- Stepping back a bit, one of the big uses of game theory is in institutional design.
+- We look at what game we are asking people to play, and use game theory to predict what they'll play, and if we don't like the answer, we think about changing the game to get a better one.
+- Sometimes the most efficient way to get change is to change values - to get people to care about outcomes for others.
+
+## Marginal Utility and Decision Making
+
+- Getting $2x is not twice as valuable as getting $x.
+- That's because it's like getting $x, then getting $x again.
+- And after you get the first $x, you're richer, and getting $x is (in general) less valuable to richer people.
+
+## Philosophical Point
+
+It's relatively uncontroversial that the following two things are true. The philosophical claim that lies behind the theory I'm setting out in these slides is that they are closely connected.
+
+:::{.nonincremental}
+1. You're better off getting a million dollars than getting a 50/50 shot at two million dollars.
+2. Getting a million dollars changes your life more than it changes the life of a billionaire.
+:::
+
+Both are grounded in the fact that the more money you have, the less utility each extra dollar has.
+
+## Utility and Money
+
+The graph of the relationship between utility and money should have the following two features.
+
+:::{.nonincremental}
+1. More money means more utility.
+2. The amount of extra utility you get for each extra dollar should be decreasing
+:::
+
+Arguably utility rises with something like log of wealth.
+
+
+## Insurance
+
+Insurance is a funny business.
+
+- Every insurance contract is a bet, with you and the insurance company on opposite sides of it.
+- The bet can't, as a matter of almost mathematical necessity, have a positive expected dollar return for both of you.
+- And given it involves some transaction costs, it could have a negative expected dollar return for both of you.
+- So why does the industry even exist?
+
+## Declining Marginal Utility Example
+
+- Assume our person has assets of $100,000, including a car worth $30,000.
+- They live in a risky area, so there is a 1 in 10 chance the car will fall in value to 0 over the next 12 months.
+- They are offered an insurance contract with the following terms.
+- They pay $3,200.
+- If the risky thing happens and the car value falls to 0, the insurance company will reimburse them, so they will get the $30,000 back.
+
+## Should They Take the Deal
+
+Outcome if they take the deal
+
+:::{.nonincremental}
+- A guaranteed $96,800. \pause
+:::
+
+Outcome if they don't take the deal.
+
+:::{.nonincremental}
+- A 90% chance of $100,000.
+- A 10% chance of $70,000. \pause
+:::
+
+The latter outcome has an expected dollar return of $97,000 - that's $0.9 \times 100,000 + 0.1 \times 70,000$.
+
+## Should They Take the Deal
+
+- But this doesn't settle the matter. We care about utility not dollars.
+- Let's re-run the question using utility.
+
+## {.plain}
+
+Outcome if they take the deal
+
+:::{.nonincremental}
+- A guaranteed $96,800, which has utility roughly 4.986  \pause
+:::
+
+Outcome if they don't take the deal.
+
+:::{.nonincremental}
+- A 90% chance of $100,000, which has utility 5.
+- A 10% chance of $70,000, which has utility roughly 4.845 \pause
+:::
+
+The latter outcome has an expected utility return of roughly $0.9 \times 5 + 0.1 \times 4.845 \approx 4.984$. Option 1 is better - not by much, but better.
+
+## Company Point of View
+
+- Assume (for now) that they have a constant marginal utility of money.
+- So all that matters is that the policy has a positive dollar value.
+- And the expected dollar return of the deal is +$200, so it's good for the company as well.
+
+## Success!
+
+- We found a case where both parties are rational in taking the bet, even though they are on opposite sides of it.
+- And this doesn't require fraud, or misperception of the odds for either party.
+
+## Possibility Constraints
+
+- This is only possible because the two sides have different utility curves, at least locally.
+- That's what makes the conflicting interests (in dollar terms) into a possible mutual interest.
+- Someone with a less steeply sloping utility curve (i.e., with more resources) is in a better position to absorb certain risks.
+- It is worth paying over the odds to them to absorb that risk.
+
+## Curves (Almost) Always Slope Down
+
+- But eventually, the insurance company has risks it shudders at as well.
+- This only happens on enormous scale, but it happens.
+- And it's why insurance companies won't (happily) offer insurance against correlated risks, like floods or invasion.
+
+## A Big Caveat
+
+When you run the numbers on cases like this, three things come out.
+
+1. Sometimes, insurance is good for both parties.
+2. Unless the loss is a huge portion of the customer's wealth, the numbers end up being really close.
+3. Even in those cases, the numbers aren't that different.
+
+So I end up thinking that people probably over-purchase insurance, even though this is a model on which insurance purchase can be rational.
+
+# Probability
+
+## Probability
+
+I'm going to do a bit more on this in the half week that's coming up, but here's the nickel version. A probability function $\Pr(\cdot)$ is a function from sets to reals in $[0, 1]$ satisfying:
+
+1. $0 \leq \Pr(X) \leq 1$
+2. If $X \cap Y$ is empty, then $\Pr(X) + \Pr(Y) = \Pr(X \cup Y)$
+
+## Probability and Action
+
+We get from this bit of math to something useful for decisions by making the following extra assumptions.
+
+- The elements of the sets are possible outcomes.
+- Propositions are identified first with properties of outcomes, and in turn with sets of outcomes that have that property.
+- Then the probability of a set of outcomes can be equated with the probability of the truth of that proposition.
+
+## Probability in Practice
+
+For any way of carving up the possibilities into disjoint sets (formally speaking a partition), the probabilities of each of the members of the partition must sum to 1.
+
+- So if there is a soccer game, and we know the result is that Michigan is going to win, lose or draw (and not two of those things), then it has to be that.
+- Probability Win plus Probability Lose plus Probability Draw equals 1.
+
+## More About Probability Later
+
+- We will say much more about probability later, but I think that's sort of enough for now (even though it's just a couple of slides).
+
+# Expected Utility
+
+## Random Variables
+
+- A **random variable**  is simply a variable that takes different numerical values in different states. 
+- In other words, it is a function from possibilities to numbers. 
+- It need not be 'random' in any familiar sense.
+- The function from possible situations to the value of 2 + 2 in that situation is a random variable, albeit a constant one.
+- It's just a slightly confusing term for any variable that takes different, numerical, values in different situations.
+
+## Labels
+
+- Typically, random variables are denoted by capital letters. 
+- So we might have a random variable $X$ whose value is the age of the next President of the United States, and his or her inauguration. 
+- Or we might have a random variable $Y$ that is the number of children you will have in your lifetime. 
+- Basically any mapping from possibilities to numbers can be a random variable. 
+
+## {.plain}
+
+- You've asked each of your friends who will win the Lakers v Clippers game.
+- 12 said the Lakers will win.
+- 7 said the Clippers will win. \pause
+- Then we can let $X$ be a random variable measuring the number of your friends who correctly predicted the result of the game.
+
+\begin{equation*}
+X = 
+	\begin{cases}
+		12,& \text{if Lakers win} ,\\ 
+		7,& \text{if Clippers win} .
+	\end{cases}
+\end{equation*}
+
+## Expected Value
+
+- Given a random variable $X$ and a probability function $Pr$, we can work out the **expected value** of that random variable with respect to that probability function. 
+- Intuitively, the expected value of $X$ is a weighted average of the possible values of $X$, where the weights are given by the probability (according to $Pr$) of each value coming about. 
+
+## Calculating Expected Value
+
+- More formally, we work out the expected value of $X$ this way. 
+- For each possibility, we multiply the value of $X$ in that case by the probability of the possibility obtaining. 
+- Then we sum the numbers we've got, and the result is the expected value of $X$. 
+- We'll write the expected value of $X$ as $Exp(X)$. 
+
+## Back to the Example
+
+- So if the probability that the Lakers win is 0.7, and the probability that the Clippers win is 0.3, then
+
+\begin{align*}
+Exp(X) &= 12 \times 0.7 + 7 \times 0.3 \\
+ &= 8.4 + 2.1 \\
+ &= 10.5
+\end{align*} 
+
+## Notes
+
+1. The expected value of $X$ isn't in any sense the value that we expect $X$ to take. It's more like an average.
+2. If this kind of situation recurs a lot, you would expect the long run average value $X$ takes to be roundabout the expected value.
+3. That's a better way of conceptualising what expected values are.
+
+## {.plain}
+
+The standard theory of decisions under uncertainty requires three conceptual innovations.
+
+1. Utility, understood as a measure of how well things are for the decider, and defined in a way such that ratios of differences are meaningful.
+2. Probability, understood as measuring the likelihood of classes of outcomes.
+3. Expected value, understood as something generated by multiplying probabilities of an outcome by the value of the random variable in that outcome.
+
+## For Next Time
+
+- We will start looking at how to use these tools to analyse games that we couldn't analyse with purely ordinal utility
+
+
