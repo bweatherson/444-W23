@@ -1,0 +1,612 @@
+---
+title: "444 Lecture 8"
+subtitle: "Mixed Strategies"
+date: "February 2, 2023"
+---
+
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+# Cardinal Importance
+
+## Games with Lotteries
+
+Here is one thing we can do with cardinal utilities - include lotteries in the payoffs.
+
+- We can treat the lottery ticket as having a value equal to the **expected value** of the lottery.
+
+## Games with Lotteries
+
+Bonanno illustrates this with a game that involves an actual lottery - an auction where tied bids are resolved by a chance mechanism.
+
+- But philosophically, lots of things in life look like lottery ticket.
+
+## Life is a Series of Lotteries
+
+- How much is $1  million worth?
+- It depends a bit on whether there is lots of inflation in the near future.
+- It also depends on whether there is a revolution soon and millionaires are in danger.
+
+## Everything's a Gamble
+
+The orthodox treatment of these questions, which I totally endorse, is that a quantity of money is just as much a gamble as a lottery ticket.
+
+- It's a relatively safe gamble; there hasn't been hyperinflation or anti-capitialist revolution in America in a long time.
+- But it's a gamble.
+- So even games with monetary payouts are gambles - gambles on the future value of money.
+
+## Chicken 1
+
+Here is a version of chicken using ordinal utility.
+
+```{r}
+game <- tribble(
+  ~Moves,         ~swerve, ~drive,
+  "Swerve",  "3, 3", "2, 4",
+  "Drive",  "4, 2", "1, 1"
+)
+gameformat(game)
+```
+
+## Chicken 2
+
+```{r}
+game <- tribble(
+  ~Moves,         ~swerve, ~drive,
+  "Swerve",  "1, 1", "0, 2",
+  "Drive",  "2, 0", "-5, -5"
+)
+gameformat(game)
+```
+
+I guess you mostly swerve in this game, but you think about driving.
+
+## Chicken 3
+
+```{r}
+game <- tribble(
+  ~Moves,         ~swerve, ~drive,
+  "Swerve",  "1, 1", "0, 2",
+  "Drive",  "2, 0", "-5000, -5000"
+)
+gameformat(game)
+```
+
+Please swerve! \pause
+
+- But (Swerve, swerve) is not Nash. We'll come back to this.
+
+## Cardinal Utility Matters
+
+- The last two games were alike in ordinal utility.
+- But they were unlike in how you should play them.
+- So more than ordinal utility matters for how you should play.
+
+# Mixed Strategies
+
+## Core Idea
+
+Flip a coin!
+
+## Motivation
+
+![Rock! Paper!! Scissors!!!](images/rps.png)
+
+## Payout
+
+If Row plays 60% Up and 40% Down, and Column plays Left, then Row's expected payout will be
+
+::: {.nonincremental}
+- 0.6 times the payout for Up/Left
+- 0.4 times the payout for Down/Left \pause
+::: {.nonincremental}
+
+When we evaluate a mixed strategy, we evaluate it by its expected payout, not its actual payout.
+
+## Payout
+
+If Row plays 60% Up and 40% Down, and Column plays Left, then Column's payout will be
+
+::: {.nonincremental}
+- 0.6 times the payout for Left/Up
+- 0.4 times the payout for Left/Down \pause
+:::
+
+We have to use expected values for evaluating even **pure** strategies like Left, once one player plays mixtures.
+
+## Both Mixing
+
+What if Column also mixes, playing 70% Left and 30% Right.
+
+- Then Row's expected payout is 0.7 times the **expected** payout of their mixed strategy when Column plays Left, plus 0.3 times the expected payout of their mixed strategy when Column plays right.
+- We have to use expected values twice over to get the philosophically important value of this strategy.
+
+## Independence
+
+- What we're assuming here is that the probabilities of each player are **independent**.
+- If they roll 20-sided dice or whatever, they roll different ones.
+- There is an interesting part of game theory where we drop that assumption, but I'm not going to cover it.
+- This is the part that deals with so-called **correlated equilibrium**.
+- Bonanno doesn't cover this, and I won't either.
+
+## What is a Mixed Strategy
+
+At least three interpretations.
+
+1. Random device
+2. Frequencies
+3. Epistemic
+
+## Random Device
+
+- I mean, you literally roll a die, flip a coin, use something on your phone or something.
+- This is the traditional interpretation, but it's become less popular.
+
+## Frequencies
+
+- In the long-run, your frequency of each play tracks the probabilities in the strategy.
+- And more specifically, your frequency of each play in each identifiable situation tracks the probabilities.
+
+## Frequencies
+
+- Alternating rock-then-paper-then-scissors isn't a way to play the mixed strategy 1/3 for each move.
+- Relatedly, you will lose.
+- On the frequency interpretation of mixed strategies, playing that mixed strategy means that after rock, you'll play 1/3 rock, 1/3 paper, 1/3 scissors, and after paper-then-scissors, you'll play ..., and so on.
+
+## Epistemic
+
+- A rational onlooker will not be able to figure out what you will do/are doing, beyond saying that you're playing each strategy with the specified probability.
+- It doesn't matter how you get there, as long as that's all that an onlooker (or co-player) can figure out.
+
+## Mixtures Always Available
+
+- Game theorists standardly assume that if some moves are available, so is any mixed strategy built out of them.
+- Philosophers do not assume this, and often think it's the least plausible thing about game theory.
+- Is this assume plausible?
+
+## What's a Mixed Theory
+
+- On the random device interpretation, it's very implausible.
+- Not all game players have arbitrary random devices available.
+- But on the other interpretations, it is more plausible.
+- A good player should be able to hide their strategy, even in repeated plays.
+
+# Mixed Strategies in Equilibria
+
+## Key Theorem
+
+In any finite game in which all mixtures of strategies are available, there is at least one Nash equilibria.
+
+## {.plain}
+
+```{r}
+game <- tribble(
+  ~Moves,         ~Left, ~Right,
+  "Up",  "2, 0", "0, 3", 
+  "Down",  "0, 1", "1, 0"
+)
+gameformat(game)
+```
+
+Let's discuss this game for a bit. Does it have an equilibrium?
+
+## {.plain}
+
+```{r}
+gamebox <- tribble(
+  ~Moves,         ~Left, ~Right,
+  "Up",  "\\fbox{2}, 0", "0, \\fbox{3}", 
+  "Down",  "0, \\fbox{1}", "\\fbox{1}, 0"
+)
+gameformat(gamebox)
+```
+
+No Nash equilibrium in pure strategies.
+
+## {.plain}
+
+:::{.columns}
+
+:::: {.column width="40%"}
+```{r}
+gameformat(game)
+```
+::::
+
+:::: {.column width="60%"}
+Consider what happens if Row plays
+
+- Up with probability $\nicefrac{1}{4}$;
+- Down with probability $\nicefrac{3}{4}$.
+::::
+
+:::
+
+## {.plain}
+
+:::{.columns}
+
+:::: {.column width="40%"}
+```{r}
+gameformat(game)
+```
+::::
+
+:::: {.column width="60%"}
+
+Column's expected return from playing Left is 
+
+:::::{.nonincremental}
+- 0 with probability $\nicefrac{1}{4}$ plus
+- 1 with probability $\nicefrac{3}{4}$, i.e.,
+- $\nicefrac{3}{4}$.
+:::::
+
+::::
+
+:::
+
+## {.plain}
+
+:::{.columns}
+
+:::: {.column width="40%"}
+```{r}
+gameformat(game)
+```
+::::
+
+:::: {.column width="60%"}
+
+Column's expected return from playing Right is 
+
+:::::{.nonincremental}
+- 3 with probability $\nicefrac{1}{4}$ plus
+- 0 with probability $\nicefrac{3}{4}$, i.e.,
+- $\nicefrac{3}{4}$.
+:::::
+
+::::
+
+:::
+
+## {.plain}
+
+:::{.columns}
+
+:::: {.column width="40%"}
+```{r}
+gameformat(game)
+```
+::::
+
+:::: {.column width="60%"}
+
+- So either way, Column's expected return from playing a pure strategy is $\nicefrac{3}{4}$.
+- And hence Column's expected return from playing any mixture of the two pure strategies is $\nicefrac{3}{4}$.
+::::
+
+:::
+
+## {.plain}
+
+:::{.columns}
+
+:::: {.column width="40%"}
+```{r}
+gameformat(game)
+```
+::::
+
+:::: {.column width="60%"}
+
+Consider what happens if Column plays
+
+:::::{.nonincremental}
+- Left with probability $\nicefrac{1}{3}$;
+- Right with probability $\nicefrac{2}{3}$.
+:::::
+
+::::
+
+:::
+
+## Row's Expected Return
+
+:::{.columns}
+
+:::: {.column width="40%"}
+```{r}
+gameformat(game)
+```
+::::
+
+:::: {.column width="60%"}
+
+Row's expected return from playing Up is 
+
+:::::{.nonincremental}
+- 2 with probability $\nicefrac{1}{3}$ plus
+- 0 with probability $\nicefrac{2}{3}$, i.e.,
+- $\nicefrac{2}{3}$.
+:::::
+
+::::
+
+:::
+
+## {.plain}
+
+:::{.columns}
+
+:::: {.column width="40%"}
+```{r}
+gameformat(game)
+```
+::::
+
+:::: {.column width="60%"}
+
+Row's expected return from playing Down is 
+
+:::::{.nonincremental}
+- 0 with probability $\nicefrac{1}{3}$ plus
+- 1 with probability $\nicefrac{2}{3}$, i.e.,
+- $\nicefrac{2}{3}$.
+:::::
+
+::::
+
+:::
+
+## {.plain}
+
+:::{.columns}
+
+:::: {.column width="40%"}
+```{r}
+gameformat(game)
+```
+::::
+
+:::: {.column width="60%"}
+
+- So either way, Row's expected return from playing a pure strategy is $\nicefrac{2}{3}$.
+- And hence Row's expected return from playing any mixture of the two pure strategies is $\nicefrac{2}{3}$.
+
+::::
+
+:::
+
+## An Equilibria
+
+:::{.columns}
+
+:::: {.column width="40%"}
+```{r}
+gameformat(game)
+```
+::::
+
+:::: {.column width="60%"}
+
+- What happens if they both play the mixed strategies we've been discussing? 
+- It's an equilibria.
+
+::::
+
+:::
+
+## {.plain}
+
+:::{.columns}
+
+:::: {.column width="40%"}
+```{r}
+gameformat(game)
+```
+::::
+
+:::: {.column width="60%"}
+
+- Whatever Column does, their expected return is $\nicefrac{3}{4}$.
+- So they can't do better than play this mixed strategy.
+- They can't do worse either, but the definition of equilibrium just requires that they can't do better.
+
+::::
+
+:::
+
+## {.plain}
+
+:::{.columns}
+
+:::: {.column width="40%"}
+```{r}
+gameformat(game)
+```
+::::
+
+:::: {.column width="60%"}
+
+- Whatever Row does, their expected return is $\nicefrac{2}{3}$.
+- So they can't do better than play this mixed strategy.
+- They can't do worse either, but the definition of equilibrium just requires that they can't do better.
+::::
+
+:::
+
+## Two General Points
+
+1. There is always some equilibria like this (at least in finite games), even if it doesn't look like it at first.
+2. Typically, the way we find equilibria is making the other player indifferent between a bunch of options.
+
+
+# Finding Mixed Strategy Equilibria
+
+## Basic Idea
+
+- In equilibria, the other player is willing to play a mixed strategy.
+- That requires that they be indifferent between other strategies.
+- So we find the equilibria by finding the mixture that makes them indifferent.
+
+## {.plain}
+
+```{r}
+game <- tribble(
+  ~Moves,         ~Left, ~Right,
+  "Up",  "5, 2", "1, 3", 
+  "Down",  "2, 2", "3, 0"
+)
+gameformat(game)
+```
+
+- You can see fairly quicklythat there is no pure strategy equilibria.
+- So the equilibria must be a mixed strategy equilibria.
+
+## Theory
+
+What does it take for Column to play a mixed strategy in equilibria?
+
+- Assume that Left has a higher expected return than Right.
+- The expected return of a mixed strategy is a weighted average of the expected returns of Left and Right.
+- If Left has a higher expected return than Right, that weighted average will be strictly between the expected returns of Left and Right.
+
+## Theory
+
+- And that means it can't be an equilibrium, since in equilibrium there is no alternative with a higher expected return. 
+- And the same reasoning shows Right can't have a higher expected return than Left.
+
+## Theory
+
+So we are trying to find the mixture such that Column is indifferent between Left and Right.
+
+- The other crucial thing to remember is that probabilities add to 1. (We'll do a review lecture on probability next time.)
+- So when working out Row's strategy, there is only one variable.
+- Once we set the probability of Row playing Up to $x$, that sets all the probabilities, because the probablity of playing Down is $1-x$.
+
+## A Note
+
+I'm only going to go over cases where the mixed strategy equilibrium involves a mixture of two pure strategies.
+
+- There are cases where the mixed strategy equilibrium involves mixtures of 3 or more pure strategies.
+- Rock, Paper, Scissors is the simplest such example.
+- But in general the math of calculating these is considerably fancier than what we'll be doing, and I'll stick to cases where the mixed strategy equilibrium only involves 2 pure strategies.
+
+## {.plain}
+
+:::{.columns}
+
+:::: {.column width="40%"}
+```{r}
+gameformat(game)
+```
+::::
+
+:::: {.column width="60%"}
+
+- Assume Row plays Up with probability $x$, and Down with probability $1-x$.
+- Our job is to find an $x$ such that the expected return of Left and Right is the same.
+::::
+
+:::
+
+## {.plain}
+
+:::{.columns}
+
+:::: {.column width="40%"}
+```{r}
+gameformat(game)
+```
+::::
+
+:::: {.column width="60%"}
+
+- The expected return of Left is $2x + 2(1-x)$, i.e., $2$.
+- The expected return of Right is $3x + 0(1-x)$, i.e., $3x$.
+::::
+
+:::
+
+## {.plain}
+
+:::{.columns}
+
+:::: {.column width="40%"}
+```{r}
+gameformat(game)
+```
+::::
+
+:::: {.column width="60%"}
+
+- So $2 = 3x$, so $x = \nicefrac{2}{3}$.
+- So Row's strategy is to play Up with probability $\nicefrac{2}{3}$, and hence Down with probability $\nicefrac{1}{3}$.
+- The expected return of Right is $3x + 0(1-x)$, i.e., $3x$.
+::::
+
+:::
+
+
+## {.plain}
+
+:::{.columns}
+
+:::: {.column width="40%"}
+```{r}
+gameformat(game)
+```
+::::
+
+:::: {.column width="60%"}
+- Assume Column plays Left with probability $x$, and Right with probability $1-x$.
+- Our job is to find an $x$ such that the expected return of Up and Down is the same.
+::::
+
+:::
+
+## {.plain}
+
+:::{.columns}
+
+:::: {.column width="40%"}
+```{r}
+gameformat(game)
+```
+::::
+
+:::: {.column width="60%"}
+- The expected return of Up is $5x + 1(1-x)$, i.e., $4x + 1$.
+- The expected return of Down is $2x + 3(1-x)$, i.e., $3 - x$.
+::::
+
+:::
+
+## {.plain}
+
+\begin{align*}
+4x + 1 &= 3 - x \\
+5x + 1 &= 3 \\
+5x    &= 2 \\
+x    &= \nicefrac{2}{5}
+\end{align*}
+
+So Column's strategy is to play Left with probability $\nicefrac{2}{5}$, and hence Right with probability $\nicefrac{3}{5}$.
+
+## Takeaways
+
+- To find a player's move probabilities in equilibria, look to the other player's payouts.
+- Try to make the other player indifferent between their choices.
+
+## Extra Steps
+
+- I'm not going to go over more complicated examples on the slides, but there is an extra step you can do (and which we can discuss in class if you're interested).
+- Sometimes you can find the mixed strategy equilibria of a game with more than 2 moves by first deleting **strongly** dominated strategies.
+- Bonanno works through an example like this.
+
+## For Next Time
+
+I'm going to start on an idea I want to work through very slowly, and spend a bit of time on - the idea that a mixture of strategies can dominate another strategy.
