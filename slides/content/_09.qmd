@@ -1,0 +1,434 @@
+---
+title: "444 Lecture 9"
+subtitle: "Mixed Strategies and Philosophy"
+date: "February 7, 2023"
+---
+
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+# Dominance by Mixture
+
+## Basic Example
+
+```{r}
+game <- tribble(
+  ~Moves,         ~Left, ~Right,
+  "Up",  "3, 0", "0, 0", 
+  "Middle", "1, 0", "1, 0",
+  "Down",  "0, 0", "3, 0"
+)
+gameformat(game)
+```
+
+This is a bit boring for Column, but let's focus on Row for now.
+
+## {.plain}
+
+::: {.columns}
+
+:::: {.column width="40%"}
+
+```{r}
+gameformat(game)
+```
+
+::::
+
+:::: {.column width="60%"}
+
+At first it looks like there are no dominated strategies.
+::::
+
+:::
+
+## {.plain}
+
+::: {.columns}
+
+:::: {.column width="40%"}
+
+```{r}
+gameformat(game)
+```
+
+::::
+
+:::: {.column width="60%"}
+- Up does worse than Middle and Down if Column plays Right, so it doesn't dominate anything.
+- Middle does worse that Up if Column plays Left, and worse than Down if Column plays Right.
+- Down does worse than both of them if Column plays Left.
+::::
+
+:::
+
+## {.plain}
+
+::: {.columns}
+
+:::: {.column width="40%"}
+
+```{r}
+gameformat(game)
+```
+
+::::
+
+:::: {.column width="60%"}
+
+But compare these two strategies.
+
+:::::{.nonincremental}
+- Middle
+- The mixed strategy of Up with probability 0.5, and Down with probability 0.5.
+:::::
+
+::::
+
+:::
+
+## {.plain}
+
+::: {.columns}
+
+:::: {.column width="40%"}
+
+```{r}
+gameformat(game)
+```
+
+::::
+
+:::: {.column width="60%"}
+- Middle gets an actual return of 1 whatever Column does.
+- The mixed strategy gets an expected return of 1.5 whatever Column does.
+- So it has a higher expected return given Left (1.5 > 1), and a higher expected return given Right (1.5 > 1).
+::::
+
+:::
+
+## {.plain}
+
+::: {.columns}
+
+:::: {.column width="40%"}
+
+```{r}
+gameformat(game)
+```
+
+::::
+
+:::: {.column width="60%"}
+- If that happens, then we'll say that Middle is dominated by this mixture.
+- When we're deleting dominated strategies, we should delete it too.
+::::
+
+:::
+
+## Nash and Dominance
+
+- A strategy that is dominated by a mixture like this can never be part of a Nash equilibrium.
+- After all, the player would be better off playing the mixture than playing it, so it fails the test that there is nothing better to do.
+- So being able to find these dominating mixtures can be very helpful in working out what the Nash equilibrium is.
+
+## Rational Play and Dominance
+
+- But even beyond that, it seems wrong to play strategies that are dominated in this way.
+- If you're thinking about playing Middle (as Row), you increase your expected return by simply flipping a coin to choose between Left and Right.
+- So that's what you should do.
+
+# Best Responses
+
+## {.plain}
+
+```{r}
+game <- tribble(
+  ~Moves,         ~Left, ~Right,
+  "Up",  "3, 0", "0, 0",
+  "Middle", "2, 0", "2, 0",
+  "Down",  "0, 0", "3, 0"
+)
+```
+
+
+::: {.columns}
+
+:::: {.column width="40%"}
+
+```{r}
+gameformat(game)
+```
+
+::::
+
+:::: {.column width="60%"}
+
+-   Up is the best response to Left.
+-   Down is the best response to Right.
+-   Is Middle the best response to anything?
+
+::::
+
+:::
+
+## {.plain}
+
+::: {.columns}
+
+:::: {.column width="40%"}
+
+```{r}
+gameformat(game)
+```
+
+::::
+
+:::: {.column width="60%"}
+Yes!
+
+-   Middle is the best response to the mixed strategy Left with probability 0.5, Right with probability 0.5.
+-   It gets 2, the other options have an expected return of 1.5.
+::::
+
+:::
+
+## {.plain}
+
+::: {.columns}
+
+:::: {.column width="40%"}
+
+```{r}
+gameformat(game)
+```
+
+::::
+
+:::: {.column width="60%"}
+
+-   Middle is the best thing to do if you know Column is going to flip a coin to decide what to do.
+-   But it's also the best thing to do if you have no idea what Column is going to do, and the best you can do is say it's 50/50 what they are going to do.
+-   So it's actually pretty easy to think of situations where Middle is the smart play.
+::::
+
+:::
+
+## Best Response
+
+-   A strategy $S$ is a **best response** just in case...
+-   There is some probability distribution over the other player's strategies and ...
+-   No strategy has a higher expected return than $S$ given that probability distribution.
+
+## Best Response
+
+-   Note that this allows for ties.
+-   Weakly dominated strategies can even be best responses in this sense. \pause
+-   This definition also covers mixed strategies; they can also be best responses.
+
+## A Surprising Theorem
+
+-   Say a strategy is **undominated** if no other strategy, pure or mixed, strongly dominates it.
+-   And it is a **best response** if it does as well as anything, given at least one probability distribution.
+-   Here's the surprising theorem:
+
+\pause
+> The strategies that are best responses are just the same strategies as those that are undominated.
+
+## Best Reponses
+
+-   This relates back to something I was saying in the last lecture.
+-   The strategies that are dominated by mixtures didn't seem to make sense - you could just play the mixtures.
+-   But here's another property that they have - they are never best responses.
+
+## Best Reponses
+
+-   And if they are not best responses, no one can play them while maximising expected utility.
+-   Whatever probability you give to the other player's play, if you maximise expected utility you will play a best response.
+-   And you should maximise expected utility.
+
+# Rationalizable Strategies
+
+
+```{r}
+game <- tribble(
+  ~Moves,         ~Left, ~Right,
+  "Up",  "3, 0", "0, 1",
+  "Middle", "1, 1", "1, 0",
+  "Down",  "0, 0", "3, 1"
+)
+```
+
+## {.plain}
+
+::: {.columns}
+
+:::: {.column width="40%"}
+
+```{r}
+gameformat(game)
+```
+
+::::
+
+:::: {.column width="60%"}
+
+In this game, the best responses are:
+
+- Row can play Up (best response to Left) or Down (best response to Right);
+- Column can play Left (best response to Middle) or Right (best response to either Up or Down).
+::::
+
+:::
+
+## {.plain}
+
+::: {.columns}
+
+:::: {.column width="40%"}
+
+```{r}
+gameformat(game)
+```
+
+::::
+
+:::: {.column width="60%"}
+- But Middle is not a best response.
+- It is dominated by the 50/50 mixture of Left and Right.
+::::
+
+:::
+
+## {.plain}
+
+::: {.columns}
+
+:::: {.column width="40%"}
+
+```{r}
+gameformat(game)
+```
+
+::::
+
+:::: {.column width="60%"}
+- So while Left is a best response...
+- It is not a best response to a best response.
+::::
+
+:::
+
+## Iterated Best Responses
+
+- That makes it seem irrational to play Middle.
+- I could build more complicated examples, where we had cases that are best responses to best responses, but not best responses to best responses to best responses.
+
+## Iterated Best Responses
+
+- Actually we've already seen such a case.
+- In the Ice Cream game, 2 is a best response to 1, which is a best response to 0.
+- But 2 is not a best response to any best response to a best response.
+
+## Iterated Best Responses
+
+- Some strategies are at the start of an infinite chain $S_1, S_2, \dots$ where each strategy is a best response to the one that comes after it.
+- Call these the **rationalizable** strategies.
+
+## Infinite Chains
+
+Here is one way to get an infinite chain like this.
+
+- If the pair $\langle S_1, S_2 \rangle$ is a Nash equilibrium, ...
+- Then $S_1$ is a best response to $S_2$, which is a best response to $S_1$, which is a best response to $S_2$, which ... \pause
+- But you don't only need to use Nash equilibria.
+
+## Infinite Chains
+
+- Think about Rock, Paper, Scissors.
+- Rock is a best response to Scissors, which is a best response to Paper, which is a best response to Rock, which is...
+- But Rock is not part of a Nash equilibrium.
+
+## Rationalizability
+
+I'm not going to prove this, but the following turns out to be true.
+
+- The strategies that can be at the start of these infinite chains ...
+- Are exactly those strategies that survive iterated deletion of strongly dominated strategies ...
+- Provided we include dominance by mixtures when we're doing the deleting.
+
+## Philosophical Payoff
+
+Some economists, and a few philosophers, have argued that this is the key philosophical notion in game theory.
+
+- They say that a strategy is rational to play if and only if it is rationalizable in this sense.
+- In economics, this is very much a **heterodox** view.
+- Note that this view is more permissive than the view that rational players will choose Nash equilibria.
+
+## Philosophical Payoff
+
+- All Nash equilibria are rationalizable, but some rationalizable strategies (e.g., Rock!), are not Nash equilibria.
+- Most economists think that if there is a key notion in game theory, it is **less permissive** than Nash equilibrium.
+
+# Why Nash?
+
+## Reading
+
+Bonanno, sections 2.6 (which we discussed earlier) and 6.4.
+
+## Two Conjectures
+
+1. It is rational to play any rationalizable strategy.
+2. It is only rational to play Nash Equilibrium strategies
+
+I'm going to end this week talking a bit about why people might prefer 2 over 1.
+
+## One Intuitive Idea
+
+- Don't just play Rock - the other person will figure it out.
+- Rock every time is rationalizable.
+- But you shouldn't do it.
+- Therefore principle 1 must be false.
+
+## Response 1
+
+- Yeah, you shouldn't play Rock every single time, that's dumb.
+- But on any given occasion, it's fine.
+- And we know, from e.g., Prisoners' Dilemma, that we shouldn't infer what to do in a single shot game from what happens in the repeated game.
+
+## Response 2
+
+- The orthodox solution (i.e., principle 2) actually doesn't give you the result you might want here.
+- It is possible that the randomising device will come up Rock every single time.
+- So if you think it's always irrational to play Rock repeatedly, you have to think both of these are wrong.
+
+## Response 3
+
+- If principle 2 is right, all rational players will randomise every time.
+- So the expected return of Rock is just the same as the expected return of randomisation.
+- So it can't be wrong to play it.
+
+## Mixing Response 2 and Response 3
+
+- If principle 2 is right, and it's common knowledge that the players are rational, then the rational way to interpret the other player playing Rock every time is "Wow, their random device is having a freaky run."
+- But if that's right, there isn't anything wrong with playing Rock every time.
+
+## Other Direction
+
+- As we'll see when we get to O'Connor's book, you mostly see people wanting more restrictions on moves than Nash.
+- But Bonanno ends chapter 6 with an interesting reason for thinking even rationalisability (i.e., IDSDS) is too strong.
+
+## Other Direction
+
+- It's really incredibly unrealistic to know the utility function that the other player has.
+- You might know the physical outcomes of the game, but knowing what utility each player gets is a huge assumption.
+- So in practice, you should probably not rely too heavily on theories or policies that rely on this knowledge.
+
+## For Next Time
+
+- Next week we will do a bit of revision of probability theory.
+- It's completely optional, and will be very familiar to many people here; if you want a day off, take a day off.
+- After that, we'll look at how game theorists think about signals and messages.
+

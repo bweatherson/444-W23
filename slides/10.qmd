@@ -1,0 +1,2 @@
+
+{{< include content/_10.qmd >}}

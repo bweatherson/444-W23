@@ -27,7 +27,7 @@ mainfontoptions: BoldFont = SF Pro Rounded Semibold
   \istb{B}[r]
   \istb{C}[ar]
   \endist
-\xtdistance{10mm}{20mm}
+\xtdistance{10mm}{15mm}
 \istroot(1)(0-2)
   \istb{l}[al]{(4,4)}
   \istb{r}[ar]{(1,0)}
@@ -97,7 +97,7 @@ Alice plays A and gets 2, and she believes she would get 1 if she played B and 0
   \istb{B}[r]
   \istb{C}[ar]
   \endist
-\xtdistance{10mm}{20mm}
+\xtdistance{10mm}{15mm}
 \istroot(1)(0-2)
   \istb{l}[al]{(4,4)}
   \istb{r}[ar]{(0,0)}

@@ -1,0 +1,944 @@
+---
+title: "444 Lecture 10"
+subtitle: "Probability"
+date: "February 9, 2023"
+---
+
+
+```{r, include=FALSE}
+source("kableformat.R")
+```
+
+## Day Plan
+
+Pure revision/introduction of basics of probability
+
+## Totally Not Compulsory
+
+- If you've taken any college class using probability before, then probably 100% of what I say this whole week will be pure revision.
+- I bet many people in the class could *teach* all this stuff.
+- That's fine - take a week off.
+- But I really don't want anyone left behind before we dive into the more applied stuff.
+
+## Book
+
+![These slides are based off an open access textbook, Odds and Ends, available at https://jonathanweisberg.org/vip/](images/Odds_and_Ends.png){height=70%}
+
+# Basics of Probability 
+
+## Associated Reading
+
+Odds and Ends, Chapter 1
+
+## Basic Idea
+
+- A probability function is a mapping from possibilities to numbers.
+- The numbers must sum to one.
+- Intuitively, the numbers measure how likely the possibilities are.
+
+## Sum to One
+
+The math of probability functions is just the math of proportions. Ultimately, all we'll be doing is the same kind of math that you would do when thinking about things like
+
+- What proportion of UM students are from North Carolina?
+- What proportion of UM undergraduates are Tigers fans?
+
+## Three Big Questions
+
+1. What to do with these numbers?
+2. Where these numbers come from?
+3. What do the numbers even mean?
+
+## A Simple Case
+
+- Imagine that it is basketball season, and UM has planned to have both the women's and men's teams play on the same night.
+- So at the end of the night there are four possible outcomes.
+
+## Made Up Probabilities
+
+I'll stipulate that the probabilities of the four possible outcomes are given by this table.
+
+              Men Win   Men Lose
+-----------  --------- ----------
+Women Win       0.45      0.25
+Women Lose      0.20      0.10
+
+## Another Representation
+
+Here are the same numbers written a different way.
+
+ Women   Men    Probability
+------- ------ -------------
+  Win    Win        0.45
+  Win    Lose       0.25
+  Lose   Win        0.20
+  Lose   Lose       0.10
+  
+## Possibilities
+
+Say a possibility (for current purposes) is one of these maximally specific things that the probability is defined over.
+
+- It is not really a complete possibility.
+- It doesn't tell us the score, or the weather, or the results of the next election, or for that matter the results of the last election.
+- But it tells us everything that's relevant to a particular inquiry.
+- It is a lot like a line on a truth table.
+  
+## Events
+
+We will say an **event** is a proposition that can be defined using these possibilities. So here are some sample events.
+
+- The women's team wins.
+- The men's team wins.
+- At least one Michigan team wins.
+- The two teams have the same result.
+
+## Probability of Events
+
+- An event is true at some possibilities, false at others.
+- Each possibility gets a probability.
+- The probability of an event is the sum of the probabilities of the possibilities where it is true.
+
+## Examples - Probability Women's Team Wins
+
+::: columns
+
+:::: column
+
+ Women   Men    Probability
+------- ------ -------------
+  Win    Win        0.45
+  Win    Lose       0.25
+  Lose   Win        0.20
+  Lose   Lose       0.10
+  
+::::
+
+:::: column
+
+\bigskip
+- The women's team wins at lines 1 and 2.
+- So its probability is 
+- 0.45 + 0.25 = 0.7.
+
+::::
+
+:::
+
+
+## Examples - Probability Men's Team Wins
+
+
+::: columns
+
+:::: column
+
+ Women   Men    Probability
+------- ------ -------------
+  Win    Win        0.45
+  Win    Lose       0.25
+  Lose   Win        0.20
+  Lose   Lose       0.10
+  
+::::
+
+:::: column
+
+\bigskip
+- The men's team wins at lines 1 and 3.
+- So its probability is 0.45 + 0.20 = \textbf{0.65}.
+
+::::
+
+:::
+
+
+## Examples - At Least One Team Wins
+
+::: columns
+
+:::: column
+
+ Women   Men    Probability
+------- ------ -------------
+  Win    Win        0.45
+  Win    Lose       0.25
+  Lose   Win        0.20
+  Lose   Lose       0.10
+  
+::::
+
+:::: column
+
+\bigskip
+- At least one team wins at lines 1, 2 and 3.
+- So its probability is 0.45 + 0.25 + 0.20 = \textbf{0.90}.
+
+::::
+
+:::
+
+## Examples - Same Result in Each Game
+
+::: columns
+
+:::: column
+
+ Women   Men    Probability
+------- ------ -------------
+  Win    Win        0.45
+  Win    Lose       0.25
+  Lose   Win        0.20
+  Lose   Lose       0.10
+  
+::::
+
+:::: column
+
+\bigskip
+- It is the same result in each game at lines 1 and 4.
+- So its probability is 0.45 + 0.10 = {0.55}.
+
+::::
+
+:::
+
+
+# Features of Probabiility Functions
+
+## Associated Reading
+
+Odds and Ends, Chapter 5
+
+## Scale
+
+$$
+0 \leq \Pr(A) \leq 1
+$$
+
+## Negation
+
+$$
+\Pr(\neg A) = 1 - \Pr(A)
+$$
+
+## Excluded Middle
+
+$$
+\Pr(A) + \Pr(\neg A) = 1
+$$
+
+## Partition
+
+Some events $A_1, \dots A_n$ form a partition if, necessarily, exactly one of them is true.
+
+- So they are **exclusive** - you can't have any two of them both be true.
+- And they are **exhaustive** - you have to have at least one true.
+
+## Partition
+
+If $A_1, \dots A_n$ form a partition then
+
+$$
+\Pr(A_1) + \dots + \Pr(A_n) = 1
+$$
+
+## Exclusive
+
+If $A, B$ are exclusive
+
+$$
+\Pr(A \vee B) = \Pr(A) + \Pr(B)
+$$
+
+## General Principle
+
+$$
+\Pr(A) + \Pr(B) = \Pr(A \vee B) + \Pr(A \wedge B)
+$$
+
+\pause
+
+It's worth thinking through why this is true in terms of possibilities.
+
+## Trees
+
+- Often, we can't just write down numbers for the possibilities.
+- But we can write down, or at least make reasonable guesses about, numbers for certain events.
+- And we can think about how things are likely to go given those events happen.
+- This is the tree structure that is used in _Odds and Ends_.
+
+## Football Forecasting
+
+Let's think about the probability that Michigan wins the men's football championship next year.
+
+## One Method
+
+- Divide up the state space.
+- Work out the probability of being in one or other part of the space.
+- Work out the probability of winning given you are in one or other part of the space.
+- Add things up.
+
+## Nothing is Reliable
+
+- There are a lot of ways to do this.
+- You could divide up the space by how much it snows for the next two months.
+- Or you could divide it up by whether we win one or other basketball championship.
+- Or, more reasonably, and this is what we'll use, you could divide it up by what Coach Harbaugh does over the next few months.
+
+## Coach Outcomes
+
+- So assume (I'm writing these slides a fair way in advance of the actual class) that we don't know whether Coach Harbaugh will stay at Michigan or leave for an NFL job.
+- But what he does makes a big difference to Michigan's chances.
+
+## Coach Outcomes
+
+We need some numbers for illustration, so let's make some up.
+
+- 60% chance he simply stays with no distraction.
+- 30% chance he goes to the NFL.
+- 10% chance he dithers and is linked to NFL jobs all through spring before staying.
+
+## Team Outcomes
+
+Again, let's make some numbers up. (Not realistic; not investment advice!)
+
+- If the coach stays (with no distractions) we have a 30% chance of winning.
+- If he leaves, we have a 20% chance of winning.
+- But if he dithers, and there's no good team planning, we have a 0% chance of winning.
+
+
+## Two Step Process
+
+1. Work out (or at least estimate) probability of each state.
+2. Work out probability of the winning within each of those states.
+
+This will involve a lot of guesswork - do not make investment decisions on the basis of the numbers I'm using
+
+
+## The Giant Table
+
+                                     We win!              We don't win
+---------------------------- ------------------------- -------------------------
+Coach simply stays            $0.6 \times 0.3 = 0.18$   $0.6 \times 0.7 = 0.42$
+Coach leaves                  $0.3 \times 0.2 = 0.06$   $0.3 \times 0.8 = 0.24$
+Coach dithers                 $0.1 \times 0.0 = 0.00$   $0.1 \times 1.0 = 0.10$
+  
+So the probability that we win (given these literally made up assumptions) is $0.18 + 0.06 + 0.00 = 0.24$, or 76%.
+
+## Probabilities and Errors
+
+- The error bars on that calculation are massive.
+- But it's a kind of sanity check on your reasoning
+- Especially in situations where only a handful of paths lead to a salient result (like in playoffs in sports, or when thinking about the likelihood of a particular challenger winning), doing the tree even with favorable numbers can give you a conservative estimate of some probability.
+
+## Three Cases Where This is More Precise
+
+1. Probabilities are stipulated
+2. Probabilities are due to well understood chance processes (like gambling devices)
+3. Probabilities are derived from very large data sets
+
+# Tree Example
+
+## Soccer Tournament
+
+There is a big soccer tournament this weekend. The teams competing are
+
+- Fireflies
+- Penguins
+- Huskies
+- Bluebirds
+
+## Tournament Structure
+
+There will be three games. Each game will have a winner one way or the other (maybe via penalty kicks or extra time).
+
+1. Fireflies vs Penguins
+2. Huskies vs Bluebirds
+3. Winner of Game 1 vs Winner of Game 2
+
+
+## Team Strength
+
+The teams are not all equally good. They each have a 'strength'. Here is their respective strengths
+
+ Team        Strength
+----------- ---------- 
+ Fireflies      5
+ Penguins       4
+ Huskies        3
+ Bluebirds      1
+
+## Win Probabilities
+
+If a team with strength $x$ plays a team with strength $y$, the team with strength $x$ will win with probability
+
+$$
+\frac{x}{x+ y}
+$$
+
+\bigskip
+
+And the team with strength $y$ will win with probability
+
+$$
+\frac{y}{x + y}
+$$
+
+## Question
+
+What is the probability that each team will win the tournament?
+
+> - We will answer this by doing a tree.
+
+## {.plain .fragile}
+
+\newcommand{\pictext}[3]{
+\put(#1, #2){\makebox(0, 0)[b]{#3}}}
+\setlength{\unitlength}{0.9pt}
+\begin{picture}(350, 150)
+\pictext{175}{0}{G1}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\put(177, 13){\line(2, 1){69}}
+\pictext{135}{20}{F}
+\pictext{215}{20}{P}
+\pictext{105}{33}{G2}
+\put(105, 47){\circle*{4}}
+\put(105, 47){\line(-1, 1){35}}
+\put(105, 47){\line(1, 1){35}}
+\pictext{80}{55}{H}
+\pictext{130}{55}{B}
+\pictext{245}{33}{G2}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+\pictext{220}{55}{H}
+\pictext{270}{55}{B}
+\pictext{70}{66}{G3}
+\put(70, 82){\circle*{4}}
+\put(70, 82){\line(-1, 2){20}}
+%\pictext{50}{125}{$\mathpzc{L}$}
+\put(70, 82){\line(1, 2){20}}
+%\pictext{90}{125}{$\mathpzc{L}$}
+\pictext{55}{95}{F}
+\pictext{85}{95}{H}
+\pictext{140}{66}{G3}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+%\pictext{120}{125}{$\mathpzc{L}$}
+\put(140, 82){\line(1, 2){20}}
+%\pictext{160}{125}{$\mathpzc{W}$}
+\pictext{125}{95}{F}
+\pictext{155}{95}{B}
+\pictext{210}{66}{G3}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+%\pictext{190}{125}{$\mathpzc{L}$}
+\put(210, 82){\line(1, 2){20}}
+%\pictext{230}{125}{$\mathpzc{W}$}
+\pictext{195}{95}{P}
+\pictext{225}{95}{H}
+\pictext{280}{66}{G3}
+\put(280, 82){\circle*{4}}
+\put(280, 82){\line(-1, 2){20}}
+%\pictext{260}{125}{$\mathpzc{W}$}
+\put(280, 82){\line(1, 2){20}}
+%\pictext{300}{125}{$\mathpzc{L}$}
+\pictext{265}{95}{P}
+\pictext{295}{95}{B}
+\end{picture}
+
+\pause
+
+Now we have to add the probabilities to it.
+
+## {.plain .fragile}
+
+\setlength{\unitlength}{0.9pt}
+\begin{picture}(350, 150)
+\pictext{175}{0}{G1}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\put(177, 13){\line(2, 1){69}}
+\pictext{135}{20}{F}
+\pictext{135}{8}{$\nicefrac{5}{9}$}
+\pictext{215}{20}{P}
+\pictext{215}{8}{$\nicefrac{4}{9}$}
+\pictext{105}{33}{G2}
+\put(105, 47){\circle*{4}}
+\put(105, 47){\line(-1, 1){35}}
+\put(105, 47){\line(1, 1){35}}
+\pictext{80}{55}{H}
+\pictext{130}{55}{B}
+\pictext{245}{33}{G2}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+\pictext{220}{55}{H}
+\pictext{270}{55}{B}
+\pictext{70}{66}{G3}
+\put(70, 82){\circle*{4}}
+\put(70, 82){\line(-1, 2){20}}
+%\pictext{50}{125}{$\mathpzc{L}$}
+\put(70, 82){\line(1, 2){20}}
+%\pictext{90}{125}{$\mathpzc{L}$}
+\pictext{55}{95}{F}
+\pictext{85}{95}{H}
+\pictext{140}{66}{G3}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+%\pictext{120}{125}{$\mathpzc{L}$}
+\put(140, 82){\line(1, 2){20}}
+%\pictext{160}{125}{$\mathpzc{W}$}
+\pictext{125}{95}{F}
+\pictext{155}{95}{B}
+\pictext{210}{66}{G3}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+%\pictext{190}{125}{$\mathpzc{L}$}
+\put(210, 82){\line(1, 2){20}}
+%\pictext{230}{125}{$\mathpzc{W}$}
+\pictext{195}{95}{P}
+\pictext{225}{95}{H}
+\pictext{280}{66}{G3}
+\put(280, 82){\circle*{4}}
+\put(280, 82){\line(-1, 2){20}}
+%\pictext{260}{125}{$\mathpzc{W}$}
+\put(280, 82){\line(1, 2){20}}
+%\pictext{300}{125}{$\mathpzc{L}$}
+\pictext{265}{95}{P}
+\pictext{295}{95}{B}
+\end{picture}
+
+The first game is strength 5 vs strength 4, so the win probability for the stronger team is $\nicefrac{5}{5+4}$, i.e., $\nicefrac{5}{9}$.
+
+## {.plain .fragile}
+
+\setlength{\unitlength}{0.9pt}
+\begin{picture}(350, 150)
+\pictext{175}{0}{G1}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\put(177, 13){\line(2, 1){69}}
+\pictext{135}{20}{F}
+\pictext{135}{8}{$\nicefrac{5}{9}$}
+\pictext{215}{20}{P}
+\pictext{215}{8}{$\nicefrac{4}{9}$}
+\pictext{105}{33}{G2}
+\put(105, 47){\circle*{4}}
+\put(105, 47){\line(-1, 1){35}}
+\put(105, 47){\line(1, 1){35}}
+\pictext{80}{55}{H}
+\pictext{80}{43}{$\nicefrac{3}{4}$}
+\pictext{130}{55}{B}
+\pictext{130}{43}{$\nicefrac{1}{4}$}
+\pictext{245}{33}{G2}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+\pictext{220}{55}{H}
+\pictext{220}{43}{$\nicefrac{3}{4}$}
+\pictext{270}{55}{B}
+\pictext{270}{43}{$\nicefrac{1}{4}$}
+\pictext{70}{66}{G3}
+\put(70, 82){\circle*{4}}
+\put(70, 82){\line(-1, 2){20}}
+%\pictext{50}{125}{$\mathpzc{L}$}
+\put(70, 82){\line(1, 2){20}}
+%\pictext{90}{125}{$\mathpzc{L}$}
+\pictext{55}{95}{F}
+\pictext{85}{95}{H}
+\pictext{140}{66}{G3}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+%\pictext{120}{125}{$\mathpzc{L}$}
+\put(140, 82){\line(1, 2){20}}
+%\pictext{160}{125}{$\mathpzc{W}$}
+\pictext{125}{95}{F}
+\pictext{155}{95}{B}
+\pictext{210}{66}{G3}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+%\pictext{190}{125}{$\mathpzc{L}$}
+\put(210, 82){\line(1, 2){20}}
+%\pictext{230}{125}{$\mathpzc{W}$}
+\pictext{195}{95}{P}
+\pictext{225}{95}{H}
+\pictext{280}{66}{G3}
+\put(280, 82){\circle*{4}}
+\put(280, 82){\line(-1, 2){20}}
+%\pictext{260}{125}{$\mathpzc{W}$}
+\put(280, 82){\line(1, 2){20}}
+%\pictext{300}{125}{$\mathpzc{L}$}
+\pictext{265}{95}{P}
+\pictext{295}{95}{B}
+\end{picture}
+
+The second game is strength 3 vs strength 1, so the win probability for the stronger team is $\nicefrac{3}{3+1}$, i.e., $\nicefrac{3}{4}$. And it doesn't matter how the first game went - that's the probability for the second game.
+
+## {.plain .fragile}
+
+\setlength{\unitlength}{0.9pt}
+\begin{picture}(350, 150)
+\pictext{175}{0}{G1}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\put(177, 13){\line(2, 1){69}}
+\pictext{135}{20}{F}
+\pictext{135}{8}{$\nicefrac{5}{9}$}
+\pictext{215}{20}{P}
+\pictext{215}{8}{$\nicefrac{4}{9}$}
+\pictext{105}{33}{G2}
+\put(105, 47){\circle*{4}}
+\put(105, 47){\line(-1, 1){35}}
+\put(105, 47){\line(1, 1){35}}
+\pictext{80}{55}{H}
+\pictext{80}{43}{$\nicefrac{3}{4}$}
+\pictext{130}{55}{B}
+\pictext{130}{43}{$\nicefrac{1}{4}$}
+\pictext{245}{33}{G2}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+\pictext{220}{55}{H}
+\pictext{220}{43}{$\nicefrac{3}{4}$}
+\pictext{270}{55}{B}
+\pictext{270}{43}{$\nicefrac{1}{4}$}
+\pictext{70}{66}{G3}
+\put(70, 82){\circle*{4}}
+\put(70, 82){\line(-1, 2){20}}
+%\pictext{50}{125}{$\mathpzc{L}$}
+\put(70, 82){\line(1, 2){20}}
+%\pictext{90}{125}{$\mathpzc{L}$}
+\pictext{55}{95}{F}
+\pictext{55}{83}{$\nicefrac{5}{8}$}
+\pictext{85}{95}{H}
+\pictext{85}{83}{$\nicefrac{3}{8}$}
+\pictext{140}{66}{G3}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+%\pictext{120}{125}{$\mathpzc{L}$}
+\put(140, 82){\line(1, 2){20}}
+%\pictext{160}{125}{$\mathpzc{W}$}
+\pictext{125}{95}{F}
+\pictext{125}{83}{$\nicefrac{5}{6}$}
+\pictext{155}{95}{B}
+\pictext{155}{83}{$\nicefrac{1}{6}$}
+\pictext{210}{66}{G3}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+%\pictext{190}{125}{$\mathpzc{L}$}
+\put(210, 82){\line(1, 2){20}}
+%\pictext{230}{125}{$\mathpzc{W}$}
+\pictext{195}{95}{P}
+\pictext{195}{83}{$\nicefrac{4}{7}$}
+\pictext{225}{95}{H}
+\pictext{225}{83}{$\nicefrac{3}{7}$}
+\pictext{280}{66}{G3}
+\put(280, 82){\circle*{4}}
+\put(280, 82){\line(-1, 2){20}}
+%\pictext{260}{125}{$\mathpzc{W}$}
+\put(280, 82){\line(1, 2){20}}
+%\pictext{300}{125}{$\mathpzc{L}$}
+\pictext{265}{95}{P}
+\pictext{265}{83}{$\nicefrac{4}{5}$}
+\pictext{295}{95}{B}
+\pictext{295}{83}{$\nicefrac{1}{5}$}
+\end{picture}
+
+And now for each possible match up in game 3, we apply the formula to get the win probability for each team.
+
+##  {.plain .fragile}
+
+\setlength{\unitlength}{0.9pt}
+\begin{picture}(350, 150)
+\pictext{175}{0}{G1}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\put(177, 13){\line(2, 1){69}}
+\pictext{135}{20}{F}
+\pictext{135}{8}{$\nicefrac{5}{9}$}
+\pictext{215}{20}{P}
+\pictext{215}{8}{$\nicefrac{4}{9}$}
+\pictext{105}{33}{G2}
+\put(105, 47){\circle*{4}}
+\put(105, 47){\line(-1, 1){35}}
+\put(105, 47){\line(1, 1){35}}
+\pictext{80}{55}{H}
+\pictext{80}{43}{$\nicefrac{3}{4}$}
+\pictext{130}{55}{B}
+\pictext{130}{43}{$\nicefrac{1}{4}$}
+\pictext{245}{33}{G2}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+\pictext{220}{55}{H}
+\pictext{220}{43}{$\nicefrac{3}{4}$}
+\pictext{270}{55}{B}
+\pictext{270}{43}{$\nicefrac{1}{4}$}
+\pictext{70}{66}{G3}
+\put(70, 82){\circle*{4}}
+\put(70, 82){\line(-1, 2){20}}
+%\pictext{50}{125}{$\mathpzc{L}$}
+\put(70, 82){\line(1, 2){20}}
+%\pictext{90}{125}{$\mathpzc{L}$}
+\pictext{55}{95}{F}
+\pictext{55}{83}{$\nicefrac{5}{8}$}
+\pictext{85}{95}{H}
+\pictext{85}{83}{$\nicefrac{3}{8}$}
+\pictext{140}{66}{G3}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+%\pictext{120}{125}{$\mathpzc{L}$}
+\put(140, 82){\line(1, 2){20}}
+%\pictext{160}{125}{$\mathpzc{W}$}
+\pictext{125}{95}{F}
+\pictext{125}{83}{$\nicefrac{5}{6}$}
+\pictext{155}{95}{B}
+\pictext{155}{83}{$\nicefrac{1}{6}$}
+\pictext{210}{66}{G3}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+%\pictext{190}{125}{$\mathpzc{L}$}
+\put(210, 82){\line(1, 2){20}}
+\pictext{230}{125}{$\nicefrac{1}{7}$}
+\pictext{195}{95}{P}
+\pictext{195}{83}{$\nicefrac{4}{7}$}
+\pictext{225}{95}{H}
+\pictext{225}{83}{$\nicefrac{3}{7}$}
+\pictext{280}{66}{G3}
+\put(280, 82){\circle*{4}}
+\put(280, 82){\line(-1, 2){20}}
+%\pictext{260}{125}{$\mathpzc{W}$}
+\put(280, 82){\line(1, 2){20}}
+%\pictext{300}{125}{$\mathpzc{L}$}
+\pictext{265}{95}{P}
+\pictext{265}{83}{$\nicefrac{4}{5}$}
+\pictext{295}{95}{B}
+\pictext{295}{83}{$\nicefrac{1}{5}$}
+\end{picture}
+
+- The probability of each completed branch is the product of each of the smaller branches.
+- So the one I've marked is $\nicefrac{4}{9} \times \nicefrac{3}{4} \times \nicefrac{3}{7} = \nicefrac{1}{7}$.
+
+##  {.plain .fragile}
+
+\setlength{\unitlength}{0.9pt}
+\begin{picture}(350, 150)
+\pictext{175}{0}{G1}
+\put(175, 12){\circle{4}}\put(173, 13){\line(-2, 1){69}}
+\put(177, 13){\line(2, 1){69}}
+\pictext{135}{20}{F}
+\pictext{135}{8}{$\nicefrac{5}{9}$}
+\pictext{215}{20}{P}
+\pictext{215}{8}{$\nicefrac{4}{9}$}
+\pictext{105}{33}{G2}
+\put(105, 47){\circle*{4}}
+\put(105, 47){\line(-1, 1){35}}
+\put(105, 47){\line(1, 1){35}}
+\pictext{80}{55}{H}
+\pictext{80}{43}{$\nicefrac{3}{4}$}
+\pictext{130}{55}{B}
+\pictext{130}{43}{$\nicefrac{1}{4}$}
+\pictext{245}{33}{G2}
+\put(245, 47){\circle*{4}}
+\put(245, 47){\line(-1, 1){35}}
+\put(245, 47){\line(1, 1){35}}
+\pictext{220}{55}{H}
+\pictext{220}{43}{$\nicefrac{3}{4}$}
+\pictext{270}{55}{B}
+\pictext{270}{43}{$\nicefrac{1}{4}$}
+\pictext{70}{66}{G3}
+\put(70, 82){\circle*{4}}
+\put(70, 82){\line(-1, 2){20}}
+\pictext{50}{125}{$\nicefrac{25}{96}$}
+\put(70, 82){\line(1, 2){20}}
+\pictext{90}{125}{$\nicefrac{5}{32}$}
+\pictext{55}{95}{F}
+\pictext{55}{83}{$\nicefrac{5}{8}$}
+\pictext{85}{95}{H}
+\pictext{85}{83}{$\nicefrac{3}{8}$}
+\pictext{140}{66}{G3}
+\put(140, 82){\circle*{4}}
+\put(140, 82){\line(-1, 2){20}}
+\pictext{120}{125}{$\nicefrac{25}{216}$}
+\put(140, 82){\line(1, 2){20}}
+\pictext{160}{125}{$\nicefrac{5}{216}$}
+\pictext{125}{95}{F}
+\pictext{125}{83}{$\nicefrac{5}{6}$}
+\pictext{155}{95}{B}
+\pictext{155}{83}{$\nicefrac{1}{6}$}
+\pictext{210}{66}{G3}
+\put(210, 82){\circle*{4}}
+\put(210, 82){\line(-1, 2){20}}
+\pictext{190}{125}{$\nicefrac{4}{21}$}
+\put(210, 82){\line(1, 2){20}}
+\pictext{230}{125}{$\nicefrac{1}{7}$}
+\pictext{195}{95}{P}
+\pictext{195}{83}{$\nicefrac{4}{7}$}
+\pictext{225}{95}{H}
+\pictext{225}{83}{$\nicefrac{3}{7}$}
+\pictext{280}{66}{G3}
+\put(280, 82){\circle*{4}}
+\put(280, 82){\line(-1, 2){20}}
+\pictext{260}{125}{$\nicefrac{4}{45}$}
+\put(280, 82){\line(1, 2){20}}
+\pictext{300}{125}{$\nicefrac{1}{45}$}
+\pictext{265}{95}{P}
+\pictext{265}{83}{$\nicefrac{4}{5}$}
+\pictext{295}{95}{B}
+\pictext{295}{83}{$\nicefrac{1}{5}$}
+\end{picture}
+
+I've included all the others - they usually don't cancel as nicely as that one.
+
+## {.plain}
+
+It might be easier to see the results in a table
+
+  Winner     Runner-Up   Probability             Approx
+----------- ----------- ---------------------- ------------
+ Fireflies   Huskies     $\nicefrac{25}{96}$     0.260
+ Huskies     Fireflies   $\nicefrac{5}{32}$      0.156
+ Fireflies   Bluebirds   $\nicefrac{25}{216}$    0.116
+ Bluebirds   Fireflies   $\nicefrac{5}{216}$     0.023
+ Penguins    Huskies     $\nicefrac{4}{21}$      0.190
+ Huskies     Penguins    $\nicefrac{1}{7}$       0.143
+ Penguins    Bluebirds   $\nicefrac{4}{45}$      0.089
+ Bluebirds   Penguins    $\nicefrac{1}{45}$      0.022 
+ 
+## {.plain}
+
+And we can rearrange that so the rows where each team wins are adjacent.
+
+  Winner     Runner-Up   Probability             Approx
+----------- ----------- ---------------------- ------------
+ Fireflies   Huskies     $\nicefrac{25}{96}$     0.260
+ Fireflies   Bluebirds   $\nicefrac{25}{216}$    0.116
+ Huskies     Fireflies   $\nicefrac{5}{32}$      0.156
+ Huskies     Penguins    $\nicefrac{1}{7}$       0.143
+ Penguins    Huskies     $\nicefrac{4}{21}$      0.190
+ Penguins    Bluebirds   $\nicefrac{4}{45}$      0.089
+ Bluebirds   Fireflies   $\nicefrac{5}{216}$     0.023
+ Bluebirds   Penguins    $\nicefrac{1}{45}$      0.022 
+
+## {.plain}
+
+And then just adding up the probabilities for the two ways each team can win, we get the actual probabilities of each win. (I'm just doing the decimals now.)
+
+  Winner     Approx Probability
+----------- --------------------
+ Fireflies          0.376
+ Huskies            0.299
+ Penguins           0.279
+ Bluebirds          0.045
+ 
+(Those numbers don't sum to 1 precisely because of rounding.)
+
+# Conditional Probability
+
+## Associated Reading
+
+Odds and Ends, Chapter 6
+
+## What it is
+
+- Sometimes we don't just care about how likely something is.
+- We care about how likely it is given some other thing has happened or will happen. 
+- This might be because we want to plan. 
+- It might be because we want to compute overall probabilities. 
+- Or it might be because we've found something out, and want to know what it means for other likelihoods.
+
+## Prior Examples
+
+We've already used some conditional probabilities.
+
+- We already talked, for example, about the probability of the Fireflies winning conditional on them being in the final against the Bluebirds.
+
+## Inverting
+
+But there are other questions we might want to ask as well.
+
+- E.g., conditional on the Fireflies winning, how likely is it that they played the Huskies.
+
+## Intuitions
+
+This isn't an easy question to answer intuitively.
+
+- It is more likely that the Huskies will be actually in the final - because they are the better team.
+- But it is more likely that the Fireflies will win against the Bluebirds - because they are weaker.
+- It isn't always easy to intuitively balance these forces.
+
+## Formula
+
+$$
+\Pr(A | B) = \frac{Pr(A \wedge B)}{Pr(B)}
+$$
+
+\pause
+
+- The left-hand side means "The probability of $A$ given $B$." 
+- And the right-hand side says that this is equal to the probability of $A \wedge B$ divided by the probability of $B$.
+
+## Fireflies
+
+$$
+\Pr(HR | FC) = \frac{\Pr(HR \wedge FC)}{\Pr(FC)}
+$$
+
+That is, the probability that the Huskies are runners-up ($HR$) given that the Fireflies are champions ($FC$), is given by the formula on the right.
+
+## Fireflies
+
+$$
+\Pr(HR | FC) = \frac{0.26}{0.26+0.116} = \frac{0.26}{0.376} \approx 0.691
+$$
+
+So conditional on the Fireflies winning, it's just under 70% likely they beat the Huskies.
+
+## Updating
+
+We are going to mostly assume that this philosophical claim is true.
+
+$$
+\Pr{}_B(A) = \Pr(A | B)
+$$
+
+The way to read that is saying that the unconditional probability of $A$ after learning $B$ equals the conditional probability of $A$ given $B$. This claim - and it is a philosophical claim not a mathematical one - is a big part of why we care about conditional probability.
+
+# Independence
+
+## Associated Reading
+
+Odds and Ends, Chapter 6.5
+
+## Independence
+
+$A$ and $B$ are independent if (and only if)
+
+$$
+\Pr(A | B) = \Pr(A)
+$$
+
+That is, taking things conditional on $B$ doesn't change $A$.
+
+## Ways Independence can Fail
+
+Causal
+
+- $B$ might be a possible cause of $A$. 
+- $B$ might be a possible preventer of $A$. 
+- $B$ might be a common effect of a frequent cause of $A$. 
+- $B$ might be a common effect of a frequent preventer of $A$.
+
+## Ways Indepenence can Fail
+
+Epistemic
+
+- $B$ being true could tell you that a source that also predicts $A$ is more reliable than you thought.
+
+## Two Big Real World Facts about Independence
+
+1. In reality, strict independence almost never obtains. 
+2. In practice, it's very often useful to assume independence for modelling purposes. \pause
+
+These are consistent, but it does mean be careful. Sometimes assuming independence is like assuming that relativistic considerations aren't important to figuring out whether a bridge will stand up. And sometimes it is like assuming that friction isn't important to figuring out whether a bridge will stand up.
+
+## For Next Time
+
+We'll get back to game theory, looking in more detail at what happens once strategies are probabilistic.

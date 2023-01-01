@@ -101,7 +101,7 @@ If Row plays 60% Up and 40% Down, and Column plays Left, then Row's expected pay
 ::: {.nonincremental}
 - 0.6 times the payout for Up/Left
 - 0.4 times the payout for Down/Left \pause
-::: {.nonincremental}
+::: 
 
 When we evaluate a mixed strategy, we evaluate it by its expected payout, not its actual payout.
 
@@ -313,7 +313,7 @@ Consider what happens if Column plays
 
 :::
 
-## Row's Expected Return
+## {.plain}
 
 :::{.columns}
 
@@ -380,7 +380,7 @@ gameformat(game)
 
 :::
 
-## An Equilibria
+## {.plain}
 
 :::{.columns}
 

@@ -231,6 +231,18 @@ What makes $\langle B, bb \rangle$ not subgame perfect, what makes it an incredi
 
 So I plays A, and they end up at the 4,1 outcome.
 
+# Examples
+
+## Four Problems on Handout
+
+::::: {.nonincremental}
+1. Burning Bridges
+2. Tying Hands
+3. Commitment Problem
+4. Pirates!
+::::
+
+
 # The Backward Induction Paradox
 
 ## Reading

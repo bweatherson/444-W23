@@ -96,5 +96,5 @@ mainfontoptions: BoldFont = SF Pro Rounded Semibold
 
 ## For Next Time
 
-- For next class I don't have slides, just a long-ish handout.
 - Next week we will look more closely at Iterated Prisoners' Dilemma.
+- The main reading is a long-ish 'handout' that I've posted to Canvas.
