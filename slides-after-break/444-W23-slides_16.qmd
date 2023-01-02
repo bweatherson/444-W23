@@ -1,0 +1,7 @@
+---
+format: 
+  beamer: 
+    classoption: handout
+---
+
+{{< include 16.qmd >}}

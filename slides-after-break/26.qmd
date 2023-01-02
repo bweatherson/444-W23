@@ -1,0 +1,124 @@
+---
+title: "444 Lecture 26"
+subtitle: "Network Epistemology"
+author: "Brian Weatherson"
+date: "April 13, 2023"
+---
+
+# Big Picture
+
+## Methods and Conclusions
+
+- The conclusions of the Sullivan et al paper aren't very surprising.
+- The 'wisdom of crowds' isn't very wise on politically charged matters, even when you measure it very carefully.
+- But the methods are really interesting, and point to very interesting kinds of research.
+- This includes both conceptual and empirical research.
+
+## Methods
+
+- Look at networks not just individuals.
+- Focus on the asymmetric links in these networks.
+- Use computer science tools to both analyse and investigate these networks.
+
+# Networks
+
+## A Brief History of Western Epistemology
+
+> - Dawn-of-time to 1990s: Epistemology is primarily about sense perception and inference. 
+> - 1990s-2010s: Testimony is really important too. 
+> - 2020s: And testimony isn't just a one-one relationship; it happens in networks.
+
+## A Brief History of Western Epistemology
+
+- Dawn-of-time to 1990s: Epistemology is primarily about sense perception and inference. 
+- 1990s-2010s: Testimony is really important too. 
+- 2020s: And testimony isn't just a one-one relationship; it happens in networks.
+ 
+I'm stressing *western* here because the relationship between testimony and other forms of knowledge is a very big deal in plenty of other philosophical traditions.
+
+## Simple Testimony
+
+- One speaker; one hearer.
+- Two big questions.
+- First, what prior knowledge does hearer have to have to get knowledge from speaker?
+- Second, is there is something special about being spoken to, as opposed to overhearing?
+
+## Network Testimony
+
+- Breaks down the recipient/eavesdropper distinction.
+- Is the TV news anchor talking to *you*?
+
+## Network Testimony
+
+- Cross-topic connections can start to matter.
+- Is who you trust on vaccines related to what they say on climate change?
+
+## Network Testimony
+
+- If the network is a huge part of your contact with the world, what happens when the network 'chooses' to prioritise some information over others. 
+
+## Some Empirical/Philosophical Questions
+
+- Are networks with strong centers better or worse at getting/distributing/filtering information than networks with weak centers?
+- What makes someone become central to a network?
+- What happens when people use views on one topic to choose a network to trust on other topics?
+
+# Asymmetries in Networks
+
+## Symmetric Networks
+
+- Each talks to the other.
+- Each takes the other seriously as a source.
+
+## Real World Counterexamples
+
+- TV Networks who you literally can't talk back to.
+- Influencers who don't really listen to people who talk 'to' them?
+
+## Sullivan et al
+
+- The paper we've got makes a big deal out of the fact that the network model they construct is asymmetric.
+- And this seems cool, but the actual use they make of this fact seems, maybe, not very large.
+
+## Empirical/Philosophical Consequences
+
+- What differences do we see in networks that include strong asymmetries?
+- Does it harm information bubbling to the top and out?
+
+# Computer Tools
+
+## PageRank
+
+- As you might know, PageRank was initially developed to power the Google search engine.
+- But it's a very general mathematical construction, that can be used in any case where there are inbound and outbound links.
+- And it makes sense in any case that the existence of those links indicates (sort of) trust.
+
+## PageRank
+
+- Most statistical programs these days have an implementation of PageRank built in to them.
+- The math behind it isn't very sophisticated, but because of the iterative nature of it, actually doing the calculations can be time-consuming.
+- But again, that's been optimised a lot in readily available software.
+
+## LDA
+
+- The other tool they mention that I wanted to briefly touch on was latent Dirichlet allocation, which is a kind of topic model.
+- Topic models are meant to compute 'topics' within bodies of text, just by looking at word frequencies, and in particular at the frequencies of co-occuring words.
+
+## Topic Models
+
+- Again, the math here is not super hard, at least by some standards.
+- What is hard is actually doing the computations.
+- This can take hours, even days, on not super large corpuses on reasonably good computers.
+
+## Topics and Viewpoints
+
+- I was a little surprised how they were using them here, because they seemed to be trying to sort out pro vs anti vax views using topic modeling.
+- That's weird, since the models are much better at saying what people are writing about, than they are at getting the valence.
+- If you plug a bunch of philosophy papers into the model, it will tell you which ones are about utilitarianism, but not which ones are pro or anti.
+
+## Potential
+
+- Both of these tools require datasets, and computational power to process those datasets, that was hardly available to anyone a generation ago, and only really available to experts a decade ago.
+- One really exciting prospect in thinking about group epistemology in the near future is that we'll be able to observe and analyse very large networks, and start testing philosophical conjectures against them.
+
+# The End
