@@ -1,0 +1,81 @@
+---
+title: "Practice Games"
+author: "Philosophy 444"
+fontsize: 11pt
+date: 5 January, 2023
+format: 
+  pdf: 
+    include-in-header: 
+      text: |
+        \usepackage{tabulary}
+        \usepackage{booktabs}
+        \usepackage{multirow}
+geometry: margin=1in
+mainfont: SF Pro Text Light
+mainfontoptions: 
+ - BoldFont = SF Pro Text Semibold
+ - Scale = MatchLowercase
+
+---
+
+## Part One
+
+Your task is to figure out a strategy to play in each of the three games on the other side of the page. On an index card write down your name, and your strategy choice for each of the following three games.
+
+This is not actually for credit, though I want you to pretend that it is. That is, I want you to pretend that the payoffs for the games are grades in an assignment that will count for 5% of the course credit.
+
+Each of the three games has roles for two players, you and ʼOtherʼ. What I will do is select two cards at random, select a game at random, and play out how that game would go if the two of you played that game. That will determine your grade for the assignment.
+
+In each game, there are two choices for you, and two choices for Other, making for four (i.e., two times two) outcomes. Correspondingly, each of the games has four cells in its out- come table. You will choose which row is played, and Other will determine which column is played. The first grade listed is your grade, the second grade listed is Otherʼs grade. (Note that the games are all symmetric, which makes this kind of game play possible. From someone elseʼs perspective, you are Other.)
+
+You might think it is unfair that (a) who you are paired with is random, and (b) which game you play is random. Both of these are true; some games will definitely yield higher averages than others, and some players will play the same way but get different outcomes solely due to the luck of the draw. Iʼll simply note that (a) life is often unfair, and (b) this isnʼt actually for credit. If youʼd like, in the spirit of pretending to play this for credit, you should pretend to get upset about the unfairness of it all.
+
+\newpage
+
+\bigskip
+\begin{large}
+\textbf{Game 1}
+\end{large}
+
+\begin{center}
+\begin{tabular}{l r | c c}
+ & & \multicolumn{2}{c}{\textbf{Other}} \\
+& & X & Y \\ \hline
+\multirow{2}{*}{\textbf{You}} & X & A, A & D, B+ \\ & Y & B+, D & B, B \\
+\end{tabular}
+\end{center}
+
+\bigskip
+\begin{large}
+\textbf{Game 2}
+\end{large}
+
+\begin{center}
+\begin{tabular}{l r | c c}
+ & & \multicolumn{2}{c}{\textbf{Other}} \\
+& & X & Y \\ \hline
+\multirow{2}{*}{\textbf{You}} & X & B-, B- & A, B+ \\ & Y & B+, A & B-, B- \\
+\end{tabular}
+\end{center}
+
+\bigskip
+\begin{large}
+\textbf{Game 3}
+\end{large}
+
+\begin{center}
+\begin{tabular}{l r | c c}
+ & & \multicolumn{2}{c}{\textbf{Other}} \\
+& & X & Y \\ \hline
+\multirow{2}{*}{\textbf{You}} & X & D, D & A, C \\ & Y & C, A & B+, B+
+\end{tabular}
+\end{center}
+
+## Part Two
+
+Just focus on Game 2. We're going to make one modification to the game. Everyone will (eventually) be assigned as either an Alpha or a Beta. You don't know which you will be yet, so you have to plan. But every run of the game will include exactly one Alpha, and exactly one Beta.
+
+I want you to answer the following two questions. (Just in your own notebook this time, not on a card.)
+
+1. What would you do if you were an Alpha?
+2. What would you do if you were a Beta?

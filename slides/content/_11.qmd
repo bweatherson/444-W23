@@ -261,6 +261,13 @@ Alice plays A and gets 2, and she believes she would get 1 if she played B and 0
 
 # Signaling Games
 
+## Handout
+
+I used to do much more in this class on signaling games, but I dropped it because it's not relevant to the applications we're going to primarily work on in the second half.
+
+- But there is a very long handout from the longer form of this unit on the website.
+- We really won't cover much of the stuff in it, but if you're interested in pointers to more material on this stuff, it could be interesting.
+
 ## {.plain}
 
 \begin{center}

@@ -9,6 +9,10 @@ date: "February 2, 2023"
 source("kableformat.R")
 ```
 
+## Handout
+
+There is a handout for today. It kind of duplicates the slides, so I haven't made copies of it, but it is on Canvas, under Handouts in files. If you prefer seeing things in paragraphs rather than bullet points, you could follow along on that.
+
 # Cardinal Importance
 
 ## Games with Lotteries
