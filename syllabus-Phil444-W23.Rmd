@@ -3,13 +3,13 @@ title: 'PHIL 444: Groups and Choices'
 author: "Brian Weatherson"
 date: "Winter 2023"
 output:
-  html_document:
-    df_print: paged
   pdf_document:
     keep_tex: yes
     fig_caption: yes
     latex_engine: xelatex
     extra_dependencies: ["multicol"]
+  html_document:
+    df_print: paged
 geometry: margin=1.5in
 mainfont: SF Pro Rounded
 mainfontoptions: 
@@ -26,6 +26,7 @@ knitr::opts_chunk$set(cache.path = '_cache/')
 knitr::opts_chunk$set(warning = F, message = F)
 # knitr::opts_knit$get(kable.force.latex = TRUE)
 require(tidyverse)
+require(fontawesome)
 ```
 
 ```{r dates_bib, include=FALSE}
@@ -50,6 +51,15 @@ advdate <- function(obj, adv) {
 #myopts <- BibOptions(bib.style = "authoryear", style="latex", first.inits=FALSE, max.names = 20)
 
 ```
+
+| **Lead Instructor**: Brian Weatherson
+| `r fa("far fa-envelope")` weath@umich.edu
+| `r fa("fas fa-wifi")` canvas.umich.edu
+| 
+| **Office Hours**: Wednesday 10-11, Zoom; Thursday 2-3, Room 2207.
+| 
+| **Discussion Section Leader**: Ariana Peruzzi
+| `r fa("far fa-envelope")` acpe@umich.edu
 
 # Course Description
 
@@ -95,11 +105,11 @@ Both of the papers may be co-written with one other student in the class. But yo
 
 # Plagiarism
 
-Although team-work, and even co-authorship, is encouraged, plagiarism is strictly prohibited. You are responsible for making sure that none of your work is plagiarized. Be sure to cite work that you use, both direct quotations and paraphrased ideas. Any citation method that is tolerably clear is permitted, but if you'd like a good description of a citation scheme that works well in philosophy, look at <http://bit.ly/VDhRJ4>.
+Although team-work, and even co-authorship, is encouraged, plagiarism is strictly prohibited. You are responsible for making sure that none of your work is plagiarized. Be sure to cite work that you use, both direct quotations and paraphrased ideas. Any citation method that is tolerably clear is permitted, but if you'd like a good description of a citation scheme that works well in philosophy, look at <https://www.mendeley.com/guides/apa-citation-guide/>.
 
 You are encouraged to discuss the course material, including assignments, with your classmates, but all written work that you hand in under your own name must be your own. If work is handed is as the work of two people, you are affirming that each person did a fair share of the work. (Note that when you're submitting work on Canvas, you have to each submit the paper, even if it is co-authored. That way Canvas knows that everyone has turned in work.)
 
-You should also be familiar with the academic integrity policies of the College of Literature, Science & the Arts at the University of Michigan, which are available here: <http://www.lsa.umich.edu/academicintegrity/>. Violations of these policies will be reported to the Office of the Assistant Dean for Student Academic Affairs, and sanctioned with a course grade of F.
+You should also be familiar with the academic integrity policies of the College of Literature, Science & the Arts at the University of Michigan, which are available here: <https://lsa.umich.edu/lsa/academics/academic-integrity.html>. Violations of these policies will be reported to the Office of the Assistant Dean for Student Academic Affairs, and sanctioned with a course grade of F.
 
 
 # Disability
@@ -115,8 +125,6 @@ For more information on disability services at the University of Michigan, go to
 # Class Schedule
 
 Most of the readings are from the two textbooks. The other readings are all in the UM library or online. You might have to be logged in to UM to get them though. The names of the papers are links to a source where you can get a copy of the paper.
-
-The video lectures will have a number of the form $x.y$, where $x$ is the week they are for, and the $y$ is their order in the week. You should watch these **before** class, and we can discuss the material in class.
 
 I'm away January 27 which complicates the schedule for a while, especially since the classes are meant to go in pairs. For a couple of weeks the units will start on Thursday and end on the following Tuesday, until we'll have a short unit on Probability to catch back up.
 

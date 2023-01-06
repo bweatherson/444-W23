@@ -74,6 +74,6 @@ Find all subgame perfect equilibria to the game with the following three constra
 
 1. If Coke doesn't enter, Coke gets 0, Pepsi gets 5. Coke first decides whether to enter or not, and then both Coke and Pepsi find out whether Coke decided to enter, then each company simultaneously decides on Tough or Accommodate.
 2. Coke decides whether to enter at the same time Pepsi decides whether to be Tough or Accommodate. If Coke enters, it then decides whether to be Tough or Accommodating, knowing what Pepsi has decided. If Coke stays out, it gets 0, and Pepsi gets 0 if Accommodating, -1 if Tough.
-3. Just like the previous case, but if Coke stays out, and Pepsi is Tough, it gets +1.
+3. Just like the previous case, but if Coke stays out, and Pepsi is Tough, Coke gets +1.
 
 ## Due Friday February 3rd, at 5pm

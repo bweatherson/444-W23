@@ -65,6 +65,13 @@ How do you order these in terms of utility to Billy, from highest to lowest?
 -   It's not money, for two distinct reasons.
 -   Second, getting twice as much money typically doesn't produce twice as much utility.
 
+## Discussion Question
+
+Here is a schematic question:
+
+- Given a particular sum $X, find the value $Y such that you'd be indifferent between getting $X, and having a coin flip bet that pays $Y if heads, nothing if tails.
+- What's the value of Y where you'd be just as happy with the bet as the cash when X is $1, $1,000, $1,000,000, $1,000,000,000?
+
 ## What is Utility
 
 It is, more or less, desirability.
@@ -394,6 +401,10 @@ Cardinal constraints
 
 :::
 
+## Stag Hunt and Prisoners' Dilemma
+
+One thing we'll come back to is which real life situations are like Prisones' Dilemma, and which are like Stag Hunt.
+
 ## Battle of the Sexes {.fragile}
 
 ```{r}
@@ -415,6 +426,13 @@ game <- tribble(
 )
 gameformat(game)
 ```
+
+## O'Connor
+
+Note that O'Connor is going to **reject** the idea that this is a mere relabelling.
+
+- She calls the game on the previous slide Made For Each Other (MFEO), and it's going to play a big role in her story.
+- But she argues that it is an importantly different game to Battle of the Sexes.
 
 ## Chicken {.fragile}
 
