@@ -468,7 +468,7 @@ gameformat(game1)
 ::: {.columns align=center}
 
 :::: column
-![Harold Hotelling](images/hotelling.jpg)
+![Harold Hotelling](images/hotelling.jpg){height=60%}
 ::::
 
 :::: column
