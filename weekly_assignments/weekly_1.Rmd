@@ -16,7 +16,7 @@ mainfont: SF Pro Text Light
 mainfontoptions: "Scale=MatchLowercase"
 geometry: margin=1in
 author: Philosophy 444
-date: Due 13 January, 2023
+date: Due 12.01pm, 14 January, 2023
 ---
 
 \captionsetup[table]{labelformat=empty}
