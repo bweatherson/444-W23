@@ -24,18 +24,24 @@ source("kableformat.R")
 - That includes nodes that are ruled out by their earlier play.
 - So a strategy for chess might include the instructions "Open with e4, then if the first two moves are d4-d5, follow with c4."
 
-## Why be a Control Freak?
+## Why be a Control Freak? (1/3)
 
 - Strategies serve two roles.
 - They get followed by one player.
 - And they get reasoned about by the other players, in order to create their own strategies.
 - And to play the latter role, sometimes you need these weird steps.
 
-## Why be a Control Freak?
+## Why be a Control Freak? (2/3)
 
 - Sometimes in games we're interested in situations where there is a gap between giving an order and carrying it out.
 - When opposing generals are watching a battle play out, they can't assume that their instructions will be carried out to the letter, or that what they see on the battlefield is the result of the other side carrying out instructions properly.
 - In these cases, it is clear why a strategy should include "What to do if you haven't done what I said you should do so far."
+
+## Why be a Control Freak? (3/3)
+
+- Strategies are part of **explanations** of what the players do.
+- Sometimes a move is not taken because it would lead to bad consequences several moves down the track.
+- But to see that it would lead to those consequences, you need to see how the player who makes the bad move would follow it up.
 
 ## Back to Nash
 
@@ -58,7 +64,7 @@ source("kableformat.R")
 ## The End of Time?
 
 - So does that mean we don't need to think about dynamics at all?
-- No, and next time we'll look at why.
+- No, and next section we'll look at why.
 - Some strategy pairs that make sense in a one-shot game don't seem to make sense in a dynamic game.
 
 # Incredible Threats
