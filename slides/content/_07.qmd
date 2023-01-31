@@ -213,7 +213,7 @@ When you run the numbers on cases like this, three things come out.
 
 1. Sometimes, insurance is good for both parties.
 2. Unless the loss is a huge portion of the customer's wealth, the numbers end up being really close.
-3. Even in those cases, the numbers aren't that different.
+3. Even in those cases, the numbers aren't that different. \pause
 
 So I end up thinking that people probably over-purchase insurance, even though this is a model on which insurance purchase can be rational.
 
