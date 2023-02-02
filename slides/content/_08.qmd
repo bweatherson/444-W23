@@ -168,7 +168,7 @@ At least three interpretations.
 
 - Game theorists standardly assume that if some moves are available, so is any mixed strategy built out of them.
 - Philosophers do not assume this, and often think it's the least plausible thing about game theory.
-- Is this assume plausible?
+- Is this assumption plausible?
 
 ## What's a Mixed Theory
 
