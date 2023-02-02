@@ -13,6 +13,78 @@ source("kableformat.R")
 
 There is a handout for today. It kind of duplicates the slides, so I haven't made copies of it, but it is on Canvas, under Handouts in files. If you prefer seeing things in paragraphs rather than bullet points, you could follow along on that.
 
+# A Worked Example
+
+## Stag Hunts with Migration
+
+Recall the basic game table for stag hunt.
+
+```{r}
+staghunt <- tribble(
+  ~Moves,         ~cooperate, ~defect,
+  "Cooperate",  "5, 5", "0, 4",
+  "Defect",  "4, 0", "2, 2"
+)
+gameformat(staghunt)
+```
+
+## Stag Hunts with Migration
+
+Here's a more complicated game.
+
+- There are two players: Enzo and Alessia.
+- Enzo starts in a different country to Alessia, and can Stay where he is (S), or Migrate to her country (M).
+- If he Stays, he will get a payout of 3, and she will get 4.
+- If he Migrates, they will play Stag Hunt.
+
+## Stag Hunts with Migration
+
+Let's find the (pure strategy) subgame perfect equilibria for this game.
+
+- Enzo has four possible strategies: SC, SD, MC, MD.
+- Alessia just has two possible strategies: c, d.
+- The minimal subgame is the stag hunt game.
+
+## Stag Hunts with Migration
+
+That minimal subgame has two equilibria: Cc and Dd.
+
+- In the first, they both get a payout of 5.
+- In the second, they both get a payout of 2.
+
+## Stag Hunts with Migration
+
+So we have to build two trees to work out subgame perfect equilibria.
+
+- This is just like what we did when using backward induction in games where there are ties.
+- The idea is that we're **extending** the equilibria of the subgame to an equilibrium of the full game.
+
+## Stag Hunts with Migration
+
+If the equilibrium of the subgame is Cc, then Enzo is better off Migrating than Staying.
+
+- So the full equilibrium is that Enzo plays MC, Alessia plays c, and they both get 5.
+
+## Stag Hunts with Migration
+
+If the equilibrium of the subgame is Dd, then Enzo is better off Migrating than Staying.
+
+- So the full equilibrium is that Enzo plays SD, Alessia plays d, and he gets 3, while she gets 4.
+
+## Stag Hunts with Migration
+
+So there are two possible subgame perfect equilibria:
+
+1. Enzo plays MC, Alessia plays c.
+2. Enzo plays SD, Alessia plays d.
+
+## Not-on-the-test Bonus Content 
+
+Really deep philosophical question: Can Enzo reason as follows?
+
+- If I migrate, Alessia will know that I must be playing C. I wouldn't have migrated just to get the 2,2 equilibrium. And if she knows I'll play C, she will play c, and we'll both get 5. And that's better than the 3 I'll get from Staying. So the uniquely rational move is to Migrate.
+- This is **forward induction** reasoning, and we're not going to go over it in this course. But it's a really fascinating philosophical question whether it is sound.
+
 # Cardinal Importance
 
 ## Games with Lotteries
