@@ -1,0 +1,118 @@
+---
+title: "4th Weekly Assignment Answers"
+output:
+  pdf_document:
+    toc: false
+    keep_tex: yes
+    latex_engine: xelatex
+    extra_dependencies: ["nicefrac", "caption"]
+    fig_caption: no
+    includes:
+      in_header: 
+        - compact-title.tex
+fontsize: 10pt
+mainfont: SF Pro Text Light
+mainfontoptions: "Scale=MatchLowercase"
+geometry: margin=1in
+author: Philosophy 444
+date: Due 12.01pm, 11 February, 2023
+---
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, include = FALSE}
+require(knitr)
+require(tidyverse)
+require(huxtable)
+
+knitr::opts_chunk$set(echo = FALSE, results = "asis")
+
+gameformat <- function(game){
+  as_hux(game) %>%
+    set_markdown_contents(1, 1, "") %>%
+    set_right_border(everywhere, 1, value = 0.4) %>%
+    set_bottom_border(1, everywhere, value = 0.4) %>%
+    set_align(everywhere, everywhere, "center") %>%
+    set_align(everywhere, 1, "right") %>%
+    set_valign(1, everywhere, "middle") %>%
+    set_all_padding(everywhere, everywhere, 2) %>%
+    set_top_padding(1, everywhere, 0) %>%
+    set_bottom_padding(1, everywhere, 6) %>%
+    set_latex_float("h!")
+}
+```
+
+
+# Answers to One-Six
+
+There is no pure strategy Nash equilibrium, so there must be a mixed strategy equilibrium. Let $x$ be the probability that thief plays S, so $1-x$ is the probability of $N$, and $y$ be the probability that firm plays Basic, so $1-y$ is the probability that they play Enhanced. So we compute $x$ and $y$ by setting the other players' payouts from the two options to be equal.
+
+\begin{align*}
+E(S) &= E(N) \\
+1y - 5(1-y) &= 0y + 0(1-y) \\
+6y - 5 &= 0 \\
+y &= \frac{5}{6} \approx 0.83
+\end{align*}
+
+1. Probability of Basic is about 0.83.
+2. Probability of Enhanced is about 0.17.
+
+\begin{align*}
+E(B) &= E(E) \\
+0x + 1(1-x) &= 2x + 0(1-x) \\
+1-x &= 2x \\
+1 &= 3x \\
+x &= \frac{1}{3} \approx 0.33
+\end{align*}
+
+3. Probability of Steal is about 0.33.
+4. Probability of Not Steal is about 0.67.
+
+To work out expected return for a player, we just need to work it out for one of the strategies, since the two strategies have the same expected return.
+
+\begin{align*}
+E(B) &= 0x + 1(1-x) \\
+ &= \frac{2}{3} \approx 0.67.
+\end{align*}
+
+5. Firm's expected return is about 0.67.
+
+\begin{align*}
+E(N) &= 0y + 0(1-y) \\
+ &= 0.
+\end{align*}
+
+6. Thief's expected return is 0.
+
+# Answers to Seven-Nine
+
+The only answers that could change are those that had the $-5$ as an input. Since it wasn't part of the input to calculating $x$, that is unchanged. So firm's expected payout, which is just a function of $x$, is **unchanged**. And since Thief's expected return from $N$ is still 0, and in equilibrium their payouts are the same from $S$ and $N$, Thief's payout is **unchanged**. But to work out the probability that the diamond is stolen, which is $xy$, we need to recalculate $y$. (Why $xy$? The diamond gets stolen only if Thief plays $S$, which has probability $x$, and firm plays $B$, which has probability $y$. And these are independent events, so the probability of them both happening is the product of the probabilities of each of them happening individually.)
+
+\begin{align*}
+E(S) &= E(N) \\
+1y - 10(1-y) &= 0y + 0(1-y) \\
+11y - 10 &= 0 \\
+y &= \frac{10}{11} \approx 0.91
+\end{align*}
+
+Since the probability of $x$ was unchanged, and the probability of $y$ went up, the probability that the diamond gets stolen has gone **up**. Putting all this together.
+
+7. Unchanged.
+8. Unchanged.
+9. Up.
+
+# Answers to Ten-Eleven
+
+In equilibrium, firm will choose the option that maximises its expected return from the game. We know that if Firm chooses option one or option two, their expected payout is $\frac{2}{3}$. We worked that out for option one in the first set of questions, and in the second set of questions we worked out that their payout is unchanged. So what about option 3. Now the calculation for $x$ changes, as follows.
+
+\begin{align*}
+E(B) &= E(E) \\
+0x + 1(1-x) &= 3x + 0(1-x) \\
+1-x &= 3x \\
+1 &= 4x \\
+x &= \frac{1}{4} = 0.25
+\end{align*}
+
+10. Since firm's expected payout is $1-x$, and $x = 0.25$, firm's expected payout is 0.75.
+
+The probability that the diamond gets stolen in this situation is $xy$, where $x = 0.25$, and $y = \frac{5}{6}$. So $xy = \frac{5}{24} \approx 0.21$.
+
+11. The probability that the diamond gets stolen is about 0.21.

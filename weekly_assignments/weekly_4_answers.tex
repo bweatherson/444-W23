@@ -1,0 +1,247 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  10pt,
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+  \setmainfont[Scale=MatchLowercase]{SF Pro Text Light}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% https://github.com/rstudio/rmarkdown/issues/337
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+% https://github.com/rstudio/rmarkdown/pull/252
+\usepackage{titling}
+\setlength{\droptitle}{-2em}
+
+\pretitle{\vspace{\droptitle}\centering\huge}
+\posttitle{\par}
+
+\preauthor{\centering\large\emph}
+\postauthor{\par}
+
+\predate{\centering\large\emph}
+\postdate{\par}
+
+\usepackage[normalem]{ulem}
+\usepackage{nicefrac}
+\usepackage{caption}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={4th Weekly Assignment Answers},
+  pdfauthor={Philosophy 444},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{4th Weekly Assignment Answers}
+\author{Philosophy 444}
+\date{Due 12.01pm, 11 February, 2023}
+
+\begin{document}
+\maketitle
+
+\hypertarget{answers-to-one-six}{%
+\section{Answers to One-Six}\label{answers-to-one-six}}
+
+There is no pure strategy Nash equilibrium, so there must be a mixed
+strategy equilibrium. Let \(x\) be the probability that thief plays S,
+so \(1-x\) is the probability of \(N\), and \(y\) be the probability
+that firm plays Basic, so \(1-y\) is the probability that they play
+Enhanced. So we compute \(x\) and \(y\) by setting the other players'
+payouts from the two options to be equal.
+
+\begin{align*}
+E(S) &= E(N) \\
+1y - 5(1-y) &= 0y + 0(1-y) \\
+6y - 5 &= 0 \\
+y &= \frac{5}{6} \approx 0.83
+\end{align*}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Probability of Basic is about 0.83.
+\item
+  Probability of Enhanced is about 0.17.
+\end{enumerate}
+
+\begin{align*}
+E(B) &= E(E) \\
+0x + 1(1-x) &= 2x + 0(1-x) \\
+1-x &= 2x \\
+1 &= 3x \\
+x &= \frac{1}{3} \approx 0.33
+\end{align*}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Probability of Steal is about 0.33.
+\item
+  Probability of Not Steal is about 0.67.
+\end{enumerate}
+
+To work out expected return for a player, we just need to work it out
+for one of the strategies, since the two strategies have the same
+expected return.
+
+\begin{align*}
+E(B) &= 0x + 1(1-x) \\
+ &= \frac{2}{3} \approx 0.67.
+\end{align*}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{4}
+\tightlist
+\item
+  Firm's expected return is about 0.67.
+\end{enumerate}
+
+\begin{align*}
+E(N) &= 0y + 0(1-y) \\
+ &= 0.
+\end{align*}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{5}
+\tightlist
+\item
+  Thief's expected return is 0.
+\end{enumerate}
+
+\hypertarget{answers-to-seven-nine}{%
+\section{Answers to Seven-Nine}\label{answers-to-seven-nine}}
+
+The only answers that could change are those that had the \(-5\) as an
+input. Since it wasn't part of the input to calculating \(x\), that is
+unchanged. So firm's expected payout, which is just a function of \(x\),
+is \textbf{unchanged}. And since Thief's expected return from \(N\) is
+still 0, and in equilibrium their payouts are the same from \(S\) and
+\(N\), Thief's payout is \textbf{unchanged}. But to work out the
+probability that the diamond is stolen, which is \(xy\), we need to
+recalculate \(y\). (Why \(xy\)? The diamond gets stolen only if Thief
+plays \(S\), which has probability \(x\), and firm plays \(B\), which
+has probability \(y\). And these are independent events, so the
+probability of them both happening is the product of the probabilities
+of each of them happening individually.)
+
+\begin{align*}
+E(S) &= E(N) \\
+1y - 10(1-y) &= 0y + 0(1-y) \\
+11y - 10 &= 0 \\
+y &= \frac{10}{11} \approx 0.91
+\end{align*}
+
+Since the probability of \(x\) was unchanged, and the probability of
+\(y\) went up, the probability that the diamond gets stolen has gone
+\textbf{up}. Putting all this together.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Unchanged.
+\item
+  Unchanged.
+\item
+  Up.
+\end{enumerate}
+
+\hypertarget{answers-to-ten-eleven}{%
+\section{Answers to Ten-Eleven}\label{answers-to-ten-eleven}}
+
+In equilibrium, firm will choose the option that maximises its expected
+return from the game. We know that if Firm chooses option one or option
+two, their expected payout is \(\frac{2}{3}\). We worked that out for
+option one in the first set of questions, and in the second set of
+questions we worked out that their payout is unchanged. So what about
+option 3. Now the calculation for \(x\) changes, as follows.
+
+\begin{align*}
+E(B) &= E(E) \\
+0x + 1(1-x) &= 3x + 0(1-x) \\
+1-x &= 3x \\
+1 &= 4x \\
+x &= \frac{1}{4} = 0.25
+\end{align*}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{9}
+\tightlist
+\item
+  Since firm's expected payout is \(1-x\), and \(x = 0.25\), firm's
+  expected payout is 0.75.
+\end{enumerate}
+
+The probability that the diamond gets stolen in this situation is
+\(xy\), where \(x = 0.25\), and \(y = \frac{5}{6}\). So
+\(xy = \frac{5}{24} \approx 0.21\).
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  The probability that the diamond gets stolen is about 0.21.
+\end{enumerate}
+
+\end{document}
