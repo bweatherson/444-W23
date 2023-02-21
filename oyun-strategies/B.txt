@@ -1,0 +1,5 @@
+Strategy B
+B - Tit-For-Tat
+2
+C, 0, 1
+D, 0, 1
