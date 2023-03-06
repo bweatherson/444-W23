@@ -42,7 +42,7 @@ gameformat <- function(game){
 
 # Iterated Prisoners' Dilemma
 
-We are going to run a tournament pitting different strategies against each other in Iterated Prisoners' Dilemma. Your task is to write a strategy, and write a short document (about 300 words) explaining why you picked that strategy. Both of these are due **Friday, March 12** at **5pm**. You can use the Canvas site to collaborate with others on ideas, but you must submit your own work. You will be graded in part on how well you do in the tournament, and in part on how well you defend your strategy choice.
+We are going to run a tournament pitting different strategies against each other in Iterated Prisoners' Dilemma. Your task is to write a strategy, and write a short document (about 300 words) explaining why you picked that strategy. Both of these are due **Tuesday, March 7** at **10am**. You can use the Canvas site to collaborate with others on ideas, but you must submit your own work. You will be graded in part on how well you do in the tournament, and in part on how well you defend your strategy choice.
 
 In the tournament, your strategy will be matched up in turn with each of the strategies submitted (including your own), plus five pre-defined strategies. You play `against' each of these others five times. Each play will consist of roughly 200 rounds of Prisoners' Dilemma (PD). Each round of PD consists of a game with the following payouts, in points. (You are Row, the other player is Column.)
 

@@ -6,19 +6,16 @@
   11pt,
 ]{article}
 \usepackage{amsmath,amssymb}
+\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math} % this also loads fontspec
+  \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
-\usepackage{lmodern}
-\ifPDFTeX\else
-  % xetex/luatex font selection
   \setmainfont[Scale=MatchLowercase]{SF Pro Text Light}
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
@@ -104,7 +101,7 @@
 \fi
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same}
+\urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
   pdftitle={Assignment Week 8},
   pdfauthor={Philosophy 444},
@@ -124,8 +121,8 @@
 We are going to run a tournament pitting different strategies against
 each other in Iterated Prisoners' Dilemma. Your task is to write a
 strategy, and write a short document (about 300 words) explaining why
-you picked that strategy. Both of these are due \textbf{Friday, March
-12} at \textbf{5pm}. You can use the Canvas site to collaborate with
+you picked that strategy. Both of these are due \textbf{Tuesday, March
+7} at \textbf{10am}. You can use the Canvas site to collaborate with
 others on ideas, but you must submit your own work. You will be graded
 in part on how well you do in the tournament, and in part on how well
 you defend your strategy choice.
@@ -224,14 +221,13 @@ One of these states, state 0, will be the initial state of the machine.
 So here is a very simple machine.
 
 \begin{longtable}[]{@{}lllll@{}}
-\toprule\noalign{}
+\toprule()
 Number & Play & Move if C & Move if D & Notes \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 0 & C & 0 & 1 & Cooperate state \\
 1 & D & 0 & 1 & Defect state \\
+\bottomrule()
 \end{longtable}
 
 This machine will play C at first, since that's the play in state 0.
@@ -244,15 +240,14 @@ pre-defined strategies I mentioned above.
 Let's look at a slightly more complicated strategy.
 
 \begin{longtable}[]{@{}lllll@{}}
-\toprule\noalign{}
+\toprule()
 Number & Play & Move if C & Move if D & Notes \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 0 & C & 0 & 1 & Cooperate state \\
 1 & C & 0 & 1 & After single defection \\
 2 & D & 0 & 2 & After multiple defections \\
+\bottomrule()
 \end{longtable}
 
 This strategy will start cooperating, then will defect any time the
@@ -273,12 +268,10 @@ having more states. In the notes, I'll list the count of defections.
 \newpage
 
 \begin{longtable}[]{@{}lllll@{}}
-\toprule\noalign{}
+\toprule()
 Number & Play & Move if C & Move if D & Notes \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 0 & C & 0 & 1 & Base; count=0 \\
 1 & D & 2 & 3 & Defect; count=1 \\
 2 & C & 2 & 3 & Coop; count=1 \\
@@ -287,6 +280,7 @@ Number & Play & Move if C & Move if D & Notes \\
 5 & D & 6 & 7 & Defect; count=3 \\
 6 & C & 6 & 7 & Coop; count=3 \\
 7 & D & 7 & 7 & Defect; count=4 \\
+\bottomrule()
 \end{longtable}
 
 The machine really cares about two things; how many times the opponent
