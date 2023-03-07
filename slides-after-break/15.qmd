@@ -37,7 +37,7 @@ But note two things about these.
 - At the other end is where a player just has to pick a strategy in complete ignorance of who the other player is.
 - With types we get in between; you don't know who the other player is, but you know they are of type $t$.
 
-## Symmetry
+## {.plain}
 
 - The formal effect of this is to open up a new range of **symmetric** equilibria.
 - Without types, the only equilibrium in a complementary coordination game is really bad.
@@ -49,7 +49,7 @@ But note two things about these.
 
 - The only symmetric equilibrium is that we both play the mixed strategy half-A/half-B, with a return of 0.5.
 
-## Types
+## {.plain}
 
 |        |  A  | B |
 |-------:|:------:|:------:|
@@ -86,7 +86,10 @@ But note two things about these.
 ## What makes something a move
 
 - The player must be physically capable of performing the move.
-- But they must also be capable of performing it under that description. \pause
+- But they must also be capable of performing it under that description.
+
+## What makes something a move
+
 - Question: Can I call up Barack Obama? \pause
 - Positive answer: it's just a matter of dialing the right number, and I have the dexterity to hit the numbers. \pause
 - Negative answer: I don't know his phone number!
@@ -147,6 +150,9 @@ Everyone wants to be the only defector.
 
 - Just one small note this week.
 - Is it really true that militaries need strict hierarchies to be successful?
+
+## Military
+
 - I think this turns on what you call a 'military'.
 - The slave rebellion in what's now Haiti was pretty successful, without a particularly clear hierarchy.
 - The guerilla war the Spanish people waged against Napoleon was much more successful than anyone their own army did.
