@@ -13,6 +13,9 @@ author: "Brian Weatherson"
 - In any interaction, everyone knows who is of which type.
 - And everyone knows everyone knows that.
 - So part of the theory is that a method of typing will have to go along, socially, with visible markers.
+
+## Types
+
 - This is interesting in the context of religious typing - and worth thinking about how religious groups have voluntarily or involuntarily adopted visible markers.
 
 # Resumé Studies
@@ -21,18 +24,24 @@ author: "Brian Weatherson"
 
 - These are really fascinating, and worth looking up.
 - You can find some of them at this UM site: https://advance.umich.edu/stride-readings/
+
+## Resumé Studies
+
 - Do be careful about dates.
 - Obviously racism/sexism have not gone away in the last 40 years.
 - But they have changed some, and results from 40 years ago might not replicate now.
 
-# Handfield Model
+# Hadfield Model
 
-## Handfield Model
+## Hadfield Model
 
-This is the model discussed on page 60 of the book, and we spent a bit of time on it last time.
+This is the model discussed on page 60 of the book.
 
 > - O'Connor thinks it puts too much weight on rational choice. We'll come back to her alternative to rational choice models in a bit.
 > - She also thinks it can't explain the stability of gender roles. I'm not really sure why that is true.
+
+## Hadfield Model
+
 > - I'm worried that it requires 100% pairing; even with a 90% likelihood of pairing, you'd expect to see non-trivial investment in non-normative skills, as basically insurance. But we often didn't see even that.
 
 # Basins of Attraction
@@ -42,6 +51,9 @@ This is the model discussed on page 60 of the book, and we spent a bit of time o
 - These are going to be significant, and I encourage you to ask about them if you're not following.
 - Here's one thing about them that threw me at first.
 - As O'Connor is using them, these are population level models.
+
+## Basins of Attraction
+
 - When there is an equilibrium point that is 70% A/30% not-A (or whatever), that doesn't mean each player adopts the mixed strategy 0.7 A, 0.3 not A.
 - Rather, it means 70% of the population do A, and 30% do not-A.
 - That doesn't amount to much mathematically, but it matters for how we interpret the model.
@@ -53,7 +65,7 @@ This is the model discussed on page 60 of the book, and we spent a bit of time o
 - (Rational Choice) Game Theory
 - Evolutionary Game Theory
 
-## Sociological Question
+## {.plain}
 
 A lot of economists believe all of the following things.
 
@@ -76,7 +88,7 @@ Evolutionary game theory
 - Low rationality assumptions
 - Dynamic method
 
-## Big Picture Worries
+## Big Picture Points
 
 > - The dynamism of evolutionary views is just good. Who cares if a position is stable if it could never be reached?
 > - And not requiring full rationality is good too.
