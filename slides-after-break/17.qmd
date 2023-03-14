@@ -43,6 +43,27 @@ To see this, think about how we ended up with the distribution of languages we h
 - English is more widely spoken than Welsh for somewhat functional reasons.
 - English is more widely spoken than Dutch for almost entirely conventional reasons.
 
+## Three Kinds of (Non-)Conventionality
+
+1. Better Payoffs
+2. Harder to disrupt
+3. Larger Basins
+
+O'Connor's theory only relies on 3.
+
+## Three Kinds of (Non-)Conventionality
+
+Can these be teased apart?
+
+- Stag Hunts pull apart payoffs (condition 1) from basins (condition 3)
+
+## Three Kinds of (Non-)Conventionality
+
+Can these be teased apart?
+
+- Getting 2 (disruption) teased apart from 1 and 3 might require either more options, or more players.
+- Faintly worries that 2-by-2-by-2 games are not the right modeling tool here.
+
 # Pairing
 
 ## Normal Households
@@ -119,4 +140,4 @@ One challenge in this chapter is to go beyond explaining why typing occurs to ex
 - There is an attempt at this by noting the benefits of the equal division.
 - But this is, I think, an artifact of the game chosen.
 - It comes back to whether it is useful to have 50% specialise in some task.
-- I think it's more likely that thinking about interlocking games is more promising.
+- Thinking about interlocking games looks more promising.
