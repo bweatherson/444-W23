@@ -34,6 +34,10 @@ I don't have much to say here, but I really wanted to draw attention to the very
 - But this one really was surprisingly different.
 - Would be kind of interested in running another version of this with multiple overlapping games.
 
+## {.plain}
+
+![Figure 5.3 from O'Connor's book. Look how small the fair basin is on the right!](cailin-fig-5_3.png){height=80%}
+
 # Equity
 
 ## What is Fair
@@ -45,7 +49,7 @@ I don't have much to say here, but I really wanted to draw attention to the very
 
 - This matters a lot in market economies.
 - Often the fair outcome is the one driven by the market.
-- And that's true even if different forms of market infrastrcture would have produced different outcomes.
+- And that's true even if different forms of market infrastructure would have produced different outcomes.
 
 ## Fairness and Deontology
 
@@ -63,6 +67,10 @@ The fact that different people are differentially able to walk away from a game 
 - The basins of attraction of the equilibria where the type with more ability to walk away end up with less are surprisingly large.
 - Is there a real world situation that is like this?
 - Or is this a case where the model doesn't really reflect reality?
+
+## {.blank}
+
+![Figure 5.5 from O'Connor's book. Those triangles aren't going to zero!](cailin-fig-5_5.png){height=80%}
 
 # Punishment
 
@@ -98,7 +106,12 @@ I really liked the stuff around page 126 on what happens if there is divergence 
 And this I think really does matter to the real world.
 
 - Sometimes what matters in these games is not what your disagreement point is, but what you can credibly signal that it is.
-- We're getting back here to things that would come up if we modelled each interaction as a negotiation over time.
+- We're getting back here to things that would come up if we modeled each interaction as a negotiation over time.
+
+## Credible Signals
+
+And this I think really does matter to the real world.
+
 - Anyway, sometimes it is really obvious what your type is, but there is no way to credibly signal willingness to walk away.
 - And in that case, the other player might (quite rationally!) assume that your disagreement point is something like the average of your type, whatever non-credible signal you send.
 
@@ -109,6 +122,16 @@ And this I think really does matter to the real world.
 I was a bit confused by the game on page 128 and after, where success causes one to have a higher disagreement point.
 
 - I don't really see the causal mechanism for this; it seemed much more plausible in the other direction.
+
+## Building Power
+
+I was a bit confused by the game on page 128 and after, where success causes one to have a higher disagreement point.
+
 - Maybe it's that the returns to the game come in resources that can be saved?
 - Maybe it's that there will be other games to play - where your type by default gets the good side of the equilibrium?
+
+## Building Power
+
+I was a bit confused by the game on page 128 and after, where success causes one to have a higher disagreement point.
+
 - It's a nice game, but I would like to hear more about the real world application.
