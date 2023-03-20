@@ -41,6 +41,11 @@ The key insight, which seems right, is that small groups learn about big groups 
 
 - Australian immigrants in America can tell you a lot more about American social practices than native-born Americans can tell you about Australian immigrants.
 - And something similar I suspect is true about American immigrants in Australia.
+
+## Small Populations
+
+The key insight, which seems right, is that small groups learn about big groups more rapidly than big groups learn about small groups.
+
 - And maybe, maybe, the result of that learning means that the small group will head to the nearest equilibrium, even if it is one that is bad for them.
 
 # Strategies
