@@ -5,6 +5,90 @@ author: "Brian Weatherson"
 date: "21 March 2023"
 ---
 
+# Bank Runs
+
+## {.plain}
+
+![The intro to Matt Levine's newsletter from last Friday](levine170323.png){height=80%}
+
+## Two Models of Bank Runs
+
+> 1. It is a prisoner's dilemma game. Everyone would prefer that everyone else keep their money in, but they would prefer to withdraw their money.
+> 2. It is an **iterated** prisoner's dilemma game. In the very short term, it's like in 1, but in the longer term, it makes (selfish, prudential) sense to develop an ethos of cooperation.
+
+## Two Models of Bank Runs
+
+Which is correct? \pause
+
+- Answer: Whichever everyone believes is correct.
+
+## What is the Iteration?
+
+> - Future banking relationships?
+> - Any kind of future business relationships?
+> - Any kind of future relationships? \pause
+
+One of the hardest things around here is knowing when to make multiple interactions part of the same game.
+
+## An Alternative View
+
+Tim Harford in the _Financial Times_ said that the situation is not a Prisoners Dilemma, it's a Stag Hunt. \pause
+
+- This might not be a rival view.
+- Brian Skyrms argued (as part of his campaign to get philosophers to take Stag Hunts more seriously) that iterated PDs just are Stag Hunts.
+
+# Polygyny
+
+## {.plain}
+
+![Effective male (on left) and female (on right) population sizes over time](patriarchy.jpg){height=80%}
+
+## Sources
+
+- The picture and description are sourced from Doug Jones's blog - https://logarithmichistory.wordpress.com/2015/09/27/the-patriarchal-age/.
+- The actual credit for the work goes to a paper by Monika Karmin et al, "A recent bottleneck of Y chromosome diversity coincides with a global change in culture"m _Genome Research_ 2015 Apr; 25(4): 459–466.
+- And I learned about all this from Brad DeLong's book _Slouching Towards Utopia_.
+
+## Consequences
+
+I've mentioned occasionally that I thought O'Connor really downplays the physical effects of pregnancy, childbirth, and nursing on the development of inequality.
+
+- They are there, perhaps as reasons for the asymmetries that get everything going, but they are a bit the ghost haunting the picture.
+- But I had been running together two different concerns.
+
+## Two Consequences of Pregnancy
+
+1. Within a particular male/female child-having couple, there are physical reasons to prefer one division of labor over another. That doesn't necessitate inequality, let alone justify it, but you can see how it could make it possible.
+2. The physical constraints imposed by pregnancy put a fairly hard cap on the number of children a woman can have, but not on the number of children a man can have.
+
+## A Four Player Game
+
+The players are two men and two women.
+
+- One of the equilibria is that both women have children with one of the men, and are minimally supported by, but extremely subservient to, one of the men. The other man gets nothing.
+- Open question: Could this kind of outcome be a large basin equilibrium.
+
+## Empirical Question
+
+- We know that across the world, the _mean_ status/wealth of men in any society is higher than that of women.
+- Do we know whether that claim is also true for the _median_ of status/wealth?
+
+## Empirical Question
+
+How many societies had the following structure?
+
+- Life is very hard, barely above subsistence level, for the vast bulk of the population, all of whom are more or less at the same low level of welfare.
+- There is a privileged minority who have a much higher level of welfare.
+- They are all men.
+
+## What Are We Explaining Here?
+
+The aim of O'Connor's book is to explain gendered inequality, and it's clearly true that this is a feature of approximately all human societies.
+
+- It's also true that in recent Western socities, this group-level inequality was reflected in individual inequalities. The median man was better off, sometimes much better off, than the median woman.
+- O'Connor's models I think are aimed to explain that kind of distribution.
+- But is it the standard one? Maybe, but maybe not!
+
 # Variable Learning Rate
 
 ## Benefits to Learning
