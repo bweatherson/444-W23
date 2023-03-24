@@ -6,6 +6,91 @@ date: "23 March, 2023"
 
 ---
 
+# Big Picture
+
+## Some Questions
+
+First, some questions internal to the model.
+
+1. Who are the players?
+2. What are the payoffs?
+3. What is the generation rule?
+
+## Some Questions
+
+Then, some questions about how the model relates to reality.
+
+1. Do people play those games particularly often?
+2. Are the payouts really correct?
+3. Are there other games we should also have them play?
+
+## Some Questions
+
+Finally, some very big picture questions that it's easy to lose track of while going page-by-page.
+
+1. What is impossible to express in the model, and could it be explanatorily important?
+2. Does the model get the details right?
+3. Could the model be used to 'explain' things that we don't actually see in the world?
+
+## Complementarity and Trading
+
+One thing I was stressing in the earlier lectures is that the 'players', 'payoff' and 'often' questions seem easier to answer for the trading games than the MEFO games.
+
+- Are the MEFO players 12 year olds choosing life skills to acquire? Or adults training youngsters? Or older people acquiring new skills?
+- How important is the MEFO question outside of nuclear households, which are a very recent invention.
+
+## Complementarity and Trading
+
+On the other hand, these questions seem easy to answer for trading.
+
+- Situations where a resource must be divided are really ubiquitous. No need to look hard for them.
+
+## Inexpressibility
+
+Imagine someone who says that inequality within each gender explains inequality between genders. There is more inequality among men than among women, and maybe this partially explains inequality between genders.
+
+- Could O'Connor's models show that isn't right?
+- Arguably no, because there isn't a variable for this.
+- But arguably yes, because they could show such an explanation is unnecessary.
+
+## Details
+
+If you have an explanation for some phenomena, it would be nice if it explained why the phenomena was more pronounced in some places than others.
+
+- I don't really think O'Connor's story does that.
+- On the other hand, this feels like a 'nice to have' feature, not a 'need to have' feature.
+
+## Details
+
+But there is one thing I do worry about here.
+
+- O'Connor's models give us gendered inequality in general.
+- Do they explain why it always goes the same way, across thousands of years and thousands of miles?
+- Maybe it could be easily supplemented to do this.
+
+## Overgeneration
+
+One of the favorite tools that philosophers have.
+
+- This explanation can't be right, because if it were right, it would 'explain' a phenomena that doesn't actually happen.
+
+## Overgeneration
+
+Here's one thing you might push.
+
+- Say a 'summer' person is a person born between the spring and fall equinoxes, and a 'winter' person is a person born between the fall and spring equinoxes.
+- We could have summer and winter be the **types** that do all the work in these models.
+- So the model 'explains' summer/winter discrimination.
+- But obviously we don't see that in the world.
+
+
+## Overgeneration
+
+One reason why - summer/winter is not visible.
+
+- Really big question - and one I don't know the answer to.
+- Is the visibility of gender differences something that can be used to explain discrimination, or something that we should hope to explain as part of the explanation.
+
 # Network Models
 
 ## Networks and Ecosystems
