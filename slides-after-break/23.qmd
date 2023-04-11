@@ -53,6 +53,9 @@ Can a group know that $A$ without any member of the group knowing that $A$? \pau
 
 - Lackey's premise 1 is a version of an important principle connecting knowledge and action.
 - The premise is really super controversial.
+
+## Knowledge and Action
+
 - Lots of people think that you cannot always take for granted things that you know.
 - For example, they think that you can simultaneously know that you turned the oven off, and not be able to take this for granted when deciding to check whether the oven is off.
 - But I think this principle is pretty plausible.
@@ -74,6 +77,10 @@ Can a group know that $A$ without any member of the group knowing that $A$? \pau
 
 - Note that the possibility of group knowledge without individual knowledge doesn't entail that there is anything like a group mind above and beyond the individual mind.
 - These cases are still compatible with thorough going reductionism.
-- It's just that we can't reduce group knowledge to individual knowledge. \pause
+- It's just that we can't reduce group knowledge to individual knowledge.
+
+## Emergence
+
 - The same pattern occurs in a lot of other topics.
 - You can often have reduction without reduction on this very question.
+- For instance, the same thing is arguably true about causation.

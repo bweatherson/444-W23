@@ -48,6 +48,9 @@ Imagine the following case.
 - Two trials of a new medicine are being run, one in Michigan and one in California.
 - The theory behind the medicine is very speculative, and it's only 50/50 whether it will work as intended.
 - The trials aren't complete, and the evidence isn't released, but you know each of the lead researchers, and you call them up separately.
+
+## Experts With Different Evidence
+
 - They each say, "This is going better than expected; I'd say it's 90% likely that the drug works."
 - What should your probability be that the drug works?
 
@@ -105,6 +108,11 @@ This case is a bit more complicated, but it's the most important one.
 - There are two people, $X$ and $Y$, who want to learn from the experts.
 - There is only one proposition that they care about: $p$.
 - There are two experts $A$ and $B$.
+
+## Two Orders of Updating
+
+This case is a bit more complicated, but it's the most important one.
+
 - In the morning, $X$ goes to talk to them.
 - They say that they'll know more in the afternoon, after it is revealed at midday whether $q$ is true.
 - $X$ says that they can update themselves, just give them the four way table.
@@ -125,6 +133,9 @@ $X$ takes the average of those two probabilities, and comes away with $\Pr(p | q
 - It becomes public knowledge whether $q$ happens. Let's say it doesn't.
 - Now $A$ thinks $\Pr(p) = \frac{3}{4}$, and $B$ thinks $\Pr(p) = \frac{1}{3}$.
 - Now $Y$ asks for their expert views, learns them, and averages them.
+
+## Later That Day
+
 - So $Y$ ends up with $\Pr(p) = \frac{13}{24}$.
 - But $X$ ends up with $\Pr(p) = 0.5$.
 - Yet they did the same thing - defer to these two experts, and make one's beliefs sensitive to $q$.
@@ -151,7 +162,7 @@ Multiply the numbers together, and take the n'th root.
 
 ## Geometric Mean of Probabilities
 
-In general, if you take the geometric means of the expert's opinions about each elemtn of a probability space, the result will **not** be a probability.
+In general, if you take the geometric means of the expert's opinions about each element of a probability space, the result will **not** be a probability.
 
 ## Old Example
 

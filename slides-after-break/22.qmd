@@ -27,17 +27,36 @@ The last condition is a strengthening of the idea that cooperative activity is n
 - Like with Gilbert, you might worry about the generalisation of these to many person groups.
 - In a large group, I can intend that this group activity happen without having any commitment to being part of it.
 - That can't happen in a two person group; if I leave, the group ceases to exist.
+
+## Many Person Groups
+
 - So there is this tricky question about what kind of commitment is needed on the part of each individual for a large group activity to persist.
 - Thinking about two person cases is unlikely to help clarify that.
 
 ## Extra-Personal Intentions
 
 - One of the central moves Bratman makes is that each person individually intends that the group does something.
-- You might think this is odd; I can only intend that I do things. \pause
+- You might think this is odd; I can only intend that I do things.
+
+## Extra-Personal Intentions
+
 - But really there are lots of cases where I intend something not entirely in my control.
 - I can intend to spend a sunny day at the beach, without intending the sunshine. \pause
-- I can even, I think, do it without being 100% sure of the sunshine. \pause
-- Another example: I can intend to holiday in Paris, although I can't control all the aspects of my getting to Paris.
+- I can even, I think, do it without being 100% sure of the sunshine.
+
+## Extra-Personal Intentions
+
+- Another example: I can intend to holiday in Paris, although I can't control all the aspects of my getting to Paris. \pause
+- Maybe (when thinking about my family) I can intend that we holiday in Paris.
+- And that's all Bratman needs.
+- So it's a bit weird, but seems maybe ok.
+
+## Big Question
+
+What are the limits on intention? Two dimensions you might care about.
+
+- Power dimension: how much is it in my power to make it happen.
+- Epistemic dimension: is it compatible with knowing it won't happen/not knowing it will happen?
 
 ## Mesh
 
@@ -52,6 +71,12 @@ The last condition is a strengthening of the idea that cooperative activity is n
 - Imagine that your job is to get the paint. 
 - I have views about where to get the paint from (as in Bratman's example), but also how to drive there. 
 - This feels like it shouldn't matter; it's your job to get the paint.
+
+## Structured Groups
+
+- This is really evident in structured groups.
+- If it quite literally your job to do X, and my job to do Y, we could be in a group even if I disapprove of how you do your job.
+- Imagine applying mesh to a group the size of the United States Armed Forces.
 
 ## Mesh and Counterfactuals
 
@@ -68,6 +93,36 @@ From the other direction, it's fascinating to think through cases that turn on h
 - Of course, it's fine to be helpful, and there isn't really anything wrong with having views about what is better and worse.
 - I don't really know to balance these considerations.
 
+## Power and Coercion
+
+It's famously hard to draw a line between a power imbalance and a coercive situation.
+
+- Coercion doesn't literally mean that I give you no options at all. I can coerce you while you have agency.
+- But not every unwanted pressure is coercive.
+
+## Groups and Coercion
+
+Thinking about groups helps with a really hard puzzle case for coercion.
+
+- A1 has illegitimate power over C1, and A2 has illegitimate power over C2.
+- C2 enters into a deal with A1 that is mutually beneficial, but which they would not enter into but for A2's illegitimate power over them.
+- C1 enters into a deal with A2 that is mutually beneficial, but which they would not enter into but for A1's illegitimate power over them.
+
+## Groups and Coercion
+
+This seems kind of bad at some level, but it is possible that the 'deals' are still in some sense cooperative ventures.
+
+- But if A1 and A2 are exercising their illegitimate power as part of a group, in some strong sense of group, then the deals are coercive.
+- This matters if, e.g., C2 doesn't keep up their part of the deal - does A1 have a legitimate complaint?
+- Perhaps it depends on how closely they are working with A2.
+
+## Coercion
+
+Note that for Bratman there is a difference between a **shared intention** and a **shared cooperative activity**.
+
+- Even coercive agreements might produce shared intentions. (If the coercion is to steer your agency, not to bypass it.)
+- But they can't produce shared cooperation.
+
 ## What Counts as Support
 
 - The single possible kind of support feels really weak.
@@ -79,5 +134,17 @@ From the other direction, it's fascinating to think through cases that turn on h
 - Last case, because this is both a problem for Bratman and an interesting puzzle that tells us something about the stakes of these questions.
 - Is playing chess with a friend a shared cooperative activity?
 - It doesn't satisfy mesh, or support. I want to upset your plans.
-- But in some ways it is; a chess game involves a fair amount of coordination and cooperation. \pause
-- What turns on calling it a shared activity or not?
+- But in some ways it is; a chess game involves a fair amount of coordination and cooperation. 
+
+## Are Competitive Games SCAs, or Group Actions
+
+- What turns on calling a game of chess a shared cooperative activity or not?
+- I don't really have a good answer here.
+
+## An Objection to Gilbert
+
+Bratman believes that intentions typically come with resilience conditions.
+
+- But he doesn't think that shared cooperative activity comes with a Gilbert style obligation to continue.
+- One key case for him is where the participants explicitly disavow any such obligation.
+- Are such cases plausible? Are they problems for Gilbert?
