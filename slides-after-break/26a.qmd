@@ -1,0 +1,281 @@
+---
+title: "444 Lecture 26"
+subtitle: "Network Epistemology"
+author: "Brian Weatherson"
+date: "April 13, 2023"
+---
+
+# Density Functions
+
+## PDF
+
+Probability density functions are ways of expressing probabilities over continuous values.
+
+- Example: Probability that we will get precipitation in such-and-such interval over the next 12 months.
+- For any given number, probability that precipitation is exactly that is zero.
+- But probability that we get between 30 and 36 inches of precipitation is an interesting number.
+
+## Example
+
+```{r cache=TRUE, fig.height=5}
+require(tidyverse)
+theme_set(theme_minimal())
+ggplot(data.frame(x = c(20, 60)), aes(x)) +
+  stat_function(fun = dnorm,
+                geom = "line",
+                xlim = c(20, 60),
+                 args = list(
+                  mean = 39,
+                  sd = 5
+                )) +
+  stat_function(fun = dnorm,
+                geom = "area",
+                fill = "steelblue",
+                xlim = c(30, 36),
+                 args = list(
+                  mean = 39,
+                  sd = 5
+                )) +
+  xlim(20, 60) +
+  labs(x = "Inches of precipitation in Ann Arbor in 2024")
+```
+
+## Question
+
+What is the arithmetic mean of two PDFS?
+
+- Answer: Just take the arithmetic mean of the value at each point.
+
+## Question
+
+What is the geometric mean of two PDFS?
+
+- Possible answer: Take the geometric means of the value at each point and renormalise.
+- Does that preserve the cool features of discrete geometric means? Not sure - hard question.
+
+## How PDFs get used
+
+- Step 1: Come up with the 'shape' of the density function, either by armchair reasoning or background knowledge.
+- Step 2: Observe the target phenomena to set the parameter values.
+
+## Normal Distribution
+
+A common answer to step 1 is that the 'shape' should be the normal distribution. (Not going to go over what that is - it's in early stats classes.)
+
+- Two parameters.
+- First is mean - which is obvious.
+- Second is standard deviation, which is _very roughly_ half the distance between the mean and values that would be _weird_.
+
+## Cauchy distribution
+
+```{r cache=TRUE, fig.height=5}
+require(tidyverse)
+theme_set(theme_minimal())
+ggplot(data.frame(x = c(20, 60)), aes(x)) +
+  stat_function(fun = dcauchy,
+                geom = "line",
+                xlim = c(20, 60),
+                 args = list(
+                  location = 39,
+                  scale = 5
+                )) +
+  stat_function(fun = dcauchy,
+                geom = "area",
+                fill = "steelblue",
+                xlim = c(30, 36),
+                 args = list(
+                  location = 39,
+                  scale = 5
+                )) +
+  xlim(20, 60) +
+  labs(x = "Inches of precipitation in Ann Arbor in 2024")
+```
+
+## Larger Tails
+
+```{r cache=TRUE, fig.height=5}
+require(tidyverse)
+theme_set(theme_minimal())
+ggplot(data.frame(x = c(20, 60)), aes(x)) +
+  stat_function(fun = dcauchy,
+                geom = "line",
+                xlim = c(20, 60),
+                 args = list(
+                  location = 39,
+                  scale = 4
+                ),
+                aes(color="red")
+                )+
+    stat_function(fun = dnorm,
+                geom = "line",
+                xlim = c(20, 60),
+                 args = list(
+                  mean = 39,
+                  sd = 5
+                ),
+                aes(color="green")
+                )+
+  labs(x = "Inches of precipitation in Ann Arbor in 2024", col = "Shape of distribution") +
+  scale_color_discrete(labels=c('Normal', 'Cauchy'))
+```
+
+## Problems
+
+Sometimes the differences between shapes only show up in very rare cases.
+
+- But those cases, like a pandemic, or a stock market crash, or a massive snow storm, are really practically important.
+- If you see people talking about 'fat tails', that's what they mean.
+
+# Potted History
+
+## A Puzzle
+
+Assume some people have non-probabilistic yes/no judgments on a bunch of propositions.
+
+- Question: How do you get a group judgment?
+
+## Obvious Answer
+
+Majority Rule.
+
+- The group believes _p_ iff a majority of members believe _p_.
+
+## Problem 1
+
+What to do with ties.
+
+- Maybe that's ok, just neither belief nor disbelief.
+
+## Problem 2
+
+Leads to inconsistency.
+
+- E.g., we each agree that precisely one team will win the playoffs, and the three of us disagree about which it is.
+
+## Practical Consequence
+
+This matters a lot in jurisprudence.
+
+- When do judges decide on a question point by point, and when all at once.
+
+## Philosophical History
+
+Lots of detailed approaches, none of them particularly attractive.
+
+- General thought (through 2000s), should just get people to state probabilities, those are easy to merge.
+- Implicit thought: the merger is by arithmetic means.
+
+# Sullivan et al
+
+## Methods and Conclusions
+
+- The conclusions of the Sullivan et al paper aren't very surprising.
+- The 'wisdom of crowds' isn't very wise on politically charged matters, even when you measure it very carefully.
+- But the methods are really interesting, and point to very interesting kinds of research.
+- This includes both conceptual and empirical research.
+
+## Methods
+
+- Look at networks not just individuals.
+- Focus on the asymmetric links in these networks.
+- Use computer science tools to both analyse and investigate these networks.
+
+# Networks
+
+## A Brief History of Western Epistemology
+
+- Dawn-of-time to 1990s: Epistemology is primarily about sense perception and inference. 
+- 1990s-2010s: Testimony is really important too. 
+- 2020s: And testimony isn't just a one-one relationship; it happens in networks.
+ 
+I'm stressing *western* here because the relationship between testimony and other forms of knowledge is a very big deal in plenty of other philosophical traditions.
+
+## Simple Testimony
+
+- One speaker; one hearer.
+- Two big questions.
+- First, what prior knowledge does hearer have to have to get knowledge from speaker?
+- Second, is there is something special about being spoken to, as opposed to overhearing?
+
+## Network Testimony
+
+- Breaks down the recipient/eavesdropper distinction.
+- Is the TV news anchor talking to *you*?
+
+## Network Testimony
+
+- Cross-topic connections can start to matter.
+- Is who you trust on vaccines related to what they say on climate change?
+
+## Network Testimony
+
+- If the network is a huge part of your contact with the world, what happens when the network 'chooses' to prioritise some information over others. 
+
+## Some Empirical/Philosophical Questions
+
+- Are networks with strong centers better or worse at getting/distributing/filtering information than networks with weak centers?
+- What makes someone become central to a network?
+- What happens when people use views on one topic to choose a network to trust on other topics?
+
+# Wisdom of Crowds
+
+## Condorcet
+
+![Marquis de Condorcet (1743-1794)](Condorcet.png){height="70%"}
+
+## Jury Theorem
+
+If you have a large bunch of people who make a judgment on a question, then the majority answer will almost certainly be right given the following constraints:
+
+1. Each has a success probability greater than 0.5.
+2. Each makes their judgment independently.
+
+## Jury Theorem
+
+- The first constraint doesn't always hold in real world cases.
+- The second never does.
+- Some work on how much it can be weakened, but it's a challenge to get much out of it.
+
+## Real World Data
+
+There are some impressive cases where this works though, especially on things that are not politically charged.
+
+# Methods
+
+## Real World Case
+
+Sullivan et al use a real world case: Twitter posts about vaccines.
+
+- Upside: Gotta say something about the actual world eventually.
+- Downside: So much noise
+
+## Asymmetric Networks
+
+This adds a surprising amount to the computational complexity.
+
+- But it does make for more realistic models.
+
+## PageRank
+
+- As you might know, PageRank was initially developed to power the Google search engine.
+- But it's a very general mathematical construction, that can be used in any case where there are inbound and outbound links.
+- And it makes sense in any case that the existence of those links indicates (sort of) trust.
+
+## PageRank
+
+- Most statistical programs these days have an implementation of PageRank built in to them.
+- The math behind it isn't very sophisticated, but because of the iterative nature of it, actually doing the calculations can be time-consuming.
+- But again, that's been optimised a lot in readily available software.
+
+## Sentiment Analysis
+
+- They use something called latent Dirichlet allocation to do this.
+- I could talk all day about this if you want (quite literally - I wrote a book using this tool).
+- It's a weird tool for this purpose.
+
+## Sentiment Analysis circa 2023
+
+- GPT rules everything.
+- This is a remarkably good use case for it.
+- It's less good than expert analysis, but better than non-expert analysis.
+- And in studies I've seen, it's much closer to experts than non-experts.
