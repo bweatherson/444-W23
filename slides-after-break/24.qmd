@@ -81,12 +81,20 @@ Remember there are very good reasons for imitation.
 
 - If someone does something, and they subsequently get a good result, that is evidence that the 'something' leads to a good result.
 - This is especially true because the 'something' didn't just happen, it was an action.
+
+## Imitation and Discrimination
+
+Remember there are very good reasons for imitation.
+
 - It's a good general practice to assume that things you see people do are done for reasons.
 - That's especially true for the things you see successful people do.
+
 
 ## Second Order Evidence
 
 Very often, we get a reason to believe that $p$ not by being given direct evidence of it, but by being given evidence that someone else has evidence of it.
+
+## Second Order Evidence
 
 - The fact that someone who wanted to achieve outcome O did action A to get it, and got outcome O, is in fact two bits of evidence.
 - From the success, we get direct evidence that A leads to O.
